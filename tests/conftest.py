@@ -2,7 +2,12 @@
 
 from __future__ import annotations
 
+import os
+
 import pytest
+
+# os produtos pedidos pelo ➕ (monitor/produtos_extras.json) mudam com o uso: os testes rodam com o catálogo fixo
+os.environ["PRODUTOS_EXTRAS"] = ""
 
 
 @pytest.fixture(autouse=True)

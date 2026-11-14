@@ -31,11 +31,14 @@ importado dentro das funções.
 
 from __future__ import annotations
 
+import json
+import os
 import re
 import unicodedata
 from dataclasses import dataclass, field
 from datetime import date
 from functools import lru_cache
+from pathlib import Path
 from typing import Any, Iterable, NamedTuple, Optional
 
 from .models import MODELO_55, MODELO_65
@@ -49,8 +52,12 @@ FAMILIA_PS5 = "PS5"
 FAMILIA_GTA6 = "GTA6"
 FAMILIA_ACESSORIO = "ACESSORIO"
 FAMILIA_SSD = "SSD"   # SSD NVMe M.2 1TB para o notebook (pedido de 14/11/2026)
-FAMILIAS = (FAMILIA_TV, FAMILIA_PS5, FAMILIA_GTA6, FAMILIA_ACESSORIO, FAMILIA_SSD)
-# seções do painel (o acessório aparece junto do produto a que serve: leitor no PS5, gift card no GTA 6)
+# produtos pedidos pelo botão ➕ do painel (14/11/2026): entram sozinhos pelo workflow novo-produto.yml, que grava
+# monitor/produtos_extras.json; cada um é a própria seção do painel
+FAMILIA_EXTRA = "EXTRA"
+FAMILIAS = (FAMILIA_TV, FAMILIA_PS5, FAMILIA_GTA6, FAMILIA_ACESSORIO, FAMILIA_SSD, FAMILIA_EXTRA)
+# seções do painel (o acessório aparece junto do produto a que serve: leitor no PS5, gift card no GTA 6); as dos
+# produtos extras entram depois do catálogo (_carrega_extras)
 SECOES = {FAMILIA_TV: "TVs", FAMILIA_PS5: "PS5", FAMILIA_GTA6: "GTA 6", FAMILIA_SSD: "SSD"}
 
 LANCAMENTO_GTA6 = "2026-11-19"      # 00:00 de Brasília (digital); Code in Box a partir de 12/11
@@ -250,6 +257,40 @@ PRODUTOS: dict[str, Produto] = {p.id: p for p in (
                 "magalu": ("ssd nvme 1tb",), "telegram": ("SSD",)},   # KaBuM: config.URL_KABUM_BUSCA_SSD
         temas=("ssd",)),
 )}
+
+
+# ---- produtos extras (botão ➕ do painel, 14/11/2026): cada pedido do monitor/produtos_extras.json vira um Produto
+# genérico. O título tem de ter todos os termos de "tem" (sem eles, as palavras do nome) e nenhum de "fora"
+# (_classifica_extra). Busca: Promobit, Pelando, Magalu, Telegram e KaBuM pelo nome.
+ARQUIVO_EXTRAS = Path(__file__).with_name("produtos_extras.json")
+
+
+def produto_extra(e: dict) -> Produto:
+    pix = float(e["pix"])
+    parc = float(e.get("parcelado") or round(pix * 1.07))
+    nome = str(e["nome"])
+    busca = (nome.lower(),)
+    return Produto(
+        e["id"], nome, FAMILIA_EXTRA, nome[:24], nome, pix, parc,
+        # ponytail: faixa larga e fixa (25% a 5x a meta); um campo de faixa no pedido se aparecer peça/kit demais
+        faixa=(round(pix * 0.25, 2), round(pix * 5, 2)),
+        buscas={"promobit": busca, "pelando": busca, "magalu": busca, "telegram": (nome,)})
+
+
+def _carrega_extras() -> list[dict]:
+    if os.environ.get("PRODUTOS_EXTRAS") == "":   # desligado (tests/conftest.py: catálogo fixo nos testes)
+        return []
+    try:
+        extras = json.loads(ARQUIVO_EXTRAS.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return []
+    return [e for e in extras if e.get("id") and e["id"] not in PRODUTOS]
+
+
+EXTRAS: list[dict] = _carrega_extras()
+for _e in EXTRAS:
+    PRODUTOS[_e["id"]] = produto_extra(_e)
+    SECOES[_e["nome"]] = _e["nome"]
 
 IDS: tuple[str, ...] = tuple(PRODUTOS)
 TVS: tuple[str, ...] = tuple(i for i, p in PRODUTOS.items() if p.familia == FAMILIA_TV)
@@ -968,6 +1009,35 @@ def _classifica_ssd(t: str) -> Optional[Classificacao]:
     return _ok("SSD_NVME_1TB", geracao=next((x for x in g.groups() if x), None) if g else None)
 
 
+_PALAVRAS_VAZIAS = {"de", "da", "do", "das", "dos", "para", "com", "e", "o", "a", "em", "no", "na"}
+
+
+def _rx_termo(termo: str) -> re.Pattern:
+    """O termo como palavra(s) inteira(s); espaço ou hífen opcional entre as partes ("2tb" = "2 tb", "air fryer" =
+    "air-fryer" = "airfryer")."""
+    partes = re.findall(r"\d+|[a-z]+|[^\sa-z\d-]", normaliza(termo))
+    return re.compile(r"(?<![a-z0-9])" + r"[\s-]*".join(map(re.escape, partes)) + r"(?![a-z0-9])")
+
+
+def termos_obrigatorios(e: dict) -> list[str]:
+    tem = [x for x in e.get("tem") or [] if x.strip()]
+    return tem or [w for w in normaliza(e["nome"]).split() if w not in _PALAVRAS_VAZIAS]
+
+
+def classifica_extra(t: str, extras: Iterable[dict]) -> Optional[Classificacao]:
+    """O produto extra do título (texto já normalizado), a recusa dele ("fora do pedido") ou None (não é nenhum)."""
+    for e in extras:
+        if not all(_rx_termo(x).search(t) for x in termos_obrigatorios(e)):
+            continue
+        fora = next((x for x in e.get("fora") or [] if x.strip() and _rx_termo(x).search(t)), None)
+        if fora:
+            return _r(f"fora do pedido: {fora.strip()}")
+        if _RE_ESTADO.search(t):
+            return _r("estado: " + _RE_ESTADO.search(t).group(0))
+        return _ok(e["id"])
+    return None
+
+
 @lru_cache(maxsize=8192)
 def _classifica_titulo(t: str, loja: str) -> Classificacao:
     from .filtro import modelo_do_titulo, motivo_rejeicao
@@ -975,6 +1045,10 @@ def _classifica_titulo(t: str, loja: str) -> Classificacao:
     tv = modelo_do_titulo(t)
     if tv:
         return _ok(tv)
+    # o pedido do ➕ vem antes do SSD/PS5: quem pede "Controle DualSense" quer o que esses recusariam como acessório
+    extra = classifica_extra(normaliza(t), EXTRAS)
+    if extra:
+        return extra
     ssd = _classifica_ssd(normaliza(t))
     if ssd:
         return ssd

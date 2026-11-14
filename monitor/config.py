@@ -246,7 +246,7 @@ URL_KABUM_BUSCA_SSD = "https://www.kabum.com.br/busca/ssd-nvme-1tb"
 URL_KABUM_FRETE = "https://servicespub.prod.api.aws.grupokabum.com.br/shipping/v4/quotation"
 # Magalu (magazinevoce): as buscas do PS5/GTA 6 já trazem preço, vendedor e o cupom do anúncio (seller.tags)
 MAGALU_TERMOS_PRODUTOS = _produtos.termos("magalu", _NAO_TV)
-MAGALU_PRODUTOS_MAX_REQUISICOES = 4
+MAGALU_PRODUTOS_MAX_REQUISICOES = 4 + len(_produtos.EXTRAS)   # cada produto do ➕ ganha a busca dele
 # Carrefour: busca e página do produto por HTTP (a API VTEX dá 403); a página de cada produto traz vendedor e parcelado
 URL_CARREFOUR_BUSCA = "https://www.carrefour.com.br/busca/playstation%205"
 URL_CARREFOUR_PRODUTO = "https://www.carrefour.com.br/produto/p-{sku}"   # o slug não importa, só o sku no fim

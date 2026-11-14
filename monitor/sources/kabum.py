@@ -14,6 +14,7 @@ Oferta relâmpago só para assinante Prime Ninja (isPrimeExclusive) não vale: o
 from __future__ import annotations
 
 import json
+import re
 import time
 from typing import Any, Optional
 
@@ -217,8 +218,12 @@ class KaBuMProdutos(Fonte):
     def coletar(self) -> Resultado:
         por_id: dict[str, Oferta] = {}
         erros: list[str] = []
-        for rotulo, url in (("lista", config.URL_KABUM_LISTA_CONSOLES), ("gift card", config.URL_KABUM_LISTA_GIFT),
-                            ("ssd", config.URL_KABUM_BUSCA_SSD)):
+        listas = [("lista", config.URL_KABUM_LISTA_CONSOLES), ("gift card", config.URL_KABUM_LISTA_GIFT),
+                  ("ssd", config.URL_KABUM_BUSCA_SSD)]
+        # produtos do ➕ (14/11/2026): a busca da KaBuM pelo nome ("Air Fryer 5L" -> /busca/air-fryer-5l)
+        listas += [(e["nome"], "https://www.kabum.com.br/busca/" + re.sub(r"[^a-z0-9.]+", "-", produtos.normaliza(e["nome"])).strip("-"))
+                   for e in produtos.EXTRAS]
+        for rotulo, url in listas:
             try:
                 for o in parse_lista(get_html(url), self.nome):
                     por_id.setdefault(o.id, o)
