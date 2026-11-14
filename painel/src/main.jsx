@@ -279,13 +279,14 @@ const BOTAO_ICONE =
   'inline-flex items-center justify-center rounded-full p-1.5 text-band-ink transition-opacity duration-150 hover:opacity-80 disabled:cursor-wait';
 
 // novo produto (14/11/2026): a página é estática e pública, então não muda o robô sozinha. A janela monta o pedido e
-// abre uma issue já preenchida no GitHub (a pessoa confirma lá, logada); o produto entra no robô depois de configurado
-// no catálogo (monitor/produtos.py), como foi o SSD. Nenhum token na página.
+// abre uma issue já preenchida no GitHub (a pessoa confirma lá, logada); o workflow novo-produto.yml põe o produto no
+// catálogo (monitor/produtos_extras.json) e dispara uma coleta. Nenhum token na página. O formato do corpo
+// ("**Rótulo:** valor") é lido por monitor/novo_produto.py.
 const URL_NOVA_ISSUE = 'https://github.com/luisdfcalazans-dot/tcl-55c6k-monitor/issues/new';
 const CAMPOS_PEDIDO = [
   ['produto', 'Produto', 'ex.: SSD NVMe M.2 1TB', true],
-  ['tem', 'O que precisa ter', 'capacidade, versão, modelo, marca...', false],
-  ['fora', 'O que não serve', 'ex.: usado, SATA, outra capacidade', false],
+  ['tem', 'O que o título precisa ter (separe por vírgula)', 'ex.: ssd, nvme, 1tb', false],
+  ['fora', 'O que não serve (separe por vírgula)', 'ex.: sata, externo, 2tb', false],
   ['pix', 'Meta à vista / Pix (R$)', 'ex.: 700', true],
   ['parcelado', 'Meta parcelada (R$, opcional)', 'ex.: 750', false],
 ];
@@ -335,8 +336,8 @@ function BotaoNovoProduto() {
             Pedir um produto novo
           </p>
           <p className="mt-1 text-sm text-tinta-3">
-            O pedido abre uma issue no GitHub já preenchida (confirme lá, logado). O robô passa a buscar o produto
-            depois que ele for configurado.
+            O pedido abre uma issue no GitHub já preenchida: confirme lá, logado. Em poucos minutos o produto entra no
+            robô e uma coleta nova começa. Sem termos, vale o nome do produto.
           </p>
           {CAMPOS_PEDIDO.map(([k, rotulo, dica, obrigatorio]) => (
             <label key={k} className="mt-3 block text-sm text-tinta-2">

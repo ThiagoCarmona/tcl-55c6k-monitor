@@ -769,8 +769,24 @@ _PERFIL_SSD = _Perfil(
     False)
 
 
+@lru_cache(maxsize=64)
+def _perfil_extra(modelo: str) -> _Perfil:
+    """Produto pedido pelo ➕ (14/11/2026): vale o cupom do site todo ou o que cita as palavras do produto; as marcas e as
+    categorias de fora são as gerais, menos o que estiver no nome/termos do produto."""
+    e = next((x for x in produtos.EXTRAS if x["id"] == modelo), {"nome": modelo})
+    palavras = {w for t in produtos.termos_obrigatorios(e) for w in produtos.normaliza(t).split()
+                if w not in produtos._PALAVRAS_VAZIAS}
+    alvo = re.compile("|".join(r"\b" + re.escape(w) + r"\b" for w in sorted(palavras)) or r"(?!)")
+    marcas = [m for m in _MARCAS_OUTRAS if m not in palavras]
+    return _Perfil(alvo, alvo, marcas, [m for m in marcas if " " not in m and len(m) >= 3],
+                   [c for c in _CATEGORIAS_FORA_TEXTO if c.strip() not in palavras], [], re.compile(r"(?!)"), False)
+
+
 def _perfil(modelo: str) -> _Perfil:
-    return _PERFIL_SSD if produtos.familia(modelo) == produtos.FAMILIA_SSD else _PERFIL_JOGOS
+    fam = produtos.familia(modelo)
+    if fam == produtos.FAMILIA_EXTRA:
+        return _perfil_extra(modelo)
+    return _PERFIL_SSD if fam == produtos.FAMILIA_SSD else _PERFIL_JOGOS
 
 
 def _loja_de_outra_marca_jogos(e: "_Escopo", loja: str) -> bool:
@@ -1575,7 +1591,7 @@ def _lojas_base(m: str) -> set[str]:
         return {"PlayStation Store"}
     if m == "GIFT_CARD_PSN":
         return set(produtos.LOJAS_GIFT_OFICIAIS)
-    if produtos.familia(m) == produtos.FAMILIA_SSD:
+    if produtos.familia(m) in (produtos.FAMILIA_SSD, produtos.FAMILIA_EXTRA):   # extra: os marketplaces grandes
         return set(_LOJAS_COM_SSD)
     return set(_LOJAS_COM_GAMES)
 
@@ -1848,7 +1864,7 @@ def _resumo_produtos(estado: Estado, ofertas: list[Oferta], diretas: set[str]) -
                 txt += f" · menor já visto {fmt_preco(float(m['preco']))}"
             bloco.append(txt)
         if bloco:
-            linhas.append(f"\n{'💾' if sec == produtos.FAMILIA_SSD else '🎮'} <b>{produtos.SECOES[sec]}</b>")
+            linhas.append(f"\n{'💾' if sec == produtos.FAMILIA_SSD else '🎮' if sec in (produtos.FAMILIA_PS5, produtos.FAMILIA_GTA6) else '🛒'} <b>{produtos.SECOES[sec]}</b>")
             linhas += bloco
             if sec == produtos.FAMILIA_GTA6:
                 linhas.append(_linha_ultimate_resumo(produtos.comparacao_ultimate(

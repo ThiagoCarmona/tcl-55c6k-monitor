@@ -1,0 +1,77 @@
+name: novo produto (botão ➕ do painel)
+
+# O ➕ do painel abre uma issue "Novo produto: ..." já preenchida. Quando quem abre tem acesso ao repositório (dono ou
+# colaborador), este workflow põe o produto no catálogo (monitor/produtos_extras.json), faz o commit na main, dispara
+# uma coleta nova (que já busca o produto), responde e fecha a issue. Issue de quem não tem acesso é ignorada.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: novo-produto
+  cancel-in-progress: false
+
+jobs:
+  incluir:
+    if: >-
+      startsWith(github.event.issue.title, 'Novo produto:') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NUM: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Incluir no catálogo
+        id: incluir
+        env:
+          CORPO: ${{ github.event.issue.body }}
+        run: |
+          printf '%s' "$CORPO" > "$RUNNER_TEMP/corpo.md"
+          if python -m monitor.novo_produto "$RUNNER_TEMP/corpo.md" "$NUM" > "$RUNNER_TEMP/resposta.md"; then
+            echo "ok=1" >> "$GITHUB_OUTPUT"
+          fi
+          cat "$RUNNER_TEMP/resposta.md"
+
+      - name: Conferir, commit e coleta nova
+        id: commit
+        if: steps.incluir.outputs.ok == '1'
+        run: |
+          python -c "from monitor import produtos, regras, config; print(len(produtos.EXTRAS), 'produto(s) extra(s)')"
+          git config user.name "monitor-bot"
+          git config user.email "monitor-bot@users.noreply.github.com"
+          git add monitor/produtos_extras.json
+          git commit -q -m "Catálogo: produto novo pelo painel (issue #$NUM)"
+          for i in 1 2 3 4; do
+            git pull --rebase -q && git push -q && break
+            [ "$i" = 4 ] && exit 1
+            sleep $(( i * 5 ))
+          done
+          # a coleta em andamento carregou o catálogo antigo: a nova a substitui (concurrency do monitor.yml)
+          gh workflow run monitor.yml
+
+      - name: Responder na issue
+        if: always()
+        run: |
+          if [ "${{ steps.commit.outcome }}" = "success" ]; then
+            gh issue comment "$NUM" --body-file "$RUNNER_TEMP/resposta.md"
+            gh issue close "$NUM" --reason completed
+          elif [ "${{ steps.incluir.outputs.ok }}" != "1" ] && [ -s "$RUNNER_TEMP/resposta.md" ]; then
+            gh issue comment "$NUM" --body-file "$RUNNER_TEMP/resposta.md"
+            gh issue close "$NUM" --reason "not planned"
+          else
+            gh issue comment "$NUM" --body "⚠️ Não consegui incluir o produto automaticamente (falha no workflow: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)."
+          fi

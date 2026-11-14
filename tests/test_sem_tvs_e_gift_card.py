@@ -87,7 +87,7 @@ def test_buscas_das_fontes_mistas_sem_os_termos_das_tvs(sem_tvs, monkeypatch):
     from monitor.sources import pelando, promobit, telegram_public
 
     assert produtos.familias_monitoradas() == (produtos.FAMILIA_PS5, produtos.FAMILIA_GTA6, produtos.FAMILIA_ACESSORIO,
-                                               produtos.FAMILIA_SSD)
+                                               produtos.FAMILIA_SSD, produtos.FAMILIA_EXTRA)
     pedidos = []
     monkeypatch.setattr(promobit, "get_json", lambda url, **k: pedidos.append(url) or {})
     promobit.PromobitBusca().coletar()
