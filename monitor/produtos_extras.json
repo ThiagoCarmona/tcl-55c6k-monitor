@@ -1,16 +1,1 @@
-[
-  {
-    "id": "X_SSD_1TB",
-    "nome": "SSD 1TB",
-    "tem": [
-      "SSD 1TB NVME M2 PCI EXPRESS"
-    ],
-    "fora": [
-      "Sata",
-      "externo"
-    ],
-    "pix": 700.0,
-    "parcelado": 750.0,
-    "pedido": "issue #8, 2026-11-14"
-  }
-]
+[]
