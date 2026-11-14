@@ -48,6 +48,10 @@ def monta_entrada(pedido: dict, issue: str, existentes: dict) -> dict:
     if pid in existentes or any(produtos.normaliza(p.nome) == produtos.normaliza(nome) for p in existentes.values()):
         raise ValueError(f"já existe um produto com esse nome ({pid})")
     lista = lambda k: [x.strip() for x in re.split(r";|,(?!\d)", pedido.get(k, "")) if x.strip()]  # noqa: E731
+    # o mesmo produto com outro nome ("SSD 1TB" quando o robô já vigia o SSD NVMe 1TB): o classificador já o reconhece
+    ja = produtos.classifica(" ".join([nome, *lista("tem")])).produto
+    if ja:
+        raise ValueError(f"o robô já monitora esse produto: {produtos.nome(ja)} ({ja})")
     return {"id": pid, "nome": nome, "tem": lista("tem"), "fora": lista("fora"), "pix": pix, "parcelado": parcelado,
             "pedido": f"issue #{issue}, {date.today().isoformat()}"}
 

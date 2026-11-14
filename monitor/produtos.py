@@ -1013,10 +1013,15 @@ _PALAVRAS_VAZIAS = {"de", "da", "do", "das", "dos", "para", "com", "e", "o", "a"
 
 
 def _rx_termo(termo: str) -> re.Pattern:
-    """O termo como palavra(s) inteira(s); espaço ou hífen opcional entre as partes ("2tb" = "2 tb", "air fryer" =
-    "air-fryer" = "airfryer")."""
-    partes = re.findall(r"\d+|[a-z]+|[^\sa-z\d-]", normaliza(termo))
-    return re.compile(r"(?<![a-z0-9])" + r"[\s-]*".join(map(re.escape, partes)) + r"(?![a-z0-9])")
+    """O termo como palavra(s) inteira(s); espaço, ponto ou hífen opcional entre as partes ("2tb" = "2 tb", "m2" =
+    "m.2", "air fryer" = "air-fryer" = "airfryer")."""
+    partes = re.findall(r"\d+|[a-z]+|[^\sa-z\d.-]", normaliza(termo))
+    return re.compile(r"(?<![a-z0-9])" + r"[\s.-]*".join(map(re.escape, partes)) + r"(?![a-z0-9])")
+
+
+def _tem_termo(termo: str, t: str) -> bool:
+    """A frase inteira ou cada palavra dela, em qualquer ordem ("ssd 1tb nvme m2" sem vírgulas = 4 termos)."""
+    return bool(_rx_termo(termo).search(t)) or all(_rx_termo(w).search(t) for w in normaliza(termo).split())
 
 
 def termos_obrigatorios(e: dict) -> list[str]:
@@ -1027,7 +1032,7 @@ def termos_obrigatorios(e: dict) -> list[str]:
 def classifica_extra(t: str, extras: Iterable[dict]) -> Optional[Classificacao]:
     """O produto extra do título (texto já normalizado), a recusa dele ("fora do pedido") ou None (não é nenhum)."""
     for e in extras:
-        if not all(_rx_termo(x).search(t) for x in termos_obrigatorios(e)):
+        if not all(_tem_termo(x, t) for x in termos_obrigatorios(e)):
             continue
         fora = next((x for x in e.get("fora") or [] if x.strip() and _rx_termo(x).search(t)), None)
         if fora:

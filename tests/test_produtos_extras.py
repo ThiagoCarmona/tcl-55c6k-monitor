@@ -38,6 +38,24 @@ def test_pedido_invalido(pedido, erro):
         novo_produto.monta_entrada(pedido, "1", produtos.PRODUTOS)
 
 
+@pytest.mark.parametrize("pedido", [
+    # issue #8 (14/11/2026): o SSD que o robô já vigiava, com outro nome
+    {"nome": "SSD 1TB", "tem": "SSD 1TB NVME M2 PCI EXPRESS", "pix": "700"},
+    {"nome": "Console PlayStation 5 Digital", "pix": "3500"},
+])
+def test_pedido_de_produto_ja_monitorado(pedido):
+    with pytest.raises(ValueError, match="já monitora"):
+        novo_produto.monta_entrada(pedido, "8", produtos.PRODUTOS)
+
+
+def test_termo_sem_virgulas_vale_palavra_por_palavra():
+    e = {"id": "X_HD", "nome": "HD", "tem": ["hd externo 2tb usb3"]}
+    assert produtos.classifica_extra("hd externo seagate expansion 2 tb usb3", [e]).produto == "X_HD"
+    assert produtos.classifica_extra("hd externo seagate 1tb usb3", [e]) is None
+    e = {"id": "X_M2", "nome": "Case", "tem": ["case m2"]}
+    assert produtos.classifica_extra("case para ssd m.2 nvme", [e]).produto == "X_M2"
+
+
 def test_main_grava_e_recusa(tmp_path, monkeypatch, capsys):
     arq = tmp_path / "extras.json"
     arq.write_text("[]", encoding="utf-8")
