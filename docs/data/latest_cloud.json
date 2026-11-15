@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-15T04:11:13-03:00",
+ "atualizado": "2026-11-15T11:12:35-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -888,7 +888,7 @@
     "anuncio": "241923300",
     "vendedor_id": "magazineluiza",
     "ficha": {
-     "avaliacoes": 112,
+     "avaliacoes": 175,
      "peso_kg": 0.09,
      "razao_social": "Magazine Luiza SA",
      "vendedor_desde": "2016-06-01",
@@ -1968,6 +1968,59 @@
    "melhor_preco": 1179.26
   },
   {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "SSD Tronos TRS1024G-2280 1TB - M.2 NVMe PCIe 4.0 - Leitura 2000 MB/s, Escrita 1500 MB/s",
+   "url": "https://www.magazineluiza.com.br/ssd-tronos-trs1024g-2280-1tb-m-2-nvme-pcie-4-0-leitura-2000-mb-s-escrita-1500-mb-s/p/cj6k03g5aa/in/ssdi/",
+   "id": "cj6k03g5aa-entertecnologiaeletroltda",
+   "preco": 1281.03,
+   "preco_pix": 1191.36,
+   "parcelado": "10x R$ 128,10 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "ELETRO ENTER",
+   "extra": {
+    "preco_de": 1281.03,
+    "1p": false,
+    "anuncio": "cj6k03g5aa",
+    "vendedor_id": "entertecnologiaeletroltda",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.3,
+     "razao_social": "Enter Tecnologia E Eletro Ltda",
+     "vendedor_desde": "2022-10-28",
+     "vendas_vendedor": 1000,
+     "nota_vendedor": 2.6
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:cj6k03g5aa-entertecnologiaeletroltda",
+   "melhor_preco": 1191.36
+  },
+  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -2592,59 +2645,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:483621",
    "melhor_preco": 1319.9
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "SSD Tronos TRS1024G-2280 1TB - M.2 NVMe PCIe 4.0 - Leitura 2000 MB/s, Escrita 1500 MB/s",
-   "url": "https://www.magazineluiza.com.br/ssd-tronos-trs1024g-2280-1tb-m-2-nvme-pcie-4-0-leitura-2000-mb-s-escrita-1500-mb-s/p/cj6k03g5aa/in/ssdi/",
-   "id": "cj6k03g5aa-entertecnologiaeletroltda",
-   "preco": 1432.78,
-   "preco_pix": 1332.49,
-   "parcelado": "10x R$ 143,28 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "ELETRO ENTER",
-   "extra": {
-    "preco_de": 1432.78,
-    "1p": false,
-    "anuncio": "cj6k03g5aa",
-    "vendedor_id": "entertecnologiaeletroltda",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.3,
-     "razao_social": "Enter Tecnologia E Eletro Ltda",
-     "vendedor_desde": "2022-10-28",
-     "vendas_vendedor": 1000,
-     "nota_vendedor": 2.6
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:cj6k03g5aa-entertecnologiaeletroltda",
-   "melhor_preco": 1332.49
   },
   {
    "fonte": "kabum.produtos",
@@ -5120,6 +5120,41 @@
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
+   "titulo": "SSD SanDisk Optimus GX PRO 850X com Dissipador, 1TB, M.2 2280, PCIe 4.0 x4, NVMe, Leitura: 7300 MB/s, Gravação: 6300 MB/s - SDSP81100TAH-000E0",
+   "url": "https://www.kabum.com.br/produto/1003584",
+   "id": "1003584",
+   "preco": 2555.54,
+   "preco_pix": 2299.99,
+   "parcelado": "10x de R$ 255,55 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "KaBuM!",
+   "extra": {
+    "preco_tabela": 2555.54,
+    "openbox": false,
+    "kabum_seller_id": "0",
+    "kabum_oferta_id": 0,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "kabum.produtos:1003584",
+   "melhor_preco": 2299.99
+  },
+  {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
    "titulo": "SSD Corsair MP600 Elite, 1TB, M.2 2280, PCIe 4.0 x4, NVMe, Leitura: 7000 MB/s, Gravação: 6200 MB/s, Branco - CSSD-F1000GBMP600ECS",
    "url": "https://www.kabum.com.br/produto/542150",
    "id": "542150",
@@ -5150,41 +5185,6 @@
    },
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:542150",
-   "melhor_preco": 2299.99
-  },
-  {
-   "fonte": "kabum.produtos",
-   "tipo": "loja",
-   "loja": "KaBuM!",
-   "titulo": "SSD SanDisk Optimus GX PRO 850X com Dissipador, 1TB, M.2 2280, PCIe 4.0 x4, NVMe, Leitura: 7300 MB/s, Gravação: 6300 MB/s - SDSP81100TAH-000E0",
-   "url": "https://www.kabum.com.br/produto/1003584",
-   "id": "1003584",
-   "preco": 2555.54,
-   "preco_pix": 2299.99,
-   "parcelado": "10x de R$ 255,55 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "KaBuM!",
-   "extra": {
-    "preco_tabela": 2555.54,
-    "openbox": false,
-    "kabum_seller_id": "0",
-    "kabum_oferta_id": 0,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "confiavel"
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "kabum.produtos:1003584",
    "melhor_preco": 2299.99
   },
   {
@@ -6330,107 +6330,6 @@
    "fonte": "vtex.fastshop.ps5",
    "tipo": "loja",
    "loja": "Fast Shop",
-   "titulo": "Console PlayStation 5 Slim Digital 825GB com controle Dualsense",
-   "url": "https://site.fastshop.com.br/console-playstation-5-slim-digital-825gb-com-controle-dualsense-187039/p",
-   "id": "Fast Shop-187039-cnl217",
-   "preco": 4019.0,
-   "preco_pix": 3938.62,
-   "parcelado": "8x R$ 502,37 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Negociun",
-   "extra": {
-    "preco_de": 4999.0,
-    "ref": "274897_Fastshopbr",
-    "ean": "711719021490",
-    "sku": "197394",
-    "seller_id": "cnl217",
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "vtex.fastshop.ps5:Fast Shop-187039-cnl217",
-   "melhor_preco": 3938.62
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Console PlayStation 5 Slim Digital 825GB com controle Dualsense",
-   "url": "https://www.magazineluiza.com.br/console-playstation-5-slim-digital-825gb-com-controle-dualsense-sony/p/hg9286bd4c/ga/gap5/",
-   "id": "hg9286bd4c-negociunoficial",
-   "preco": 4349.0,
-   "preco_pix": 4131.55,
-   "parcelado": "10x R$ 434,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Negociun Oficial",
-   "extra": {
-    "preco_de": 4869.0,
-    "1p": false,
-    "anuncio": "hg9286bd4c",
-    "vendedor_id": "negociunoficial",
-    "ficha": {
-     "avaliacoes": 1198,
-     "peso_kg": 4.1,
-     "razao_social": "negociunoficial",
-     "vendedor_desde": "2025-03-17",
-     "vendas_vendedor": 100000,
-     "nota_vendedor": 4.1
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "peso",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas",
-      "catálogo da loja"
-     ],
-     "sinais": [],
-     "codigos": [],
-     "catalogo": {
-      "total": 652,
-      "tv": 50,
-      "games": 15
-     }
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "magalu.produtos:hg9286bd4c-negociunoficial",
-   "melhor_preco": 4131.55
-  },
-  {
-   "fonte": "vtex.fastshop.ps5",
-   "tipo": "loja",
-   "loja": "Fast Shop",
    "titulo": "Console PS5 Digital 825GB com Controle DualSense Branco - Sony",
    "url": "https://site.fastshop.com.br/console-ps5-digital-825gb-com-controle-dualsense-branco---sony-141991/p",
    "id": "Fast Shop-141991-CNL132",
@@ -6524,7 +6423,7 @@
     "anuncio": "aebh5a7a94",
     "vendedor_id": "kabum",
     "ficha": {
-     "avaliacoes": 3636,
+     "avaliacoes": 3663,
      "peso_kg": 3.808,
      "razao_social": "KABUM S.A.",
      "vendedor_desde": "2021-06-30",
@@ -6565,6 +6464,47 @@
    "melhor_preco": 4276.06
   },
   {
+   "fonte": "vtex.fastshop.ps5",
+   "tipo": "loja",
+   "loja": "Fast Shop",
+   "titulo": "Console PlayStation 5 Slim Disc 1TB com Controle DualSense",
+   "url": "https://site.fastshop.com.br/console-playstation-5-slim-disk-1tb---so-187040/p",
+   "id": "Fast Shop-187040-cnl217",
+   "preco": 4399.0,
+   "preco_pix": 4311.02,
+   "parcelado": "8x R$ 549,87 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Negociun",
+   "extra": {
+    "preco_de": 5999.0,
+    "ref": "274901_Fastshopbr",
+    "ean": "0711719022022",
+    "sku": "197395",
+    "seller_id": "cnl217",
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "vtex.fastshop.ps5:Fast Shop-187040-cnl217",
+   "melhor_preco": 4311.02
+  },
+  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -6600,47 +6540,6 @@
    "melhor_preco": 4370.07
   },
   {
-   "fonte": "vtex.fastshop.ps5",
-   "tipo": "loja",
-   "loja": "Fast Shop",
-   "titulo": "Console PS5 Físico 1TB com Controle DualSense Branco - Sony",
-   "url": "https://site.fastshop.com.br/console-ps5-fisico-1tb-com-controle-dualsense-branco---sony-173286/p",
-   "id": "Fast Shop-173286-CNL132",
-   "preco": 4679.0,
-   "preco_pix": 4398.26,
-   "parcelado": "8x R$ 584,87 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Webfones",
-   "extra": {
-    "preco_de": 5099.0,
-    "ref": "133400_Fastshopbr",
-    "ean": "711719022022",
-    "sku": "183493",
-    "seller_id": "CNL132",
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 3950.0,
-     "parcelado": 4150.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DISCO",
-   "chave": "vtex.fastshop.ps5:Fast Shop-173286-CNL132",
-   "melhor_preco": 4398.26
-  },
-  {
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
@@ -6660,7 +6559,7 @@
     "anuncio": "240590700",
     "vendedor_id": "magazineluiza",
     "ficha": {
-     "avaliacoes": 3636,
+     "avaliacoes": 3663,
      "peso_kg": 4.9,
      "razao_social": "Magazine Luiza SA",
      "vendedor_desde": "2016-06-01",
@@ -7012,7 +6911,7 @@
       "vendas"
      ],
      "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 3.636)"
+      "anúncio sem avaliações (o da loja confiável tem 3.663)"
      ],
      "codigos": [
       "sem_avaliacoes"
@@ -7027,66 +6926,6 @@
    "modelo": "PS5_DIGITAL",
    "chave": "magalu.produtos:gjfb974g3e-temdetudo1001",
    "melhor_preco": 4507.08
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Console PlayStation 5 Slim Disk 1TB Físico com Controle DualSense Branco Sony",
-   "url": "https://www.magazineluiza.com.br/console-playstation-5-slim-disk-1tb-fisico-com-controle-dualsense-branco-sony/p/ch30jc3c3j/ga/pltt/",
-   "id": "ch30jc3c3j-negociunoficial",
-   "preco": 4769.0,
-   "preco_pix": 4530.55,
-   "parcelado": "10x R$ 476,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Negociun Oficial",
-   "extra": {
-    "preco_de": 5889.0,
-    "1p": false,
-    "anuncio": "ch30jc3c3j",
-    "vendedor_id": "negociunoficial",
-    "ficha": {
-     "avaliacoes": 550,
-     "peso_kg": 4.9,
-     "razao_social": "negociunoficial",
-     "vendedor_desde": "2025-03-17",
-     "vendas_vendedor": 100000,
-     "nota_vendedor": 4.1
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "peso",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas",
-      "catálogo da loja"
-     ],
-     "sinais": [],
-     "codigos": [],
-     "catalogo": {
-      "total": 652,
-      "tv": 50,
-      "games": 15
-     }
-    },
-    "alvo": {
-     "pix": 3950.0,
-     "parcelado": 4150.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DISCO",
-   "chave": "magalu.produtos:ch30jc3c3j-negociunoficial",
-   "melhor_preco": 4530.55
   },
   {
    "fonte": "magalu.produtos",
@@ -7152,7 +6991,7 @@
     "anuncio": "240590800",
     "vendedor_id": "magazineluiza",
     "ficha": {
-     "avaliacoes": 4998,
+     "avaliacoes": 5007,
      "peso_kg": 4.9,
      "razao_social": "Magazine Luiza SA",
      "vendedor_desde": "2016-06-01",
@@ -7534,7 +7373,7 @@
       "vendas"
      ],
      "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 3.636)"
+      "anúncio sem avaliações (o da loja confiável tem 3.663)"
      ],
      "codigos": [
       "sem_avaliacoes"
@@ -7570,7 +7409,7 @@
     "anuncio": "bja6dfc54b",
     "vendedor_id": "kabum",
     "ficha": {
-     "avaliacoes": 4998,
+     "avaliacoes": 5007,
      "peso_kg": 4.8,
      "razao_social": "KABUM S.A.",
      "vendedor_desde": "2021-06-30",
@@ -7830,7 +7669,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "telegram:tecnanofertas/157657#PS5_DIGITAL_GTA6",
    "melhor_preco": 4508.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 4508.0,
    "menor_preco": 4508.0
   },
@@ -7875,7 +7714,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "telegram:tecnoarthardware/54310#PS5_DIGITAL_GTA6",
    "melhor_preco": 4508.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 4508.0,
    "menor_preco": 4508.0
   },
@@ -7939,11 +7778,11 @@
    "parcelado": null,
    "cupom": null,
    "publicado": "2026-11-15T00:36:03-03:00",
-   "ativo": true,
+   "ativo": false,
    "vendedor": null,
    "extra": {
     "preco_antigo": 5049.8,
-    "status": "APPROVED",
+    "status": "FINISHED",
     "produto": {
      "versao_incerta": false
     },
@@ -7963,7 +7802,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3214757",
    "melhor_preco": 4908.9,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 4908.9,
    "menor_preco": 4908.9
   },
@@ -8064,11 +7903,11 @@
    "parcelado": null,
    "cupom": null,
    "publicado": "2026-11-15T00:02:06-03:00",
-   "ativo": true,
+   "ativo": false,
    "vendedor": null,
    "extra": {
     "preco_antigo": null,
-    "status": "APPROVED",
+    "status": "FINISHED",
     "produto": {
      "versao_incerta": false
     },
@@ -8081,7 +7920,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3214718",
    "melhor_preco": 3578.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 3578.0,
    "menor_preco": 3578.0
   },
@@ -8184,7 +8023,7 @@
     "links": [
      "https://pelando.promo/snIkT"
     ],
-    "texto": "SSD Samsung 990 PRO 1TB NVMe M.2 2280 (Leit. até 7450MB/s e Grav. até 6900MB/s)\n💰  R$ 1418,00\n📍  Amazon\n➡️   https://pelando.promo/snIkT\n⚠️  Essa promo pode acabar a qualquer momento",
+    "texto": "SSD Samsung 990 PRO 1TB NVMe M.2 2280 (Leit. até 7450MB/s e Grav. até 6900MB/s)\n💰 R$ 1418,00\n📍 Amazon\n➡️ https://pelando.promo/snIkT\n⚠️ Essa promo pode acabar a qualquer momento",
     "alvo": {
      "pix": 700.0,
      "parcelado": 750.0,
@@ -8194,7 +8033,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:pelandobr/101450#SSD_NVME_1TB",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 1418.0,
    "menor_preco": 1418.0
   },
@@ -8281,9 +8120,39 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3214656",
    "melhor_preco": 395.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 395.0,
    "menor_preco": 395.0
+  },
+  {
+   "primeira_vez": "2026-11-15T11:12:34-03:00",
+   "preco_alertado": null,
+   "fonte": "promobit",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "SSD Samsung 990 PRO 1TB NVMe M.2 2280",
+   "url": "https://www.promobit.com.br/oferta/ssd-samsung-990-pro-1tb-nvme-m2-2280-3214638/",
+   "id": "3214638",
+   "preco": 1418.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-14T22:20:07-03:00",
+   "ativo": false,
+   "vendedor": null,
+   "extra": {
+    "preco_antigo": 2575.85,
+    "status": "FINISHED",
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "promobit:3214638",
+   "melhor_preco": 1418.0,
+   "ultima_vez": "2026-11-15T11:12:34-03:00"
   },
   {
    "primeira_vez": "2026-11-15T03:26:31-03:00",
@@ -8366,7 +8235,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84551#GTA6_CODE_IN_BOX",
    "melhor_preco": 288.73,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 288.73,
    "menor_preco": 288.73
   },
@@ -8428,7 +8297,7 @@
    "vendedor": null,
    "extra": {
     "preco_antigo": null,
-    "status": "TOP_OFFER",
+    "status": "FINISHED",
     "produto": {
      "plataforma_incerta": false
     },
@@ -8448,7 +8317,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3214315",
    "melhor_preco": 288.73,
-   "ultima_vez": "2026-11-15T04:11:12-03:00"
+   "ultima_vez": "2026-11-15T11:12:34-03:00"
   },
   {
    "primeira_vez": "2026-11-14T17:57:49-03:00",
@@ -8540,7 +8409,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84548#GTA6_CODE_IN_BOX",
    "melhor_preco": 318.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 318.0,
    "menor_preco": 318.0
   },
@@ -8582,7 +8451,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3213808",
    "melhor_preco": 360.91,
-   "ultima_vez": "2026-11-14T21:48:08-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 360.91,
    "menor_preco": 360.91
   },
@@ -8962,7 +8831,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84542#GTA6_CODE_IN_BOX",
    "melhor_preco": 289.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 289.0,
    "menor_preco": 289.0
   },
@@ -9090,7 +8959,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:escolhasegura/25261#GTA6_CODE_IN_BOX",
    "melhor_preco": 366.56,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 366.56,
    "menor_preco": 366.56
   },
@@ -9168,7 +9037,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84539#PS5_DIGITAL",
    "melhor_preco": 3599.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 3599.0,
    "menor_preco": 3599.0
   },
@@ -9226,11 +9095,11 @@
    "parcelado": null,
    "cupom": "MELIMAIS1411",
    "publicado": "2026-11-14T09:24:11-03:00",
-   "ativo": true,
+   "ativo": false,
    "vendedor": null,
    "extra": {
     "preco_antigo": 999.9,
-    "status": "APPROVED",
+    "status": "FINISHED",
     "produto": {
      "plataforma_incerta": false
     },
@@ -9250,7 +9119,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3212747",
    "melhor_preco": 318.0,
-   "ultima_vez": "2026-11-15T04:11:12-03:00",
+   "ultima_vez": "2026-11-15T11:12:34-03:00",
    "ultimo_preco": 318.0,
    "menor_preco": 318.0
   },
@@ -9402,45 +9271,6 @@
    "chave": "telegram:tecnoarthardware/54156#PS5_DIGITAL",
    "melhor_preco": 3578.0,
    "ultima_vez": "2026-11-14T00:11:35-03:00",
-   "ultimo_preco": 3578.0,
-   "menor_preco": 3578.0
-  },
-  {
-   "primeira_vez": "2026-11-14T00:11:35-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Shopee",
-   "titulo": "[linguicapromocoes] 💲  Console PlayStation 5 Slim Edição Digital 825GB - PS5",
-   "url": "https://t.me/linguicapromocoes/115764",
-   "id": "linguicapromocoes/115764#PS5_DIGITAL",
-   "preco": 3578.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-14T00:07:31-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "linguicapromocoes",
-    "links": [
-     "https://s.shopee.com.br/6L5zoE15dz",
-     "https://linktr.ee/linguicapromo"
-    ],
-    "texto": "💲  Console PlayStation 5 Slim Edição Digital 825GB - PS5\n💳  R$ 3.578,00\n👇  Link do produto:\nhttps://s.shopee.com.br/6L5zoE15dz\nanúncio\nEntre no meu grupo de ofertas 👇🏻 👇🏻\nhttps://linktr.ee/linguicapromo",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "telegram:linguicapromocoes/115764#PS5_DIGITAL",
-   "melhor_preco": 3578.0,
-   "ultima_vez": "2026-11-14T06:59:19-03:00",
    "ultimo_preco": 3578.0,
    "menor_preco": 3578.0
   }
@@ -10800,72 +10630,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:15-03:00",
+   "ultimo_ok": "2026-11-15T11:11:30-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:22-03:00",
+   "ultimo_ok": "2026-11-15T11:11:38-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:11:10-03:00",
+   "ultimo_ok": "2026-11-15T11:12:25-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:17-03:00",
+   "ultimo_ok": "2026-11-15T11:11:32-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:35-03:00",
+   "ultimo_ok": "2026-11-15T11:11:51-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:43-03:00",
+   "ultimo_ok": "2026-11-15T11:11:59-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:44-03:00",
+   "ultimo_ok": "2026-11-15T11:12:00-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:46-03:00",
+   "ultimo_ok": "2026-11-15T11:12:02-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:48-03:00",
+   "ultimo_ok": "2026-11-15T11:12:03-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:49-03:00",
+   "ultimo_ok": "2026-11-15T11:12:04-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 795,
+   "falhas": 796,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-15T04:10:55-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-15T11:12:10-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:57-03:00",
+   "ultimo_ok": "2026-11-15T11:12:11-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:10:58-03:00",
+   "ultimo_ok": "2026-11-15T11:12:13-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T04:11:00-03:00",
+   "ultimo_ok": "2026-11-15T11:12:14-03:00",
    "ultimo_erro": null
   }
  },
