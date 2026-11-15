@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-15T20:44:05-03:00",
+ "atualizado": "2026-11-15T20:58:53-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -741,6 +741,48 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "vtex.fastshop.ps5:Fast Shop-175223-CNL132",
    "melhor_preco": 400.41
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Videogame Sony PS5 Diablo IV para Xbox",
+   "url": "https://www.magazineluiza.com.br/videogame-sony-ps5-diablo-iv-para-xbox/p/hh31e551ag/ga/otga/",
+   "id": "hh31e551ag-nocnocestadosunidos",
+   "preco": 439.28,
+   "preco_pix": 408.53,
+   "parcelado": "7x R$ 62,75 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": false,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 464.83,
+    "1p": false,
+    "anuncio": "hh31e551ag",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.09,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 4.4
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": true
+    },
+    "descartado": "fora da faixa do produto (2500 a 7000)",
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "magalu.produtos:hh31e551ag-nocnocestadosunidos",
+   "melhor_preco": 408.53
   },
   {
    "fonte": "hype",
@@ -7621,7 +7663,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:tecnoarthardware/54420#PS5_DIGITAL",
    "melhor_preco": 3732.0,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 3732.0,
    "menor_preco": 3732.0
   },
@@ -7663,7 +7705,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216390",
    "melhor_preco": 391.41,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 391.41,
    "menor_preco": 391.41
   },
@@ -7702,7 +7744,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:tecnoarthardware/54408#SSD_NVME_1TB",
    "melhor_preco": 849.0,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 849.0,
    "menor_preco": 849.0
   },
@@ -7737,7 +7779,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3216282",
    "melhor_preco": 3869.79,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 3869.79,
    "menor_preco": 3869.79
   },
@@ -7772,7 +7814,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3216261",
    "melhor_preco": 3955.91,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 3955.91,
    "menor_preco": 3955.91
   },
@@ -7851,7 +7893,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:tecnoarthardware/54403#SSD_NVME_1TB",
    "melhor_preco": 798.0,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 798.0,
    "menor_preco": 798.0
   },
@@ -8069,7 +8111,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:vrlofertas/72576#GTA6_CODE_IN_BOX",
    "melhor_preco": 376.56,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 376.56,
    "menor_preco": 376.56
   },
@@ -8284,7 +8326,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3214757",
    "melhor_preco": 4908.9,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 4908.9,
    "menor_preco": 4908.9
   },
@@ -8402,7 +8444,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3214718",
    "melhor_preco": 3578.0,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 3578.0,
    "menor_preco": 3578.0
   },
@@ -8515,7 +8557,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:pelandobr/101450#SSD_NVME_1TB",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 1418.0,
    "menor_preco": 1418.0
   },
@@ -8634,7 +8676,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3214638",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-15T20:44:03-03:00"
+   "ultima_vez": "2026-11-15T20:58:52-03:00"
   },
   {
    "primeira_vez": "2026-11-15T03:26:31-03:00",
@@ -8717,7 +8759,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84551#GTA6_CODE_IN_BOX",
    "melhor_preco": 288.73,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 288.73,
    "menor_preco": 288.73
   },
@@ -8799,7 +8841,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3214315",
    "melhor_preco": 288.73,
-   "ultima_vez": "2026-11-15T20:44:03-03:00"
+   "ultima_vez": "2026-11-15T20:58:52-03:00"
   },
   {
    "primeira_vez": "2026-11-14T17:57:49-03:00",
@@ -8891,7 +8933,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84548#GTA6_CODE_IN_BOX",
    "melhor_preco": 318.0,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 318.0,
    "menor_preco": 318.0
   },
@@ -8933,7 +8975,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3213808",
    "melhor_preco": 360.91,
-   "ultima_vez": "2026-11-15T20:44:03-03:00",
+   "ultima_vez": "2026-11-15T20:58:52-03:00",
    "ultimo_preco": 360.91,
    "menor_preco": 360.91
   },
@@ -10534,72 +10576,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:42:58-03:00",
+   "ultimo_ok": "2026-11-15T20:57:58-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:07-03:00",
+   "ultimo_ok": "2026-11-15T20:58:06-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:52-03:00",
+   "ultimo_ok": "2026-11-15T20:58:50-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:00-03:00",
+   "ultimo_ok": "2026-11-15T20:58:00-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:20-03:00",
+   "ultimo_ok": "2026-11-15T20:58:19-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:28-03:00",
+   "ultimo_ok": "2026-11-15T20:58:27-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:28-03:00",
+   "ultimo_ok": "2026-11-15T20:58:28-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:30-03:00",
+   "ultimo_ok": "2026-11-15T20:58:28-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:31-03:00",
+   "ultimo_ok": "2026-11-15T20:58:30-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:32-03:00",
+   "ultimo_ok": "2026-11-15T20:58:31-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 804,
+   "falhas": 805,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-15T20:43:37-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-15T20:58:37-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:40-03:00",
+   "ultimo_ok": "2026-11-15T20:58:38-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:41-03:00",
+   "ultimo_ok": "2026-11-15T20:58:39-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T20:43:42-03:00",
+   "ultimo_ok": "2026-11-15T20:58:41-03:00",
    "ultimo_erro": null
   }
  },
