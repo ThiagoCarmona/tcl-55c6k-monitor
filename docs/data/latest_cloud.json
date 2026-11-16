@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-15T21:28:52-03:00",
+ "atualizado": "2026-11-16T00:11:39-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -713,7 +713,7 @@
     "produto": {
      "plataforma_incerta": false
     },
-    "entrega_prevista": "2026-12-14",
+    "entrega_prevista": "2026-12-15",
     "entrega_ate_lancamento": false,
     "cep_referencia": false,
     "entrega_origem": "simulação de frete",
@@ -732,10 +732,10 @@
     },
     "entrega": {
      "classe": "depois",
-     "data": "2026-12-14",
+     "data": "2026-12-15",
      "origem": "loja",
      "cep_referencia": false,
-     "texto": "📦 Entrega: previsão 14/12 — ⚠️ chega DEPOIS do lançamento (19/11)"
+     "texto": "📦 Entrega: previsão 15/12 — ⚠️ chega DEPOIS do lançamento (19/11)"
     }
    },
    "modelo": "GTA6_CODE_IN_BOX",
@@ -783,39 +783,6 @@
    "modelo": "PS5_DIGITAL",
    "chave": "magalu.produtos:hh31e551ag-nocnocestadosunidos",
    "melhor_preco": 408.53
-  },
-  {
-   "fonte": "hype",
-   "tipo": "loja",
-   "loja": "Hype",
-   "titulo": "R$450 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-   "url": "https://hype.games/br/product/450-playstation-store-cartao-presente-digital",
-   "id": "20649",
-   "preco": 414.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Hype",
-   "extra": {
-    "preco_tabela": 450.0,
-    "vendedor_marca": "Sony",
-    "produto": {
-     "valor_face": 450.0
-    },
-    "confianca": {
-     "veredito": "confiavel"
-    },
-    "alvo": {
-     "pix": 382.5,
-     "parcelado": 382.5,
-     "nota": "15% de desconto sobre R$ 450"
-    }
-   },
-   "modelo": "GIFT_CARD_PSN",
-   "chave": "hype:20649",
-   "melhor_preco": 414.0
   },
   {
    "fonte": "kabum.produtos",
@@ -1032,10 +999,10 @@
    "fonte": "hype",
    "tipo": "loja",
    "loja": "Hype",
-   "titulo": "R$550 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-   "url": "https://hype.games/br/product/550-playstation-store-cartao-presente-digital",
-   "id": "29403",
-   "preco": 506.0,
+   "titulo": "R$450 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
+   "url": "https://hype.games/br/product/450-playstation-store-cartao-presente-digital",
+   "id": "20649",
+   "preco": 450.0,
    "preco_pix": null,
    "parcelado": null,
    "cupom": null,
@@ -1043,23 +1010,23 @@
    "ativo": true,
    "vendedor": "Hype",
    "extra": {
-    "preco_tabela": 550.0,
+    "preco_tabela": 450.0,
     "vendedor_marca": "Sony",
     "produto": {
-     "valor_face": 550.0
+     "valor_face": 450.0
     },
     "confianca": {
      "veredito": "confiavel"
     },
     "alvo": {
-     "pix": 467.5,
-     "parcelado": 467.5,
-     "nota": "15% de desconto sobre R$ 550"
+     "pix": 382.5,
+     "parcelado": 382.5,
+     "nota": "15% de desconto sobre R$ 450"
     }
    },
    "modelo": "GIFT_CARD_PSN",
-   "chave": "hype:29403",
-   "melhor_preco": 506.0
+   "chave": "hype:20649",
+   "melhor_preco": 450.0
   },
   {
    "fonte": "psstore",
@@ -1132,10 +1099,10 @@
    "fonte": "hype",
    "tipo": "loja",
    "loja": "Hype",
-   "titulo": "R$700 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-   "url": "https://hype.games/br/product/700-playstation-store-cartao-presente-digital",
-   "id": "29404",
-   "preco": 644.0,
+   "titulo": "R$550 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
+   "url": "https://hype.games/br/product/550-playstation-store-cartao-presente-digital",
+   "id": "29403",
+   "preco": 550.0,
    "preco_pix": null,
    "parcelado": null,
    "cupom": null,
@@ -1143,23 +1110,23 @@
    "ativo": true,
    "vendedor": "Hype",
    "extra": {
-    "preco_tabela": 700.0,
+    "preco_tabela": 550.0,
     "vendedor_marca": "Sony",
     "produto": {
-     "valor_face": 700.0
+     "valor_face": 550.0
     },
     "confianca": {
      "veredito": "confiavel"
     },
     "alvo": {
-     "pix": 595.0,
-     "parcelado": 595.0,
-     "nota": "15% de desconto sobre R$ 700"
+     "pix": 467.5,
+     "parcelado": 467.5,
+     "nota": "15% de desconto sobre R$ 550"
     }
    },
    "modelo": "GIFT_CARD_PSN",
-   "chave": "hype:29404",
-   "melhor_preco": 644.0
+   "chave": "hype:29403",
+   "melhor_preco": 550.0
   },
   {
    "fonte": "kabum.produtos",
@@ -1226,6 +1193,39 @@
    },
    "modelo": "GIFT_CARD_PSN",
    "chave": "kabum.produtos:1059586",
+   "melhor_preco": 700.0
+  },
+  {
+   "fonte": "hype",
+   "tipo": "loja",
+   "loja": "Hype",
+   "titulo": "R$700 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
+   "url": "https://hype.games/br/product/700-playstation-store-cartao-presente-digital",
+   "id": "29404",
+   "preco": 700.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Hype",
+   "extra": {
+    "preco_tabela": 700.0,
+    "vendedor_marca": "Sony",
+    "produto": {
+     "valor_face": 700.0
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 595.0,
+     "parcelado": 595.0,
+     "nota": "15% de desconto sobre R$ 700"
+    }
+   },
+   "modelo": "GIFT_CARD_PSN",
+   "chave": "hype:29404",
    "melhor_preco": 700.0
   },
   {
@@ -1602,12 +1602,8 @@
       "vendas",
       "catálogo da loja"
      ],
-     "sinais": [
-      "vendedor na loja só desde 18/08/2026"
-     ],
-     "codigos": [
-      "vendedor_recente"
-     ],
+     "sinais": [],
+     "codigos": [],
      "catalogo": {
       "total": 49,
       "tv": 2,
@@ -2008,59 +2004,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:897548",
    "melhor_preco": 1179.26
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "SSD Tronos TRS1024G-2280 1TB - M.2 NVMe PCIe 4.0 - Leitura 2000 MB/s, Escrita 1500 MB/s",
-   "url": "https://www.magazineluiza.com.br/ssd-tronos-trs1024g-2280-1tb-m-2-nvme-pcie-4-0-leitura-2000-mb-s-escrita-1500-mb-s/p/cj6k03g5aa/in/ssdi/",
-   "id": "cj6k03g5aa-entertecnologiaeletroltda",
-   "preco": 1281.03,
-   "preco_pix": 1191.36,
-   "parcelado": "10x R$ 128,10 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "ELETRO ENTER",
-   "extra": {
-    "preco_de": 1281.03,
-    "1p": false,
-    "anuncio": "cj6k03g5aa",
-    "vendedor_id": "entertecnologiaeletroltda",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.3,
-     "razao_social": "Enter Tecnologia E Eletro Ltda",
-     "vendedor_desde": "2022-10-28",
-     "vendas_vendedor": 1000,
-     "nota_vendedor": 2.6
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:cj6k03g5aa-entertecnologiaeletroltda",
-   "melhor_preco": 1191.36
   },
   {
    "fonte": "kabum.produtos",
@@ -3018,6 +2961,59 @@
    },
    "modelo": "SSD_NVME_1TB",
    "chave": "magalu.produtos:ak487d7724-nocnocestadosunidos",
+   "melhor_preco": 1392.23
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "SSD Kingston NV2 interno de 1 TB M.2 2280 NVMe PCIe 4.0 Gen 4x4",
+   "url": "https://www.magazineluiza.com.br/ssd-kingston-nv2-interno-de-1-tb-m-2-2280-nvme-pcie-4-0-gen-4x4/p/ek214c5968/in/ssdi/",
+   "id": "ek214c5968-nocnocestadosunidos",
+   "preco": 1497.02,
+   "preco_pix": 1392.23,
+   "parcelado": "7x R$ 213,86 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 1560.6,
+    "1p": false,
+    "anuncio": "ek214c5968",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 1440,
+     "peso_kg": 0.018,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 4.4
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:ek214c5968-nocnocestadosunidos",
    "melhor_preco": 1392.23
   },
   {
@@ -6368,6 +6364,66 @@
    "melhor_preco": 3799.99
   },
   {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Console PlayStation 5 Slim Digital 825GB com controle Dualsense",
+   "url": "https://www.magazineluiza.com.br/console-playstation-5-slim-digital-825gb-com-controle-dualsense-sony/p/hg9286bd4c/ga/gap5/",
+   "id": "hg9286bd4c-negociunoficial",
+   "preco": 4349.0,
+   "preco_pix": 4131.55,
+   "parcelado": "10x R$ 434,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Negociun Oficial",
+   "extra": {
+    "preco_de": 4869.0,
+    "1p": false,
+    "anuncio": "hg9286bd4c",
+    "vendedor_id": "negociunoficial",
+    "ficha": {
+     "avaliacoes": 1198,
+     "peso_kg": 4.1,
+     "razao_social": "negociunoficial",
+     "vendedor_desde": "2025-03-17",
+     "vendas_vendedor": 100000,
+     "nota_vendedor": 4.1
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "peso",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas",
+      "catálogo da loja"
+     ],
+     "sinais": [],
+     "codigos": [],
+     "catalogo": {
+      "total": 652,
+      "tv": 50,
+      "games": 15
+     }
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "magalu.produtos:hg9286bd4c-negociunoficial",
+   "melhor_preco": 4131.55
+  },
+  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -6503,7 +6559,7 @@
    "titulo": "Console Sony Playstation 5 Slim Edição Digital, 1TB, 2 Jogos",
    "url": "https://www.kabum.com.br/produto/939943",
    "id": "939943",
-   "preco": 4735.78,
+   "preco": 4735.79,
    "preco_pix": 4404.28,
    "parcelado": "10x de R$ 473,57 sem juros",
    "cupom": null,
@@ -6513,7 +6569,6 @@
    "extra": {
     "preco_tabela": 4735.79,
     "openbox": false,
-    "oferta": "NINJA FRIDAY",
     "kabum_seller_id": "1000",
     "kabum_oferta_id": 30376291,
     "produto": {
@@ -6792,6 +6847,66 @@
    "modelo": "PS5_DIGITAL",
    "chave": "magalu.produtos:gjfb974g3e-temdetudo1001",
    "melhor_preco": 4507.08
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Console PlayStation 5 Slim Disk 1TB Físico com Controle DualSense Branco Sony",
+   "url": "https://www.magazineluiza.com.br/console-playstation-5-slim-disk-1tb-fisico-com-controle-dualsense-branco-sony/p/ch30jc3c3j/ga/pltt/",
+   "id": "ch30jc3c3j-negociunoficial",
+   "preco": 4769.0,
+   "preco_pix": 4530.55,
+   "parcelado": "10x R$ 476,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Negociun Oficial",
+   "extra": {
+    "preco_de": 5889.0,
+    "1p": false,
+    "anuncio": "ch30jc3c3j",
+    "vendedor_id": "negociunoficial",
+    "ficha": {
+     "avaliacoes": 550,
+     "peso_kg": 4.9,
+     "razao_social": "negociunoficial",
+     "vendedor_desde": "2025-03-17",
+     "vendas_vendedor": 100000,
+     "nota_vendedor": 4.1
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "peso",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas",
+      "catálogo da loja"
+     ],
+     "sinais": [],
+     "codigos": [],
+     "catalogo": {
+      "total": 652,
+      "tv": 50,
+      "games": 15
+     }
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "magalu.produtos:ch30jc3c3j-negociunoficial",
+   "melhor_preco": 4530.55
   },
   {
    "fonte": "magalu.produtos",
@@ -7592,6 +7707,41 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-16T00:11:38-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Mercado Livre",
+   "titulo": "[linguicapromocoes] 👉 Gift Cards PSN/XBOX/NINTENDO:  https://meli.la/2LWUsqF",
+   "url": "https://t.me/linguicapromocoes/117082",
+   "id": "linguicapromocoes/117082#GIFT_CARD_PSN",
+   "preco": null,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-16T00:05:15-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "linguicapromocoes",
+    "links": [
+     "https://mercadolivre.com/sec/1H7uov1",
+     "https://meli.la/1LfaWVQ",
+     "https://meli.la/2Zf9LDB"
+    ],
+    "texto": "🛍️  Cupom Mercado Livre\n🏷  15% OFF a partir de R$ 89, Limite de R$ 20:  FULL1611\nNossa lista de sugestões\nhttps://mercadolivre.com/sec/1H7uov1\n⚠️  Clique em \"mostrar mais\" ao acessar os links\n👉 Jogos de PS5:  https://meli.la/1LfaWVQ\n👉 Jogos de PS4:  https://meli.la/2Zf9LDB\n👉 Jogos de Nintendo Switch:  https://meli.la/26ZqFQR\n👉 Gift Cards PSN/XBOX/NINTENDO:  https://meli.la/2LWUsqF\nanúncio\nEntre no meu grupo de ofertas 👇🏻 👇🏻\nhttps://linktr.ee/linguicapromo",
+    "alvo": {
+     "pix": null,
+     "parcelado": null,
+     "nota": "sem o valor de face"
+    }
+   },
+   "modelo": "GIFT_CARD_PSN",
+   "chave": "telegram:linguicapromocoes/117082#GIFT_CARD_PSN",
+   "melhor_preco": null,
+   "ultima_vez": "2026-11-16T00:11:38-03:00"
+  },
+  {
    "primeira_vez": "2026-11-15T20:44:03-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -7705,7 +7855,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216390",
    "melhor_preco": 391.41,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 391.41,
    "menor_preco": 391.41
   },
@@ -7749,6 +7899,46 @@
    "menor_preco": 849.0
   },
   {
+   "primeira_vez": "2026-11-16T00:11:38-03:00",
+   "preco_alertado": null,
+   "fonte": "promobit",
+   "tipo": "post",
+   "loja": "KaBuM!",
+   "titulo": "R$ 50 OFF na compra do Jogo Grand Theft Auto VI (GTA 6) para PS5 na KaBuM! com cupom",
+   "url": "https://www.promobit.com.br/oferta/r-50-off-na-compra-do-jogo-grand-theft-auto-vi-gta-6-para-ps5-na-kabum-com-cupom-3216340/",
+   "id": "3216340",
+   "preco": 0.01,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "VEMNOGTA",
+   "publicado": "2026-11-15T18:22:42-03:00",
+   "ativo": false,
+   "vendedor": null,
+   "extra": {
+    "preco_antigo": null,
+    "status": "FINISHED",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 345.0,
+     "parcelado": 370.0,
+     "nota": "chega até 18/11"
+    },
+    "entrega": {
+     "classe": "a_tempo",
+     "data": "2026-11-17",
+     "origem": "estimativa",
+     "cep_referencia": true,
+     "texto": "📦 Entrega: previsão 17/11 (estimativa da pesquisa de 03/10) — chega a tempo ✅ (até 18/11; lançamento 19/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "promobit:3216340",
+   "melhor_preco": 0.01,
+   "ultima_vez": "2026-11-16T00:11:38-03:00"
+  },
+  {
    "primeira_vez": "2026-11-15T20:44:03-03:00",
    "preco_alertado": null,
    "fonte": "promobit",
@@ -7779,7 +7969,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3216282",
    "melhor_preco": 3869.79,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 3869.79,
    "menor_preco": 3869.79
   },
@@ -7814,7 +8004,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3216261",
    "melhor_preco": 3955.91,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 3955.91,
    "menor_preco": 3955.91
   },
@@ -8111,7 +8301,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:vrlofertas/72576#GTA6_CODE_IN_BOX",
    "melhor_preco": 376.56,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 376.56,
    "menor_preco": 376.56
   },
@@ -8326,7 +8516,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3214757",
    "melhor_preco": 4908.9,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 4908.9,
    "menor_preco": 4908.9
   },
@@ -8444,7 +8634,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3214718",
    "melhor_preco": 3578.0,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 3578.0,
    "menor_preco": 3578.0
   },
@@ -8557,7 +8747,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:pelandobr/101450#SSD_NVME_1TB",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 1418.0,
    "menor_preco": 1418.0
   },
@@ -8676,7 +8866,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3214638",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-15T21:28:51-03:00"
+   "ultima_vez": "2026-11-16T00:11:38-03:00"
   },
   {
    "primeira_vez": "2026-11-15T03:26:31-03:00",
@@ -8759,7 +8949,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84551#GTA6_CODE_IN_BOX",
    "melhor_preco": 288.73,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 288.73,
    "menor_preco": 288.73
   },
@@ -8933,7 +9123,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84548#GTA6_CODE_IN_BOX",
    "melhor_preco": 318.0,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 318.0,
    "menor_preco": 318.0
   },
@@ -8975,7 +9165,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3213808",
    "melhor_preco": 360.91,
-   "ultima_vez": "2026-11-15T21:28:51-03:00",
+   "ultima_vez": "2026-11-16T00:11:38-03:00",
    "ultimo_preco": 360.91,
    "menor_preco": 360.91
   },
@@ -9133,92 +9323,6 @@
    "chave": "telegram:linguicapromocoes/116138#GIFT_CARD_PSN",
    "melhor_preco": null,
    "ultima_vez": "2026-11-14T13:35:45-03:00"
-  },
-  {
-   "primeira_vez": "2026-11-14T12:51:11-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "AliExpress",
-   "titulo": "[linguicapromocoes] Playstation 5 Digital Edition 825Gb",
-   "url": "https://t.me/linguicapromocoes/116087",
-   "id": "linguicapromocoes/116087#PS5_DIGITAL",
-   "preco": 3880.55,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "AFFNOV09",
-   "publicado": "2026-11-14T12:22:02-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "linguicapromocoes",
-    "links": [
-     "https://s.click.aliexpress.com/e/_c4NY75X9",
-     "https://s.click.aliexpress.com/e/_c3pfvUJp",
-     "https://s.click.aliexpress.com/e/_c3k1dpWL"
-    ],
-    "texto": "PS5, SWITCH 1 E 2, TVS, TUDO EM OFERTA NO 11.11 DO ALIEXPRESS!\nPlaystation 5 Digital Edition 825Gb\nhttps://s.click.aliexpress.com/e/_c4NY75X9\nR$3.880,55 com cupom AFFNOV09\nNintendo Switch 2 Ea Sports Fc 27\nhttps://s.click.aliexpress.com/e/_c3pfvUJp\nR$3.819,76 com cupom AFFNOV09\nNintendo Switch Oled + with Super Mario Bros. Wonder\nhttps://s.click.aliexpress.com/e/_c3k1dpWL\nR$1.789,76 com cupom AEMEGA6\nSmart Tv Tcl 4K Uhd Miniled 65C6K 120Hz Google Tv Aipq Google Assistant 4 HDMI 2 USB\n65 polegadas\nhttps://s.click.aliexpress.com/e/_c3TTHdnN\nR$3.299,76 com cupom AEMEGA8\n55 polegadas\nhttps://s.cli",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "telegram:linguicapromocoes/116087#PS5_DIGITAL",
-   "melhor_preco": 3880.55,
-   "ultima_vez": "2026-11-14T12:51:11-03:00",
-   "ultimo_preco": 3880.55,
-   "menor_preco": 3880.55
-  },
-  {
-   "primeira_vez": "2026-11-14T12:51:11-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Shopee",
-   "titulo": "[tecnoarthardware] 🔥  Jogo Grand Theft Auto VI Edição Standard - Playstation 5",
-   "url": "https://t.me/tecnoarthardware/54223",
-   "id": "tecnoarthardware/54223#GTA6_CODE_IN_BOX",
-   "preco": 316.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-14T12:20:48-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "tecnoarthardware",
-    "links": [
-     "https://s.shopee.com.br/20x1Sbse6X",
-     "https://s.shopee.com.br/30pYeRoyby"
-    ],
-    "texto": "🔥  Jogo Grand Theft Auto VI Edição Standard - Playstation 5\n💵  R$ 316,00\n🏷️  Resgate todos os cupons desta página:\nhttps://s.shopee.com.br/20x1Sbse6X\n🔗  Link do produto:\nhttps://s.shopee.com.br/30pYeRoyby\n⚡️ SE LIGA NOS OUTROS CANAIS DO TECNOART ⚡️\n👨🏼‍💻 SÓ PLACAS DE VÍDEO:  https://t.me/placasdevideotecnoart\n💻 SÓ NOTEBOOKS:  https://t.me/cacadordenotebook\n📱 SÓ SMARTHPONES:  t.me/cacadordesmartphones\n(anuncio)",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "depois",
-     "data": null,
-     "origem": "estimativa",
-     "cep_referencia": true,
-     "texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:tecnoarthardware/54223#GTA6_CODE_IN_BOX",
-   "melhor_preco": 316.0,
-   "ultima_vez": "2026-11-14T13:35:45-03:00",
-   "ultimo_preco": 316.0,
-   "menor_preco": 316.0
   }
  ],
  "gta6_custo_final": [
@@ -9581,7 +9685,7 @@
    "tipo": "loja",
    "url": "https://store.playstation.com/pt-br/product/EP1004-PPSA01547_00-GTAVIULTIMATE001",
    "preco": 549.9,
-   "custo_final": 506.0,
+   "custo_final": 549.9,
    "cupom": null,
    "entrega": "digital",
    "entrega_texto": "libera às 00:00 de 19/11 (digital)",
@@ -9596,118 +9700,17 @@
    "tipo": "calculo",
    "url": "https://store.playstation.com/pt-br/product/EP1004-PPSA01547_00-GTAVISTANDARD001",
    "preco": 549.9,
-   "custo_final": 514.0,
+   "custo_final": 549.9,
    "cupom": null,
    "entrega": "digital",
-   "entrega_texto": "digital R$ 414,00 em PlayStation Store + upgrade R$ 100,00 (preço oficial) na PS Store · libera às 00:00 de 19/11 (digital)",
+   "entrega_texto": "digital R$ 449,90 em PlayStation Store + upgrade R$ 100,00 (preço oficial) na PS Store · libera às 00:00 de 19/11 (digital)",
    "meta": 450.0
   }
  ],
  "gift_card_psn": {
-  "melhor": {
-   "loja": "Hype",
-   "valor_face": 450.0,
-   "preco": 414.0,
-   "desconto": 0.08,
-   "url": "https://hype.games/br/product/450-playstation-store-cartao-presente-digital",
-   "tipo": "loja",
-   "fonte": "hype",
-   "titulo": "R$450 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-   "cupom": null
-  },
-  "cartoes": [
-   {
-    "loja": "Hype",
-    "valor_face": 450.0,
-    "preco": 414.0,
-    "desconto": 0.08,
-    "url": "https://hype.games/br/product/450-playstation-store-cartao-presente-digital",
-    "tipo": "loja",
-    "fonte": "hype",
-    "titulo": "R$450 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-    "cupom": null
-   },
-   {
-    "loja": "Hype",
-    "valor_face": 550.0,
-    "preco": 506.0,
-    "desconto": 0.08,
-    "url": "https://hype.games/br/product/550-playstation-store-cartao-presente-digital",
-    "tipo": "loja",
-    "fonte": "hype",
-    "titulo": "R$550 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-    "cupom": null
-   },
-   {
-    "loja": "Hype",
-    "valor_face": 700.0,
-    "preco": 644.0,
-    "desconto": 0.08,
-    "url": "https://hype.games/br/product/700-playstation-store-cartao-presente-digital",
-    "tipo": "loja",
-    "fonte": "hype",
-    "titulo": "R$700 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-    "cupom": null
-   }
-  ],
-  "gta": {
-   "GTA6_DIGITAL": {
-    "produto": "GTA6_DIGITAL",
-    "nome": "GTA 6 digital Standard (PS Store)",
-    "edicao": "Standard",
-    "preco_psstore": 449.9,
-    "custo": 414.0,
-    "economia": 35.9,
-    "desconto": 0.0798,
-    "cartoes": [
-     {
-      "loja": "Hype",
-      "valor_face": 450.0,
-      "preco": 414.0,
-      "desconto": 0.08,
-      "url": "https://hype.games/br/product/450-playstation-store-cartao-presente-digital",
-      "tipo": "loja",
-      "fonte": "hype",
-      "titulo": "R$450 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-      "cupom": null
-     }
-    ],
-    "valor_face": 450.0,
-    "no_cartao": 0.0,
-    "sobra": 0.1,
-    "meta": 382.42,
-    "aceitavel": 404.91,
-    "otimo": 359.92
-   },
-   "GTA6_ULTIMATE": {
-    "produto": "GTA6_ULTIMATE",
-    "nome": "GTA 6 digital Ultimate (PS Store)",
-    "edicao": "Ultimate",
-    "preco_psstore": 549.9,
-    "custo": 506.0,
-    "economia": 43.9,
-    "desconto": 0.0798,
-    "cartoes": [
-     {
-      "loja": "Hype",
-      "valor_face": 550.0,
-      "preco": 506.0,
-      "desconto": 0.08,
-      "url": "https://hype.games/br/product/550-playstation-store-cartao-presente-digital",
-      "tipo": "loja",
-      "fonte": "hype",
-      "titulo": "R$550 Gift Card PlayStation Store - Cartão Presente [Exclusivo Brasil]",
-      "cupom": null
-     }
-    ],
-    "valor_face": 550.0,
-    "no_cartao": 0.0,
-    "sobra": 0.1,
-    "meta": 467.42,
-    "aceitavel": 494.91,
-    "otimo": 439.92
-   }
-  },
+  "melhor": null,
+  "cartoes": [],
+  "gta": {},
   "regra": {
    "meta": 0.15,
    "minimo": 0.15,
@@ -9900,21 +9903,6 @@
   {
    "fonte": "promobit",
    "loja": "KaBuM!",
-   "codigo": "RECEBA",
-   "titulo": "Cupom de desconto KaBuM! oferece 6% OFF em suas compras",
-   "url": "https://www.promobit.com.br/cupons/loja/kabum/",
-   "id": "71993",
-   "regra": "produtos KaBuM!",
-   "validade": "2026-11-15T23:59:59-03:00",
-   "publicado": "2026-11-13T12:12:40-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:71993"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "KaBuM!",
    "codigo": "HORADOCAFE",
    "titulo": "A chance de economizar R$ 30 em compras na KaBuM!",
    "url": "https://www.promobit.com.br/cupons/loja/kabum/",
@@ -9930,21 +9918,6 @@
   {
    "fonte": "promobit",
    "loja": "KaBuM!",
-   "codigo": "VEMNOGTA",
-   "titulo": "Aproveite para economizar R$ 50 com cupom KaBuM!",
-   "url": "https://www.promobit.com.br/cupons/loja/kabum/",
-   "id": "71968",
-   "regra": "produtos KaBuM!",
-   "validade": "2026-11-15T23:59:59-03:00",
-   "publicado": "2026-11-12T12:23:21-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:71968"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "KaBuM!",
    "codigo": "QUEROCAFE100",
    "titulo": "Cupom de desconto KaBuM! oferece R$ 100 OFF em suas compras",
    "url": "https://www.promobit.com.br/cupons/loja/kabum/",
@@ -9956,21 +9929,6 @@
    "modelo": null,
    "extra": {},
    "chave": "promobit:71898"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "KaBuM!",
-   "codigo": "MAGALUPS5",
-   "titulo": "Os melhores itens do site com R$ 100 OFF aplicando cupom KaBuM!",
-   "url": "https://www.promobit.com.br/cupons/loja/kabum/",
-   "id": "71895",
-   "regra": "produtos KaBuM!",
-   "validade": "2026-11-15T23:59:59-03:00",
-   "publicado": "2026-11-11T12:21:09-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:71895"
   },
   {
    "fonte": "promobit",
@@ -10424,6 +10382,51 @@
   },
   {
    "fonte": "promobit",
+   "loja": "Shopee",
+   "codigo": "F1MD3M3S",
+   "titulo": "Compre com código promocional Shopee e economize R$10",
+   "url": "https://www.promobit.com.br/cupons/loja/shopee/",
+   "id": "68960",
+   "regra": "produtos Shopee Aplique o código promocional Shopee no carrinho de compras em compras acima de R$59.",
+   "validade": null,
+   "publicado": "2026-08-28T14:29:16-03:00",
+   "especifico": false,
+   "modelo": null,
+   "extra": {},
+   "chave": "promobit:68960"
+  },
+  {
+   "fonte": "promobit",
+   "loja": "Shopee",
+   "codigo": "GAMER7",
+   "titulo": "Aproveite para economizar 7% com cupom Shopee",
+   "url": "https://www.promobit.com.br/cupons/loja/shopee/",
+   "id": "68927",
+   "regra": "produtos Shopee Aproveite descontos de até 7% (máx. R$45) ao inserir o cupom na finalização da compra.",
+   "validade": null,
+   "publicado": "2026-08-27T16:12:22-03:00",
+   "especifico": false,
+   "modelo": null,
+   "extra": {},
+   "chave": "promobit:68927"
+  },
+  {
+   "fonte": "promobit",
+   "loja": "Shopee",
+   "codigo": "15D3D3SC0NT0",
+   "titulo": "Use cupom Shopee e tenha desconto de R$15",
+   "url": "https://www.promobit.com.br/cupons/loja/shopee/",
+   "id": "68894",
+   "regra": "produtos Shopee Economize até R$15 ao usar o código promocional no carrinho de compras em compras acima de R$79.",
+   "validade": null,
+   "publicado": "2026-08-27T12:33:11-03:00",
+   "especifico": false,
+   "modelo": null,
+   "extra": {},
+   "chave": "promobit:68894"
+  },
+  {
+   "fonte": "promobit",
    "loja": "Netshoes",
    "codigo": "NOVA15",
    "titulo": "Desconto de 15% em todo o site da Netshoes",
@@ -10576,72 +10579,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:27:58-03:00",
+   "ultimo_ok": "2026-11-16T00:10:38-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:06-03:00",
+   "ultimo_ok": "2026-11-16T00:10:44-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:48-03:00",
+   "ultimo_ok": "2026-11-16T00:11:33-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:27:59-03:00",
+   "ultimo_ok": "2026-11-16T00:10:40-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:18-03:00",
+   "ultimo_ok": "2026-11-16T00:10:58-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:26-03:00",
+   "ultimo_ok": "2026-11-16T00:11:06-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:26-03:00",
+   "ultimo_ok": "2026-11-16T00:11:07-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:27-03:00",
+   "ultimo_ok": "2026-11-16T00:11:09-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:29-03:00",
+   "ultimo_ok": "2026-11-16T00:11:11-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:30-03:00",
+   "ultimo_ok": "2026-11-16T00:11:12-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 807,
+   "falhas": 808,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-15T21:28:35-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-16T00:11:18-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:37-03:00",
+   "ultimo_ok": "2026-11-16T00:11:19-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:38-03:00",
+   "ultimo_ok": "2026-11-16T00:11:20-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-15T21:28:40-03:00",
+   "ultimo_ok": "2026-11-16T00:11:22-03:00",
    "ultimo_erro": null
   }
  },
