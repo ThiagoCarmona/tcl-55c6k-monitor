@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-16T00:26:32-03:00",
+ "atualizado": "2026-11-16T00:41:29-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -7789,6 +7789,99 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-16T00:41:28-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Shopee",
+   "titulo": "[xaviertechpromo] 🚨  Grand Theft Auto VI - Playstation 5 (PRÉ-VENDA)",
+   "url": "https://t.me/xaviertechpromo/401596",
+   "id": "xaviertechpromo/401596#GTA6_CODE_IN_BOX",
+   "preco": 370.41,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-16T00:34:41-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "xaviertechpromo",
+    "links": [
+     "https://s.shopee.com.br/5q9mQxDjFk",
+     "https://s.shopee.com.br/40i8FZCemL"
+    ],
+    "texto": "🚨  Grand Theft Auto VI - Playstation 5 (PRÉ-VENDA)\n💵  Por R$ 370,41 no Pix\nResgate o cupom aqui:\nhttps://s.shopee.com.br/5q9mQxDjFk\nLink do Produto:\nhttps://s.shopee.com.br/40i8FZCemL\n(Anúncio)",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 300.0,
+     "parcelado": 320.0,
+     "nota": "chega depois de 18/11"
+    },
+    "entrega": {
+     "classe": "depois",
+     "data": null,
+     "origem": "estimativa",
+     "cep_referencia": true,
+     "texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "telegram:xaviertechpromo/401596#GTA6_CODE_IN_BOX",
+   "melhor_preco": 370.41,
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
+   "ultimo_preco": 370.41,
+   "menor_preco": 370.41
+  },
+  {
+   "primeira_vez": "2026-11-16T00:41:28-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Shopee",
+   "titulo": "[linguicapromocoes] 📣  Grand Theft Auto VI - Playstation 5 (PRÉ-VENDA)",
+   "url": "https://t.me/linguicapromocoes/117113",
+   "id": "linguicapromocoes/117113#GTA6_CODE_IN_BOX",
+   "preco": 370.41,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-16T00:33:49-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "linguicapromocoes",
+    "links": [
+     "https://s.shopee.com.br/AKcBn9pl2u",
+     "https://s.shopee.com.br/1BzUASkiZ",
+     "https://linktr.ee/linguicapromo"
+    ],
+    "texto": "📣  Grand Theft Auto VI - Playstation 5 (PRÉ-VENDA)\n💹  R$ 370,41 no PIX\n🛍️  Resgate todos os cupons desta página:\nR$ 60 OFF\nhttps://s.shopee.com.br/AKcBn9pl2u\n🏆  Link do produto:\nhttps://s.shopee.com.br/1BzUASkiZ\nanúncio\nEntre no meu grupo de ofertas 👇🏻 👇🏻\nhttps://linktr.ee/linguicapromo",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 300.0,
+     "parcelado": 320.0,
+     "nota": "chega depois de 18/11"
+    },
+    "entrega": {
+     "classe": "depois",
+     "data": null,
+     "origem": "estimativa",
+     "cep_referencia": true,
+     "texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "telegram:linguicapromocoes/117113#GTA6_CODE_IN_BOX",
+   "melhor_preco": 370.41,
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
+   "ultimo_preco": 370.41,
+   "menor_preco": 370.41
+  },
+  {
    "primeira_vez": "2026-11-16T00:26:30-03:00",
    "preco_alertado": null,
    "fonte": "promobit",
@@ -7802,11 +7895,11 @@
    "parcelado": null,
    "cupom": "TODOSITE1611",
    "publicado": "2026-11-16T00:22:09-03:00",
-   "ativo": false,
+   "ativo": true,
    "vendedor": null,
    "extra": {
     "preco_antigo": 499.0,
-    "status": "RECENTS",
+    "status": "APPROVED",
     "produto": {
      "plataforma_incerta": false
     },
@@ -7826,7 +7919,9 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216898",
    "melhor_preco": 368.1,
-   "ultima_vez": "2026-11-16T00:26:30-03:00"
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
+   "ultimo_preco": 368.1,
+   "menor_preco": 368.1
   },
   {
    "primeira_vez": "2026-11-16T00:11:38-03:00",
@@ -7901,7 +7996,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216808",
    "melhor_preco": 370.0,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 370.0,
    "menor_preco": 370.0
   },
@@ -8019,7 +8114,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216390",
    "melhor_preco": 391.41,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 391.41,
    "menor_preco": 391.41
   },
@@ -8100,7 +8195,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216340",
    "melhor_preco": 0.01,
-   "ultima_vez": "2026-11-16T00:26:30-03:00"
+   "ultima_vez": "2026-11-16T00:41:28-03:00"
   },
   {
    "primeira_vez": "2026-11-15T20:44:03-03:00",
@@ -8133,7 +8228,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3216282",
    "melhor_preco": 3869.79,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 3869.79,
    "menor_preco": 3869.79
   },
@@ -8168,7 +8263,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3216261",
    "melhor_preco": 3955.91,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 3955.91,
    "menor_preco": 3955.91
   },
@@ -8465,7 +8560,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:vrlofertas/72576#GTA6_CODE_IN_BOX",
    "melhor_preco": 376.56,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 376.56,
    "menor_preco": 376.56
   },
@@ -8680,7 +8775,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3214757",
    "melhor_preco": 4908.9,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 4908.9,
    "menor_preco": 4908.9
   },
@@ -8798,7 +8893,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3214718",
    "melhor_preco": 3578.0,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 3578.0,
    "menor_preco": 3578.0
   },
@@ -8911,7 +9006,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:pelandobr/101450#SSD_NVME_1TB",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 1418.0,
    "menor_preco": 1418.0
   },
@@ -9030,7 +9125,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3214638",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-16T00:26:30-03:00"
+   "ultima_vez": "2026-11-16T00:41:28-03:00"
   },
   {
    "primeira_vez": "2026-11-15T03:26:31-03:00",
@@ -9113,7 +9208,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84551#GTA6_CODE_IN_BOX",
    "melhor_preco": 288.73,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 288.73,
    "menor_preco": 288.73
   },
@@ -9287,7 +9382,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84548#GTA6_CODE_IN_BOX",
    "melhor_preco": 318.0,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 318.0,
    "menor_preco": 318.0
   },
@@ -9329,87 +9424,9 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3213808",
    "melhor_preco": 360.91,
-   "ultima_vez": "2026-11-16T00:26:30-03:00",
+   "ultima_vez": "2026-11-16T00:41:28-03:00",
    "ultimo_preco": 360.91,
    "menor_preco": 360.91
-  },
-  {
-   "primeira_vez": "2026-11-14T13:35:45-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "AliExpress",
-   "titulo": "[linguicapromocoes] Playstation 5 Digital Edition 825Gb",
-   "url": "https://t.me/linguicapromocoes/116144",
-   "id": "linguicapromocoes/116144#PS5_DIGITAL",
-   "preco": 3880.55,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "AFFNOV09",
-   "publicado": "2026-11-14T13:23:01-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "linguicapromocoes",
-    "links": [
-     "https://s.click.aliexpress.com/e/_c4NY75X9",
-     "https://s.click.aliexpress.com/e/_c3pfvUJp",
-     "https://s.click.aliexpress.com/e/_c3k1dpWL"
-    ],
-    "texto": "PS5, SWITCH 1 E 2, TVS, TUDO EM OFERTA NO 11.11 DO ALIEXPRESS!\nPlaystation 5 Digital Edition 825Gb\nhttps://s.click.aliexpress.com/e/_c4NY75X9\nR$3.880,55 com cupom AFFNOV09\nNintendo Switch 2 Ea Sports Fc 27\nhttps://s.click.aliexpress.com/e/_c3pfvUJp\nR$3.819,76 com cupom AFFNOV09\nNintendo Switch Oled + with Super Mario Bros. Wonder\nhttps://s.click.aliexpress.com/e/_c3k1dpWL\nR$1.789,76 com cupom AEMEGA6\nSmart Tv Tcl 4K Uhd Miniled 65C6K 120Hz Google Tv Aipq Google Assistant 4 HDMI 2 USB\n65 polegadas\nhttps://s.click.aliexpress.com/e/_c3TTHdnN\nR$3.299,76 com cupom AEMEGA8\n55 polegadas\nhttps://s.cli",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "telegram:linguicapromocoes/116144#PS5_DIGITAL",
-   "melhor_preco": 3880.55,
-   "ultima_vez": "2026-11-14T13:35:45-03:00",
-   "ultimo_preco": 3880.55,
-   "menor_preco": 3880.55
-  },
-  {
-   "primeira_vez": "2026-11-14T13:20:57-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Mercado Livre",
-   "titulo": "[xaviertechpromo] 🚨  Playstation 5 Edição Digital 825gb 1 Controle Branco Sony Branco",
-   "url": "https://t.me/xaviertechpromo/399378",
-   "id": "xaviertechpromo/399378#PS5_DIGITAL",
-   "preco": 3992.21,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "PROMOTEC",
-   "publicado": "2026-11-14T13:18:42-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "xaviertechpromo",
-    "links": [
-     "https://meli.la/1Z7uEwb"
-    ],
-    "texto": "🚨  Playstation 5 Edição Digital 825gb 1 Controle Branco Sony Branco\n💵  R$ 3.992,21 no Pix\n🎟  Cupom:  PROMOTEC\nhttps://meli.la/1Z7uEwb\n(Anúncio)",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "telegram:xaviertechpromo/399378#PS5_DIGITAL",
-   "melhor_preco": 3992.21,
-   "ultima_vez": "2026-11-14T13:20:57-03:00",
-   "ultimo_preco": 3992.21,
-   "menor_preco": 3992.21
   }
  ],
  "gta6_custo_final": [
@@ -10666,72 +10683,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:25:37-03:00",
+   "ultimo_ok": "2026-11-16T00:40:37-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:25:44-03:00",
+   "ultimo_ok": "2026-11-16T00:40:44-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:26-03:00",
+   "ultimo_ok": "2026-11-16T00:41:23-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:25:39-03:00",
+   "ultimo_ok": "2026-11-16T00:40:39-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:25:52-03:00",
+   "ultimo_ok": "2026-11-16T00:40:50-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:00-03:00",
+   "ultimo_ok": "2026-11-16T00:40:58-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:01-03:00",
+   "ultimo_ok": "2026-11-16T00:40:59-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:02-03:00",
+   "ultimo_ok": "2026-11-16T00:41:00-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:04-03:00",
+   "ultimo_ok": "2026-11-16T00:41:02-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:05-03:00",
+   "ultimo_ok": "2026-11-16T00:41:03-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 809,
+   "falhas": 810,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-16T00:26:11-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-16T00:41:09-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:12-03:00",
+   "ultimo_ok": "2026-11-16T00:41:10-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:14-03:00",
+   "ultimo_ok": "2026-11-16T00:41:11-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T00:26:15-03:00",
+   "ultimo_ok": "2026-11-16T00:41:13-03:00",
    "ultimo_erro": null
   }
  },
