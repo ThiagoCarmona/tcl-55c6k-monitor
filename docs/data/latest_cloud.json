@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-16T08:44:07-03:00",
+ "atualizado": "2026-11-16T08:59:05-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -743,6 +743,48 @@
    "melhor_preco": 400.41
   },
   {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Videogame Sony PS5 Diablo IV para Xbox",
+   "url": "https://www.magazineluiza.com.br/videogame-sony-ps5-diablo-iv-para-xbox/p/hh31e551ag/ga/otga/",
+   "id": "hh31e551ag-nocnocestadosunidos",
+   "preco": 439.28,
+   "preco_pix": 408.53,
+   "parcelado": "7x R$ 62,75 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": false,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 464.83,
+    "1p": false,
+    "anuncio": "hh31e551ag",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.09,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 4.4
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": true
+    },
+    "descartado": "fora da faixa do produto (2500 a 7000)",
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "magalu.produtos:hh31e551ag-nocnocestadosunidos",
+   "melhor_preco": 408.53
+  },
+  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -1093,9 +1135,9 @@
    "titulo": "Leitor de Disco Para Playstation 5 Slim, PS5 Pro Sony, Edição digital, Branco - CFI-2000 - slim",
    "url": "https://www.kabum.com.br/produto/536958",
    "id": "536958",
-   "preco": 649.0,
+   "preco": 602.06,
    "preco_pix": null,
-   "parcelado": "10x de R$ 64,90 sem juros",
+   "parcelado": "10x de R$ 60,20 sem juros",
    "cupom": null,
    "publicado": null,
    "ativo": true,
@@ -1103,6 +1145,7 @@
    "extra": {
     "preco_tabela": 649.0,
     "openbox": false,
+    "oferta": "OFERTAS KABUM",
     "kabum_seller_id": "0",
     "kabum_oferta_id": 0,
     "confianca": {
@@ -1116,7 +1159,7 @@
    },
    "modelo": "LEITOR_PS5",
    "chave": "kabum.produtos:536958",
-   "melhor_preco": 649.0
+   "melhor_preco": 602.06
   },
   {
    "fonte": "kabum.produtos",
@@ -1259,7 +1302,7 @@
     "produto": {
      "geracao": "3"
     },
-    "descartado": "fora da faixa (mediana 1687.88)",
+    "descartado": "fora da faixa (mediana 1699.00)",
     "alvo": {
      "pix": 700.0,
      "parcelado": 750.0,
@@ -3690,59 +3733,6 @@
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
-   "titulo": "SSD Ediloca 1TB PCIe Gen4 NVMe M.2 com dissipador de calor para PS5 e PC",
-   "url": "https://www.magazineluiza.com.br/ssd-ediloca-1tb-pcie-gen4-nvme-m-2-com-dissipador-de-calor-para-ps5-e-pc/p/dk58a0j0e3/in/ssdi/",
-   "id": "dk58a0j0e3-nocnocestadosunidos",
-   "preco": 1814.92,
-   "preco_pix": 1687.88,
-   "parcelado": "7x R$ 259,27 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "nocnocestadosunidos",
-   "extra": {
-    "preco_de": 1885.67,
-    "1p": false,
-    "anuncio": "dk58a0j0e3",
-    "vendedor_id": "nocnocestadosunidos",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.08,
-     "razao_social": "nocnoc Estados Unidos",
-     "vendedor_desde": "2024-10-29",
-     "vendas_vendedor": 70000,
-     "nota_vendedor": 4.4
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:dk58a0j0e3-nocnocestadosunidos",
-   "melhor_preco": 1687.88
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
    "titulo": "Placa de expansão WD_BLACK C50 SSD NVMe de 1 TB para Xbox Series XS",
    "url": "https://www.magazineluiza.com.br/placa-de-expansao-wd-black-c50-ssd-nvme-de-1-tb-para-xbox-series-xs/p/kc9d30b0kd/in/ssdi/",
    "id": "kc9d30b0kd-nocnocestadosunidos",
@@ -4434,6 +4424,59 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:956348",
    "melhor_preco": 1859.88
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "SSD M.2 1TB Mini Kingston NV3 M.2 2230 NVMe PCIe 4.0 Leitura 6000MBs e Gravação 4000MBs SNV3SM3.1T0",
+   "url": "https://www.magazineluiza.com.br/ssd-m-2-1tb-mini-kingston-nv3-m-2-2230-nvme-pcie-4-0-leitura-6000mbs-e-gravacao-4000mbs-snv3sm3-1t0/p/kd49gk7695/in/ssdi/",
+   "id": "kd49gk7695-matrosinformatica",
+   "preco": 1979.0,
+   "preco_pix": 1880.05,
+   "parcelado": "10x R$ 197,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Matros Informática",
+   "extra": {
+    "preco_de": 1979.0,
+    "1p": false,
+    "anuncio": "kd49gk7695",
+    "vendedor_id": "matrosinformatica",
+    "ficha": {
+     "avaliacoes": 12,
+     "peso_kg": 0.085,
+     "razao_social": "matrosinformatica",
+     "vendedor_desde": "2025-05-07",
+     "vendas_vendedor": 1000,
+     "nota_vendedor": 4.1
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:kd49gk7695-matrosinformatica",
+   "melhor_preco": 1880.05
   },
   {
    "fonte": "magalu.produtos",
@@ -6320,42 +6363,6 @@
    "melhor_preco": 3799.99
   },
   {
-   "fonte": "kabum.produtos",
-   "tipo": "loja",
-   "loja": "KaBuM!",
-   "titulo": "Console Sony PlayStation 5, SSD 825GB, Controle Sem Fio DualSense + 2 Jogos Digitais, Edição Digital",
-   "url": "https://www.kabum.com.br/produto/989702",
-   "id": "989702",
-   "preco": 4499.0,
-   "preco_pix": 4184.07,
-   "parcelado": "10x de R$ 449,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "KaBuM!",
-   "extra": {
-    "preco_tabela": 4999.0,
-    "openbox": false,
-    "oferta": "ESQUENTA BLACK DAS BLACKS",
-    "kabum_seller_id": "0",
-    "kabum_oferta_id": 0,
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "confiavel"
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "kabum.produtos:989702",
-   "melhor_preco": 4184.07
-  },
-  {
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
@@ -6984,6 +6991,41 @@
    "modelo": "PS5_DIGITAL",
    "chave": "magalu.produtos:ac70gdd6je-oficialamericanas",
    "melhor_preco": 4599.99
+  },
+  {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "Console Sony PlayStation 5, SSD 825GB, Controle Sem Fio DualSense + 2 Jogos Digitais, Edição Digital",
+   "url": "https://www.kabum.com.br/produto/989702",
+   "id": "989702",
+   "preco": 4999.0,
+   "preco_pix": 4649.07,
+   "parcelado": "10x de R$ 499,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "KaBuM!",
+   "extra": {
+    "preco_tabela": 4999.0,
+    "openbox": false,
+    "kabum_seller_id": "0",
+    "kabum_oferta_id": 0,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "kabum.produtos:989702",
+   "melhor_preco": 4649.07
   },
   {
    "fonte": "magalu.produtos",
@@ -7685,7 +7727,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:achadosdotb/12026#GTA6_CODE_IN_BOX",
    "melhor_preco": 341.0,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 341.0,
    "menor_preco": 341.0
   },
@@ -7727,7 +7769,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3217075",
    "melhor_preco": 341.0,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 341.0,
    "menor_preco": 341.0
   },
@@ -7815,7 +7857,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3217043",
    "melhor_preco": 370.0,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 370.0,
    "menor_preco": 370.0
   },
@@ -7857,7 +7899,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3217028",
    "melhor_preco": 397.48,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 397.48,
    "menor_preco": 397.48
   },
@@ -7992,7 +8034,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216898",
    "melhor_preco": 368.1,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 368.1,
    "menor_preco": 368.1
   },
@@ -8069,7 +8111,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216808",
    "melhor_preco": 370.0,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 370.0,
    "menor_preco": 370.0
   },
@@ -8187,7 +8229,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216390",
    "melhor_preco": 391.41,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 391.41,
    "menor_preco": 391.41
   },
@@ -8268,7 +8310,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216340",
    "melhor_preco": 0.01,
-   "ultima_vez": "2026-11-16T08:44:06-03:00"
+   "ultima_vez": "2026-11-16T08:59:04-03:00"
   },
   {
    "primeira_vez": "2026-11-15T20:44:03-03:00",
@@ -8336,7 +8378,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3216261",
    "melhor_preco": 3955.91,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 3955.91,
    "menor_preco": 3955.91
   },
@@ -8633,7 +8675,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:vrlofertas/72576#GTA6_CODE_IN_BOX",
    "melhor_preco": 376.56,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 376.56,
    "menor_preco": 376.56
   },
@@ -8848,7 +8890,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3214757",
    "melhor_preco": 4908.9,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 4908.9,
    "menor_preco": 4908.9
   },
@@ -8966,7 +9008,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3214718",
    "melhor_preco": 3578.0,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 3578.0,
    "menor_preco": 3578.0
   },
@@ -9079,7 +9121,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:pelandobr/101450#SSD_NVME_1TB",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 1418.0,
    "menor_preco": 1418.0
   },
@@ -9198,7 +9240,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3214638",
    "melhor_preco": 1418.0,
-   "ultima_vez": "2026-11-16T08:44:06-03:00"
+   "ultima_vez": "2026-11-16T08:59:04-03:00"
   },
   {
    "primeira_vez": "2026-11-15T03:26:31-03:00",
@@ -9281,7 +9323,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84551#GTA6_CODE_IN_BOX",
    "melhor_preco": 288.73,
-   "ultima_vez": "2026-11-16T08:44:06-03:00",
+   "ultima_vez": "2026-11-16T08:59:04-03:00",
    "ultimo_preco": 288.73,
    "menor_preco": 288.73
   }
@@ -10540,72 +10582,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:08-03:00",
+   "ultimo_ok": "2026-11-16T08:58:08-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:16-03:00",
+   "ultimo_ok": "2026-11-16T08:58:15-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:44:01-03:00",
+   "ultimo_ok": "2026-11-16T08:59:00-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:09-03:00",
+   "ultimo_ok": "2026-11-16T08:58:09-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:30-03:00",
+   "ultimo_ok": "2026-11-16T08:58:30-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:38-03:00",
+   "ultimo_ok": "2026-11-16T08:58:38-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:38-03:00",
+   "ultimo_ok": "2026-11-16T08:58:38-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:39-03:00",
+   "ultimo_ok": "2026-11-16T08:58:39-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:41-03:00",
+   "ultimo_ok": "2026-11-16T08:58:41-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:42-03:00",
+   "ultimo_ok": "2026-11-16T08:58:41-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 814,
+   "falhas": 815,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-16T08:43:47-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-16T08:58:47-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:49-03:00",
+   "ultimo_ok": "2026-11-16T08:58:49-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:50-03:00",
+   "ultimo_ok": "2026-11-16T08:58:50-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T08:43:51-03:00",
+   "ultimo_ok": "2026-11-16T08:58:51-03:00",
    "ultimo_erro": null
   }
  },
