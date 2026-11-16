@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-16T18:04:29-03:00",
+ "atualizado": "2026-11-16T18:18:53-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -6412,47 +6412,6 @@
    "melhor_preco": 3888.88
   },
   {
-   "fonte": "vtex.fastshop.ps5",
-   "tipo": "loja",
-   "loja": "Fast Shop",
-   "titulo": "Console PlayStation 5 Slim Digital 825GB com controle Dualsense",
-   "url": "https://site.fastshop.com.br/console-playstation-5-slim-digital-825gb-com-controle-dualsense-187039/p",
-   "id": "Fast Shop-187039-cnl217",
-   "preco": 4149.0,
-   "preco_pix": 4066.02,
-   "parcelado": "8x R$ 518,62 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Negociun",
-   "extra": {
-    "preco_de": 4999.0,
-    "ref": "274897_Fastshopbr",
-    "ean": "711719021490",
-    "sku": "197394",
-    "seller_id": "cnl217",
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "vtex.fastshop.ps5:Fast Shop-187039-cnl217",
-   "melhor_preco": 4066.02
-  },
-  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -7811,7 +7770,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84576#PS5_DIGITAL",
    "melhor_preco": 3884.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 3884.0,
    "menor_preco": 3884.0
   },
@@ -7850,7 +7809,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:tecnanofertas/157960#PS5_DIGITAL",
    "melhor_preco": 3884.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 3884.0,
    "menor_preco": 3884.0
   },
@@ -7885,7 +7844,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3220022",
    "melhor_preco": 3884.07,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 3884.07,
    "menor_preco": 3884.07
   },
@@ -7917,7 +7876,7 @@
    "modelo": "LEITOR_PS5",
    "chave": "promobit:3220021",
    "melhor_preco": 585.81,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 585.81,
    "menor_preco": 585.81
   },
@@ -7959,7 +7918,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3220004",
    "melhor_preco": 4508.9,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 4508.9,
    "menor_preco": 4508.9
   },
@@ -7994,7 +7953,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3220003",
    "melhor_preco": 3863.91,
-   "ultima_vez": "2026-11-16T18:04:28-03:00"
+   "ultima_vez": "2026-11-16T18:18:52-03:00"
   },
   {
    "primeira_vez": "2026-11-16T18:04:28-03:00",
@@ -8035,7 +7994,7 @@
    "modelo": "PS5_KIT",
    "chave": "promobit:3220000",
    "melhor_preco": 4816.27,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 4816.27,
    "menor_preco": 4816.27
   },
@@ -8074,7 +8033,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:tecnoarthardware/54596#PS5_DIGITAL",
    "melhor_preco": 3767.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 3767.0,
    "menor_preco": 3767.0
   },
@@ -8114,7 +8073,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:IskandarSouza/198275#PS5_DIGITAL",
    "melhor_preco": 3767.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 3767.0,
    "menor_preco": 3767.0
   },
@@ -8154,7 +8113,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:IskandarSouza/198274#PS5_DIGITAL",
    "melhor_preco": 3884.07,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 3884.07,
    "menor_preco": 3884.07
   },
@@ -8190,7 +8149,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:tecnoarthardware/54594#SSD_NVME_1TB",
    "melhor_preco": 671.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 671.0,
    "menor_preco": 671.0
   },
@@ -8225,7 +8184,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3218860",
    "melhor_preco": 3884.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 3884.0,
    "menor_preco": 3884.0
   },
@@ -8260,7 +8219,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3218857",
    "melhor_preco": 4254.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00"
+   "ultima_vez": "2026-11-16T18:18:52-03:00"
   },
   {
    "primeira_vez": "2026-11-16T18:04:28-03:00",
@@ -8300,7 +8259,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3218769",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00"
+   "ultima_vez": "2026-11-16T18:18:52-03:00"
   },
   {
    "primeira_vez": "2026-11-16T18:04:28-03:00",
@@ -8343,7 +8302,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84561#GTA6_CODE_IN_BOX",
    "melhor_preco": 341.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 341.0,
    "menor_preco": 341.0
   },
@@ -8385,7 +8344,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3218044",
    "melhor_preco": 362.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 362.0,
    "menor_preco": 362.0
   },
@@ -8472,7 +8431,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3217075",
    "melhor_preco": 341.0,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 341.0,
    "menor_preco": 341.0
   },
@@ -8932,7 +8891,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3216390",
    "melhor_preco": 391.41,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 391.41,
    "menor_preco": 391.41
   },
@@ -9081,7 +9040,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3216261",
    "melhor_preco": 3955.91,
-   "ultima_vez": "2026-11-16T18:04:28-03:00",
+   "ultima_vez": "2026-11-16T18:18:52-03:00",
    "ultimo_preco": 3955.91,
    "menor_preco": 3955.91
   },
@@ -10532,72 +10491,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:02:54-03:00",
+   "ultimo_ok": "2026-11-16T18:17:56-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:03-03:00",
+   "ultimo_ok": "2026-11-16T18:18:04-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:04:00-03:00",
+   "ultimo_ok": "2026-11-16T18:18:49-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:02:56-03:00",
+   "ultimo_ok": "2026-11-16T18:17:58-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:17-03:00",
+   "ultimo_ok": "2026-11-16T18:18:10-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:28-03:00",
+   "ultimo_ok": "2026-11-16T18:18:19-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:29-03:00",
+   "ultimo_ok": "2026-11-16T18:18:19-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:32-03:00",
+   "ultimo_ok": "2026-11-16T18:18:22-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:33-03:00",
+   "ultimo_ok": "2026-11-16T18:18:23-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:34-03:00",
+   "ultimo_ok": "2026-11-16T18:18:24-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 816,
+   "falhas": 817,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-16T18:03:40-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-16T18:18:30-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:43-03:00",
+   "ultimo_ok": "2026-11-16T18:18:33-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:44-03:00",
+   "ultimo_ok": "2026-11-16T18:18:34-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-16T18:03:46-03:00",
+   "ultimo_ok": "2026-11-16T18:18:36-03:00",
    "ultimo_erro": null
   }
  },
