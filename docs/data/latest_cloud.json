@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-17T00:51:10-03:00",
+ "atualizado": "2026-11-17T01:06:03-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -6344,66 +6344,6 @@
    "melhor_preco": 3888.88
   },
   {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Console PlayStation 5 Slim Digital 825GB com controle Dualsense",
-   "url": "https://www.magazineluiza.com.br/console-playstation-5-slim-digital-825gb-com-controle-dualsense-sony/p/hg9286bd4c/ga/gap5/",
-   "id": "hg9286bd4c-negociunoficial",
-   "preco": 4349.0,
-   "preco_pix": 4131.55,
-   "parcelado": "10x R$ 434,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Negociun Oficial",
-   "extra": {
-    "preco_de": 4869.0,
-    "1p": false,
-    "anuncio": "hg9286bd4c",
-    "vendedor_id": "negociunoficial",
-    "ficha": {
-     "avaliacoes": 1207,
-     "peso_kg": 4.1,
-     "razao_social": "negociunoficial",
-     "vendedor_desde": "2025-03-17",
-     "vendas_vendedor": 100000,
-     "nota_vendedor": 4.1
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "peso",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas",
-      "catálogo da loja"
-     ],
-     "sinais": [],
-     "codigos": [],
-     "catalogo": {
-      "total": 652,
-      "tv": 50,
-      "games": 15
-     }
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "magalu.produtos:hg9286bd4c-negociunoficial",
-   "melhor_preco": 4131.55
-  },
-  {
    "fonte": "vtex.fastshop.ps5",
    "tipo": "loja",
    "loja": "Fast Shop",
@@ -7712,6 +7652,89 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-17T01:06:02-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "[xaviertechpromo] 🚨  Bundle GTA VI + PlayStation 5 Slim Digital 825 GB - Pacote Astro Bot e Gran Turismo 7",
+   "url": "https://t.me/xaviertechpromo/404190",
+   "id": "xaviertechpromo/404190#PS5_DIGITAL_GTA6",
+   "preco": 4508.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-17T00:58:54-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "xaviertechpromo",
+    "links": [
+     "https://www.amazon.com.br/dp/B0H6LVH152?tag=spy0f-20"
+    ],
+    "texto": "🚨  Bundle GTA VI + PlayStation 5 Slim Digital 825 GB - Pacote Astro Bot e Gran Turismo 7\n💵  R$ 4.508\nOu em até 12x sem juros\nhttps://www.amazon.com.br/dp/B0H6LVH152?tag=spy0f-20\n(Anúncio)",
+    "produto": {
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 4000.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    },
+    "entrega": {
+     "classe": "a_tempo",
+     "data": "2026-11-16",
+     "origem": "estimativa",
+     "cep_referencia": true,
+     "texto": "📦 Entrega: previsão 16/11 (estimativa da pesquisa de 03/10) — chega a tempo ✅ (até 18/11; lançamento 19/11)"
+    }
+   },
+   "modelo": "PS5_DIGITAL_GTA6",
+   "chave": "telegram:xaviertechpromo/404190#PS5_DIGITAL_GTA6",
+   "melhor_preco": 4508.0,
+   "ultima_vez": "2026-11-17T01:06:02-03:00",
+   "ultimo_preco": 4508.0,
+   "menor_preco": 4508.0
+  },
+  {
+   "primeira_vez": "2026-11-17T01:06:02-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "[xaviertechpromo] 🚨  PlayStation ® 5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+   "url": "https://t.me/xaviertechpromo/404188",
+   "id": "xaviertechpromo/404188#PS5_DIGITAL",
+   "preco": 3884.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-17T00:53:16-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "xaviertechpromo",
+    "links": [
+     "https://www.amazon.com.br/dp/B0FPGF9J2J?tag=spy0f-20"
+    ],
+    "texto": "🚨  PlayStation ® 5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7\n💵  R$ 3.884 no Pix\nOu em até 12x sem juros\n🎟  Resgate o cupom de R$300 off no anúncio, é exclusivo para assinantes Prime\nhttps://www.amazon.com.br/dp/B0FPGF9J2J?tag=spy0f-20\n(Anúncio)",
+    "produto": {
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "telegram:xaviertechpromo/404188#PS5_DIGITAL",
+   "melhor_preco": 3884.0,
+   "ultima_vez": "2026-11-17T01:06:02-03:00",
+   "ultimo_preco": 3884.0,
+   "menor_preco": 3884.0
+  },
+  {
    "primeira_vez": "2026-11-17T00:51:09-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -7753,7 +7776,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:vrlofertas/72641#GTA6_CODE_IN_BOX",
    "melhor_preco": 370.41,
-   "ultima_vez": "2026-11-17T00:51:09-03:00",
+   "ultima_vez": "2026-11-17T01:06:02-03:00",
    "ultimo_preco": 370.41,
    "menor_preco": 370.41
   },
@@ -7788,7 +7811,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3221102",
    "melhor_preco": 4499.0,
-   "ultima_vez": "2026-11-17T00:51:09-03:00",
+   "ultima_vez": "2026-11-17T01:06:02-03:00",
    "ultimo_preco": 4499.0,
    "menor_preco": 4499.0
   },
@@ -7830,7 +7853,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3221025",
    "melhor_preco": 369.0,
-   "ultima_vez": "2026-11-17T00:51:09-03:00",
+   "ultima_vez": "2026-11-17T01:06:02-03:00",
    "ultimo_preco": 369.0,
    "menor_preco": 369.0
   },
@@ -7865,7 +7888,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3220644",
    "melhor_preco": 3884.07,
-   "ultima_vez": "2026-11-17T00:51:09-03:00"
+   "ultima_vez": "2026-11-17T01:06:02-03:00"
   },
   {
    "primeira_vez": "2026-11-17T00:51:09-03:00",
@@ -7898,7 +7921,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3220570",
    "melhor_preco": 3884.07,
-   "ultima_vez": "2026-11-17T00:51:09-03:00"
+   "ultima_vez": "2026-11-17T01:06:02-03:00"
   },
   {
    "primeira_vez": "2026-11-17T00:51:09-03:00",
@@ -7938,7 +7961,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3220343",
    "melhor_preco": 0.01,
-   "ultima_vez": "2026-11-17T00:51:09-03:00"
+   "ultima_vez": "2026-11-17T01:06:02-03:00"
   },
   {
    "primeira_vez": "2026-11-16T18:04:28-03:00",
@@ -7974,7 +7997,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84576#PS5_DIGITAL",
    "melhor_preco": 3884.0,
-   "ultima_vez": "2026-11-17T00:51:09-03:00",
+   "ultima_vez": "2026-11-17T01:06:02-03:00",
    "ultimo_preco": 3884.0,
    "menor_preco": 3884.0
   },
@@ -8157,7 +8180,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3220003",
    "melhor_preco": 3863.91,
-   "ultima_vez": "2026-11-17T00:51:09-03:00"
+   "ultima_vez": "2026-11-17T01:06:02-03:00"
   },
   {
    "primeira_vez": "2026-11-16T18:04:28-03:00",
@@ -8388,7 +8411,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3218860",
    "melhor_preco": 3884.0,
-   "ultima_vez": "2026-11-17T00:51:09-03:00",
+   "ultima_vez": "2026-11-17T01:06:02-03:00",
    "ultimo_preco": 3884.0,
    "menor_preco": 3884.0
   },
@@ -8463,7 +8486,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3218769",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-17T00:51:09-03:00"
+   "ultima_vez": "2026-11-17T01:06:02-03:00"
   },
   {
    "primeira_vez": "2026-11-16T18:04:28-03:00",
@@ -8548,7 +8571,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3218044",
    "melhor_preco": 362.0,
-   "ultima_vez": "2026-11-17T00:51:09-03:00",
+   "ultima_vez": "2026-11-17T01:06:02-03:00",
    "ultimo_preco": 362.0,
    "menor_preco": 362.0
   },
@@ -8590,7 +8613,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3217620",
    "melhor_preco": 410.0,
-   "ultima_vez": "2026-11-17T00:51:09-03:00"
+   "ultima_vez": "2026-11-17T01:06:02-03:00"
   },
   {
    "primeira_vez": "2026-11-16T08:14:06-03:00",
@@ -9217,76 +9240,6 @@
    "chave": "promobit:3216340",
    "melhor_preco": 0.01,
    "ultima_vez": "2026-11-16T08:59:04-03:00"
-  },
-  {
-   "primeira_vez": "2026-11-15T20:44:03-03:00",
-   "preco_alertado": null,
-   "fonte": "promobit",
-   "tipo": "post",
-   "loja": "AliExpress",
-   "titulo": "PlayStation 5 Edição Digital 825GB 1 Controle Branco Sony",
-   "url": "https://www.promobit.com.br/oferta/playstation-5-edicao-digital-825gb-1-controle-branco-sony-3216282/",
-   "id": "3216282",
-   "preco": 3869.79,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "AFFNOV09",
-   "publicado": "2026-11-15T17:56:53-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "preco_antigo": 4999.0,
-    "status": "APPROVED",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "promobit:3216282",
-   "melhor_preco": 3869.79,
-   "ultima_vez": "2026-11-16T00:56:34-03:00",
-   "ultimo_preco": 3869.79,
-   "menor_preco": 3869.79
-  },
-  {
-   "primeira_vez": "2026-11-15T20:44:03-03:00",
-   "preco_alertado": null,
-   "fonte": "promobit",
-   "tipo": "post",
-   "loja": "Shopee",
-   "titulo": "Console PlayStation 5 Slim Digital 825GB",
-   "url": "https://www.promobit.com.br/oferta/console-playstation-5-slim-digital-825gb-3216261/",
-   "id": "3216261",
-   "preco": 3955.91,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-15T17:47:20-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "preco_antigo": 5176.35,
-    "status": "APPROVED",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "promobit:3216261",
-   "melhor_preco": 3955.91,
-   "ultima_vez": "2026-11-17T00:51:09-03:00",
-   "ultimo_preco": 3955.91,
-   "menor_preco": 3955.91
   }
  ],
  "gta6_custo_final": [
@@ -10483,72 +10436,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:49:58-03:00",
+   "ultimo_ok": "2026-11-17T01:04:57-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:07-03:00",
+   "ultimo_ok": "2026-11-17T01:05:04-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:51:01-03:00",
+   "ultimo_ok": "2026-11-17T01:05:56-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:00-03:00",
+   "ultimo_ok": "2026-11-17T01:04:59-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:23-03:00",
+   "ultimo_ok": "2026-11-17T01:05:19-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:32-03:00",
+   "ultimo_ok": "2026-11-17T01:05:28-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:33-03:00",
+   "ultimo_ok": "2026-11-17T01:05:29-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:35-03:00",
+   "ultimo_ok": "2026-11-17T01:05:31-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:36-03:00",
+   "ultimo_ok": "2026-11-17T01:05:32-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:37-03:00",
+   "ultimo_ok": "2026-11-17T01:05:33-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 820,
+   "falhas": 821,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-17T00:50:43-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-17T01:05:39-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:45-03:00",
+   "ultimo_ok": "2026-11-17T01:05:41-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:47-03:00",
+   "ultimo_ok": "2026-11-17T01:05:43-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-17T00:50:48-03:00",
+   "ultimo_ok": "2026-11-17T01:05:44-03:00",
    "ultimo_erro": null
   }
  },
