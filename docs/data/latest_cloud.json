@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-18T08:29:17-03:00",
+ "atualizado": "2026-11-18T08:44:02-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -1452,7 +1452,7 @@
     "produto": {
      "geracao": "3"
     },
-    "descartado": "fora da faixa (mediana 1699.00)",
+    "descartado": "fora da faixa (mediana 1699.99)",
     "alvo": {
      "pix": 700.0,
      "parcelado": 750.0,
@@ -1501,8 +1501,12 @@
       "vendas",
       "catálogo da loja"
      ],
-     "sinais": [],
-     "codigos": [],
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ],
      "catalogo": {
       "total": 261,
       "tv": 4,
@@ -1555,8 +1559,12 @@
       "razão social",
       "catálogo da loja"
      ],
-     "sinais": [],
-     "codigos": [],
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ],
      "catalogo": {
       "total": 1,
       "tv": 0,
@@ -2171,8 +2179,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -2317,8 +2329,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -2370,8 +2386,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -2526,8 +2546,12 @@
       "razão social",
       "idade da conta"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -3174,9 +3198,11 @@
       "idade da conta"
      ],
      "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)",
       "vendedor na loja só desde 19/10/2026"
      ],
      "codigos": [
+      "sem_avaliacoes",
       "vendedor_recente"
      ]
     },
@@ -3301,8 +3327,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -3407,8 +3437,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -3742,8 +3776,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -3815,43 +3853,6 @@
    "melhor_preco": 1647.05
   },
   {
-   "fonte": "kabum.produtos",
-   "tipo": "loja",
-   "loja": "KaBuM!",
-   "titulo": "SSD Keepdata M.2 1TB Nvme - Kdnv1t-j12",
-   "url": "https://www.kabum.com.br/produto/1055949",
-   "id": "1055949",
-   "preco": 1656.46,
-   "preco_pix": null,
-   "parcelado": "10x de R$ 165,64 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "TH INFORMATICA",
-   "extra": {
-    "preco_tabela": 1656.46,
-    "openbox": false,
-    "kabum_seller_id": "9147",
-    "kabum_oferta_id": 3181100,
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "kabum.produtos:1055949",
-   "melhor_preco": 1656.46
-  },
-  {
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
@@ -3891,8 +3892,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4056,8 +4061,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4109,8 +4118,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4234,8 +4247,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4281,6 +4298,43 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:885085",
    "melhor_preco": 1799.99
+  },
+  {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "SSD WD M.2 1TB Sn350 Green Nvme - Wds100t3g0c",
+   "url": "https://www.kabum.com.br/produto/1055183",
+   "id": "1055183",
+   "preco": 1814.62,
+   "preco_pix": null,
+   "parcelado": "10x de R$ 181,46 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "TH INFORMATICA",
+   "extra": {
+    "preco_tabela": 1814.62,
+    "openbox": false,
+    "kabum_seller_id": "9147",
+    "kabum_oferta_id": 3178077,
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "kabum.produtos:1055183",
+   "melhor_preco": 1814.62
   },
   {
    "fonte": "magalu.produtos",
@@ -4372,8 +4426,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4643,6 +4701,47 @@
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
+   "titulo": "Ssd Kingston Nv3 1tb 2280 Pcie Nvme - Snv3s-1000g",
+   "url": "https://www.magazineluiza.com.br/ssd-kingston-nv3-1tb-2280-pcie-nvme-snv3s-1000g/p/fg6he7460e/in/ssdi/",
+   "id": "fg6he7460e-lojawebcontinentalmarketplace",
+   "preco": 1973.82,
+   "preco_pix": null,
+   "parcelado": "10x R$ 197,38 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Webcontinental Marketplace",
+   "extra": {
+    "preco_de": 1973.82,
+    "1p": false,
+    "anuncio": "fg6he7460e",
+    "vendedor_id": "lojawebcontinentalmarketplace",
+    "ficha": {
+     "avaliacoes": 760,
+     "peso_kg": 0.04,
+     "razao_social": "Webcontinental Ltda",
+     "vendedor_desde": "2023-04-18",
+     "vendas_vendedor": 200000,
+     "nota_vendedor": 3.2
+    },
+    "anuncio_exclusivo": false,
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:fg6he7460e-lojawebcontinentalmarketplace",
+   "melhor_preco": 1973.82
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
    "titulo": "Ssd Kingston Nv3 M.2 2280 Nvme 4.0 1tb",
    "url": "https://www.magazineluiza.com.br/ssd-kingston-nv3-m-2-2280-nvme-4-0-1tb/p/fhfej02k92/in/ssdi/",
    "id": "fhfej02k92-comercialacvendas",
@@ -4733,8 +4832,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4785,59 +4888,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:998974",
    "melhor_preco": 2049.99
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "SSD M.2 1TB Corsair MP700 Elite - NVMe Gen5 - Leitura 10.000MB/s - Gravação 8.500MB/s",
-   "url": "https://www.magazineluiza.com.br/ssd-m-2-1tb-corsair-mp700-elite-nvme-gen5-leitura-10-000mb-s-gravacao-8-500mb-s/p/bbjhjfj5a7/in/ssdi/",
-   "id": "bbjhjfj5a7-oficinadosbits2",
-   "preco": 2299.99,
-   "preco_pix": 2069.99,
-   "parcelado": "10x R$ 230,00 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Oficina Dos Bits",
-   "extra": {
-    "preco_de": 2299.99,
-    "1p": false,
-    "anuncio": "bbjhjfj5a7",
-    "vendedor_id": "oficinadosbits2",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.1,
-     "razao_social": "Oficina Dos Bits Ltda",
-     "vendedor_desde": "2021-01-11",
-     "vendas_vendedor": 6000,
-     "nota_vendedor": 4.4
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "5"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:bbjhjfj5a7-oficinadosbits2",
-   "melhor_preco": 2069.99
   },
   {
    "fonte": "kabum.produtos",
@@ -4974,8 +5024,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -5388,8 +5442,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -5441,8 +5499,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -5607,8 +5669,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -6199,8 +6265,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -7874,6 +7944,94 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-18T08:44:00-03:00",
+   "preco_alertado": null,
+   "fonte": "promobit",
+   "tipo": "post",
+   "loja": "Netshoes",
+   "titulo": "Jogo Grand Theft Auto VI (GTA 6) PS5 - Code in Box Pré-venda - Lançamento 1911",
+   "url": "https://www.promobit.com.br/oferta/jogo-grand-theft-auto-vi-gta-6-ps5-code-in-box-pre-venda-lancamento-1911-3225649/",
+   "id": "3225649",
+   "preco": 434.42,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "BLACK40",
+   "publicado": "2026-11-18T08:34:20-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "preco_antigo": 549.0,
+    "status": "APPROVED",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 300.0,
+     "parcelado": 320.0,
+     "nota": "chega depois de 18/11"
+    },
+    "entrega": {
+     "classe": "depois",
+     "data": "2026-11-30",
+     "origem": "estimativa",
+     "cep_referencia": true,
+     "texto": "📦 Entrega: previsão 30/11 (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "promobit:3225649",
+   "melhor_preco": 434.42,
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
+   "ultimo_preco": 434.42,
+   "menor_preco": 434.42
+  },
+  {
+   "primeira_vez": "2026-11-18T08:44:00-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "[linguicapromocoes] ⚡  Grand Theft Auto VI - PlayStation 5",
+   "url": "https://t.me/linguicapromocoes/118997",
+   "id": "linguicapromocoes/118997#GTA6_CODE_IN_BOX",
+   "preco": 395.91,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-18T08:28:44-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "linguicapromocoes",
+    "links": [
+     "https://www.amazon.com.br/dp/B0H6KT2RWH?tag=senhorlinguic-20&linkCode=ogi&language=pt-BR&th=1",
+     "https://linktr.ee/linguicapromo"
+    ],
+    "texto": "⚡  Grand Theft Auto VI - PlayStation 5\n💰  R$ 395,91 no PIX\n🤑  Resgate o cupom no anúncio\n🏆  Link do produto:\nhttps://www.amazon.com.br/dp/B0H6KT2RWH?tag=senhorlinguic-20&linkCode=ogi&language=pt-BR&th=1\nanúncio\nEntre no meu grupo de ofertas 👇🏻 👇🏻\nhttps://linktr.ee/linguicapromo",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 345.0,
+     "parcelado": 370.0,
+     "nota": "chega até 18/11"
+    },
+    "entrega": {
+     "classe": "a_tempo",
+     "data": "2026-11-16",
+     "origem": "estimativa",
+     "cep_referencia": true,
+     "texto": "📦 Entrega: previsão 16/11 (estimativa da pesquisa de 03/10) — chega a tempo ✅ (até 18/11; lançamento 19/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "telegram:linguicapromocoes/118997#GTA6_CODE_IN_BOX",
+   "melhor_preco": 395.91,
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
+   "ultimo_preco": 395.91,
+   "menor_preco": 395.91
+  },
+  {
    "primeira_vez": "2026-11-18T08:29:15-03:00",
    "preco_alertado": null,
    "fonte": "promobit",
@@ -7887,11 +8045,11 @@
    "parcelado": null,
    "cupom": "300TAO",
    "publicado": "2026-11-18T08:13:21-03:00",
-   "ativo": false,
+   "ativo": true,
    "vendedor": null,
    "extra": {
     "preco_antigo": null,
-    "status": "RECENTS",
+    "status": "APPROVED",
     "produto": {
      "versao_incerta": false
     },
@@ -7904,7 +8062,9 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3225589",
    "melhor_preco": 4069.91,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
+   "ultimo_preco": 4069.91,
+   "menor_preco": 4069.91
   },
   {
    "primeira_vez": "2026-11-18T08:29:15-03:00",
@@ -7937,7 +8097,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3225576",
    "melhor_preco": 3960.55,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 3960.55,
    "menor_preco": 3960.55
   },
@@ -7982,7 +8142,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84610#GTA6_CODE_IN_BOX",
    "melhor_preco": null,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
+   "ultima_vez": "2026-11-18T08:44:00-03:00"
   },
   {
    "primeira_vez": "2026-11-18T08:29:15-03:00",
@@ -8022,7 +8182,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3225562",
    "melhor_preco": 395.91,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 395.91,
    "menor_preco": 395.91
   },
@@ -8067,7 +8227,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:pobres/44917#GTA6_CODE_IN_BOX",
    "melhor_preco": null,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
+   "ultima_vez": "2026-11-18T08:44:00-03:00"
   },
   {
    "primeira_vez": "2026-11-18T08:29:15-03:00",
@@ -8107,7 +8267,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3225493",
    "melhor_preco": 375.91,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 375.91,
    "menor_preco": 375.91
   },
@@ -8142,7 +8302,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3225463",
    "melhor_preco": 4369.9,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 4369.9,
    "menor_preco": 4369.9
   },
@@ -8180,7 +8340,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:tecnoarthardware/54934#PS5_DIGITAL",
    "melhor_preco": 3955.0,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 3955.0,
    "menor_preco": 3955.0
   },
@@ -8320,7 +8480,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:tecnoarthardware/54930#GTA6_CODE_IN_BOX",
    "melhor_preco": 379.0,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 379.0,
    "menor_preco": 379.0
   },
@@ -8363,7 +8523,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:IskandarSouza/198583#GTA6_CODE_IN_BOX",
    "melhor_preco": null,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
+   "ultima_vez": "2026-11-18T08:44:00-03:00"
   },
   {
    "primeira_vez": "2026-11-18T00:31:17-03:00",
@@ -8450,7 +8610,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3225181",
    "melhor_preco": 351.0,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 351.0,
    "menor_preco": 351.0
   },
@@ -8492,7 +8652,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3225178",
    "melhor_preco": 379.0,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 379.0,
    "menor_preco": 379.0
   },
@@ -8704,7 +8864,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3224950",
    "melhor_preco": 419.9,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 419.9,
    "menor_preco": 419.9
   },
@@ -8812,7 +8972,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:pelandobr/101873#SSD_NVME_1TB",
    "melhor_preco": 878.15,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
+   "ultima_vez": "2026-11-18T08:44:00-03:00",
    "ultimo_preco": 878.15,
    "menor_preco": 878.15
   },
@@ -8854,7 +9014,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3224442",
    "melhor_preco": 4508.0,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
+   "ultima_vez": "2026-11-18T08:44:00-03:00"
   },
   {
    "primeira_vez": "2026-11-17T18:52:05-03:00",
@@ -9115,7 +9275,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3224137",
    "melhor_preco": 4508.9,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
+   "ultima_vez": "2026-11-18T08:44:00-03:00"
   },
   {
    "primeira_vez": "2026-11-17T18:22:30-03:00",
@@ -9388,7 +9548,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3223832",
    "melhor_preco": 646.0,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
+   "ultima_vez": "2026-11-18T08:44:00-03:00"
   },
   {
    "primeira_vez": "2026-11-17T18:22:30-03:00",
@@ -9418,78 +9578,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3223523",
    "melhor_preco": 0.01,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
-  },
-  {
-   "primeira_vez": "2026-11-17T18:22:30-03:00",
-   "preco_alertado": null,
-   "fonte": "promobit",
-   "tipo": "post",
-   "loja": "Americanas",
-   "titulo": "Gift Card PlayStation Store Digital R$ 550",
-   "url": "https://www.promobit.com.br/oferta/gift-card-playstation-store-digital-r-550-3223441/",
-   "id": "3223441",
-   "preco": 495.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "sony10",
-   "publicado": "2026-11-17T14:49:53-03:00",
-   "ativo": false,
-   "vendedor": null,
-   "extra": {
-    "preco_antigo": 550.0,
-    "status": "FINISHED",
-    "produto": {
-     "valor_face": 550.0
-    },
-    "alvo": {
-     "pix": null,
-     "parcelado": null,
-     "nota": "loja não oficial para gift card"
-    }
-   },
-   "modelo": "GIFT_CARD_PSN",
-   "chave": "promobit:3223441",
-   "melhor_preco": 495.0,
-   "ultima_vez": "2026-11-18T08:29:15-03:00"
-  },
-  {
-   "primeira_vez": "2026-11-17T18:22:30-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "?",
-   "titulo": "[cupons_desconto] Console PlayStation 5 Slim Disk 1TB com Leitor de Disco + 1 Controle DualSense",
-   "url": "https://t.me/cupons_desconto/84594",
-   "id": "cupons_desconto/84594#PS5_DISCO",
-   "preco": 3869.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-17T13:40:57-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "cupons_desconto",
-    "links": [
-     "https://promoby.me/j11i8tjayp9a"
-    ],
-    "texto": "Console PlayStation 5 Slim Disk 1TB com Leitor de Disco + 1 Controle DualSense\nPor R$  3.869,00  na Vivo\nVer oferta:  https://promoby.me/j11i8tjayp9a\n🔔  Ative as notificações para avisarmos quando tem oferta chegando",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3950.0,
-     "parcelado": 4150.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DISCO",
-   "chave": "telegram:cupons_desconto/84594#PS5_DISCO",
-   "melhor_preco": 3869.0,
-   "ultima_vez": "2026-11-18T08:29:15-03:00",
-   "ultimo_preco": 3869.0,
-   "menor_preco": 3869.0
+   "ultima_vez": "2026-11-18T08:44:00-03:00"
   }
  ],
  "gta6_custo_final": [
@@ -10459,36 +10548,6 @@
   },
   {
    "fonte": "promobit",
-   "loja": "Shopee",
-   "codigo": "F1MD3M3S",
-   "titulo": "Compre com código promocional Shopee e economize R$10",
-   "url": "https://www.promobit.com.br/cupons/loja/shopee/",
-   "id": "68960",
-   "regra": "produtos Shopee Aplique o código promocional Shopee no carrinho de compras em compras acima de R$59.",
-   "validade": null,
-   "publicado": "2026-08-28T14:29:16-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:68960"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "Shopee",
-   "codigo": "GAMER7",
-   "titulo": "Aproveite para economizar 7% com cupom Shopee",
-   "url": "https://www.promobit.com.br/cupons/loja/shopee/",
-   "id": "68927",
-   "regra": "produtos Shopee Aproveite descontos de até 7% (máx. R$45) ao inserir o cupom na finalização da compra.",
-   "validade": null,
-   "publicado": "2026-08-27T16:12:22-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:68927"
-  },
-  {
-   "fonte": "promobit",
    "loja": "Netshoes",
    "codigo": "NOVA15",
    "titulo": "Desconto de 15% em todo o site da Netshoes",
@@ -10671,72 +10730,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:27:53-03:00",
+   "ultimo_ok": "2026-11-18T08:42:52-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:01-03:00",
+   "ultimo_ok": "2026-11-18T08:42:59-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:55-03:00",
+   "ultimo_ok": "2026-11-18T08:43:53-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:27:55-03:00",
+   "ultimo_ok": "2026-11-18T08:42:54-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:15-03:00",
+   "ultimo_ok": "2026-11-18T08:43:13-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:23-03:00",
+   "ultimo_ok": "2026-11-18T08:43:21-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:23-03:00",
+   "ultimo_ok": "2026-11-18T08:43:23-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:26-03:00",
+   "ultimo_ok": "2026-11-18T08:43:25-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:28-03:00",
+   "ultimo_ok": "2026-11-18T08:43:27-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:29-03:00",
+   "ultimo_ok": "2026-11-18T08:43:28-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 836,
+   "falhas": 837,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-18T08:28:35-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-18T08:43:34-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:37-03:00",
+   "ultimo_ok": "2026-11-18T08:43:36-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:38-03:00",
+   "ultimo_ok": "2026-11-18T08:43:38-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:28:40-03:00",
+   "ultimo_ok": "2026-11-18T08:43:39-03:00",
    "ultimo_erro": null
   }
  },
