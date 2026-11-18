@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-18T08:59:04-03:00",
+ "atualizado": "2026-11-18T09:14:23-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -1452,7 +1452,7 @@
     "produto": {
      "geracao": "3"
     },
-    "descartado": "fora da faixa (mediana 1699.00)",
+    "descartado": "fora da faixa (mediana 1697.78)",
     "alvo": {
      "pix": 700.0,
      "parcelado": 750.0,
@@ -2567,6 +2567,43 @@
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
+   "titulo": "SSD Lexar Nm610 Pro, 1TB, M.2 Nvme, Leitura De 3300mbs, Gravação 2600mbs, Preto, Lnm610p001t-rnnng",
+   "url": "https://www.kabum.com.br/produto/776249",
+   "id": "776249",
+   "preco": 1429.98,
+   "preco_pix": 1286.98,
+   "parcelado": "10x de R$ 142,99 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "STI COMPUTADORES",
+   "extra": {
+    "preco_tabela": 1429.98,
+    "openbox": false,
+    "kabum_seller_id": "8926",
+    "kabum_oferta_id": 3599709,
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "kabum.produtos:776249",
+   "melhor_preco": 1286.98
+  },
+  {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
    "titulo": "Ssd, 1tb, M.2 NVME PCIE, 2100MB/S Leit - 1650MB/S Grav, P300P1TBM28, Patriot",
    "url": "https://www.kabum.com.br/produto/303582",
    "id": "303582",
@@ -3398,43 +3435,6 @@
    "melhor_preco": 1413.91
   },
   {
-   "fonte": "kabum.produtos",
-   "tipo": "loja",
-   "loja": "KaBuM!",
-   "titulo": "SSD Lexar Nm610 Pro, 1TB, M.2 Nvme, Leitura De 3300mbs, Gravação 2600mbs, Preto, Lnm610p001t-rnnng",
-   "url": "https://www.kabum.com.br/produto/776249",
-   "id": "776249",
-   "preco": 1429.98,
-   "preco_pix": null,
-   "parcelado": "10x de R$ 142,99 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "STI COMPUTADORES",
-   "extra": {
-    "preco_tabela": 1429.98,
-    "openbox": false,
-    "kabum_seller_id": "8926",
-    "kabum_oferta_id": 3599709,
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "kabum.produtos:776249",
-   "melhor_preco": 1429.98
-  },
-  {
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
@@ -3890,6 +3890,43 @@
    "melhor_preco": 1647.05
   },
   {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "SSD Keepdata M.2 1TB Nvme - Kdnv1t-j12",
+   "url": "https://www.kabum.com.br/produto/1055949",
+   "id": "1055949",
+   "preco": 1656.46,
+   "preco_pix": null,
+   "parcelado": "10x de R$ 165,64 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "TH INFORMATICA",
+   "extra": {
+    "preco_tabela": 1656.46,
+    "openbox": false,
+    "kabum_seller_id": "9147",
+    "kabum_oferta_id": 3181100,
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "kabum.produtos:1055949",
+   "melhor_preco": 1656.46
+  },
+  {
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
@@ -4335,43 +4372,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:885085",
    "melhor_preco": 1799.99
-  },
-  {
-   "fonte": "kabum.produtos",
-   "tipo": "loja",
-   "loja": "KaBuM!",
-   "titulo": "SSD WD M.2 1TB Sn350 Green Nvme - Wds100t3g0c",
-   "url": "https://www.kabum.com.br/produto/1055183",
-   "id": "1055183",
-   "preco": 1814.62,
-   "preco_pix": null,
-   "parcelado": "10x de R$ 181,46 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "TH INFORMATICA",
-   "extra": {
-    "preco_tabela": 1814.62,
-    "openbox": false,
-    "kabum_seller_id": "9147",
-    "kabum_oferta_id": 3178077,
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "kabum.produtos:1055183",
-   "melhor_preco": 1814.62
   },
   {
    "fonte": "magalu.produtos",
@@ -7871,9 +7871,9 @@
    "titulo": "Console PlayStation 5 Pro Sony, SSD 2TB, Com Controle Sem Fio DualSense, Branco - 1000046552",
    "url": "https://www.kabum.com.br/produto/636960",
    "id": "636960",
-   "preco": 7399.0,
+   "preco": 7499.0,
    "preco_pix": null,
-   "parcelado": "10x de R$ 739,90 sem juros",
+   "parcelado": "10x de R$ 749,90 sem juros",
    "cupom": null,
    "publicado": null,
    "ativo": true,
@@ -7898,10 +7898,102 @@
    },
    "modelo": "PS5_PRO",
    "chave": "kabum.produtos:636960",
-   "melhor_preco": 7399.0
+   "melhor_preco": 7499.0
   }
  ],
  "posts": [
+  {
+   "primeira_vez": "2026-11-18T09:14:21-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Mercado Livre",
+   "titulo": "[tecnanofertas] 💥   😱  Grand Theft Auto VI PlayStation 5, Loja Oficial NegociuN no ML",
+   "url": "https://t.me/tecnanofertas/158280",
+   "id": "tecnanofertas/158280#GTA6_CODE_IN_BOX",
+   "preco": 371.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "DIADATECH",
+   "publicado": "2026-11-18T09:13:51-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "tecnanofertas",
+    "links": [
+     "https://meli.la/2hcwbKT",
+     "https://tecnan.com.br/"
+    ],
+    "texto": "💥   😱  Grand Theft Auto VI PlayStation 5, Loja Oficial NegociuN no ML\n🤑  De R$ 499 por R$ 371 no Pix\n🎟️  Cupom:  DIADATECH\n✅  LINK:  https://meli.la/2hcwbKT\n⚠️  Preço e estoque sujeitos a alteração.\n🚀  + Grupos de Ofertas, Cupons e Bot Alertas:\nhttps://tecnan.com.br\n📢  Anuncio",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 345.0,
+     "parcelado": 370.0,
+     "nota": "prazo desconhecido"
+    },
+    "entrega": {
+     "classe": "desconhecida",
+     "data": null,
+     "origem": "",
+     "cep_referencia": false,
+     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "telegram:tecnanofertas/158280#GTA6_CODE_IN_BOX",
+   "melhor_preco": 371.0,
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
+   "ultimo_preco": 371.0,
+   "menor_preco": 371.0
+  },
+  {
+   "primeira_vez": "2026-11-18T09:14:21-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Mercado Livre",
+   "titulo": "[linguicapromocoes] ⚡  Grand Theft Auto VI - PlayStation 5",
+   "url": "https://t.me/linguicapromocoes/119068",
+   "id": "linguicapromocoes/119068#GTA6_CODE_IN_BOX",
+   "preco": 371.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "DIADATECH",
+   "publicado": "2026-11-18T09:13:03-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "linguicapromocoes",
+    "links": [
+     "https://meli.la/2TEUYcv",
+     "https://linktr.ee/linguicapromo"
+    ],
+    "texto": "⚡  Grand Theft Auto VI - PlayStation 5\n🪙  R$ 371,00 no PIX com cupom:\nDIADATECH\n✨  Link do produto:\nhttps://meli.la/2TEUYcv\nanúncio\nEntre no meu grupo de ofertas 👇🏻 👇🏻\nhttps://linktr.ee/linguicapromo",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 345.0,
+     "parcelado": 370.0,
+     "nota": "prazo desconhecido"
+    },
+    "entrega": {
+     "classe": "desconhecida",
+     "data": null,
+     "origem": "",
+     "cep_referencia": false,
+     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "telegram:linguicapromocoes/119068#GTA6_CODE_IN_BOX",
+   "melhor_preco": 371.0,
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
+   "ultimo_preco": 371.0,
+   "menor_preco": 371.0
+  },
   {
    "primeira_vez": "2026-11-18T08:44:00-03:00",
    "preco_alertado": null,
@@ -7940,7 +8032,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3225649",
    "melhor_preco": 434.42,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 434.42,
    "menor_preco": 434.42
   },
@@ -8021,7 +8113,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3225589",
    "melhor_preco": 4069.91,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 4069.91,
    "menor_preco": 4069.91
   },
@@ -8056,7 +8148,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3225576",
    "melhor_preco": 3960.55,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 3960.55,
    "menor_preco": 3960.55
   },
@@ -8101,7 +8193,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84610#GTA6_CODE_IN_BOX",
    "melhor_preco": null,
-   "ultima_vez": "2026-11-18T08:59:02-03:00"
+   "ultima_vez": "2026-11-18T09:14:21-03:00"
   },
   {
    "primeira_vez": "2026-11-18T08:29:15-03:00",
@@ -8141,7 +8233,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3225562",
    "melhor_preco": 395.91,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 395.91,
    "menor_preco": 395.91
   },
@@ -8186,7 +8278,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:pobres/44917#GTA6_CODE_IN_BOX",
    "melhor_preco": null,
-   "ultima_vez": "2026-11-18T08:59:02-03:00"
+   "ultima_vez": "2026-11-18T09:14:21-03:00"
   },
   {
    "primeira_vez": "2026-11-18T08:29:15-03:00",
@@ -8261,7 +8353,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3225463",
    "melhor_preco": 4369.9,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 4369.9,
    "menor_preco": 4369.9
   },
@@ -8299,7 +8391,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:tecnoarthardware/54934#PS5_DIGITAL",
    "melhor_preco": 3955.0,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 3955.0,
    "menor_preco": 3955.0
   },
@@ -8439,7 +8531,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:tecnoarthardware/54930#GTA6_CODE_IN_BOX",
    "melhor_preco": 379.0,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 379.0,
    "menor_preco": 379.0
   },
@@ -8482,7 +8574,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:IskandarSouza/198583#GTA6_CODE_IN_BOX",
    "melhor_preco": null,
-   "ultima_vez": "2026-11-18T08:59:02-03:00"
+   "ultima_vez": "2026-11-18T09:14:21-03:00"
   },
   {
    "primeira_vez": "2026-11-18T00:31:17-03:00",
@@ -8569,7 +8661,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3225181",
    "melhor_preco": 351.0,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 351.0,
    "menor_preco": 351.0
   },
@@ -8611,7 +8703,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3225178",
    "melhor_preco": 379.0,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 379.0,
    "menor_preco": 379.0
   },
@@ -8931,7 +9023,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:pelandobr/101873#SSD_NVME_1TB",
    "melhor_preco": 878.15,
-   "ultima_vez": "2026-11-18T08:59:02-03:00",
+   "ultima_vez": "2026-11-18T09:14:21-03:00",
    "ultimo_preco": 878.15,
    "menor_preco": 878.15
   },
@@ -8973,7 +9065,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3224442",
    "melhor_preco": 4508.0,
-   "ultima_vez": "2026-11-18T08:59:02-03:00"
+   "ultima_vez": "2026-11-18T09:14:21-03:00"
   },
   {
    "primeira_vez": "2026-11-17T18:52:05-03:00",
@@ -9234,7 +9326,7 @@
    "modelo": "PS5_DIGITAL_GTA6",
    "chave": "promobit:3224137",
    "melhor_preco": 4508.9,
-   "ultima_vez": "2026-11-18T08:59:02-03:00"
+   "ultima_vez": "2026-11-18T09:14:21-03:00"
   },
   {
    "primeira_vez": "2026-11-17T18:22:30-03:00",
@@ -9478,66 +9570,6 @@
    "ultima_vez": "2026-11-17T19:07:03-03:00",
    "ultimo_preco": 631.0,
    "menor_preco": 631.0
-  },
-  {
-   "primeira_vez": "2026-11-17T18:22:30-03:00",
-   "preco_alertado": null,
-   "fonte": "promobit",
-   "tipo": "post",
-   "loja": "AliExpress",
-   "titulo": "SSD NVMe Kootion X15 Lite 1TB 2100 MBs",
-   "url": "https://www.promobit.com.br/oferta/ssd-nvme-kootion-x15-lite-1tb-2100-mbs-3223832/",
-   "id": "3223832",
-   "preco": 646.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "AFFNOV04",
-   "publicado": "2026-11-17T16:20:07-03:00",
-   "ativo": false,
-   "vendedor": null,
-   "extra": {
-    "preco_antigo": 1245.8,
-    "status": "FINISHED",
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "promobit:3223832",
-   "melhor_preco": 646.0,
-   "ultima_vez": "2026-11-18T08:59:02-03:00"
-  },
-  {
-   "primeira_vez": "2026-11-17T18:22:30-03:00",
-   "preco_alertado": null,
-   "fonte": "promobit",
-   "tipo": "post",
-   "loja": "Americanas",
-   "titulo": "Cupom 10% Gift Card Playstation",
-   "url": "https://www.promobit.com.br/oferta/cupom-10-gift-card-playstation-3223523/",
-   "id": "3223523",
-   "preco": 0.01,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "SONY10",
-   "publicado": "2026-11-17T15:11:06-03:00",
-   "ativo": false,
-   "vendedor": null,
-   "extra": {
-    "preco_antigo": null,
-    "status": "FINISHED",
-    "alvo": {
-     "pix": null,
-     "parcelado": null,
-     "nota": "sem o valor de face"
-    }
-   },
-   "modelo": "GIFT_CARD_PSN",
-   "chave": "promobit:3223523",
-   "melhor_preco": 0.01,
-   "ultima_vez": "2026-11-18T08:59:02-03:00"
   }
  ],
  "gta6_custo_final": [
@@ -10523,21 +10555,6 @@
   {
    "fonte": "promobit",
    "loja": "Nuuvem",
-   "codigo": "NUUESCURINHO5",
-   "titulo": "Obtenha 5% de economia utilizando o cupom Nuuvem",
-   "url": "https://www.promobit.com.br/cupons/loja/nuuvem/",
-   "id": "71560",
-   "regra": "produtos Nuuvem ATÉ 5% OFF EM PRODUTOS DE TECNOLOGIA SELECIONADOS",
-   "validade": "2026-11-30T20:59:59-03:00",
-   "publicado": "2026-11-05T15:31:05-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:71560"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "Nuuvem",
    "codigo": "CONSOLE5",
    "titulo": "HORA DO GAME: 5% OFF em Gift Cards na Nuuvem com cupom + PIX",
    "url": "https://www.promobit.com.br/cupons/loja/nuuvem/",
@@ -10553,21 +10570,6 @@
   {
    "fonte": "promobit",
    "loja": "Nuuvem",
-   "codigo": "CONSUUMIDOR",
-   "titulo": "Economize 15% OFF em games com o cupom Nuuvem",
-   "url": "https://www.promobit.com.br/cupons/loja/nuuvem/",
-   "id": "64917",
-   "regra": "produtos Nuuvem VÁLIDO PARA PRODUTOS SELECIONADOS, TESTE NO CARRINHO E APROVEITE!",
-   "validade": "2026-12-31T20:59:59-03:00",
-   "publicado": "2026-05-29T15:30:19-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:64917"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "Nuuvem",
    "codigo": "PS5NUU",
    "titulo": "Garanta 5% OFF em Gift Cards Playstation com cupom Nuuvem",
    "url": "https://www.promobit.com.br/cupons/loja/nuuvem/",
@@ -10579,21 +10581,6 @@
    "modelo": null,
    "extra": {},
    "chave": "promobit:63386"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "Nuuvem",
-   "codigo": "PROMOBIT10",
-   "titulo": "Especial Gamer Festival 2026 10% OFF em jogos selecionados!",
-   "url": "https://www.promobit.com.br/cupons/loja/nuuvem/",
-   "id": "62241",
-   "regra": "produtos Nuuvem Válido até 20/02!",
-   "validade": null,
-   "publicado": "2026-02-16T14:07:14-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:62241"
   },
   {
    "fonte": "promobit",
@@ -10689,72 +10676,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:57:52-03:00",
+   "ultimo_ok": "2026-11-18T09:12:51-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:00-03:00",
+   "ultimo_ok": "2026-11-18T09:12:57-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:55-03:00",
+   "ultimo_ok": "2026-11-18T09:14:08-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:57:54-03:00",
+   "ultimo_ok": "2026-11-18T09:12:53-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:15-03:00",
+   "ultimo_ok": "2026-11-18T09:13:12-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:24-03:00",
+   "ultimo_ok": "2026-11-18T09:13:20-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:25-03:00",
+   "ultimo_ok": "2026-11-18T09:13:21-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:27-03:00",
+   "ultimo_ok": "2026-11-18T09:13:23-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:29-03:00",
+   "ultimo_ok": "2026-11-18T09:13:26-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:30-03:00",
+   "ultimo_ok": "2026-11-18T09:13:27-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 838,
+   "falhas": 839,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-18T08:58:36-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-18T09:13:33-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:38-03:00",
+   "ultimo_ok": "2026-11-18T09:13:35-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:39-03:00",
+   "ultimo_ok": "2026-11-18T09:13:37-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T08:58:42-03:00",
+   "ultimo_ok": "2026-11-18T09:13:54-03:00",
    "ultimo_erro": null
   }
  },
