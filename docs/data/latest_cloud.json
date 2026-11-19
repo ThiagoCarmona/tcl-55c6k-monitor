@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-18T22:26:51-03:00",
+ "atualizado": "2026-11-18T22:41:30-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -839,24 +839,20 @@
     "produto": {
      "plataforma_incerta": false
     },
-    "entrega_prevista": "2026-11-25",
-    "entrega_ate_lancamento": false,
-    "cep_referencia": false,
-    "entrega_origem": "cotação de frete",
     "confianca": {
      "veredito": "confiavel"
     },
     "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
+     "pix": 345.0,
+     "parcelado": 370.0,
+     "nota": "chega até 18/11"
     },
     "entrega": {
-     "classe": "depois",
-     "data": "2026-11-25",
-     "origem": "loja",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: previsão 25/11 — ⚠️ chega DEPOIS do lançamento (19/11)"
+     "classe": "a_tempo",
+     "data": "2026-11-17",
+     "origem": "estimativa",
+     "cep_referencia": true,
+     "texto": "📦 Entrega: previsão 17/11 (estimativa da pesquisa de 03/10) — chega a tempo ✅ (até 18/11; lançamento 19/11)"
     }
    },
    "modelo": "GTA6_CODE_IN_BOX",
@@ -1446,7 +1442,7 @@
     "produto": {
      "geracao": "3"
     },
-    "descartado": "fora da faixa (mediana 1656.46)",
+    "descartado": "fora da faixa (mediana 1699.00)",
     "alvo": {
      "pix": 700.0,
      "parcelado": 750.0,
@@ -3076,10 +3072,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 700.0,
@@ -3719,10 +3721,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 700.0,
@@ -3865,10 +3873,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 700.0,
@@ -3879,43 +3893,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "magalu.produtos:cj77eejb91-kabum",
    "melhor_preco": 1647.05
-  },
-  {
-   "fonte": "kabum.produtos",
-   "tipo": "loja",
-   "loja": "KaBuM!",
-   "titulo": "SSD Keepdata M.2 1TB Nvme - Kdnv1t-j12",
-   "url": "https://www.kabum.com.br/produto/1055949",
-   "id": "1055949",
-   "preco": 1656.46,
-   "preco_pix": null,
-   "parcelado": "10x de R$ 165,64 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "TH INFORMATICA",
-   "extra": {
-    "preco_tabela": 1656.46,
-    "openbox": false,
-    "kabum_seller_id": "9147",
-    "kabum_oferta_id": 3181100,
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "kabum.produtos:1055949",
-   "melhor_preco": 1656.46
   },
   {
    "fonte": "kabum.produtos",
@@ -4347,6 +4324,43 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:885085",
    "melhor_preco": 1799.99
+  },
+  {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "SSD WD M.2 1TB Sn350 Green Nvme - Wds100t3g0c",
+   "url": "https://www.kabum.com.br/produto/1055183",
+   "id": "1055183",
+   "preco": 1814.62,
+   "preco_pix": null,
+   "parcelado": "10x de R$ 181,46 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "TH INFORMATICA",
+   "extra": {
+    "preco_tabela": 1814.62,
+    "openbox": false,
+    "kabum_seller_id": "9147",
+    "kabum_oferta_id": 3178077,
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "kabum.produtos:1055183",
+   "melhor_preco": 1814.62
   },
   {
    "fonte": "magalu.produtos",
@@ -4979,10 +4993,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 700.0,
@@ -5884,10 +5904,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 700.0,
@@ -6102,10 +6128,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 700.0,
@@ -6800,10 +6832,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 3550.0,
@@ -7099,10 +7137,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 3550.0,
@@ -7358,10 +7402,16 @@
       "avaliações",
       "razão social",
       "idade da conta",
-      "vendas"
+      "vendas",
+      "catálogo da loja"
      ],
      "sinais": [],
-     "codigos": []
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
     },
     "alvo": {
      "pix": 3950.0,
@@ -7552,6 +7602,104 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-18T22:41:29-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "[hardmob_promo] 💥  Console PlayStation 5 - Edição Digital + 2 Jogos + Frete Grátis",
+   "url": "https://t.me/hardmob_promo/469281",
+   "id": "hardmob_promo/469281#PS5_KIT",
+   "preco": 3884.07,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "300TAO",
+   "publicado": "2026-11-18T22:37:58-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "hardmob_promo",
+    "links": [
+     "?q=%23Amazon",
+     "https://cupom.cc/1PXsDSx9",
+     "?q=%23publi"
+    ],
+    "texto": "💥  Console PlayStation 5 - Edição Digital + 2 Jogos + Frete Grátis\n✅   Por: R$3.884,07  [no pix]\n🤏🏽  [em até 12x sem juros]\n🎟  Resgate o cupom na Página do produto 300TAO aqui:\n🏪  Loja:  #Amazon\n🔗  PEGAR OFERTA:  👇🏼\nhttps://cupom.cc/1PXsDSx9\n⚠️  Ofertas por tempo limitado.\n☕   #publi  · você me paga um café sem custo extra!\n‍",
+    "produto": {
+     "base": "PS5_DIGITAL",
+     "extras": [
+      {
+       "tipo": "jogo",
+       "valor": 200.0,
+       "nome": "frete gratis"
+      }
+     ],
+     "valor_extra": 200.0,
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 3750.0,
+     "parcelado": 3900.0,
+     "nota": "meta do PS5 Slim Digital + R$ 200 do extra"
+    }
+   },
+   "modelo": "PS5_KIT",
+   "chave": "telegram:hardmob_promo/469281#PS5_KIT",
+   "melhor_preco": 3884.07,
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
+   "ultimo_preco": 3884.07,
+   "menor_preco": 3884.07
+  },
+  {
+   "primeira_vez": "2026-11-18T22:41:29-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "[ofertasdodia] 💥  Console PlayStation 5 - Edição Digital + 2 Jogos + Frete Grátis",
+   "url": "https://t.me/OfertasDoDia/479720",
+   "id": "OfertasDoDia/479720#PS5_KIT",
+   "preco": 3884.07,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "300TAO",
+   "publicado": "2026-11-18T22:35:09-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "ofertasdodia",
+    "links": [
+     "?q=%23Amazon",
+     "https://cupom.cc/1PXsDSx9",
+     "?q=%23publi"
+    ],
+    "texto": "💥  Console PlayStation 5 - Edição Digital + 2 Jogos + Frete Grátis\n✅   Por: R$3.884,07  [no pix]\n🤏🏽  [em até 12x sem juros]\n🎟  Resgate o cupom na Página do produto 300TAO aqui:\n🏪  Loja:  #Amazon\n🔗  PEGAR OFERTA:  👇🏼\nhttps://cupom.cc/1PXsDSx9\n⚠️  Ofertas por tempo limitado.\n☕   #publi  · você me paga um café sem custo extra!\n‍",
+    "produto": {
+     "base": "PS5_DIGITAL",
+     "extras": [
+      {
+       "tipo": "jogo",
+       "valor": 200.0,
+       "nome": "frete gratis"
+      }
+     ],
+     "valor_extra": 200.0,
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 3750.0,
+     "parcelado": 3900.0,
+     "nota": "meta do PS5 Slim Digital + R$ 200 do extra"
+    }
+   },
+   "modelo": "PS5_KIT",
+   "chave": "telegram:OfertasDoDia/479720#PS5_KIT",
+   "melhor_preco": 3884.07,
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
+   "ultimo_preco": 3884.07,
+   "menor_preco": 3884.07
+  },
+  {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -7587,7 +7735,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:tecnoarthardware/55130#SSD_NVME_1TB",
    "melhor_preco": 837.5,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 837.5,
    "menor_preco": 837.5
   },
@@ -7627,7 +7775,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:IskandarSouza/198799#SSD_NVME_1TB",
    "melhor_preco": 848.48,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 848.48,
    "menor_preco": 848.48
   },
@@ -7667,7 +7815,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:IskandarSouza/198798#SSD_NVME_1TB",
    "melhor_preco": 837.5,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 837.5,
    "menor_preco": 837.5
   },
@@ -7709,7 +7857,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229261",
    "melhor_preco": 379.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 379.0,
    "menor_preco": 379.0
   },
@@ -7744,7 +7892,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3229213",
    "melhor_preco": 4387.48,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 4387.48,
    "menor_preco": 4387.48
   },
@@ -7786,7 +7934,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229206",
    "melhor_preco": 369.55,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 369.55,
    "menor_preco": 369.55
   },
@@ -7821,7 +7969,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3229192",
    "melhor_preco": 3905.07,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 3905.07,
    "menor_preco": 3905.07
   },
@@ -7856,7 +8004,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3229179",
    "melhor_preco": 4578.07,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 4578.07,
    "menor_preco": 4578.07
   },
@@ -7895,7 +8043,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:LOOPechinchas/6089#PS5_DIGITAL",
    "melhor_preco": 4184.07,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 4184.07,
    "menor_preco": 4184.07
   },
@@ -7937,7 +8085,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3228863",
    "melhor_preco": 367.26,
-   "ultima_vez": "2026-11-18T22:26:49-03:00"
+   "ultima_vez": "2026-11-18T22:41:29-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
@@ -7977,7 +8125,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3228817",
    "melhor_preco": 367.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00"
+   "ultima_vez": "2026-11-18T22:41:29-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
@@ -8017,7 +8165,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3228800",
    "melhor_preco": 367.26,
-   "ultima_vez": "2026-11-18T22:26:49-03:00"
+   "ultima_vez": "2026-11-18T22:41:29-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
@@ -8061,7 +8209,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:tecnanofertas/158446#GTA6_CODE_IN_BOX",
    "melhor_preco": 363.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 363.0,
    "menor_preco": 363.0
   },
@@ -8103,7 +8251,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3228766",
    "melhor_preco": 363.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 363.0,
    "menor_preco": 363.0
   },
@@ -8143,7 +8291,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:tecnanofertas/158441#SSD_NVME_1TB",
    "melhor_preco": 880.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 880.0,
    "menor_preco": 880.0
   },
@@ -8178,7 +8326,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3228473",
    "melhor_preco": 3759.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00"
+   "ultima_vez": "2026-11-18T22:41:29-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
@@ -8221,7 +8369,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84632#GTA6_CODE_IN_BOX",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 359.0,
    "menor_preco": 359.0
   },
@@ -8388,7 +8536,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3228128",
    "melhor_preco": 4609.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 4609.0,
    "menor_preco": 4609.0
   },
@@ -8589,7 +8737,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:vrlofertas/72715#PS5_DIGITAL",
    "melhor_preco": 3739.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 3739.0,
    "menor_preco": 3739.0
   },
@@ -8634,7 +8782,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:promotop/262365#GTA6_CODE_IN_BOX",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 359.0,
    "menor_preco": 359.0
   },
@@ -8679,7 +8827,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:vrlofertas/72714#GTA6_CODE_IN_BOX",
    "melhor_preco": 359.9,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 359.9,
    "menor_preco": 359.9
   },
@@ -8956,7 +9104,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3228045",
    "melhor_preco": 3759.0,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
+   "ultima_vez": "2026-11-18T22:41:29-03:00",
    "ultimo_preco": 3759.0,
    "menor_preco": 3759.0
   },
@@ -9082,92 +9230,6 @@
    "ultima_vez": "2026-11-18T17:01:13-03:00",
    "ultimo_preco": 3759.0,
    "menor_preco": 3759.0
-  },
-  {
-   "primeira_vez": "2026-11-18T16:31:43-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Amazon",
-   "titulo": "[achadosdotb] 🔥 🎮   PlayStation 5 Slim Digital (825   GB)  +Astro Bot e Grand Turismo 7",
-   "url": "https://t.me/achadosdotb/12123",
-   "id": "achadosdotb/12123#PS5_KIT",
-   "preco": 3884.07,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "300TAO",
-   "publicado": "2026-11-18T15:27:58-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "achadosdotb",
-    "links": [
-     "https://tecno.click/8mg",
-     "https://tecnoblog.net/testamos/playstation-5-review/"
-    ],
-    "texto": "🔥 🎮   PlayStation 5 Slim Digital (825   GB)  +Astro Bot e Grand Turismo 7\nPor  R$ 3.884,07  no Pix\n🏷  Aplique o cupom  300TAO  (apenas para assinantes Prime!)\n👉  Aproveite esta oferta na Amazon:  https://tecno.click/8mg\n✨  SSD de alta velocidade\n✨  Suporta 4K a 120 fps e ray-tracing\n✨  Retrocompátivel com games do PS4\n✖️  Não aceita jogos em disco\n✖️  Armazenamento limitado\n🔎  Review do PlayStation 5 padrão:  https://tecnoblog.net/testamos/playstation-5-review/",
-    "produto": {
-     "base": "PS5_DIGITAL",
-     "extras": [
-      {
-       "tipo": "jogo",
-       "valor": 200.0,
-       "nome": "e grand turismo 7"
-      }
-     ],
-     "valor_extra": 200.0,
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3750.0,
-     "parcelado": 3900.0,
-     "nota": "meta do PS5 Slim Digital + R$ 200 do extra"
-    }
-   },
-   "modelo": "PS5_KIT",
-   "chave": "telegram:achadosdotb/12123#PS5_KIT",
-   "melhor_preco": 3884.07,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
-   "ultimo_preco": 3884.07,
-   "menor_preco": 3884.07
-  },
-  {
-   "primeira_vez": "2026-11-18T16:31:43-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "?",
-   "titulo": "[cupons_desconto] PS5 Console PlayStation 5 Slim Disk 1TB com Leitor de Disco 1 DualSense 4K 120fps Branco",
-   "url": "https://t.me/cupons_desconto/84622",
-   "id": "cupons_desconto/84622#PS5_DISCO",
-   "preco": 3644.1,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-18T13:40:20-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "cupons_desconto",
-    "links": [
-     "https://promoby.me/h11n57vaphx5"
-    ],
-    "texto": "PS5 Console PlayStation 5 Slim Disk 1TB com Leitor de Disco 1 DualSense 4K 120fps Branco\nPor R$  3.644,10  na Vivo\nVer oferta:  https://promoby.me/h11n57vaphx5\n🔔  Ative as notificações para avisarmos quando tem oferta chegando",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3950.0,
-     "parcelado": 4150.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DISCO",
-   "chave": "telegram:cupons_desconto/84622#PS5_DISCO",
-   "melhor_preco": 3644.1,
-   "ultima_vez": "2026-11-18T22:26:49-03:00",
-   "ultimo_preco": 3644.1,
-   "menor_preco": 3644.1
   }
  ],
  "gta6_custo_final": [
@@ -10319,72 +10381,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:25:30-03:00",
+   "ultimo_ok": "2026-11-18T22:40:30-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:25:37-03:00",
+   "ultimo_ok": "2026-11-18T22:40:37-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:26:26-03:00",
+   "ultimo_ok": "2026-11-18T22:41:24-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:25:32-03:00",
+   "ultimo_ok": "2026-11-18T22:40:32-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:25:50-03:00",
+   "ultimo_ok": "2026-11-18T22:40:50-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:25:58-03:00",
+   "ultimo_ok": "2026-11-18T22:40:59-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:25:59-03:00",
+   "ultimo_ok": "2026-11-18T22:41:00-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:26:01-03:00",
+   "ultimo_ok": "2026-11-18T22:41:01-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:26:03-03:00",
+   "ultimo_ok": "2026-11-18T22:41:03-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:26:04-03:00",
+   "ultimo_ok": "2026-11-18T22:41:04-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 844,
+   "falhas": 845,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-18T22:26:10-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-18T22:41:09-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:26:12-03:00",
+   "ultimo_ok": "2026-11-18T22:41:11-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:26:14-03:00",
+   "ultimo_ok": "2026-11-18T22:41:12-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-18T22:26:15-03:00",
+   "ultimo_ok": "2026-11-18T22:41:14-03:00",
    "ultimo_erro": null
   }
  },
