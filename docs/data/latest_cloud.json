@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-19T06:36:27-03:00",
+ "atualizado": "2026-11-19T06:51:37-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -776,6 +776,48 @@
    "melhor_preco": 414.0
   },
   {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Videogame Sony PS5 Diablo IV para Xbox",
+   "url": "https://www.magazineluiza.com.br/videogame-sony-ps5-diablo-iv-para-xbox/p/hh31e551ag/ga/otga/",
+   "id": "hh31e551ag-nocnocestadosunidos",
+   "preco": 446.88,
+   "preco_pix": 415.6,
+   "parcelado": "7x R$ 63,84 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": false,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 472.87,
+    "1p": false,
+    "anuncio": "hh31e551ag",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.09,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 4.4
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": true
+    },
+    "descartado": "fora da faixa do produto (2500 a 7000)",
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "magalu.produtos:hh31e551ag-nocnocestadosunidos",
+   "melhor_preco": 415.6
+  },
+  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -1394,7 +1436,7 @@
    "parcelado": "10x de R$ 99,88 sem juros",
    "cupom": null,
    "publicado": null,
-   "ativo": false,
+   "ativo": true,
    "vendedor": "FLER EQUIPAMENTOS E INTERMEDICAO DE NEGOCIOS LTDA",
    "extra": {
     "preco_tabela": 998.88,
@@ -1404,7 +1446,18 @@
     "produto": {
      "geracao": "3"
     },
-    "descartado": "fora da faixa (mediana 1699.49)",
+    "confianca": {
+     "veredito": "suspeito",
+     "checagens": [
+      "preço"
+     ],
+     "sinais": [
+      "preço R$ 898,99 é 22% menor que o da loja confiável mais barata (R$ 1.149,99, KaBuM!)"
+     ],
+     "codigos": [
+      "preco_muito_abaixo"
+     ]
+    },
     "alvo": {
      "pix": 700.0,
      "parcelado": 750.0,
@@ -1453,12 +1506,8 @@
       "vendas",
       "catálogo da loja"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ],
+     "sinais": [],
+     "codigos": [],
      "catalogo": {
       "total": 261,
       "tv": 4,
@@ -1511,12 +1560,8 @@
       "razão social",
       "catálogo da loja"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ],
+     "sinais": [],
+     "codigos": [],
      "catalogo": {
       "total": 1,
       "tv": 0,
@@ -2091,12 +2136,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -2241,12 +2282,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -2298,12 +2335,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -2501,12 +2534,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -2553,11 +2582,9 @@
       "idade da conta"
      ],
      "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)",
       "vendedor na loja só desde 19/10/2026"
      ],
      "codigos": [
-      "sem_avaliacoes",
       "vendedor_recente"
      ]
     },
@@ -2645,12 +2672,8 @@
       "razão social",
       "idade da conta"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -2698,6 +2721,59 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:303582",
    "melhor_preco": 1288.0
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "SSD 1TB Kingston NV3, M.2 2280, PCIe 4.0 NVMe, Leitura/Gravação: 6000/4000 MB/s, SNV3S/1000G  KINGSTON",
+   "url": "https://www.magazineluiza.com.br/ssd-1tb-kingston-nv3-m-2-2280-pcie-4-0-nvme-leitura-gravacao-6000-4000-mb-s-snv3s-1000g-kingston/p/kk1fb8e7cj/in/ssdi/",
+   "id": "kk1fb8e7cj-mirandacomputacao",
+   "preco": 1521.36,
+   "preco_pix": 1293.16,
+   "parcelado": "10x R$ 152,14 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Miranda Computação",
+   "extra": {
+    "preco_de": 1521.36,
+    "1p": false,
+    "anuncio": "kk1fb8e7cj",
+    "vendedor_id": "mirandacomputacao",
+    "ficha": {
+     "avaliacoes": 760,
+     "peso_kg": 0.05,
+     "razao_social": "MIRANDA COMPUTAÇÃO E COMERCIO LTDA",
+     "vendedor_desde": "2020-01-20",
+     "vendas_vendedor": 100000,
+     "nota_vendedor": 5
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:kk1fb8e7cj-mirandacomputacao",
+   "melhor_preco": 1293.16
   },
   {
    "fonte": "magalu.produtos",
@@ -3426,12 +3502,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -3495,6 +3567,59 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "magalu.produtos:ek214c5968-nocnocestadosunidos",
    "melhor_preco": 1416.32
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "SSD Acer Predator GM7 1TB PCIe Gen4 NVMe M.2 2280",
+   "url": "https://www.magazineluiza.com.br/ssd-acer-predator-gm7-1tb-pcie-gen4-nvme-m-2-2280/p/ah89f165c6/in/ssdi/",
+   "id": "ah89f165c6-nocnocestadosunidos",
+   "preco": 1581.72,
+   "preco_pix": 1471.0,
+   "parcelado": "7x R$ 225,96 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 1645.05,
+    "1p": false,
+    "anuncio": "ah89f165c6",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.05,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 4.4
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:ah89f165c6-nocnocestadosunidos",
+   "melhor_preco": 1471.0
   },
   {
    "fonte": "kabum.produtos",
@@ -3765,12 +3890,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -3781,6 +3902,59 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "magalu.produtos:kd6gfhcak5-nocnocestadosunidos",
    "melhor_preco": 1569.43
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Unidade de estado sólido Lexar 1TB NM790 SSD PCIe Gen4 NVMe M.2 2280",
+   "url": "https://www.magazineluiza.com.br/unidade-de-estado-solido-lexar-1tb-nm790-ssd-pcie-gen4-nvme-m-2-2280/p/gj8b01e544/in/ssdi/",
+   "id": "gj8b01e544-nocnocestadosunidos",
+   "preco": 1746.36,
+   "preco_pix": 1624.11,
+   "parcelado": "7x R$ 249,48 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 1817.57,
+    "1p": false,
+    "anuncio": "gj8b01e544",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.05,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 4.4
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:gj8b01e544-nocnocestadosunidos",
+   "melhor_preco": 1624.11
   },
   {
    "fonte": "magalu.produtos",
@@ -3993,12 +4167,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -4009,63 +4179,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "magalu.produtos:jf205c0hkj-nocnocestadosunidos",
    "melhor_preco": 1700.67
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "SSD Acer Predator GM7 1TB PCIe Gen4 NVMe M.2 2280",
-   "url": "https://www.magazineluiza.com.br/ssd-acer-predator-gm7-1tb-pcie-gen4-nvme-m-2-2280/p/ah89f165c6/in/ssdi/",
-   "id": "ah89f165c6-nocnocestadosunidos",
-   "preco": 1846.32,
-   "preco_pix": 1717.08,
-   "parcelado": "7x R$ 263,76 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "nocnocestadosunidos",
-   "extra": {
-    "preco_de": 1918.29,
-    "1p": false,
-    "anuncio": "ah89f165c6",
-    "vendedor_id": "nocnocestadosunidos",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.05,
-     "razao_social": "nocnoc Estados Unidos",
-     "vendedor_desde": "2024-10-29",
-     "vendas_vendedor": 70000,
-     "nota_vendedor": 4.4
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:ah89f165c6-nocnocestadosunidos",
-   "melhor_preco": 1717.08
   },
   {
    "fonte": "magalu.produtos",
@@ -4107,12 +4220,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -4195,63 +4304,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:1055172",
    "melhor_preco": 1761.03
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Unidade de estado sólido Lexar 1TB NM790 SSD PCIe Gen4 NVMe M.2 2280",
-   "url": "https://www.magazineluiza.com.br/unidade-de-estado-solido-lexar-1tb-nm790-ssd-pcie-gen4-nvme-m-2-2280/p/gj8b01e544/in/ssdi/",
-   "id": "gj8b01e544-nocnocestadosunidos",
-   "preco": 1934.52,
-   "preco_pix": 1799.1,
-   "parcelado": "7x R$ 276,36 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "nocnocestadosunidos",
-   "extra": {
-    "preco_de": 2014.08,
-    "1p": false,
-    "anuncio": "gj8b01e544",
-    "vendedor_id": "nocnocestadosunidos",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.05,
-     "razao_social": "nocnoc Estados Unidos",
-     "vendedor_desde": "2024-10-29",
-     "vendas_vendedor": 70000,
-     "nota_vendedor": 4.4
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:gj8b01e544-nocnocestadosunidos",
-   "melhor_preco": 1799.1
   },
   {
    "fonte": "kabum.produtos",
@@ -4415,12 +4467,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -4690,47 +4738,6 @@
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
-   "titulo": "Ssd Kingston Nv3 1tb 2280 Pcie Nvme - Snv3s-1000g",
-   "url": "https://www.magazineluiza.com.br/ssd-kingston-nv3-1tb-2280-pcie-nvme-snv3s-1000g/p/fg6he7460e/in/ssdi/",
-   "id": "fg6he7460e-lojawebcontinentalmarketplace",
-   "preco": 1973.82,
-   "preco_pix": null,
-   "parcelado": "10x R$ 197,38 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Webcontinental Marketplace",
-   "extra": {
-    "preco_de": 1973.82,
-    "1p": false,
-    "anuncio": "fg6he7460e",
-    "vendedor_id": "lojawebcontinentalmarketplace",
-    "ficha": {
-     "avaliacoes": 760,
-     "peso_kg": 0.04,
-     "razao_social": "Webcontinental Ltda",
-     "vendedor_desde": "2023-04-18",
-     "vendas_vendedor": 200000,
-     "nota_vendedor": 3.2
-    },
-    "anuncio_exclusivo": false,
-    "confianca": {
-     "veredito": "confiavel"
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:fg6he7460e-lojawebcontinentalmarketplace",
-   "melhor_preco": 1973.82
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
    "titulo": "Ssd Kingston Nv3 M.2 2280 Nvme 4.0 1tb",
    "url": "https://www.magazineluiza.com.br/ssd-kingston-nv3-m-2-2280-nvme-4-0-1tb/p/fhfej02k92/in/ssdi/",
    "id": "fhfej02k92-comercialacvendas",
@@ -4861,12 +4868,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -4918,12 +4921,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -5110,12 +5109,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -5345,12 +5340,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -5568,12 +5559,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -6164,12 +6151,8 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
+     "sinais": [],
+     "codigos": []
     },
     "alvo": {
      "pix": 700.0,
@@ -7737,7 +7720,7 @@
    "modelo": "PS5_KIT",
    "chave": "promobit:3230093",
    "melhor_preco": 4793.19,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 4793.19,
    "menor_preco": 4793.19
   },
@@ -7772,7 +7755,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3230091",
    "melhor_preco": 4274.9,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 4274.9,
    "menor_preco": 4274.9
   },
@@ -7807,7 +7790,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3230090",
    "melhor_preco": 3999.9,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 3999.9,
    "menor_preco": 3999.9
   },
@@ -7842,7 +7825,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3230014",
    "melhor_preco": 3909.79,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 3909.79,
    "menor_preco": 3909.79
   },
@@ -7884,7 +7867,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229901",
    "melhor_preco": 120.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00"
+   "ultima_vez": "2026-11-19T06:51:35-03:00"
   },
   {
    "primeira_vez": "2026-11-19T06:06:46-03:00",
@@ -7924,7 +7907,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229874",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 359.0,
    "menor_preco": 359.0
   },
@@ -7971,7 +7954,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:tecnanofertas/158503#GTA6_CODE_IN_BOX",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 359.0,
    "menor_preco": 359.0
   },
@@ -8006,7 +7989,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3229746",
    "melhor_preco": 3999.9,
-   "ultima_vez": "2026-11-19T06:36:25-03:00"
+   "ultima_vez": "2026-11-19T06:51:35-03:00"
   },
   {
    "primeira_vez": "2026-11-19T06:06:46-03:00",
@@ -8039,7 +8022,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3229735",
    "melhor_preco": 4274.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00"
+   "ultima_vez": "2026-11-19T06:51:35-03:00"
   },
   {
    "primeira_vez": "2026-11-19T06:06:46-03:00",
@@ -8072,7 +8055,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3229663",
    "melhor_preco": 4274.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 4274.0,
    "menor_preco": 4274.0
   },
@@ -8107,7 +8090,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3229653",
    "melhor_preco": 3999.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 3999.0,
    "menor_preco": 3999.0
   },
@@ -8149,7 +8132,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3226473",
    "melhor_preco": 351.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00"
+   "ultima_vez": "2026-11-19T06:51:35-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:41:29-03:00",
@@ -8407,7 +8390,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229261",
    "melhor_preco": 379.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 379.0,
    "menor_preco": 379.0
   },
@@ -8484,7 +8467,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229206",
    "melhor_preco": 369.55,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 369.55,
    "menor_preco": 369.55
   },
@@ -8593,7 +8576,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:LOOPechinchas/6089#PS5_DIGITAL",
    "melhor_preco": 4184.07,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 4184.07,
    "menor_preco": 4184.07
   },
@@ -8635,7 +8618,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3228863",
    "melhor_preco": 367.26,
-   "ultima_vez": "2026-11-19T06:36:25-03:00"
+   "ultima_vez": "2026-11-19T06:51:35-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
@@ -8876,7 +8859,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3228473",
    "melhor_preco": 3759.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00"
+   "ultima_vez": "2026-11-19T06:51:35-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
@@ -8919,7 +8902,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84632#GTA6_CODE_IN_BOX",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultima_vez": "2026-11-19T06:51:35-03:00",
    "ultimo_preco": 359.0,
    "menor_preco": 359.0
   },
@@ -10426,72 +10409,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:32-03:00",
+   "ultimo_ok": "2026-11-19T06:50:32-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:39-03:00",
+   "ultimo_ok": "2026-11-19T06:50:39-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:36:17-03:00",
+   "ultimo_ok": "2026-11-19T06:51:26-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:34-03:00",
+   "ultimo_ok": "2026-11-19T06:50:33-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:44-03:00",
+   "ultimo_ok": "2026-11-19T06:50:52-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:52-03:00",
+   "ultimo_ok": "2026-11-19T06:51:00-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:53-03:00",
+   "ultimo_ok": "2026-11-19T06:51:00-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:54-03:00",
+   "ultimo_ok": "2026-11-19T06:51:02-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:56-03:00",
+   "ultimo_ok": "2026-11-19T06:51:04-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:35:57-03:00",
+   "ultimo_ok": "2026-11-19T06:51:05-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 850,
+   "falhas": 851,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-19T06:36:02-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-19T06:51:11-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:36:04-03:00",
+   "ultimo_ok": "2026-11-19T06:51:12-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:36:05-03:00",
+   "ultimo_ok": "2026-11-19T06:51:13-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:36:07-03:00",
+   "ultimo_ok": "2026-11-19T06:51:15-03:00",
    "ultimo_erro": null
   }
  },
