@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-19T06:21:37-03:00",
+ "atualizado": "2026-11-19T06:36:27-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -1404,7 +1404,7 @@
     "produto": {
      "geracao": "3"
     },
-    "descartado": "fora da faixa (mediana 1677.73)",
+    "descartado": "fora da faixa (mediana 1699.49)",
     "alvo": {
      "pix": 700.0,
      "parcelado": 750.0,
@@ -3845,43 +3845,6 @@
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
-   "titulo": "SSD Keepdata M.2 1TB Nvme - Kdnv1t-j12",
-   "url": "https://www.kabum.com.br/produto/1055949",
-   "id": "1055949",
-   "preco": 1656.46,
-   "preco_pix": null,
-   "parcelado": "10x de R$ 165,64 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "TH INFORMATICA",
-   "extra": {
-    "preco_tabela": 1656.46,
-    "openbox": false,
-    "kabum_seller_id": "9147",
-    "kabum_oferta_id": 3181100,
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "kabum.produtos:1055949",
-   "melhor_preco": 1656.46
-  },
-  {
-   "fonte": "kabum.produtos",
-   "tipo": "loja",
-   "loja": "KaBuM!",
    "titulo": "SSD 1TB Crucial E100, M.2 2280 NVMe PCie Gen 4x4, Leitura 5000MB/s, Gravação 4500MB/s - Ct1000e100ssd8",
    "url": "https://www.kabum.com.br/produto/775557",
    "id": "775557",
@@ -4324,6 +4287,43 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:885085",
    "melhor_preco": 1799.99
+  },
+  {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "SSD WD M.2 1TB Sn350 Green Nvme - Wds100t3g0c",
+   "url": "https://www.kabum.com.br/produto/1055183",
+   "id": "1055183",
+   "preco": 1814.62,
+   "preco_pix": null,
+   "parcelado": "10x de R$ 181,46 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "TH INFORMATICA",
+   "extra": {
+    "preco_tabela": 1814.62,
+    "openbox": false,
+    "kabum_seller_id": "9147",
+    "kabum_oferta_id": 3178077,
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "kabum.produtos:1055183",
+   "melhor_preco": 1814.62
   },
   {
    "fonte": "magalu.produtos",
@@ -7699,6 +7699,119 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-19T06:36:25-03:00",
+   "preco_alertado": null,
+   "fonte": "promobit",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "Bundle Marvel's Wolverine + PlayStation 5 Slim Disk - Pacote Astro Bot e Gran Turismo 7",
+   "url": "https://www.promobit.com.br/oferta/bundle-marvels-wolverine-playstation-5-slim-disk-pacote-astro-bot-e-gran-turismo-7-3230093/",
+   "id": "3230093",
+   "preco": 4793.19,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "12x de R$ 399,46 sem juros",
+   "publicado": "2026-11-19T06:21:33-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "preco_antigo": 5499.8,
+    "status": "APPROVED",
+    "produto": {
+     "base": "PS5_DISCO",
+     "extras": [
+      {
+       "tipo": "edicao",
+       "valor": 200.0
+      }
+     ],
+     "valor_extra": 200.0,
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 4150.0,
+     "parcelado": 4350.0,
+     "nota": "meta do PS5 Slim com leitor + R$ 200 do extra"
+    }
+   },
+   "modelo": "PS5_KIT",
+   "chave": "promobit:3230093",
+   "melhor_preco": 4793.19,
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultimo_preco": 4793.19,
+   "menor_preco": 4793.19
+  },
+  {
+   "primeira_vez": "2026-11-19T06:36:25-03:00",
+   "preco_alertado": null,
+   "fonte": "promobit",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "PlayStation5 Slim Disk - Pacote ASTRO BOT e Gran Turismo 7",
+   "url": "https://www.promobit.com.br/oferta/playstation5-slim-disk-pacote-astro-bot-e-gran-turismo-7-3230091/",
+   "id": "3230091",
+   "preco": 4274.9,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "12x de R$ 375,01 sem juros",
+   "publicado": "2026-11-19T06:19:08-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "preco_antigo": 5099.9,
+    "status": "APPROVED",
+    "produto": {
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "promobit:3230091",
+   "melhor_preco": 4274.9,
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultimo_preco": 4274.9,
+   "menor_preco": 4274.9
+  },
+  {
+   "primeira_vez": "2026-11-19T06:36:25-03:00",
+   "preco_alertado": null,
+   "fonte": "promobit",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "PlayStation5 Slim Digital 825GB Pacote ASTRO BOT e Gran Turismo 7",
+   "url": "https://www.promobit.com.br/oferta/playstation5-slim-digital-825gb-pacote-astro-bot-e-gran-turismo-7-3230090/",
+   "id": "3230090",
+   "preco": 3999.9,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-19T06:18:37-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "preco_antigo": 4599.9,
+    "status": "APPROVED",
+    "produto": {
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "promobit:3230090",
+   "melhor_preco": 3999.9,
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
+   "ultimo_preco": 3999.9,
+   "menor_preco": 3999.9
+  },
+  {
    "primeira_vez": "2026-11-19T06:06:46-03:00",
    "preco_alertado": null,
    "fonte": "promobit",
@@ -7729,7 +7842,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3230014",
    "melhor_preco": 3909.79,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 3909.79,
    "menor_preco": 3909.79
   },
@@ -7771,7 +7884,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229901",
    "melhor_preco": 120.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00"
+   "ultima_vez": "2026-11-19T06:36:25-03:00"
   },
   {
    "primeira_vez": "2026-11-19T06:06:46-03:00",
@@ -7811,7 +7924,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229874",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 359.0,
    "menor_preco": 359.0
   },
@@ -7858,7 +7971,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:tecnanofertas/158503#GTA6_CODE_IN_BOX",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 359.0,
    "menor_preco": 359.0
   },
@@ -7893,7 +8006,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3229746",
    "melhor_preco": 3999.9,
-   "ultima_vez": "2026-11-19T06:21:35-03:00"
+   "ultima_vez": "2026-11-19T06:36:25-03:00"
   },
   {
    "primeira_vez": "2026-11-19T06:06:46-03:00",
@@ -7926,7 +8039,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3229735",
    "melhor_preco": 4274.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00"
+   "ultima_vez": "2026-11-19T06:36:25-03:00"
   },
   {
    "primeira_vez": "2026-11-19T06:06:46-03:00",
@@ -7959,7 +8072,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3229663",
    "melhor_preco": 4274.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 4274.0,
    "menor_preco": 4274.0
   },
@@ -7994,7 +8107,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3229653",
    "melhor_preco": 3999.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 3999.0,
    "menor_preco": 3999.0
   },
@@ -8036,7 +8149,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3226473",
    "melhor_preco": 351.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00"
+   "ultima_vez": "2026-11-19T06:36:25-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:41:29-03:00",
@@ -8294,7 +8407,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229261",
    "melhor_preco": 379.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 379.0,
    "menor_preco": 379.0
   },
@@ -8371,7 +8484,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3229206",
    "melhor_preco": 369.55,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 369.55,
    "menor_preco": 369.55
   },
@@ -8480,7 +8593,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:LOOPechinchas/6089#PS5_DIGITAL",
    "melhor_preco": 4184.07,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 4184.07,
    "menor_preco": 4184.07
   },
@@ -8522,7 +8635,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3228863",
    "melhor_preco": 367.26,
-   "ultima_vez": "2026-11-19T06:21:35-03:00"
+   "ultima_vez": "2026-11-19T06:36:25-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
@@ -8763,7 +8876,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3228473",
    "melhor_preco": 3759.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00"
+   "ultima_vez": "2026-11-19T06:36:25-03:00"
   },
   {
    "primeira_vez": "2026-11-18T22:26:49-03:00",
@@ -8806,7 +8919,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84632#GTA6_CODE_IN_BOX",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-19T06:21:35-03:00",
+   "ultima_vez": "2026-11-19T06:36:25-03:00",
    "ultimo_preco": 359.0,
    "menor_preco": 359.0
   },
@@ -9177,141 +9290,6 @@
    "ultima_vez": "2026-11-18T23:11:32-03:00",
    "ultimo_preco": 3739.0,
    "menor_preco": 3739.0
-  },
-  {
-   "primeira_vez": "2026-11-18T16:31:43-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Mercado Livre",
-   "titulo": "[promotop] Jogo Grand Theft Auto Vi Edição Standard - Playstation 5",
-   "url": "https://t.me/promotop/262365",
-   "id": "promotop/262365#GTA6_CODE_IN_BOX",
-   "preco": 359.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "MP100GAMES",
-   "publicado": "2026-11-18T16:07:45-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "promotop",
-    "links": [
-     "https://meli.la/31VMeTN"
-    ],
-    "texto": "Jogo Grand Theft Auto Vi Edição Standard - Playstation 5\n🔥  Por:  R$ 359,00  parcelado (Cartão Mercado Pago)\n🎯  Usem o cupom:  MP100GAMES\n🛒   https://meli.la/31VMeTN",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 345.0,
-     "parcelado": 370.0,
-     "nota": "prazo desconhecido"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:promotop/262365#GTA6_CODE_IN_BOX",
-   "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-18T23:11:32-03:00",
-   "ultimo_preco": 359.0,
-   "menor_preco": 359.0
-  },
-  {
-   "primeira_vez": "2026-11-18T16:31:43-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "?",
-   "titulo": "[vrlofertas] Grand Theft Auto VI - Playstation 5  | De   Por  R$ 359,90",
-   "url": "https://t.me/vrlofertas/72714",
-   "id": "vrlofertas/72714#GTA6_CODE_IN_BOX",
-   "preco": 359.9,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "MP100GAMES",
-   "publicado": "2026-11-18T16:07:27-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "vrlofertas",
-    "links": [
-     "https://cutt.ly/SyA7JvGS"
-    ],
-    "texto": "Grand Theft Auto VI - Playstation 5  | De   Por  R$ 359,90\n☝️   Use o Cupom:   MP100GAMES\n🚛   Frete Grátis  (Consultar CEP)\n✅  Parcelado em  10x sem juros\n‼️   Exclusivo para compras com cartão Mercado Pago!\n➡️   COMPRE PELO SITE:   https://cutt.ly/SyA7JvGS",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 345.0,
-     "parcelado": 370.0,
-     "nota": "prazo desconhecido"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:vrlofertas/72714#GTA6_CODE_IN_BOX",
-   "melhor_preco": 359.9,
-   "ultima_vez": "2026-11-18T23:11:32-03:00",
-   "ultimo_preco": 359.9,
-   "menor_preco": 359.9
-  },
-  {
-   "primeira_vez": "2026-11-18T16:31:43-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Mercado Livre",
-   "titulo": "[peperaiohardware] Jogo Grand Theft Auto Vi Edição Standard - Playstation 5",
-   "url": "https://t.me/peperaiohardware/123886",
-   "id": "peperaiohardware/123886#GTA6_CODE_IN_BOX",
-   "preco": 359.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "MP100GAMES",
-   "publicado": "2026-11-18T16:05:56-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "peperaiohardware",
-    "links": [
-     "https://meli.la/1PkcAvs"
-    ],
-    "texto": "Jogo Grand Theft Auto Vi Edição Standard - Playstation 5\n💵  R$ 359 em 7x sem juros\n🏷️  Use cupom:  MP100GAMES\n✅  Link do produto:\nhttps://meli.la/1PkcAvs\n🔔  BOT DE ALERTAS:  https://t.me/alertadaspromobot",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 345.0,
-     "parcelado": 370.0,
-     "nota": "prazo desconhecido"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:peperaiohardware/123886#GTA6_CODE_IN_BOX",
-   "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-18T17:16:16-03:00",
-   "ultimo_preco": 359.0,
-   "menor_preco": 359.0
   }
  ],
  "gta6_custo_final": [
@@ -10448,72 +10426,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:20:32-03:00",
+   "ultimo_ok": "2026-11-19T06:35:32-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:20:40-03:00",
+   "ultimo_ok": "2026-11-19T06:35:39-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:21:32-03:00",
+   "ultimo_ok": "2026-11-19T06:36:17-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:20:34-03:00",
+   "ultimo_ok": "2026-11-19T06:35:34-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:20:48-03:00",
+   "ultimo_ok": "2026-11-19T06:35:44-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:20:57-03:00",
+   "ultimo_ok": "2026-11-19T06:35:52-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:20:57-03:00",
+   "ultimo_ok": "2026-11-19T06:35:53-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:20:59-03:00",
+   "ultimo_ok": "2026-11-19T06:35:54-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:21:01-03:00",
+   "ultimo_ok": "2026-11-19T06:35:56-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:21:02-03:00",
+   "ultimo_ok": "2026-11-19T06:35:57-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 849,
+   "falhas": 850,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-19T06:21:08-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-19T06:36:02-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:21:09-03:00",
+   "ultimo_ok": "2026-11-19T06:36:04-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:21:10-03:00",
+   "ultimo_ok": "2026-11-19T06:36:05-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-19T06:21:21-03:00",
+   "ultimo_ok": "2026-11-19T06:36:07-03:00",
    "ultimo_erro": null
   }
  },
