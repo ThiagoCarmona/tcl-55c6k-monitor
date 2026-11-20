@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-20T05:16:49-03:00",
+ "atualizado": "2026-11-20T05:31:51-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -4044,6 +4044,100 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-20T05:31:50-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Mercado Livre",
+   "titulo": "[hardmob_promo] 💥  Grand Theft Auto Vi - Playstation 5",
+   "url": "https://t.me/hardmob_promo/471212",
+   "id": "hardmob_promo/471212#GTA6_CODE_IN_BOX",
+   "preco": 339.92,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-20T05:23:56-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "hardmob_promo",
+    "links": [
+     "?q=%23MercadoLivre",
+     "https://meli.la/2v784fN",
+     "?q=%23publi"
+    ],
+    "texto": "💥  Grand Theft Auto Vi - Playstation 5\n❌\n✅   Por: R$339,92  [no pix]\n🔻  24% de desconto\n🤏🏽  [em até 8x sem juros]\n🏪  Loja:  #MercadoLivre\n🔗  PEGAR OFERTA:  👇🏼\nhttps://meli.la/2v784fN\n⚠️  Ofertas por tempo limitado.\n☕   #publi  · você me paga um café sem custo extra!",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 300.0,
+     "parcelado": 320.0,
+     "nota": "chega depois de 18/11"
+    },
+    "entrega": {
+     "classe": "desconhecida",
+     "data": null,
+     "origem": "",
+     "cep_referencia": false,
+     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "telegram:hardmob_promo/471212#GTA6_CODE_IN_BOX",
+   "melhor_preco": 339.92,
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
+   "ultimo_preco": 339.92,
+   "menor_preco": 339.92
+  },
+  {
+   "primeira_vez": "2026-11-20T05:31:50-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Mercado Livre",
+   "titulo": "[ofertasdodia] 💥  Grand Theft Auto Vi - Playstation 5",
+   "url": "https://t.me/OfertasDoDia/481556",
+   "id": "OfertasDoDia/481556#GTA6_CODE_IN_BOX",
+   "preco": 339.92,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-20T05:23:44-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "ofertasdodia",
+    "links": [
+     "?q=%23MercadoLivre",
+     "https://meli.la/2v784fN",
+     "?q=%23publi"
+    ],
+    "texto": "💥  Grand Theft Auto Vi - Playstation 5\n❌\n✅   Por: R$339,92  [no pix]\n🔻  24% de desconto\n🤏🏽  [em até 8x sem juros]\n🏪  Loja:  #MercadoLivre\n🔗  PEGAR OFERTA:  👇🏼\nhttps://meli.la/2v784fN\n⚠️  Ofertas por tempo limitado.\n☕   #publi  · você me paga um café sem custo extra!",
+    "produto": {
+     "plataforma_incerta": false
+    },
+    "alvo": {
+     "pix": 300.0,
+     "parcelado": 320.0,
+     "nota": "chega depois de 18/11"
+    },
+    "entrega": {
+     "classe": "desconhecida",
+     "data": null,
+     "origem": "",
+     "cep_referencia": false,
+     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "telegram:OfertasDoDia/481556#GTA6_CODE_IN_BOX",
+   "melhor_preco": 339.92,
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
+   "ultimo_preco": 339.92,
+   "menor_preco": 339.92
+  },
+  {
    "primeira_vez": "2026-11-20T04:46:59-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -4363,7 +4457,7 @@
    "modelo": "PS5_DISCO_GTA6",
    "chave": "promobit:3153689",
    "melhor_preco": 5548.9,
-   "ultima_vez": "2026-11-20T05:16:48-03:00"
+   "ultima_vez": "2026-11-20T05:31:50-03:00"
   },
   {
    "primeira_vez": "2026-11-20T04:46:59-03:00",
@@ -4400,7 +4494,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:tecnoarthardware/55500#SSD_NVME_1TB",
    "melhor_preco": 842.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 842.0,
    "menor_preco": 842.0
   },
@@ -4446,7 +4540,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:tecnanofertas/158727#GTA6_CODE_IN_BOX",
    "melhor_preco": 343.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 343.0,
    "menor_preco": 343.0
   },
@@ -4488,7 +4582,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3234230",
    "melhor_preco": 499.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00"
+   "ultima_vez": "2026-11-20T05:31:50-03:00"
   },
   {
    "primeira_vez": "2026-11-19T22:10:36-03:00",
@@ -4577,7 +4671,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:tecnanofertas/158726#GTA6_CODE_IN_BOX",
    "melhor_preco": 343.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 343.0,
    "menor_preco": 343.0
   },
@@ -4622,7 +4716,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84670#GTA6_CODE_IN_BOX",
    "melhor_preco": 279.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 279.0,
    "menor_preco": 279.0
   },
@@ -4705,7 +4799,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:vrlofertas/72795#GTA6_CODE_IN_BOX",
    "melhor_preco": 343.92,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 343.92,
    "menor_preco": 343.92
   },
@@ -4870,7 +4964,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3233840",
    "melhor_preco": 295.92,
-   "ultima_vez": "2026-11-20T05:16:48-03:00"
+   "ultima_vez": "2026-11-20T05:31:50-03:00"
   },
   {
    "primeira_vez": "2026-11-19T21:41:14-03:00",
@@ -4913,7 +5007,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84667#GTA6_CODE_IN_BOX",
    "melhor_preco": 279.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 279.0,
    "menor_preco": 279.0
   },
@@ -5123,7 +5217,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3233362",
    "melhor_preco": 359.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00"
+   "ultima_vez": "2026-11-20T05:31:50-03:00"
   },
   {
    "primeira_vez": "2026-11-19T21:41:14-03:00",
@@ -5163,7 +5257,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3233361",
    "melhor_preco": 279.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 279.0,
    "menor_preco": 279.0
   },
@@ -5248,7 +5342,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84662#GTA6_CODE_IN_BOX",
    "melhor_preco": 297.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 297.0,
    "menor_preco": 297.0
   },
@@ -5293,7 +5387,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:achadosdotb/12144#GTA6_CODE_IN_BOX",
    "melhor_preco": 380.0,
-   "ultima_vez": "2026-11-20T05:16:48-03:00",
+   "ultima_vez": "2026-11-20T05:31:50-03:00",
    "ultimo_preco": 380.0,
    "menor_preco": 380.0
   },
@@ -5328,7 +5422,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3232955",
    "melhor_preco": 0.01,
-   "ultima_vez": "2026-11-20T05:16:48-03:00"
+   "ultima_vez": "2026-11-20T05:31:50-03:00"
   },
   {
    "primeira_vez": "2026-11-20T04:46:59-03:00",
@@ -5361,7 +5455,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3232954",
    "melhor_preco": 0.01,
-   "ultima_vez": "2026-11-20T05:16:48-03:00"
+   "ultima_vez": "2026-11-20T05:31:50-03:00"
   },
   {
    "primeira_vez": "2026-11-19T16:00:44-03:00",
@@ -5679,98 +5773,6 @@
    "ultima_vez": "2026-11-19T16:00:44-03:00",
    "ultimo_preco": 298.0,
    "menor_preco": 298.0
-  },
-  {
-   "primeira_vez": "2026-11-19T15:45:34-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Shopee",
-   "titulo": "[tecnanofertas] 💥   😱  Jogo Grand Theft Auto VI Edição Standard - Playstation 5",
-   "url": "https://t.me/tecnanofertas/158655",
-   "id": "tecnanofertas/158655#GTA6_CODE_IN_BOX",
-   "preco": 297.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-19T15:44:10-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "tecnanofertas",
-    "links": [
-     "https://s.shopee.com.br/AKcHaLR0eV",
-     "https://tecnan.com.br/"
-    ],
-    "texto": "💥   😱  Jogo Grand Theft Auto VI Edição Standard - Playstation 5\n🤑  R$ 297\n🎟️  Resgate todos os cupons na Live (sacola laranja) no APP e adicione pela sacola aqui\n✅  LINK:  https://s.shopee.com.br/AKcHaLR0eV\n⚠️  Preço e estoque sujeitos a alteração.\n🚀  + Grupos de Ofertas, Cupons e Bot Alertas:\nhttps://tecnan.com.br\n📢  Anuncio\n➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖\n🔥   PREÇO EM BAIXA!  Abaixo da média recente — vale aproveitar",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "depois",
-     "data": null,
-     "origem": "estimativa",
-     "cep_referencia": true,
-     "texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:tecnanofertas/158655#GTA6_CODE_IN_BOX",
-   "melhor_preco": 297.0,
-   "ultima_vez": "2026-11-19T16:00:44-03:00",
-   "ultimo_preco": 297.0,
-   "menor_preco": 297.0
-  },
-  {
-   "primeira_vez": "2026-11-19T15:45:34-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Shopee",
-   "titulo": "[xaviertechpromo] 🚨  Jogo Grand Theft Auto VI Edição Standard - Playstation 5",
-   "url": "https://t.me/xaviertechpromo/410420",
-   "id": "xaviertechpromo/410420#GTA6_CODE_IN_BOX",
-   "preco": 297.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-19T15:43:27-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "xaviertechpromo",
-    "links": [
-     "https://s.shopee.com.br/3VlxRkMtbn",
-     "https://s.shopee.com.br/114cT9WPg0"
-    ],
-    "texto": "🚨  Jogo Grand Theft Auto VI Edição Standard - Playstation 5\n💵  Por R$ 297,00\nResgate o cupom R$60 OFF em R$ 279 Sparcelado aqui:\nhttps://s.shopee.com.br/3VlxRkMtbn\nLink do Produto:\nhttps://s.shopee.com.br/114cT9WPg0\nLoja oficial na Shopee\n(Anúncio)",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "depois",
-     "data": null,
-     "origem": "estimativa",
-     "cep_referencia": true,
-     "texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:xaviertechpromo/410420#GTA6_CODE_IN_BOX",
-   "melhor_preco": 297.0,
-   "ultima_vez": "2026-11-19T15:45:34-03:00",
-   "ultimo_preco": 297.0,
-   "menor_preco": 297.0
   }
  ],
  "gta6_custo_final": [
@@ -7072,72 +7074,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:15:53-03:00",
+   "ultimo_ok": "2026-11-20T05:30:55-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:01-03:00",
+   "ultimo_ok": "2026-11-20T05:31:03-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:45-03:00",
+   "ultimo_ok": "2026-11-20T05:31:46-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:15:54-03:00",
+   "ultimo_ok": "2026-11-20T05:30:56-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:07-03:00",
+   "ultimo_ok": "2026-11-20T05:31:09-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:13-03:00",
+   "ultimo_ok": "2026-11-20T05:31:18-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:14-03:00",
+   "ultimo_ok": "2026-11-20T05:31:18-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:16-03:00",
+   "ultimo_ok": "2026-11-20T05:31:20-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:17-03:00",
+   "ultimo_ok": "2026-11-20T05:31:21-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:18-03:00",
+   "ultimo_ok": "2026-11-20T05:31:22-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 862,
+   "falhas": 863,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-20T05:16:23-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-20T05:31:28-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:26-03:00",
+   "ultimo_ok": "2026-11-20T05:31:30-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:27-03:00",
+   "ultimo_ok": "2026-11-20T05:31:32-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T05:16:32-03:00",
+   "ultimo_ok": "2026-11-20T05:31:33-03:00",
    "ultimo_erro": null
   }
  },
