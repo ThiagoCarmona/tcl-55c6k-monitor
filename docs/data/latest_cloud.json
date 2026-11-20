@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-20T19:49:46-03:00",
+ "atualizado": "2026-11-20T20:04:36-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -7808,6 +7808,39 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-20T20:04:35-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "?",
+   "titulo": "[IskandarSouza] AO VIVO! Unboxing RTX 5080 Palit, SSD Nvme Fanxiang 1TB, Testes R5 5500F e Testes GTA 6!",
+   "url": "https://t.me/IskandarSouza/199376",
+   "id": "IskandarSouza/199376#SSD_NVME_1TB",
+   "preco": null,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-20T19:59:23-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "IskandarSouza",
+    "links": [
+     "https://youtube.com/live/AQcjeQzgaYU"
+    ],
+    "texto": "‼️  SEXTOU\nAO VIVO! Unboxing RTX 5080 Palit, SSD Nvme Fanxiang 1TB, Testes R5 5500F e Testes GTA 6!\n➡️  Link  https://youtube.com/live/AQcjeQzgaYU",
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "telegram:IskandarSouza/199376#SSD_NVME_1TB",
+   "melhor_preco": null,
+   "ultima_vez": "2026-11-20T20:04:35-03:00"
+  },
+  {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -7841,7 +7874,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84689#PS5_DIGITAL",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-20T19:49:45-03:00",
+   "ultima_vez": "2026-11-20T20:04:35-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -7922,7 +7955,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236565",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-20T19:49:45-03:00"
+   "ultima_vez": "2026-11-20T20:04:35-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -7962,7 +7995,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236541",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-20T19:49:45-03:00"
+   "ultima_vez": "2026-11-20T20:04:35-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -8005,7 +8038,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84686#GTA6_CODE_IN_BOX",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-20T19:49:45-03:00",
+   "ultima_vez": "2026-11-20T20:04:35-03:00",
    "ultimo_preco": 279.92,
    "menor_preco": 279.92
   },
@@ -8047,7 +8080,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236134",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-20T19:49:45-03:00"
+   "ultima_vez": "2026-11-20T20:04:35-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -8088,7 +8121,7 @@
    "modelo": "PS5_KIT",
    "chave": "promobit:3236025",
    "melhor_preco": 4742.07,
-   "ultima_vez": "2026-11-20T19:49:45-03:00",
+   "ultima_vez": "2026-11-20T20:04:35-03:00",
    "ultimo_preco": 4742.07,
    "menor_preco": 4742.07
   },
@@ -8318,7 +8351,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3235594",
    "melhor_preco": 3905.07,
-   "ultima_vez": "2026-11-20T19:49:45-03:00",
+   "ultima_vez": "2026-11-20T20:04:35-03:00",
    "ultimo_preco": 3905.07,
    "menor_preco": 3905.07
   },
@@ -8543,7 +8576,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:escolhasegura/25507#GTA6_CODE_IN_BOX",
    "melhor_preco": 279.0,
-   "ultima_vez": "2026-11-20T19:49:45-03:00",
+   "ultima_vez": "2026-11-20T20:04:35-03:00",
    "ultimo_preco": 279.0,
    "menor_preco": 279.0
   },
@@ -9053,7 +9086,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3235528",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-20T19:49:45-03:00",
+   "ultima_vez": "2026-11-20T20:04:35-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -9128,7 +9161,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3235346",
    "melhor_preco": 4370.07,
-   "ultima_vez": "2026-11-20T19:49:45-03:00",
+   "ultima_vez": "2026-11-20T20:04:35-03:00",
    "ultimo_preco": 4370.07,
    "menor_preco": 4370.07
   },
@@ -9208,7 +9241,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84676#GTA6_CODE_IN_BOX",
    "melhor_preco": 323.93,
-   "ultima_vez": "2026-11-20T19:49:45-03:00",
+   "ultima_vez": "2026-11-20T20:04:35-03:00",
    "ultimo_preco": 323.93,
    "menor_preco": 323.93
   },
@@ -9435,53 +9468,6 @@
    },
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:hardmob_promo/471166#GTA6_CODE_IN_BOX",
-   "melhor_preco": 299.0,
-   "ultima_vez": "2026-11-20T04:46:59-03:00",
-   "ultimo_preco": 299.0,
-   "menor_preco": 299.0
-  },
-  {
-   "primeira_vez": "2026-11-20T04:46:59-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Shopee",
-   "titulo": "[ofertasdodia] 💥  ￼Grand Theft Auto VI - Playstation 5",
-   "url": "https://t.me/OfertasDoDia/481510",
-   "id": "OfertasDoDia/481510#GTA6_CODE_IN_BOX",
-   "preco": 299.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-20T04:37:49-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "ofertasdodia",
-    "links": [
-     "?q=%23Shopee",
-     "https://cupom.cc/TeO5S0tt",
-     "?q=%23publi"
-    ],
-    "texto": "💥  ￼Grand Theft Auto VI - Playstation 5\n✅   Por: R$299,00\n🏪  Loja:  #Shopee\n🔗  PEGAR OFERTA:  👇🏼\nhttps://cupom.cc/TeO5S0tt\n⚠️  Ofertas por tempo limitado.\n☕   #publi  · você me paga um café sem custo extra!",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "depois",
-     "data": null,
-     "origem": "estimativa",
-     "cep_referencia": true,
-     "texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:OfertasDoDia/481510#GTA6_CODE_IN_BOX",
    "melhor_preco": 299.0,
    "ultima_vez": "2026-11-20T04:46:59-03:00",
    "ultimo_preco": 299.0,
@@ -10847,72 +10833,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:48:49-03:00",
+   "ultimo_ok": "2026-11-20T20:03:48-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:48:56-03:00",
+   "ultimo_ok": "2026-11-20T20:03:53-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:36-03:00",
+   "ultimo_ok": "2026-11-20T20:04:31-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:48:50-03:00",
+   "ultimo_ok": "2026-11-20T20:03:50-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:11-03:00",
+   "ultimo_ok": "2026-11-20T20:04:07-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:13-03:00",
+   "ultimo_ok": "2026-11-20T20:04:10-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:14-03:00",
+   "ultimo_ok": "2026-11-20T20:04:11-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:15-03:00",
+   "ultimo_ok": "2026-11-20T20:04:12-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:16-03:00",
+   "ultimo_ok": "2026-11-20T20:04:13-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:17-03:00",
+   "ultimo_ok": "2026-11-20T20:04:13-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 868,
+   "falhas": 869,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-20T19:49:22-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-20T20:04:19-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:24-03:00",
+   "ultimo_ok": "2026-11-20T20:04:20-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:25-03:00",
+   "ultimo_ok": "2026-11-20T20:04:20-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T19:49:26-03:00",
+   "ultimo_ok": "2026-11-20T20:04:22-03:00",
    "ultimo_erro": null
   }
  },
