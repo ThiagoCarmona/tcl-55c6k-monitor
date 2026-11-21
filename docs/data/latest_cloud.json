@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-20T20:34:50-03:00",
+ "atualizado": "2026-11-21T00:44:33-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -815,7 +815,7 @@
     "produto": {
      "plataforma_incerta": false
     },
-    "entrega_prevista": "2026-11-26",
+    "entrega_prevista": "2026-11-27",
     "entrega_ate_lancamento": false,
     "cep_referencia": false,
     "entrega_origem": "cotação de frete",
@@ -829,10 +829,10 @@
     },
     "entrega": {
      "classe": "depois",
-     "data": "2026-11-26",
+     "data": "2026-11-27",
      "origem": "loja",
      "cep_referencia": false,
-     "texto": "📦 Entrega: previsão 26/11 — ⚠️ chega DEPOIS do lançamento (19/11)"
+     "texto": "📦 Entrega: previsão 27/11 — ⚠️ chega DEPOIS do lançamento (19/11)"
     }
    },
    "modelo": "GTA6_CODE_IN_BOX",
@@ -3848,63 +3848,6 @@
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
-   "titulo": "SSD Acer Predator GM7 1TB PCIe Gen4 NVMe M.2 2280",
-   "url": "https://www.magazineluiza.com.br/ssd-acer-predator-gm7-1tb-pcie-gen4-nvme-m-2-2280/p/ah89f165c6/in/ssdi/",
-   "id": "ah89f165c6-nocnocestadosunidos",
-   "preco": 1624.76,
-   "preco_pix": 1511.03,
-   "parcelado": "7x R$ 232,11 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "nocnocestadosunidos",
-   "extra": {
-    "preco_de": 1689.81,
-    "1p": false,
-    "anuncio": "ah89f165c6",
-    "vendedor_id": "nocnocestadosunidos",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.05,
-     "razao_social": "nocnoc Estados Unidos",
-     "vendedor_desde": "2024-10-29",
-     "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:ah89f165c6-nocnocestadosunidos",
-   "melhor_preco": 1511.03
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
    "titulo": "SSD Kingston NV3 M.2 1TB NVMe Velocidade e Performance PCIe 4.0",
    "url": "https://www.magazineluiza.com.br/ssd-kingston-nv3-m-2-1tb-nvme-velocidade-e-performance-pcie-4-0/p/dgk7eh5597/in/ssdi/",
    "id": "dgk7eh5597-brasiltekoficial",
@@ -4352,6 +4295,63 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:729815",
    "melhor_preco": 1749.99
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "SSD Acer Predator GM7 1TB PCIe Gen4 NVMe M.2 2280",
+   "url": "https://www.magazineluiza.com.br/ssd-acer-predator-gm7-1tb-pcie-gen4-nvme-m-2-2280/p/ah89f165c6/in/ssdi/",
+   "id": "ah89f165c6-nocnocestadosunidos",
+   "preco": 1896.56,
+   "preco_pix": 1763.8,
+   "parcelado": "7x R$ 270,94 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 1970.49,
+    "1p": false,
+    "anuncio": "ah89f165c6",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.05,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 4.1
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:ah89f165c6-nocnocestadosunidos",
+   "melhor_preco": 1763.8
   },
   {
    "fonte": "kabum.produtos",
@@ -6707,47 +6707,6 @@
    "melhor_preco": 4370.07
   },
   {
-   "fonte": "vtex.fastshop.ps5",
-   "tipo": "loja",
-   "loja": "Fast Shop",
-   "titulo": "Console PlayStation 5 Slim Disc 1TB com Controle DualSense",
-   "url": "https://site.fastshop.com.br/console-playstation-5-slim-disk-1tb---so-187040/p",
-   "id": "Fast Shop-187040-cnl217",
-   "preco": 4484.0,
-   "preco_pix": 4394.32,
-   "parcelado": "8x R$ 560,50 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Negociun",
-   "extra": {
-    "preco_de": 5999.0,
-    "ref": "274901_Fastshopbr",
-    "ean": "0711719022022",
-    "sku": "197395",
-    "seller_id": "cnl217",
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 3950.0,
-     "parcelado": 4150.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DISCO",
-   "chave": "vtex.fastshop.ps5:Fast Shop-187040-cnl217",
-   "melhor_preco": 4394.32
-  },
-  {
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
@@ -6877,6 +6836,66 @@
    "modelo": "PS5_DIGITAL",
    "chave": "kabum.produtos:939944",
    "melhor_preco": 4509.57
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Console PlayStation 5 Slim Disk 1TB Físico com Controle DualSense Branco Sony",
+   "url": "https://www.magazineluiza.com.br/console-playstation-5-slim-disk-1tb-fisico-com-controle-dualsense-branco-sony/p/ch30jc3c3j/ga/pltt/",
+   "id": "ch30jc3c3j-negociunoficial",
+   "preco": 4769.0,
+   "preco_pix": 4530.55,
+   "parcelado": "10x R$ 476,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Negociun Oficial",
+   "extra": {
+    "preco_de": 5889.0,
+    "1p": false,
+    "anuncio": "ch30jc3c3j",
+    "vendedor_id": "negociunoficial",
+    "ficha": {
+     "avaliacoes": 552,
+     "peso_kg": 4.9,
+     "razao_social": "negociunoficial",
+     "vendedor_desde": "2025-03-17",
+     "vendas_vendedor": 100000,
+     "nota_vendedor": 4.7
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "peso",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas",
+      "catálogo da loja"
+     ],
+     "sinais": [],
+     "codigos": [],
+     "catalogo": {
+      "total": 652,
+      "tv": 50,
+      "games": 15
+     }
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "magalu.produtos:ch30jc3c3j-negociunoficial",
+   "melhor_preco": 4530.55
   },
   {
    "fonte": "americanas",
@@ -7820,7 +7839,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84689#PS5_DIGITAL",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-20T20:34:49-03:00",
+   "ultima_vez": "2026-11-21T00:44:31-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -7881,7 +7900,7 @@
    "vendedor": null,
    "extra": {
     "preco_antigo": 449.9,
-    "status": "TOP_OFFER",
+    "status": "FINISHED",
     "produto": {
      "plataforma_incerta": false
     },
@@ -7901,7 +7920,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236565",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-20T20:34:49-03:00"
+   "ultima_vez": "2026-11-21T00:44:31-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -7921,7 +7940,7 @@
    "vendedor": null,
    "extra": {
     "preco_antigo": 449.9,
-    "status": "TOP_OFFER",
+    "status": "FINISHED",
     "produto": {
      "plataforma_incerta": false
     },
@@ -7941,7 +7960,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236541",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-20T20:34:49-03:00"
+   "ultima_vez": "2026-11-21T00:44:31-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -7984,7 +8003,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84686#GTA6_CODE_IN_BOX",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-20T20:34:49-03:00",
+   "ultima_vez": "2026-11-21T00:44:31-03:00",
    "ultimo_preco": 279.92,
    "menor_preco": 279.92
   },
@@ -8026,7 +8045,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236134",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-20T20:34:49-03:00"
+   "ultima_vez": "2026-11-21T00:44:31-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -8129,7 +8148,7 @@
    "vendedor": null,
    "extra": {
     "preco_antigo": 4599.9,
-    "status": "RECENTS",
+    "status": "FINISHED",
     "produto": {
      "versao_incerta": false
     },
@@ -8142,7 +8161,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3235645",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-20T14:24:21-03:00"
+   "ultima_vez": "2026-11-21T00:44:31-03:00"
   },
   {
    "primeira_vez": "2026-11-20T14:24:21-03:00",
@@ -8297,7 +8316,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3235594",
    "melhor_preco": 3905.07,
-   "ultima_vez": "2026-11-20T20:34:49-03:00",
+   "ultima_vez": "2026-11-21T00:44:31-03:00",
    "ultimo_preco": 3905.07,
    "menor_preco": 3905.07
   },
@@ -8522,7 +8541,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:escolhasegura/25507#GTA6_CODE_IN_BOX",
    "melhor_preco": 279.0,
-   "ultima_vez": "2026-11-20T20:34:49-03:00",
+   "ultima_vez": "2026-11-21T00:44:31-03:00",
    "ultimo_preco": 279.0,
    "menor_preco": 279.0
   },
@@ -9032,7 +9051,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3235528",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-20T20:34:49-03:00",
+   "ultima_vez": "2026-11-21T00:44:31-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -9107,7 +9126,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3235346",
    "melhor_preco": 4370.07,
-   "ultima_vez": "2026-11-20T20:34:49-03:00",
+   "ultima_vez": "2026-11-21T00:44:31-03:00",
    "ultimo_preco": 4370.07,
    "menor_preco": 4370.07
   },
@@ -9187,7 +9206,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84676#GTA6_CODE_IN_BOX",
    "melhor_preco": 323.93,
-   "ultima_vez": "2026-11-20T20:34:49-03:00",
+   "ultima_vez": "2026-11-21T00:44:31-03:00",
    "ultimo_preco": 323.93,
    "menor_preco": 323.93
   },
@@ -10043,21 +10062,6 @@
   {
    "fonte": "promobit",
    "loja": "Mercado Livre",
-   "codigo": "INOVATECHML",
-   "titulo": "Cupom Mercado Livre: 10% OFF em Eletrônicos acima de R$ 199",
-   "url": "https://www.promobit.com.br/cupons/loja/mercado-livre/",
-   "id": "72403",
-   "regra": "produtos Mercado Livre Desconto máximo de R$ 200.",
-   "validade": "2026-11-20T23:59:59-03:00",
-   "publicado": "2026-11-20T09:06:19-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:72403"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "Mercado Livre",
    "codigo": "PLAYER1",
    "titulo": "Garanta 8% OFF em produtos elegíveis com cupom Mercado Livre",
    "url": "https://www.promobit.com.br/cupons/loja/mercado-livre/",
@@ -10103,21 +10107,6 @@
   {
    "fonte": "promobit",
    "loja": "KaBuM!",
-   "codigo": "ACERNOKABUM",
-   "titulo": "A chance de economizar R$ 400 em compras na KaBuM!",
-   "url": "https://www.promobit.com.br/cupons/loja/kabum/",
-   "id": "72069",
-   "regra": "produtos KaBuM!",
-   "validade": "2026-11-20T23:59:59-03:00",
-   "publicado": "2026-11-16T12:23:19-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:72069"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "KaBuM!",
    "codigo": "SEXTAFEIRA13",
    "titulo": "Cupom de desconto Kabum oferece 13% OFF em suas compras",
    "url": "https://www.promobit.com.br/cupons/loja/kabum/",
@@ -10144,6 +10133,36 @@
    "modelo": null,
    "extra": {},
    "chave": "promobit:72005"
+  },
+  {
+   "fonte": "promobit",
+   "loja": "KaBuM!",
+   "codigo": "ZAFADINHO15",
+   "titulo": "A chance de economizar 15% em compras na Kabum",
+   "url": "https://www.promobit.com.br/cupons/loja/kabum/",
+   "id": "71814",
+   "regra": "produtos KaBuM! Economize até 15% ao usar o código promocional no carrinho de compras.",
+   "validade": null,
+   "publicado": "2026-11-10T13:25:22-03:00",
+   "especifico": false,
+   "modelo": null,
+   "extra": {},
+   "chave": "promobit:71814"
+  },
+  {
+   "fonte": "promobit",
+   "loja": "KaBuM!",
+   "codigo": "130IMPRESSORA",
+   "titulo": "A chance de economizar R$ 130 em compras na KaBuM!",
+   "url": "https://www.promobit.com.br/cupons/loja/kabum/",
+   "id": "71657",
+   "regra": "produtos KaBuM!",
+   "validade": "2026-11-30T23:59:59-03:00",
+   "publicado": "2026-11-06T11:31:07-03:00",
+   "especifico": false,
+   "modelo": null,
+   "extra": {},
+   "chave": "promobit:71657"
   },
   {
    "fonte": "promobit",
@@ -10779,72 +10798,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:33:48-03:00",
+   "ultimo_ok": "2026-11-21T00:43:30-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:33:57-03:00",
+   "ultimo_ok": "2026-11-21T00:43:38-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:46-03:00",
+   "ultimo_ok": "2026-11-21T00:44:27-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:33:50-03:00",
+   "ultimo_ok": "2026-11-21T00:43:33-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:10-03:00",
+   "ultimo_ok": "2026-11-21T00:43:53-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:13-03:00",
+   "ultimo_ok": "2026-11-21T00:43:57-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:14-03:00",
+   "ultimo_ok": "2026-11-21T00:43:58-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:15-03:00",
+   "ultimo_ok": "2026-11-21T00:44:00-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:15-03:00",
+   "ultimo_ok": "2026-11-21T00:44:01-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:16-03:00",
+   "ultimo_ok": "2026-11-21T00:44:01-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 871,
+   "falhas": 872,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-20T20:34:22-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-21T00:44:08-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:24-03:00",
+   "ultimo_ok": "2026-11-21T00:44:11-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:25-03:00",
+   "ultimo_ok": "2026-11-21T00:44:12-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-20T20:34:37-03:00",
+   "ultimo_ok": "2026-11-21T00:44:15-03:00",
    "ultimo_erro": null
   }
  },
