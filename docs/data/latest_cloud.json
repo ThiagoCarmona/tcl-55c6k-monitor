@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-21T09:35:06-03:00",
+ "atualizado": "2026-11-21T15:39:01-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -537,7 +537,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -691,76 +691,6 @@
    "melhor_preco": 360.0
   },
   {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Jogo Grand Theft Auto VI Rockstar Games PS5 Sony",
-   "url": "https://www.magazineluiza.com.br/jogo-grand-theft-auto-vi-rockstar-games-ps5-sony/p/jh6gffkf3j/ga/jgta/",
-   "id": "jh6gffkf3j-negociunoficial",
-   "preco": 449.0,
-   "preco_pix": 413.08,
-   "parcelado": "6x R$ 74,83 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Negociun Oficial",
-   "extra": {
-    "preco_de": 639.0,
-    "1p": false,
-    "anuncio": "jh6gffkf3j",
-    "vendedor_id": "negociunoficial",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.09,
-     "razao_social": "negociunoficial",
-     "vendedor_desde": "2025-03-17",
-     "vendas_vendedor": 100000,
-     "nota_vendedor": 4.7
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas",
-      "catálogo da loja"
-     ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 1.554)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ],
-     "catalogo": {
-      "total": 652,
-      "tv": 50,
-      "games": 15
-     }
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "magalu.produtos:jh6gffkf3j-negociunoficial",
-   "melhor_preco": 413.08
-  },
-  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -829,7 +759,7 @@
     "produto": {
      "plataforma_incerta": false
     },
-    "entrega_prevista": "2026-11-21",
+    "entrega_prevista": "2026-11-23",
     "entrega_ate_lancamento": false,
     "cep_referencia": false,
     "entrega_origem": "simulação de frete",
@@ -843,10 +773,10 @@
     },
     "entrega": {
      "classe": "depois",
-     "data": "2026-11-21",
+     "data": "2026-11-23",
      "origem": "loja",
      "cep_referencia": false,
-     "texto": "📦 Entrega: previsão 21/11 — ⚠️ chega DEPOIS do lançamento (19/11)"
+     "texto": "📦 Entrega: previsão 23/11 — ⚠️ chega DEPOIS do lançamento (19/11)"
     }
    },
    "modelo": "GTA6_CODE_IN_BOX",
@@ -1603,8 +1533,12 @@
       "vendas",
       "catálogo da loja"
      ],
-     "sinais": [],
-     "codigos": [],
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ],
      "catalogo": {
       "total": 261,
       "tv": 4,
@@ -1657,8 +1591,12 @@
       "razão social",
       "catálogo da loja"
      ],
-     "sinais": [],
-     "codigos": [],
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ],
      "catalogo": {
       "total": 1,
       "tv": 0,
@@ -2327,8 +2265,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -2508,7 +2450,7 @@
      "razao_social": "RENATO LOPES DE ALMEIDA 37397053882",
      "vendedor_desde": "2023-11-21",
      "vendas_vendedor": 300,
-     "nota_vendedor": 2.71
+     "nota_vendedor": 3.4
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -2523,8 +2465,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -2561,7 +2507,7 @@
      "razao_social": "RENATO LOPES DE ALMEIDA 37397053882",
      "vendedor_desde": "2023-11-21",
      "vendas_vendedor": 300,
-     "nota_vendedor": 2.71
+     "nota_vendedor": 3.4
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -2576,8 +2522,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -2682,8 +2632,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -2730,9 +2684,11 @@
       "idade da conta"
      ],
      "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)",
       "vendedor na loja só desde 19/10/2026"
      ],
      "codigos": [
+      "sem_avaliacoes",
       "vendedor_recente"
      ]
     },
@@ -2771,7 +2727,7 @@
      "razao_social": "Cobra Tech",
      "vendedor_desde": "2026-04-29",
      "vendas_vendedor": 80,
-     "nota_vendedor": 2.6
+     "nota_vendedor": 2.2
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -2873,8 +2829,12 @@
       "razão social",
       "idade da conta"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -3244,7 +3204,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -3297,7 +3257,7 @@
      "razao_social": "Eduardo Queiroz Oliveira Informatica",
      "vendedor_desde": "2022-05-06",
      "vendas_vendedor": 1000,
-     "nota_vendedor": 5
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "confianca": {
@@ -3694,7 +3654,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -3709,8 +3669,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4026,7 +3990,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -4041,8 +4005,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4079,7 +4047,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -4094,8 +4062,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4244,7 +4216,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -4259,8 +4231,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4332,7 +4308,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -4347,8 +4323,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4459,7 +4439,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -4474,8 +4454,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4612,8 +4596,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -4756,59 +4744,6 @@
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
-   "titulo": "SSD M.2 1TB Mini Kingston NV3 M.2 2230 NVMe PCIe 4.0 Leitura 6000MBs e Gravação 4000MBs SNV3SM3.1T0",
-   "url": "https://www.magazineluiza.com.br/ssd-m-2-1tb-mini-kingston-nv3-m-2-2230-nvme-pcie-4-0-leitura-6000mbs-e-gravacao-4000mbs-snv3sm3-1t0/p/kd49gk7695/in/ssdi/",
-   "id": "kd49gk7695-matrosinformatica",
-   "preco": 1979.0,
-   "preco_pix": 1880.05,
-   "parcelado": "10x R$ 197,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Matros Informática",
-   "extra": {
-    "preco_de": 1979.0,
-    "1p": false,
-    "anuncio": "kd49gk7695",
-    "vendedor_id": "matrosinformatica",
-    "ficha": {
-     "avaliacoes": 12,
-     "peso_kg": 0.085,
-     "razao_social": "matrosinformatica",
-     "vendedor_desde": "2025-05-07",
-     "vendas_vendedor": 1000,
-     "nota_vendedor": 4.1
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:kd49gk7695-matrosinformatica",
-   "melhor_preco": 1880.05
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
    "titulo": "SSD Kingston NV3, 1TB, M.2 2230, PCIe 4.0 x4, NVMe, Leitura: 6000 MB/s, Gravação: 5000 MB/s - SNV3SM3/1T0",
    "url": "https://www.magazineluiza.com.br/ssd-kingston-nv3-1tb-m-2-2230-pcie-4-0-x4-nvme-leitura-6000-mb-s-gravacao-5000-mb-s-snv3sm3-1t0/p/ab490acbkd/in/ssdi/",
    "id": "ab490acbkd-kabum",
@@ -4863,6 +4798,47 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "magalu.produtos:ab490acbkd-kabum",
    "melhor_preco": 1894.73
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Ssd Kingston Nv3 1tb 2280 Pcie Nvme - Snv3s-1000g",
+   "url": "https://www.magazineluiza.com.br/ssd-kingston-nv3-1tb-2280-pcie-nvme-snv3s-1000g/p/fg6he7460e/in/ssdi/",
+   "id": "fg6he7460e-lojawebcontinentalmarketplace",
+   "preco": 1973.82,
+   "preco_pix": null,
+   "parcelado": "10x R$ 197,38 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Webcontinental Marketplace",
+   "extra": {
+    "preco_de": 1973.82,
+    "1p": false,
+    "anuncio": "fg6he7460e",
+    "vendedor_id": "lojawebcontinentalmarketplace",
+    "ficha": {
+     "avaliacoes": 760,
+     "peso_kg": 0.04,
+     "razao_social": "Webcontinental Ltda",
+     "vendedor_desde": "2023-04-18",
+     "vendas_vendedor": 200000,
+     "nota_vendedor": 3.5
+    },
+    "anuncio_exclusivo": false,
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:fg6he7460e-lojawebcontinentalmarketplace",
+   "melhor_preco": 1973.82
   },
   {
    "fonte": "magalu.produtos",
@@ -4998,8 +4974,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -5112,7 +5092,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -5127,8 +5107,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -5165,7 +5149,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -5180,8 +5164,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -5492,7 +5480,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -5507,8 +5495,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -5658,7 +5650,7 @@
      "razao_social": "nocnoc Estados Unidos",
      "vendedor_desde": "2024-10-29",
      "vendas_vendedor": 70000,
-     "nota_vendedor": 4.1
+     "nota_vendedor": 3.8
     },
     "anuncio_exclusivo": false,
     "produto": {
@@ -5673,8 +5665,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -5796,8 +5792,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -6172,8 +6172,12 @@
       "idade da conta",
       "vendas"
      ],
-     "sinais": [],
-     "codigos": []
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 760)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
     },
     "alvo": {
      "pix": 700.0,
@@ -6584,66 +6588,6 @@
    "melhor_preco": 4370.07
   },
   {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Console Sony PlayStation 5, SSD 825GB, Controle Sem Fio DualSense + 2 Jogos Digitais, Edição Digital",
-   "url": "https://www.magazineluiza.com.br/console-sony-playstation-5-ssd-825gb-controle-sem-fio-dualsense-2-jogos-digitais-edicao-digital/p/aebh5a7a94/ga/gap5/",
-   "id": "aebh5a7a94-kabum",
-   "preco": 4499.0,
-   "preco_pix": null,
-   "parcelado": "10x R$ 449,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "KaBuM!",
-   "extra": {
-    "preco_de": 4999.0,
-    "1p": false,
-    "anuncio": "aebh5a7a94",
-    "vendedor_id": "kabum",
-    "ficha": {
-     "avaliacoes": 3750,
-     "peso_kg": 3.808,
-     "razao_social": "KABUM S.A.",
-     "vendedor_desde": "2021-06-30",
-     "vendas_vendedor": 2000000,
-     "nota_vendedor": 3
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "peso",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas",
-      "catálogo da loja"
-     ],
-     "sinais": [],
-     "codigos": [],
-     "catalogo": {
-      "total": 3310,
-      "tv": 25,
-      "games": 175
-     }
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "magalu.produtos:aebh5a7a94-kabum",
-   "melhor_preco": 4499.0
-  },
-  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -6713,66 +6657,6 @@
    "modelo": "PS5_DIGITAL",
    "chave": "kabum.produtos:939944",
    "melhor_preco": 4509.57
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Console PlayStation 5 Slim Disk 1TB Físico com Controle DualSense Branco Sony",
-   "url": "https://www.magazineluiza.com.br/console-playstation-5-slim-disk-1tb-fisico-com-controle-dualsense-branco-sony/p/ch30jc3c3j/ga/pltt/",
-   "id": "ch30jc3c3j-negociunoficial",
-   "preco": 4769.0,
-   "preco_pix": 4530.55,
-   "parcelado": "10x R$ 476,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Negociun Oficial",
-   "extra": {
-    "preco_de": 5889.0,
-    "1p": false,
-    "anuncio": "ch30jc3c3j",
-    "vendedor_id": "negociunoficial",
-    "ficha": {
-     "avaliacoes": 552,
-     "peso_kg": 4.9,
-     "razao_social": "negociunoficial",
-     "vendedor_desde": "2025-03-17",
-     "vendas_vendedor": 100000,
-     "nota_vendedor": 4.7
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "peso",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas",
-      "catálogo da loja"
-     ],
-     "sinais": [],
-     "codigos": [],
-     "catalogo": {
-      "total": 652,
-      "tv": 50,
-      "games": 15
-     }
-    },
-    "alvo": {
-     "pix": 3950.0,
-     "parcelado": 4150.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DISCO",
-   "chave": "magalu.produtos:ch30jc3c3j-negociunoficial",
-   "melhor_preco": 4530.55
   },
   {
    "fonte": "americanas",
@@ -7067,6 +6951,101 @@
    "melhor_preco": 4703.53
   },
   {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "Console PlayStation 5 Sony, SSD 1TB, Leitor de Discos, Controle DualSense, Astro's Playroom, Branco - 1000049892",
+   "url": "https://www.kabum.com.br/produto/1049973",
+   "id": "1049973",
+   "preco": 5099.0,
+   "preco_pix": 4742.07,
+   "parcelado": "10x de R$ 509,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "KaBuM!",
+   "extra": {
+    "preco_tabela": 5099.0,
+    "openbox": false,
+    "kabum_seller_id": "0",
+    "kabum_oferta_id": 0,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "kabum.produtos:1049973",
+   "melhor_preco": 4742.07
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Console PlayStation 5 Sony, SSD 1TB, Leitor de Discos, Controle DualSense, Astro's Playroom, Branco - 1000049892",
+   "url": "https://www.magazineluiza.com.br/console-playstation-5-sony-ssd-1tb-leitor-de-discos-controle-dualsense-astro-s-playroom-branco-1000049892/p/kb3gfb61ab/ga/gap5/",
+   "id": "kb3gfb61ab-kabum",
+   "preco": 5099.0,
+   "preco_pix": 4793.06,
+   "parcelado": "10x R$ 509,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "KaBuM!",
+   "extra": {
+    "preco_de": 5099.0,
+    "1p": false,
+    "anuncio": "kb3gfb61ab",
+    "vendedor_id": "kabum",
+    "ficha": {
+     "avaliacoes": 3,
+     "peso_kg": 4.387,
+     "razao_social": "KABUM S.A.",
+     "vendedor_desde": "2021-06-30",
+     "vendas_vendedor": 2000000,
+     "nota_vendedor": 3
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "peso",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas",
+      "catálogo da loja"
+     ],
+     "sinais": [],
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "magalu.produtos:kb3gfb61ab-kabum",
+   "melhor_preco": 4793.06
+  },
+  {
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
@@ -7147,6 +7126,50 @@
    "melhor_preco": 4844.0
   },
   {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "PlayStation 5 Slim Disk 1TB 1 Controle Branco Sony",
+   "url": "https://www.magazineluiza.com.br/playstation-5-slim-disk-1tb-1-controle-branco-sony/p/240609000/ga/gap5/",
+   "id": "240609000-magazineluiza",
+   "preco": 5299.0,
+   "preco_pix": 4875.08,
+   "parcelado": "10x R$ 529,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Magalu",
+   "extra": {
+    "preco_de": 5399.9,
+    "1p": true,
+    "anuncio": "240609000",
+    "vendedor_id": "magazineluiza",
+    "ficha": {
+     "avaliacoes": 552,
+     "peso_kg": 4.9,
+     "razao_social": "Magazine Luiza SA",
+     "vendedor_desde": "2016-06-01",
+     "vendas_vendedor": 200000000,
+     "nota_vendedor": 5
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "magalu.produtos:240609000-magazineluiza",
+   "melhor_preco": 4875.08
+  },
+  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -7180,6 +7203,66 @@
    "modelo": "PS5_DISCO",
    "chave": "kabum.produtos:953109",
    "melhor_preco": 4928.07
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Console Sony PlayStation 5, SSD 825GB, Controle Sem Fio DualSense + 2 Jogos Digitais, Edição Digital",
+   "url": "https://www.magazineluiza.com.br/console-sony-playstation-5-ssd-825gb-controle-sem-fio-dualsense-2-jogos-digitais-edicao-digital/p/aebh5a7a94/ga/gap5/",
+   "id": "aebh5a7a94-kabum",
+   "preco": 4999.0,
+   "preco_pix": null,
+   "parcelado": "10x R$ 499,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "KaBuM!",
+   "extra": {
+    "preco_de": 4999.0,
+    "1p": false,
+    "anuncio": "aebh5a7a94",
+    "vendedor_id": "kabum",
+    "ficha": {
+     "avaliacoes": 3750,
+     "peso_kg": 3.808,
+     "razao_social": "KABUM S.A.",
+     "vendedor_desde": "2021-06-30",
+     "vendas_vendedor": 2000000,
+     "nota_vendedor": 3
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "peso",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas",
+      "catálogo da loja"
+     ],
+     "sinais": [],
+     "codigos": [],
+     "catalogo": {
+      "total": 3310,
+      "tv": 25,
+      "games": 175
+     }
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "magalu.produtos:aebh5a7a94-kabum",
+   "melhor_preco": 4999.0
   },
   {
    "fonte": "kabum.produtos",
@@ -7259,47 +7342,6 @@
    "modelo": "PS5_DISCO",
    "chave": "americanas:Americanas-8299908-magazineluiza",
    "melhor_preco": 5034.05
-  },
-  {
-   "fonte": "vtex.webcontinental.ps5",
-   "tipo": "loja",
-   "loja": "Webcontinental",
-   "titulo": "Console de Videogame Playstation 5 Slim Edição Digital 825GB com 2 Jogos Branco",
-   "url": "https://www.webcontinental.com.br/console-playstation-5-slim-edicao-digital-825gb-com-2-jogos-branco-003958001074/p",
-   "id": "Webcontinental-5333700-003958",
-   "preco": 5362.66,
-   "preco_pix": 5080.41,
-   "parcelado": "8x R$ 670,33 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Lojas Edmil",
-   "extra": {
-    "preco_de": 5644.9,
-    "ref": "711719023876",
-    "ean": "711719023876",
-    "sku": "5211183",
-    "seller_id": "003958",
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "vtex.webcontinental.ps5:Webcontinental-5333700-003958",
-   "melhor_preco": 5080.41
   },
   {
    "fonte": "vtex.fastshop.ps5",
@@ -7650,6 +7692,82 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-21T15:38:59-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Mercado Livre",
+   "titulo": "[linguicapromocoes] 👉 Gift Cards PSN/XBOX/NINTENDO:  https://meli.la/2LWUsqF",
+   "url": "https://t.me/linguicapromocoes/122204",
+   "id": "linguicapromocoes/122204#GIFT_CARD_PSN",
+   "preco": null,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-21T15:28:20-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "linguicapromocoes",
+    "links": [
+     "https://mercadolivre.com/sec/1H7uov1",
+     "https://meli.la/1LfaWVQ",
+     "https://meli.la/2Zf9LDB"
+    ],
+    "texto": "🥇  Cupom Mercado Livre\n🔥  10% OFF a partir de R$ 89, Limite de R$ 40:  LOJASOFICIAIS2111\n🔥  R$ 100 OFF a partir de R$ 799, Limite de R$ 100:  TUDOCASA2111\nNossa lista de sugestões\nhttps://mercadolivre.com/sec/1H7uov1\n⚠️  Clique em \"mostrar mais\" ao acessar os links\n👉 Jogos de PS5:  https://meli.la/1LfaWVQ\n👉 Jogos de PS4:  https://meli.la/2Zf9LDB\n👉 Jogos de Nintendo Switch:  https://meli.la/26ZqFQR\n👉 Gift Cards PSN/XBOX/NINTENDO:  https://meli.la/2LWUsqF\nanúncio\nEntre no meu grupo de ofertas 👇🏻 👇🏻\nhttps://linktr.ee/linguicapromo",
+    "produto": {
+     "valor_face": 10.0
+    },
+    "alvo": {
+     "pix": null,
+     "parcelado": null,
+     "nota": "loja não oficial para gift card"
+    }
+   },
+   "modelo": "GIFT_CARD_PSN",
+   "chave": "telegram:linguicapromocoes/122204#GIFT_CARD_PSN",
+   "melhor_preco": null,
+   "ultima_vez": "2026-11-21T15:38:59-03:00"
+  },
+  {
+   "primeira_vez": "2026-11-21T15:38:59-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "[cupons_desconto] Playstation5 Slim Digital 825gb – Pacote Astro Bot E Gran Turismo 7",
+   "url": "https://t.me/cupons_desconto/84698",
+   "id": "cupons_desconto/84698#PS5_DIGITAL",
+   "preco": 3905.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-21T11:40:13-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "cupons_desconto",
+    "links": [
+     "https://promoby.me/w1201y2e8a3d"
+    ],
+    "texto": "Playstation5 Slim Digital 825gb – Pacote Astro Bot E Gran Turismo 7\nPor R$  3.905,00  na Amazon\nVer oferta:  https://promoby.me/w1201y2e8a3d\n🔔  Ative as notificações para avisarmos quando tem oferta chegando",
+    "produto": {
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "telegram:cupons_desconto/84698#PS5_DIGITAL",
+   "melhor_preco": 3905.0,
+   "ultima_vez": "2026-11-21T15:38:59-03:00",
+   "ultimo_preco": 3905.0,
+   "menor_preco": 3905.0
+  },
+  {
    "primeira_vez": "2026-11-21T09:35:04-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -7803,11 +7921,11 @@
    "parcelado": null,
    "cupom": "MELIMAIS2111",
    "publicado": "2026-11-21T09:19:19-03:00",
-   "ativo": true,
+   "ativo": false,
    "vendedor": null,
    "extra": {
     "preco_antigo": null,
-    "status": "APPROVED",
+    "status": "FINISHED",
     "produto": {
      "plataforma_incerta": false
     },
@@ -7827,7 +7945,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3237510",
    "melhor_preco": 311.0,
-   "ultima_vez": "2026-11-21T09:35:04-03:00",
+   "ultima_vez": "2026-11-21T15:38:59-03:00",
    "ultimo_preco": 311.0,
    "menor_preco": 311.0
   },
@@ -8326,7 +8444,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84689#PS5_DIGITAL",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-21T09:35:04-03:00",
+   "ultima_vez": "2026-11-21T15:38:59-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -8407,7 +8525,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236565",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-21T09:35:04-03:00"
+   "ultima_vez": "2026-11-21T15:38:59-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -8447,7 +8565,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236541",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-21T09:35:04-03:00"
+   "ultima_vez": "2026-11-21T15:38:59-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -8490,7 +8608,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84686#GTA6_CODE_IN_BOX",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-21T09:35:04-03:00",
+   "ultima_vez": "2026-11-21T15:38:59-03:00",
    "ultimo_preco": 279.92,
    "menor_preco": 279.92
   },
@@ -8648,7 +8766,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3235645",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-21T09:35:04-03:00"
+   "ultima_vez": "2026-11-21T15:38:59-03:00"
   },
   {
    "primeira_vez": "2026-11-20T14:24:21-03:00",
@@ -8803,7 +8921,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3235594",
    "melhor_preco": 3905.07,
-   "ultima_vez": "2026-11-21T09:35:04-03:00",
+   "ultima_vez": "2026-11-21T15:38:59-03:00",
    "ultimo_preco": 3905.07,
    "menor_preco": 3905.07
   },
@@ -9028,7 +9146,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:escolhasegura/25507#GTA6_CODE_IN_BOX",
    "melhor_preco": 279.0,
-   "ultima_vez": "2026-11-21T09:35:04-03:00",
+   "ultima_vez": "2026-11-21T15:38:59-03:00",
    "ultimo_preco": 279.0,
    "menor_preco": 279.0
   },
@@ -9204,97 +9322,6 @@
    "chave": "promobit:3235563",
    "melhor_preco": 279.0,
    "ultima_vez": "2026-11-20T13:54:10-03:00"
-  },
-  {
-   "primeira_vez": "2026-11-20T13:39:23-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Mercado Livre",
-   "titulo": "[tecnanofertas] 💥   😱  Jogo Grand Theft Auto Vi Edição Standard - Playstation 5 Gta 6",
-   "url": "https://t.me/tecnanofertas/158815",
-   "id": "tecnanofertas/158815#GTA6_CODE_IN_BOX",
-   "preco": 279.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "GRAND100MP",
-   "publicado": "2026-11-20T13:36:51-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "tecnanofertas",
-    "links": [
-     "https://meli.la/2mkoqTE",
-     "https://tecnan.com.br/"
-    ],
-    "texto": "💥   😱  Jogo Grand Theft Auto Vi Edição Standard - Playstation 5 Gta 6\n🤑  R$ 279\n🎟️  Cupom:  GRAND100MP\n✅  LINK:  https://meli.la/2mkoqTE\n⚠️  Preço e estoque sujeitos a alteração.\n🚀  + Grupos de Ofertas, Cupons e Bot Alertas:\nhttps://tecnan.com.br\n📢  Anuncio\n➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖ ➖\n🔥   PREÇO EM BAIXA!  Abaixo da média recente — vale aproveitar",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:tecnanofertas/158815#GTA6_CODE_IN_BOX",
-   "melhor_preco": 279.0,
-   "ultima_vez": "2026-11-20T14:24:21-03:00",
-   "ultimo_preco": 279.0,
-   "menor_preco": 279.0
-  },
-  {
-   "primeira_vez": "2026-11-20T13:39:23-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Mercado Livre",
-   "titulo": "[xaviertechpromo] 🚨  Grand Theft Auto Vi - Playstation 5",
-   "url": "https://t.me/xaviertechpromo/412245",
-   "id": "xaviertechpromo/412245#GTA6_CODE_IN_BOX",
-   "preco": 279.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "GRAND100MP",
-   "publicado": "2026-11-20T13:36:11-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "xaviertechpromo",
-    "links": [
-     "https://meli.la/1gQVdMA"
-    ],
-    "texto": "🚨  Grand Theft Auto Vi - Playstation 5\n💵  R$ 279\n🎟  Cupom:  GRAND100MP\nhttps://meli.la/1gQVdMA\n(Anúncio)",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:xaviertechpromo/412245#GTA6_CODE_IN_BOX",
-   "melhor_preco": 279.0,
-   "ultima_vez": "2026-11-20T13:39:23-03:00",
-   "ultimo_preco": 279.0,
-   "menor_preco": 279.0
   }
  ],
  "gta6_custo_final": [
@@ -9486,34 +9513,6 @@
    "forma": "GTA 6 PS5 Code in Box",
    "loja": "Shopee",
    "tipo": "post",
-   "url": "https://t.me/cupons_desconto/84542",
-   "preco": 289.0,
-   "custo_final": 289.0,
-   "cupom": null,
-   "entrega": "depois",
-   "entrega_texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)",
-   "meta": 300.0
-  },
-  {
-   "produto": "GTA6_CODE_IN_BOX",
-   "edicao": "Standard",
-   "forma": "GTA 6 PS5 Code in Box",
-   "loja": "Shopee",
-   "tipo": "post",
-   "url": "https://t.me/tecnanofertas/157623",
-   "preco": 289.9,
-   "custo_final": 289.9,
-   "cupom": null,
-   "entrega": "depois",
-   "entrega_texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)",
-   "meta": 300.0
-  },
-  {
-   "produto": "GTA6_CODE_IN_BOX",
-   "edicao": "Standard",
-   "forma": "GTA 6 PS5 Code in Box",
-   "loja": "Shopee",
-   "tipo": "post",
    "url": "https://t.me/IskandarSouza/199009",
    "preco": 295.0,
    "custo_final": 295.0,
@@ -9627,6 +9626,34 @@
    "loja": "Shopee",
    "tipo": "post",
    "url": "https://www.promobit.com.br/oferta/gta-vi-ps5-vice-city-rockstar-pre-venda-3232683/",
+   "preco": 298.0,
+   "custo_final": 298.0,
+   "cupom": null,
+   "entrega": "depois",
+   "entrega_texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)",
+   "meta": 300.0
+  },
+  {
+   "produto": "GTA6_CODE_IN_BOX",
+   "edicao": "Standard",
+   "forma": "GTA 6 PS5 Code in Box",
+   "loja": "Shopee",
+   "tipo": "post",
+   "url": "https://t.me/tecnoarthardware/55353",
+   "preco": 298.0,
+   "custo_final": 298.0,
+   "cupom": null,
+   "entrega": "depois",
+   "entrega_texto": "📦 Entrega: (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)",
+   "meta": 300.0
+  },
+  {
+   "produto": "GTA6_CODE_IN_BOX",
+   "edicao": "Standard",
+   "forma": "GTA 6 PS5 Code in Box",
+   "loja": "Shopee",
+   "tipo": "post",
+   "url": "https://t.me/linguicapromocoes/120517",
    "preco": 298.0,
    "custo_final": 298.0,
    "cupom": null,
@@ -9814,21 +9841,6 @@
   },
   {
    "fonte": "promobit",
-   "loja": "Magazine Luiza",
-   "codigo": "EPOCA10",
-   "titulo": "Cupom de desconto Magazine Luiza oferece 10% OFF em suas compras",
-   "url": "https://www.promobit.com.br/cupons/loja/magazine-luiza/",
-   "id": "70211",
-   "regra": "produtos Magazine Luiza Aplique o código promocional Magazine Luiza no carrinho de compras para participar.",
-   "validade": null,
-   "publicado": "2026-10-05T08:26:47-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:70211"
-  },
-  {
-   "fonte": "promobit",
    "loja": "Mercado Livre",
    "codigo": "PLAYER1",
    "titulo": "Garanta 8% OFF em produtos elegíveis com cupom Mercado Livre",
@@ -9920,17 +9932,17 @@
   {
    "fonte": "promobit",
    "loja": "KaBuM!",
-   "codigo": "130IMPRESSORA",
-   "titulo": "A chance de economizar R$ 130 em compras na KaBuM!",
+   "codigo": "STAR5",
+   "titulo": "A chance de economizar 5% em compras na KaBuM!",
    "url": "https://www.promobit.com.br/cupons/loja/kabum/",
-   "id": "71657",
+   "id": "71806",
    "regra": "produtos KaBuM!",
    "validade": "2026-11-30T23:59:59-03:00",
-   "publicado": "2026-11-06T11:31:07-03:00",
+   "publicado": "2026-11-10T11:51:09-03:00",
    "especifico": false,
    "modelo": null,
    "extra": {},
-   "chave": "promobit:71657"
+   "chave": "promobit:71806"
   },
   {
    "fonte": "promobit",
@@ -9951,7 +9963,7 @@
    "fonte": "promobit",
    "loja": "Fast Shop",
    "codigo": "5OFF",
-   "titulo": "Cupom de desconto Fast Shop oferece 5% OFF em suas compras",
+   "titulo": "A chance de economizar 5% em compras na Fast Shop",
    "url": "https://www.promobit.com.br/cupons/loja/fastshop/",
    "id": "70912",
    "regra": "produtos Fast Shop",
@@ -10566,72 +10578,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:14-03:00",
+   "ultimo_ok": "2026-11-21T15:37:51-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:21-03:00",
+   "ultimo_ok": "2026-11-21T15:37:57-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:58-03:00",
+   "ultimo_ok": "2026-11-21T15:38:52-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:16-03:00",
+   "ultimo_ok": "2026-11-21T15:37:53-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:27-03:00",
+   "ultimo_ok": "2026-11-21T15:38:11-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:29-03:00",
+   "ultimo_ok": "2026-11-21T15:38:13-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:30-03:00",
+   "ultimo_ok": "2026-11-21T15:38:14-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:31-03:00",
+   "ultimo_ok": "2026-11-21T15:38:16-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:32-03:00",
+   "ultimo_ok": "2026-11-21T15:38:16-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:33-03:00",
+   "ultimo_ok": "2026-11-21T15:38:17-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 879,
+   "falhas": 880,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-21T09:34:39-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-21T15:38:23-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:40-03:00",
+   "ultimo_ok": "2026-11-21T15:38:25-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:41-03:00",
+   "ultimo_ok": "2026-11-21T15:38:27-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T09:34:47-03:00",
+   "ultimo_ok": "2026-11-21T15:38:41-03:00",
    "ultimo_erro": null
   }
  },
