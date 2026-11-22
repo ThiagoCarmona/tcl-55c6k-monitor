@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-21T20:51:18-03:00",
+ "atualizado": "2026-11-21T21:06:26-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -1694,7 +1694,7 @@
      "sinais": [],
      "codigos": [],
      "catalogo": {
-      "total": 49,
+      "total": 50,
       "tv": 2,
       "games": 0
      }
@@ -1864,7 +1864,7 @@
      "sinais": [],
      "codigos": [],
      "catalogo": {
-      "total": 10,
+      "total": 11,
       "tv": 0,
       "games": 0
      }
@@ -4743,6 +4743,59 @@
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
+   "titulo": "SSD M.2 1TB Mini Kingston NV3 M.2 2230 NVMe PCIe 4.0 Leitura 6000MBs e Gravação 4000MBs SNV3SM3.1T0",
+   "url": "https://www.magazineluiza.com.br/ssd-m-2-1tb-mini-kingston-nv3-m-2-2230-nvme-pcie-4-0-leitura-6000mbs-e-gravacao-4000mbs-snv3sm3-1t0/p/kd49gk7695/in/ssdi/",
+   "id": "kd49gk7695-matrosinformatica",
+   "preco": 1979.0,
+   "preco_pix": 1880.05,
+   "parcelado": "10x R$ 197,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Matros Informática",
+   "extra": {
+    "preco_de": 1979.0,
+    "1p": false,
+    "anuncio": "kd49gk7695",
+    "vendedor_id": "matrosinformatica",
+    "ficha": {
+     "avaliacoes": 12,
+     "peso_kg": 0.085,
+     "razao_social": "matrosinformatica",
+     "vendedor_desde": "2025-05-07",
+     "vendas_vendedor": 1000,
+     "nota_vendedor": 4.1
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:kd49gk7695-matrosinformatica",
+   "melhor_preco": 1880.05
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
    "titulo": "SSD Kingston NV3, 1TB, M.2 2230, PCIe 4.0 x4, NVMe, Leitura: 6000 MB/s, Gravação: 5000 MB/s - SNV3SM3/1T0",
    "url": "https://www.magazineluiza.com.br/ssd-kingston-nv3-1tb-m-2-2230-pcie-4-0-x4-nvme-leitura-6000-mb-s-gravacao-5000-mb-s-snv3sm3-1t0/p/ab490acbkd/in/ssdi/",
    "id": "ab490acbkd-kabum",
@@ -4932,63 +4985,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "kabum.produtos:998974",
    "melhor_preco": 2049.99
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "SSD M.2 1TB Corsair MP700 Elite - NVMe Gen5 - Leitura 10.000MB/s - Gravação 8.500MB/s",
-   "url": "https://www.magazineluiza.com.br/ssd-m-2-1tb-corsair-mp700-elite-nvme-gen5-leitura-10-000mb-s-gravacao-8-500mb-s/p/bbjhjfj5a7/in/ssdi/",
-   "id": "bbjhjfj5a7-oficinadosbits2",
-   "preco": 2299.99,
-   "preco_pix": 2069.99,
-   "parcelado": "10x R$ 230,00 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Oficina Dos Bits",
-   "extra": {
-    "preco_de": 2299.99,
-    "1p": false,
-    "anuncio": "bbjhjfj5a7",
-    "vendedor_id": "oficinadosbits2",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.1,
-     "razao_social": "Oficina Dos Bits Ltda",
-     "vendedor_desde": "2021-01-11",
-     "vendas_vendedor": 6000,
-     "nota_vendedor": 3.5
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "5"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 760)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ]
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:bbjhjfj5a7-oficinadosbits2",
-   "melhor_preco": 2069.99
   },
   {
    "fonte": "kabum.produtos",
@@ -6991,50 +6987,6 @@
    "melhor_preco": 4703.53
   },
   {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "PlayStation 5 Edição Digital 825GB 1 Controle Branco Sony",
-   "url": "https://www.magazineluiza.com.br/playstation-5-edicao-digital-825gb-1-controle-branco-sony/p/240604800/ga/gap5/",
-   "id": "240604800-magazineluiza",
-   "preco": 4849.0,
-   "preco_pix": 4703.53,
-   "parcelado": "10x R$ 484,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Magalu",
-   "extra": {
-    "preco_de": 4999.0,
-    "1p": true,
-    "anuncio": "240604800",
-    "vendedor_id": "magazineluiza",
-    "ficha": {
-     "avaliacoes": 1240,
-     "peso_kg": 4.9,
-     "razao_social": "Magazine Luiza SA",
-     "vendedor_desde": "2016-06-01",
-     "vendas_vendedor": 200000000,
-     "nota_vendedor": 5
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "confiavel"
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "magalu.produtos:240604800-magazineluiza",
-   "melhor_preco": 4703.53
-  },
-  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -7208,6 +7160,50 @@
    "modelo": "PS5_DISCO",
    "chave": "mercadolivre.playstation:MLB5728106336",
    "melhor_preco": 4844.0
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "PlayStation 5 Slim Disk 1TB 1 Controle Branco Sony",
+   "url": "https://www.magazineluiza.com.br/playstation-5-slim-disk-1tb-1-controle-branco-sony/p/240609000/ga/gap5/",
+   "id": "240609000-magazineluiza",
+   "preco": 5299.0,
+   "preco_pix": 4875.08,
+   "parcelado": "10x R$ 529,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Magalu",
+   "extra": {
+    "preco_de": 5399.9,
+    "1p": true,
+    "anuncio": "240609000",
+    "vendedor_id": "magazineluiza",
+    "ficha": {
+     "avaliacoes": 552,
+     "peso_kg": 4.9,
+     "razao_social": "Magazine Luiza SA",
+     "vendedor_desde": "2016-06-01",
+     "vendas_vendedor": 200000000,
+     "nota_vendedor": 5
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "magalu.produtos:240609000-magazineluiza",
+   "melhor_preco": 4875.08
   },
   {
    "fonte": "kabum.produtos",
@@ -7704,7 +7700,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "telegram:linguicapromocoes/122442#GIFT_CARD_PSN",
    "melhor_preco": null,
-   "ultima_vez": "2026-11-21T20:51:16-03:00"
+   "ultima_vez": "2026-11-21T21:06:24-03:00"
   },
   {
    "primeira_vez": "2026-11-21T20:36:30-03:00",
@@ -7740,7 +7736,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84710#PS5_DIGITAL",
    "melhor_preco": 3869.79,
-   "ultima_vez": "2026-11-21T20:51:16-03:00",
+   "ultima_vez": "2026-11-21T21:06:24-03:00",
    "ultimo_preco": 3869.79,
    "menor_preco": 3869.79
   },
@@ -7775,7 +7771,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3238929",
    "melhor_preco": 4169.0,
-   "ultima_vez": "2026-11-21T20:51:16-03:00",
+   "ultima_vez": "2026-11-21T21:06:24-03:00",
    "ultimo_preco": 4169.0,
    "menor_preco": 4169.0
   },
@@ -7853,7 +7849,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:tecnanofertas/158943#SSD_NVME_1TB",
    "melhor_preco": 639.0,
-   "ultima_vez": "2026-11-21T20:51:16-03:00",
+   "ultima_vez": "2026-11-21T21:06:24-03:00",
    "ultimo_preco": 639.0,
    "menor_preco": 639.0
   },
@@ -7998,7 +7994,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:tecnanofertas/158942#SSD_NVME_1TB",
    "melhor_preco": 839.0,
-   "ultima_vez": "2026-11-21T20:51:16-03:00",
+   "ultima_vez": "2026-11-21T21:06:24-03:00",
    "ultimo_preco": 839.0,
    "menor_preco": 839.0
   },
@@ -8145,7 +8141,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84698#PS5_DIGITAL",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-21T20:51:16-03:00",
+   "ultima_vez": "2026-11-21T21:06:24-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -8327,7 +8323,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3237510",
    "melhor_preco": 311.0,
-   "ultima_vez": "2026-11-21T20:51:16-03:00",
+   "ultima_vez": "2026-11-21T21:06:24-03:00",
    "ultimo_preco": 311.0,
    "menor_preco": 311.0
   },
@@ -8907,7 +8903,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236565",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-21T20:51:16-03:00"
+   "ultima_vez": "2026-11-21T21:06:24-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -8947,7 +8943,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236541",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-21T20:51:16-03:00"
+   "ultima_vez": "2026-11-21T21:06:24-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -9148,7 +9144,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3235645",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-21T20:51:16-03:00"
+   "ultima_vez": "2026-11-21T21:06:24-03:00"
   },
   {
    "primeira_vez": "2026-11-20T14:24:21-03:00",
@@ -10512,72 +10508,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:20-03:00",
+   "ultimo_ok": "2026-11-21T21:05:20-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:29-03:00",
+   "ultimo_ok": "2026-11-21T21:05:27-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:51:13-03:00",
+   "ultimo_ok": "2026-11-21T21:06:16-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:24-03:00",
+   "ultimo_ok": "2026-11-21T21:05:23-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:35-03:00",
+   "ultimo_ok": "2026-11-21T21:05:40-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:39-03:00",
+   "ultimo_ok": "2026-11-21T21:05:44-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:40-03:00",
+   "ultimo_ok": "2026-11-21T21:05:45-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:43-03:00",
+   "ultimo_ok": "2026-11-21T21:05:48-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:44-03:00",
+   "ultimo_ok": "2026-11-21T21:05:49-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:45-03:00",
+   "ultimo_ok": "2026-11-21T21:05:50-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 885,
+   "falhas": 886,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-21T20:50:51-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-21T21:05:56-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:53-03:00",
+   "ultimo_ok": "2026-11-21T21:05:57-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:50:55-03:00",
+   "ultimo_ok": "2026-11-21T21:05:59-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-21T20:51:00-03:00",
+   "ultimo_ok": "2026-11-21T21:06:03-03:00",
    "ultimo_erro": null
   }
  },
