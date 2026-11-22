@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-22T09:39:04-03:00",
+ "atualizado": "2026-11-22T15:58:47-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -513,6 +513,48 @@
    "melhor_preco": 150.0
   },
   {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Videogame PlayStation 5 The Callisto Protocol Day One Edition",
+   "url": "https://www.magazineluiza.com.br/videogame-playstation-5-the-callisto-protocol-day-one-edition-krafton/p/jkehe6d5fc/ga/jgpn/",
+   "id": "jkehe6d5fc-nocnocestadosunidos",
+   "preco": 265.76,
+   "preco_pix": 247.16,
+   "parcelado": "7x R$ 37,97 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": false,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 294.03,
+    "1p": false,
+    "anuncio": "jkehe6d5fc",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.091,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 3.8
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": true
+    },
+    "descartado": "fora da faixa do produto (2500 a 7000)",
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "magalu.produtos:jkehe6d5fc-nocnocestadosunidos",
+   "melhor_preco": 247.16
+  },
+  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -791,76 +833,6 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "magalu.produtos:dge8e3de3j-oficialamericanas",
    "melhor_preco": 449.0
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Jogo Grand Theft Auto GTA VI, PS5 - TT000272PS5",
-   "url": "https://www.magazineluiza.com.br/jogo-grand-theft-auto-gta-vi-ps5-tt000272ps5-playstation/p/ag0cg2hb24/ga/jgta/",
-   "id": "ag0cg2hb24-kabum",
-   "preco": 449.9,
-   "preco_pix": null,
-   "parcelado": "6x R$ 74,98 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "KaBuM!",
-   "extra": {
-    "preco_de": 449.9,
-    "1p": false,
-    "anuncio": "ag0cg2hb24",
-    "vendedor_id": "kabum",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.112,
-     "razao_social": "KABUM S.A.",
-     "vendedor_desde": "2021-06-30",
-     "vendas_vendedor": 2000000,
-     "nota_vendedor": 3
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas",
-      "catálogo da loja"
-     ],
-     "sinais": [
-      "anúncio sem avaliações (o da loja confiável tem 500)"
-     ],
-     "codigos": [
-      "sem_avaliacoes"
-     ],
-     "catalogo": {
-      "total": 3310,
-      "tv": 25,
-      "games": 175
-     }
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "magalu.produtos:ag0cg2hb24-kabum",
-   "melhor_preco": 449.9
   },
   {
    "fonte": "psstore",
@@ -1264,9 +1236,9 @@
    "titulo": "Unidade Disco Playstation Cfi-zdd1ax Ps5 Slim E Pro",
    "url": "https://www.mercadolivre.com.br/unidade-disco-playstation-cfi-zdd1ax-ps5-slim-e-pro/up/MLBU4609697192?pdp_filters=item_id%3AMLB7337679808",
    "id": "MLB7337679808",
-   "preco": 696.4,
-   "preco_pix": 626.76,
-   "parcelado": "10x R$ 69,64 sem juros",
+   "preco": 682.47,
+   "preco_pix": 614.22,
+   "parcelado": "10x R$ 68,25 sem juros",
    "cupom": null,
    "publicado": null,
    "ativo": true,
@@ -1288,7 +1260,7 @@
    },
    "modelo": "LEITOR_PS5",
    "chave": "mercadolivre.playstation:MLB7337679808",
-   "melhor_preco": 626.76
+   "melhor_preco": 614.22
   },
   {
    "fonte": "kabum.produtos",
@@ -2582,6 +2554,59 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "magalu.produtos:ddkg17c11f-matrosinformatica",
    "melhor_preco": 1239.75
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "SSD KOOTION 1 TB NVMe PCIe 3.0 M.2 2280 3500 MB/s",
+   "url": "https://www.magazineluiza.com.br/ssd-kootion-1-tb-nvme-pcie-3-0-m-2-2280-3500-mb-s/p/cgac352ef8/in/ssdi/",
+   "id": "cgac352ef8-nocnocestadosunidos",
+   "preco": 1352.96,
+   "preco_pix": 1258.25,
+   "parcelado": "7x R$ 193,28 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "nocnocestadosunidos",
+   "extra": {
+    "preco_de": 1404.48,
+    "1p": false,
+    "anuncio": "cgac352ef8",
+    "vendedor_id": "nocnocestadosunidos",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 0.018,
+     "razao_social": "nocnoc Estados Unidos",
+     "vendedor_desde": "2024-10-29",
+     "vendas_vendedor": 70000,
+     "nota_vendedor": 3.8
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "geracao": "3"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "magalu.produtos:cgac352ef8-nocnocestadosunidos",
+   "melhor_preco": 1258.25
   },
   {
    "fonte": "magalu.produtos",
@@ -3937,59 +3962,6 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "magalu.produtos:kd6gfhcak5-nocnocestadosunidos",
    "melhor_preco": 1612.14
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
-   "titulo": "Unidade de estado sólido Lexar 1TB NM790 SSD PCIe Gen4 NVMe M.2 2280",
-   "url": "https://www.magazineluiza.com.br/unidade-de-estado-solido-lexar-1tb-nm790-ssd-pcie-gen4-nvme-m-2-2280/p/gj8b01e544/in/ssdi/",
-   "id": "gj8b01e544-nocnocestadosunidos",
-   "preco": 1793.88,
-   "preco_pix": 1668.31,
-   "parcelado": "7x R$ 256,27 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "nocnocestadosunidos",
-   "extra": {
-    "preco_de": 1867.02,
-    "1p": false,
-    "anuncio": "gj8b01e544",
-    "vendedor_id": "nocnocestadosunidos",
-    "ficha": {
-     "avaliacoes": 0,
-     "peso_kg": 0.05,
-     "razao_social": "nocnoc Estados Unidos",
-     "vendedor_desde": "2024-10-29",
-     "vendas_vendedor": 70000,
-     "nota_vendedor": 3.8
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "geracao": "4"
-    },
-    "confianca": {
-     "veredito": "sem_risco_aparente",
-     "checagens": [
-      "preço",
-      "avaliações",
-      "razão social",
-      "idade da conta",
-      "vendas"
-     ],
-     "sinais": [],
-     "codigos": []
-    },
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "magalu.produtos:gj8b01e544-nocnocestadosunidos",
-   "melhor_preco": 1668.31
   },
   {
    "fonte": "kabum.produtos",
@@ -7263,6 +7235,64 @@
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
+   "titulo": "Console PlayStation PS5 Bundle 5 Edição Digital Astro Bot e Gran Turismo 7 825GB",
+   "url": "https://www.magazineluiza.com.br/console-playstation-ps5-bundle-5-edicao-digital-astro-bot-e-gran-turismo-7-825gb-sony/p/cheh2k3h3h/ga/gap5/",
+   "id": "cheh2k3h3h-multiloja",
+   "preco": 5799.9,
+   "preco_pix": 5219.91,
+   "parcelado": "10x R$ 579,99 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Multiloja",
+   "extra": {
+    "preco_de": 5799.9,
+    "1p": false,
+    "anuncio": "cheh2k3h3h",
+    "vendedor_id": "multiloja",
+    "ficha": {
+     "avaliacoes": 0,
+     "peso_kg": 9.1,
+     "razao_social": "HORFRAN COMERCIAL ELETRO MÓVEIS LTDA",
+     "vendedor_desde": "2018-10-24",
+     "vendas_vendedor": 700000,
+     "nota_vendedor": 4
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "peso",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas"
+     ],
+     "sinais": [
+      "anúncio sem avaliações (o da loja confiável tem 3.765)"
+     ],
+     "codigos": [
+      "sem_avaliacoes"
+     ]
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "magalu.produtos:cheh2k3h3h-multiloja",
+   "melhor_preco": 5219.91
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
    "titulo": "Console Sony PlayStation 5, Com Leitor de Discos, SSD 1TB, Controle Sem Fio DualSense + 2 Jogos",
    "url": "https://www.magazineluiza.com.br/console-sony-playstation-5-com-leitor-de-discos-ssd-1tb-controle-sem-fio-dualsense-2-jogos/p/bja6dfc54b/ga/gap5/",
    "id": "bja6dfc54b-kabum",
@@ -7438,6 +7468,81 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-22T15:58:46-03:00",
+   "preco_alertado": null,
+   "fonte": "promobit",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "PlayStation5 Slim Digital 825GB Pacote ASTRO BOT e Gran Turismo 7",
+   "url": "https://www.promobit.com.br/oferta/playstation5-slim-digital-825gb-pacote-astro-bot-e-gran-turismo-7-3240334/",
+   "id": "3240334",
+   "preco": 4499.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-22T12:38:28-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "preco_antigo": null,
+    "status": "APPROVED",
+    "produto": {
+     "versao_incerta": false
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "promobit:3240334",
+   "melhor_preco": 4499.0,
+   "ultima_vez": "2026-11-22T15:58:46-03:00",
+   "ultimo_preco": 4499.0,
+   "menor_preco": 4499.0
+  },
+  {
+   "primeira_vez": "2026-11-22T15:58:46-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "AliExpress",
+   "titulo": "[peperaiohardware] EAI, KOOTION M2 NVMe SSD 1TB Gen4 7200 MB/s",
+   "url": "https://t.me/peperaiohardware/124543",
+   "id": "peperaiohardware/124543#SSD_NVME_1TB",
+   "preco": 864.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "KT0020",
+   "publicado": "2026-11-22T09:56:37-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "peperaiohardware",
+    "links": [
+     "https://a.aliexpress.com/_c3Op3npT",
+     "https://a.aliexpress.com/_c3DPL2x7",
+     "https://cutt.ly/LyebwPCv"
+    ],
+    "texto": "EAI, KOOTION M2 NVMe SSD 1TB Gen4 7200 MB/s\n💵  R$ 864 com cupom:  KT0020  +  BLACKAE5  + Moedas no App\n✅  Link APP:  https://a.aliexpress.com/_c3Op3npT\n✅  Link PC:  https://a.aliexpress.com/_c3DPL2x7\n📣  Preço já com impostos somados\n⭐  Bot de descontos AliExpress:\nhttps://cutt.ly/LyebwPCv",
+    "produto": {
+     "geracao": "4"
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "telegram:peperaiohardware/124543#SSD_NVME_1TB",
+   "melhor_preco": 864.0,
+   "ultima_vez": "2026-11-22T15:58:46-03:00",
+   "ultimo_preco": 864.0,
+   "menor_preco": 864.0
+  },
+  {
    "primeira_vez": "2026-11-22T09:39:02-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -7511,7 +7616,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:achadosdotb/12211#PS5_DIGITAL",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-22T09:39:02-03:00",
+   "ultima_vez": "2026-11-22T15:58:46-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -7631,7 +7736,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3239387",
    "melhor_preco": 351.41,
-   "ultima_vez": "2026-11-22T09:39:02-03:00",
+   "ultima_vez": "2026-11-22T15:58:46-03:00",
    "ultimo_preco": 351.41,
    "menor_preco": 351.41
   },
@@ -7704,7 +7809,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84710#PS5_DIGITAL",
    "melhor_preco": 3869.79,
-   "ultima_vez": "2026-11-22T09:39:02-03:00",
+   "ultima_vez": "2026-11-22T15:58:46-03:00",
    "ultimo_preco": 3869.79,
    "menor_preco": 3869.79
   },
@@ -7739,7 +7844,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3238929",
    "melhor_preco": 4169.0,
-   "ultima_vez": "2026-11-22T09:39:02-03:00",
+   "ultima_vez": "2026-11-22T15:58:46-03:00",
    "ultimo_preco": 4169.0,
    "menor_preco": 4169.0
   },
@@ -8291,7 +8396,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3237510",
    "melhor_preco": 311.0,
-   "ultima_vez": "2026-11-22T09:39:02-03:00",
+   "ultima_vez": "2026-11-22T15:58:46-03:00",
    "ultimo_preco": 311.0,
    "menor_preco": 311.0
   },
@@ -8871,7 +8976,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3236565",
    "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-22T09:39:02-03:00"
+   "ultima_vez": "2026-11-22T15:58:46-03:00"
   },
   {
    "primeira_vez": "2026-11-20T19:49:45-03:00",
@@ -8912,91 +9017,6 @@
    "chave": "promobit:3236541",
    "melhor_preco": 279.92,
    "ultima_vez": "2026-11-22T01:15:46-03:00"
-  },
-  {
-   "primeira_vez": "2026-11-20T19:49:45-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Mercado Livre",
-   "titulo": "[cupons_desconto] Grand Theft Auto Vi - Playstation 5",
-   "url": "https://t.me/cupons_desconto/84686",
-   "id": "cupons_desconto/84686#GTA6_CODE_IN_BOX",
-   "preco": 279.92,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-20T17:40:25-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "cupons_desconto",
-    "links": [
-     "https://promoby.me/711xv882ru2w"
-    ],
-    "texto": "Grand Theft Auto Vi - Playstation 5\nPor R$  279,92  na Mercado Livre\nVer oferta:  https://promoby.me/711xv882ru2w\n🔔  Ative as notificações para avisarmos quando tem oferta chegando",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "telegram:cupons_desconto/84686#GTA6_CODE_IN_BOX",
-   "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-21T16:23:40-03:00",
-   "ultimo_preco": 279.92,
-   "menor_preco": 279.92
-  },
-  {
-   "primeira_vez": "2026-11-20T19:49:45-03:00",
-   "preco_alertado": null,
-   "fonte": "promobit",
-   "tipo": "post",
-   "loja": "Mercado Livre",
-   "titulo": "Grand Theft Auto Vi - Playstation 5",
-   "url": "https://www.promobit.com.br/oferta/grand-theft-auto-vi-playstation-5-3236134/",
-   "id": "3236134",
-   "preco": 279.92,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "GRAND100MP",
-   "publicado": "2026-11-20T16:54:45-03:00",
-   "ativo": false,
-   "vendedor": null,
-   "extra": {
-    "preco_antigo": 449.9,
-    "status": "FINISHED",
-    "produto": {
-     "plataforma_incerta": false
-    },
-    "alvo": {
-     "pix": 300.0,
-     "parcelado": 320.0,
-     "nota": "chega depois de 18/11"
-    },
-    "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
-     "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
-    }
-   },
-   "modelo": "GTA6_CODE_IN_BOX",
-   "chave": "promobit:3236134",
-   "melhor_preco": 279.92,
-   "ultima_vez": "2026-11-21T09:35:04-03:00"
   }
  ],
  "gta6_custo_final": [
@@ -9577,21 +9597,6 @@
   {
    "fonte": "promobit",
    "loja": "Fast Shop",
-   "codigo": "5OFF",
-   "titulo": "A chance de economizar 5% em compras na Fast Shop",
-   "url": "https://www.promobit.com.br/cupons/loja/fastshop/",
-   "id": "70912",
-   "regra": "produtos Fast Shop",
-   "validade": "2026-11-30T23:59:59-03:00",
-   "publicado": "2026-10-20T13:40:16-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:70912"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "Fast Shop",
    "codigo": "PS5200",
    "titulo": "O momento chegou: Aplique cupom Fast Shop e ganhe R$ 5.229.90 OFF",
    "url": "https://www.promobit.com.br/cupons/loja/fastshop/",
@@ -9603,36 +9608,6 @@
    "modelo": null,
    "extra": {},
    "chave": "promobit:66873"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "AliExpress",
-   "codigo": "NIVER1",
-   "titulo": "R$ 500 de desconto em compras a partir de R$ 3.700",
-   "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "62783",
-   "regra": "produtos Aliexpress",
-   "validade": null,
-   "publicado": "2026-03-16T19:04:19-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:62783"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "AliExpress",
-   "codigo": "PROMOBITG",
-   "titulo": "Cupom exclusivo Promobit: R$ 550 OFF em compras a partir de R$ 3.500 na Black Friday AliExpress",
-   "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "72308",
-   "regra": "produtos Aliexpress Cupom exclusivo do Promobit: R$ 550 de desconto em compras a partir de R$ 3.500 na Black Friday AliExpress. Aplique o código PROMOBITG no carrinho. Válido até 03/12/2026 às 23h59 ou enquanto durar o estoque de cupons.",
-   "validade": "2026-12-03T23:59:59-03:00",
-   "publicado": "2026-11-19T09:25:46-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:72308"
   },
   {
    "fonte": "promobit",
@@ -9652,17 +9627,17 @@
   {
    "fonte": "promobit",
    "loja": "AliExpress",
-   "codigo": "PROMOBITE",
-   "titulo": "Cupom exclusivo Promobit: R$ 330 OFF em compras a partir de R$ 2.000 na Black Friday AliExpress",
+   "codigo": "PROMOBITG",
+   "titulo": "Cupom exclusivo Promobit: R$ 550 OFF em compras a partir de R$ 3.500 na Black Friday AliExpress",
    "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "72306",
-   "regra": "produtos Aliexpress Cupom exclusivo do Promobit: R$ 330 de desconto em compras a partir de R$ 2.000 na Black Friday AliExpress. Aplique o código PROMOBITE no carrinho. Válido até 03/12/2026 às 23h59 ou enquanto durar o estoque de cupons.",
+   "id": "72308",
+   "regra": "produtos Aliexpress Cupom exclusivo do Promobit: R$ 550 de desconto em compras a partir de R$ 3.500 na Black Friday AliExpress. Aplique o código PROMOBITG no carrinho. Válido até 03/12/2026 às 23h59 ou enquanto durar o estoque de cupons.",
    "validade": "2026-12-03T23:59:59-03:00",
-   "publicado": "2026-11-19T09:25:45-03:00",
+   "publicado": "2026-11-19T09:25:46-03:00",
    "especifico": false,
    "modelo": null,
    "extra": {},
-   "chave": "promobit:72306"
+   "chave": "promobit:72308"
   },
   {
    "fonte": "promobit",
@@ -9708,6 +9683,21 @@
    "modelo": null,
    "extra": {},
    "chave": "promobit:72303"
+  },
+  {
+   "fonte": "promobit",
+   "loja": "AliExpress",
+   "codigo": "PROMOBITE",
+   "titulo": "Cupom exclusivo Promobit: R$ 330 OFF em compras a partir de R$ 2.000 na Black Friday AliExpress",
+   "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
+   "id": "72306",
+   "regra": "produtos Aliexpress Cupom exclusivo do Promobit: R$ 330 de desconto em compras a partir de R$ 2.000 na Black Friday AliExpress. Aplique o código PROMOBITE no carrinho. Válido até 03/12/2026 às 23h59 ou enquanto durar o estoque de cupons.",
+   "validade": "2026-12-03T23:59:59-03:00",
+   "publicado": "2026-11-19T09:25:45-03:00",
+   "especifico": false,
+   "modelo": null,
+   "extra": {},
+   "chave": "promobit:72306"
   },
   {
    "fonte": "promobit",
@@ -9847,92 +9837,17 @@
   {
    "fonte": "promobit",
    "loja": "AliExpress",
-   "codigo": "WOBR03",
-   "titulo": "Ganhe R$15 OFF em suas compras aplicando o cupom AliExpress",
+   "codigo": "BRGM4",
+   "titulo": "DESCONTOS IMPERDÍVEIS: R$ 110 OFF em compras acima de R$ 740 na AliExpress com cupom",
    "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "70690",
-   "regra": "produtos Aliexpress APLIQUE O CÓDIGO WOBR03 NO CARRINHO DO ALIEXPRESS PARA RECEBER R$15 DE DESCONTO EM COMPRAS A PARTIR DE R$110",
-   "validade": "2026-12-31T20:59:59-03:00",
-   "publicado": "2026-10-15T15:30:22-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:70690"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "AliExpress",
-   "codigo": "BRCD2",
-   "titulo": "Cupom AliExpress concede desconto de R$18",
-   "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "70135",
-   "regra": "produtos Aliexpress Aplique o código promocional AliExpress no carrinho de compras em compras acima de R$150.",
-   "validade": null,
-   "publicado": "2026-10-01T09:53:52-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:70135"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "AliExpress",
-   "codigo": "BRCD4",
-   "titulo": "Use cupom AliExpress e tenha desconto de R$85",
-   "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "70133",
-   "regra": "produtos Aliexpress Economize até R$85 em compras acima de R$660 ao usar o código promocional no carrinho de compras.",
-   "validade": null,
-   "publicado": "2026-10-01T09:53:08-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:70133"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "AliExpress",
-   "codigo": "BRCD5",
-   "titulo": "Cupom de desconto Aliexpress oferece R$165 OFF em suas compras",
-   "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "70132",
-   "regra": "produtos Aliexpress Economize até R$165 ao usar o código promocional no carrinho de compras para compras acima de R$1.300.",
-   "validade": null,
-   "publicado": "2026-10-01T09:52:42-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:70132"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "AliExpress",
-   "codigo": "BRCD8",
-   "titulo": "A chance de economizar R$445 em compras na AliExpress",
-   "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "70129",
-   "regra": "produtos Aliexpress Economize até R$445 ao usar o código promocional em compras acima de R$3.900.",
-   "validade": null,
-   "publicado": "2026-10-01T09:50:46-03:00",
-   "especifico": false,
-   "modelo": null,
-   "extra": {},
-   "chave": "promobit:70129"
-  },
-  {
-   "fonte": "promobit",
-   "loja": "AliExpress",
-   "codigo": "NOVA1",
-   "titulo": "COMPRE MAIS: R$ 240 OFF em compras acima de R$ 1.600 na AliExpress (com cupom)",
-   "url": "https://www.promobit.com.br/cupons/loja/aliexpress/",
-   "id": "68485",
+   "id": "68430",
    "regra": "produtos Aliexpress",
    "validade": null,
-   "publicado": "2026-08-18T09:48:41-03:00",
+   "publicado": "2026-08-17T14:01:29-03:00",
    "especifico": false,
    "modelo": null,
    "extra": {},
-   "chave": "promobit:68485"
+   "chave": "promobit:68430"
   },
   {
    "fonte": "promobit",
@@ -10178,72 +10093,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:11-03:00",
+   "ultimo_ok": "2026-11-22T15:57:49-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:18-03:00",
+   "ultimo_ok": "2026-11-22T15:57:56-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:57-03:00",
+   "ultimo_ok": "2026-11-22T15:58:40-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:14-03:00",
+   "ultimo_ok": "2026-11-22T15:57:51-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:24-03:00",
+   "ultimo_ok": "2026-11-22T15:58:09-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:28-03:00",
+   "ultimo_ok": "2026-11-22T15:58:13-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:29-03:00",
+   "ultimo_ok": "2026-11-22T15:58:14-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:31-03:00",
+   "ultimo_ok": "2026-11-22T15:58:15-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:32-03:00",
+   "ultimo_ok": "2026-11-22T15:58:16-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:33-03:00",
+   "ultimo_ok": "2026-11-22T15:58:17-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 895,
+   "falhas": 896,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-22T09:38:39-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-22T15:58:23-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:41-03:00",
+   "ultimo_ok": "2026-11-22T15:58:26-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:42-03:00",
+   "ultimo_ok": "2026-11-22T15:58:27-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T09:38:44-03:00",
+   "ultimo_ok": "2026-11-22T15:58:29-03:00",
    "ultimo_erro": null
   }
  },
