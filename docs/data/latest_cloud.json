@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-22T16:28:42-03:00",
+ "atualizado": "2026-11-22T16:43:47-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -6314,6 +6314,66 @@
    "melhor_preco": 4138.56
   },
   {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "Console PlayStation 5 Slim Digital 825GB com controle Dualsense",
+   "url": "https://www.magazineluiza.com.br/console-playstation-5-slim-digital-825gb-com-controle-dualsense-sony/p/hg9286bd4c/ga/gap5/",
+   "id": "hg9286bd4c-negociunoficial",
+   "preco": 4399.0,
+   "preco_pix": 4179.05,
+   "parcelado": "10x R$ 439,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Negociun Oficial",
+   "extra": {
+    "preco_de": 4869.0,
+    "1p": false,
+    "anuncio": "hg9286bd4c",
+    "vendedor_id": "negociunoficial",
+    "ficha": {
+     "avaliacoes": 1240,
+     "peso_kg": 4.1,
+     "razao_social": "negociunoficial",
+     "vendedor_desde": "2025-03-17",
+     "vendas_vendedor": 100000,
+     "nota_vendedor": 4.7
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço",
+      "peso",
+      "avaliações",
+      "razão social",
+      "idade da conta",
+      "vendas",
+      "catálogo da loja"
+     ],
+     "sinais": [],
+     "codigos": [],
+     "catalogo": {
+      "total": 622,
+      "tv": 52,
+      "games": 16
+     }
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "magalu.produtos:hg9286bd4c-negociunoficial",
+   "melhor_preco": 4179.05
+  },
+  {
    "fonte": "kabum.produtos",
    "tipo": "loja",
    "loja": "KaBuM!",
@@ -7498,7 +7558,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3240334",
    "melhor_preco": 4499.0,
-   "ultima_vez": "2026-11-22T16:28:41-03:00",
+   "ultima_vez": "2026-11-22T16:43:46-03:00",
    "ultimo_preco": 4499.0,
    "menor_preco": 4499.0
   },
@@ -7538,7 +7598,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:peperaiohardware/124543#SSD_NVME_1TB",
    "melhor_preco": 864.0,
-   "ultima_vez": "2026-11-22T16:28:41-03:00",
+   "ultima_vez": "2026-11-22T16:43:46-03:00",
    "ultimo_preco": 864.0,
    "menor_preco": 864.0
   },
@@ -7616,7 +7676,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:achadosdotb/12211#PS5_DIGITAL",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-22T16:28:41-03:00",
+   "ultima_vez": "2026-11-22T16:43:46-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -7736,7 +7796,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3239387",
    "melhor_preco": 351.41,
-   "ultima_vez": "2026-11-22T16:28:41-03:00",
+   "ultima_vez": "2026-11-22T16:43:46-03:00",
    "ultimo_preco": 351.41,
    "menor_preco": 351.41
   },
@@ -7809,7 +7869,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84710#PS5_DIGITAL",
    "melhor_preco": 3869.79,
-   "ultima_vez": "2026-11-22T16:28:41-03:00",
+   "ultima_vez": "2026-11-22T16:43:46-03:00",
    "ultimo_preco": 3869.79,
    "menor_preco": 3869.79
   },
@@ -7844,7 +7904,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3238929",
    "melhor_preco": 4169.0,
-   "ultima_vez": "2026-11-22T16:28:41-03:00",
+   "ultima_vez": "2026-11-22T16:43:46-03:00",
    "ultimo_preco": 4169.0,
    "menor_preco": 4169.0
   },
@@ -8396,7 +8456,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3237510",
    "melhor_preco": 311.0,
-   "ultima_vez": "2026-11-22T16:28:41-03:00",
+   "ultima_vez": "2026-11-22T16:43:46-03:00",
    "ultimo_preco": 311.0,
    "menor_preco": 311.0
   },
@@ -10093,72 +10153,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:27:48-03:00",
+   "ultimo_ok": "2026-11-22T16:42:48-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:27:56-03:00",
+   "ultimo_ok": "2026-11-22T16:42:57-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:39-03:00",
+   "ultimo_ok": "2026-11-22T16:43:41-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:27:50-03:00",
+   "ultimo_ok": "2026-11-22T16:42:50-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:10-03:00",
+   "ultimo_ok": "2026-11-22T16:43:11-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:14-03:00",
+   "ultimo_ok": "2026-11-22T16:43:15-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:15-03:00",
+   "ultimo_ok": "2026-11-22T16:43:16-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:16-03:00",
+   "ultimo_ok": "2026-11-22T16:43:18-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:17-03:00",
+   "ultimo_ok": "2026-11-22T16:43:18-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:18-03:00",
+   "ultimo_ok": "2026-11-22T16:43:19-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 898,
+   "falhas": 899,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-22T16:28:24-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-22T16:43:25-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:26-03:00",
+   "ultimo_ok": "2026-11-22T16:43:27-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:27-03:00",
+   "ultimo_ok": "2026-11-22T16:43:28-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T16:28:28-03:00",
+   "ultimo_ok": "2026-11-22T16:43:31-03:00",
    "ultimo_erro": null
   }
  },
