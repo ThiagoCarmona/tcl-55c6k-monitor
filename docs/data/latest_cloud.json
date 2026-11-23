@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-22T21:03:10-03:00",
+ "atualizado": "2026-11-22T21:17:56-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -6689,6 +6689,41 @@
    "melhor_preco": 4606.55
   },
   {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "Console Sony PlayStation 5, SSD 825GB, Controle Sem Fio DualSense + 2 Jogos Digitais, Edição Digital",
+   "url": "https://www.kabum.com.br/produto/989702",
+   "id": "989702",
+   "preco": 4999.0,
+   "preco_pix": 4649.07,
+   "parcelado": "10x de R$ 499,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "KaBuM!",
+   "extra": {
+    "preco_tabela": 4999.0,
+    "openbox": false,
+    "kabum_seller_id": "0",
+    "kabum_oferta_id": 0,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 3550.0,
+     "parcelado": 3700.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DIGITAL",
+   "chave": "kabum.produtos:989702",
+   "melhor_preco": 4649.07
+  },
+  {
    "fonte": "americanas",
    "tipo": "loja",
    "loja": "Americanas",
@@ -7603,6 +7638,119 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-22T21:17:55-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "[xaviertechpromo] 🚨  Drive de Disco para Console PlayStation ® 5 Slim e Pro",
+   "url": "https://t.me/xaviertechpromo/415930",
+   "id": "xaviertechpromo/415930#LEITOR_PS5",
+   "preco": 598.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-22T21:16:37-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "xaviertechpromo",
+    "links": [
+     "https://www.amazon.com.br/dp/B0CL5HJNLM?tag=spy0f-20"
+    ],
+    "texto": "🚨  Drive de Disco para Console PlayStation ® 5 Slim e Pro\n💵  R$ 598\nOu em até 10x\nhttps://www.amazon.com.br/dp/B0CL5HJNLM?tag=spy0f-20\n(Anúncio)",
+    "alvo": {
+     "pix": 300.0,
+     "parcelado": 320.0,
+     "nota": ""
+    }
+   },
+   "modelo": "LEITOR_PS5",
+   "chave": "telegram:xaviertechpromo/415930#LEITOR_PS5",
+   "melhor_preco": 598.0,
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
+   "ultimo_preco": 598.0,
+   "menor_preco": 598.0
+  },
+  {
+   "primeira_vez": "2026-11-22T21:17:55-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "AliExpress",
+   "titulo": "[tecnoarthardware] 🔥  SSD NVME 1TB Fanxiang S790E novo com Leitura 7100 MB/s PCIe 4.0 Gen4 7100mbs gen 4",
+   "url": "https://t.me/tecnoarthardware/55920",
+   "id": "tecnoarthardware/55920#SSD_NVME_1TB",
+   "preco": 848.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "LIBRETX1TB",
+   "publicado": "2026-11-22T21:15:20-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "tecnoarthardware",
+    "links": [
+     "https://a.aliexpress.com/_c4bvAKW1",
+     "https://a.aliexpress.com/_c387rQyd"
+    ],
+    "texto": "🔥  SSD NVME 1TB Fanxiang S790E novo com Leitura 7100 MB/s PCIe 4.0 Gen4 7100mbs gen 4\n💵  R$ 848,00 com cupom:  LIBRETX1TB  ou  1TBLIBRETX  +  BLACKAE5  + 274 moedas no APP\n🔗  Link APP:  https://a.aliexpress.com/_c4bvAKW1\n🔗  Link PC:  https://a.aliexpress.com/_c387rQyd\n⚡️ SE LIGA NOS OUTROS CANAIS DO TECNOART ⚡️\n👨🏼‍💻 SÓ PLACAS DE VÍDEO:  https://t.me/placasdevideotecnoart\n💻 SÓ NOTEBOOKS:  https://t.me/cacadordenotebook\n📱 SÓ SMARTHPONES:  t.me/cacadordesmartphones\n(anuncio)",
+    "produto": {
+     "geracao": "4"
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "telegram:tecnoarthardware/55920#SSD_NVME_1TB",
+   "melhor_preco": 848.0,
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
+   "ultimo_preco": 848.0,
+   "menor_preco": 848.0
+  },
+  {
+   "primeira_vez": "2026-11-22T21:17:55-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "AliExpress",
+   "titulo": "[IskandarSouza] 🔥 🙂 SSD NVME 1TB Fanxiang S790E novo com Leitura 7100MB/s PCIe 4.0 Gen4 7100mbs gen 4",
+   "url": "https://t.me/IskandarSouza/199724",
+   "id": "IskandarSouza/199724#SSD_NVME_1TB",
+   "preco": 848.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": "LIBRETX1TB",
+   "publicado": "2026-11-22T21:14:06-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "IskandarSouza",
+    "links": [
+     "https://a.aliexpress.com/_c40kULzT",
+     "https://a.aliexpress.com/_c45pjNEz"
+    ],
+    "texto": "🔥 🙂 SSD NVME 1TB Fanxiang S790E novo com Leitura 7100MB/s PCIe 4.0 Gen4 7100mbs gen 4\n- Direto do Brasil  🇧🇷\n💰  R$ 848\n📝  Cupom:  LIBRETX1TB  ou   1TBLIBRETX  +   BLACKAE5  + 274 moedas no APP\n⬇️  APP\nhttps://a.aliexpress.com/_c40kULzT\n⬇️  NO PC\nhttps://a.aliexpress.com/_c45pjNEz",
+    "produto": {
+     "geracao": "4"
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "telegram:IskandarSouza/199724#SSD_NVME_1TB",
+   "melhor_preco": 848.0,
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
+   "ultimo_preco": 848.0,
+   "menor_preco": 848.0
+  },
+  {
    "primeira_vez": "2026-11-22T21:03:09-03:00",
    "preco_alertado": null,
    "fonte": "promobit",
@@ -7630,7 +7778,7 @@
    "modelo": "LEITOR_PS5",
    "chave": "promobit:3241495",
    "melhor_preco": 598.0,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 598.0,
    "menor_preco": 598.0
   },
@@ -7665,7 +7813,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3241401",
    "melhor_preco": 4047.0,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 4047.0,
    "menor_preco": 4047.0
   },
@@ -7703,7 +7851,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84729#PS5_DIGITAL",
    "melhor_preco": 4311.28,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 4311.28,
    "menor_preco": 4311.28
   },
@@ -7738,7 +7886,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3241363",
    "melhor_preco": 4599.0,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 4599.0,
    "menor_preco": 4599.0
   },
@@ -7773,7 +7921,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3241119",
    "melhor_preco": 4084.07,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 4084.07,
    "menor_preco": 4084.07
   },
@@ -7808,7 +7956,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3241081",
    "melhor_preco": 1047.01,
-   "ultima_vez": "2026-11-22T21:03:09-03:00"
+   "ultima_vez": "2026-11-22T21:17:55-03:00"
   },
   {
    "primeira_vez": "2026-11-22T21:03:09-03:00",
@@ -7841,7 +7989,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3240879",
    "melhor_preco": 4499.0,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 4499.0,
    "menor_preco": 4499.0
   },
@@ -7876,7 +8024,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3240334",
    "melhor_preco": 4499.0,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 4499.0,
    "menor_preco": 4499.0
   },
@@ -7994,7 +8142,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:achadosdotb/12211#PS5_DIGITAL",
    "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 3905.0,
    "menor_preco": 3905.0
   },
@@ -8114,7 +8262,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3239387",
    "melhor_preco": 351.41,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 351.41,
    "menor_preco": 351.41
   },
@@ -8222,7 +8370,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3238929",
    "melhor_preco": 4169.0,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 4169.0,
    "menor_preco": 4169.0
   },
@@ -8774,7 +8922,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3237510",
    "melhor_preco": 311.0,
-   "ultima_vez": "2026-11-22T21:03:09-03:00",
+   "ultima_vez": "2026-11-22T21:17:55-03:00",
    "ultimo_preco": 311.0,
    "menor_preco": 311.0
   },
@@ -9021,120 +9169,6 @@
    "ultima_vez": "2026-11-21T09:35:04-03:00",
    "ultimo_preco": 4184.06,
    "menor_preco": 4184.06
-  },
-  {
-   "primeira_vez": "2026-11-21T08:50:09-03:00",
-   "preco_alertado": null,
-   "fonte": "promobit",
-   "tipo": "post",
-   "loja": "Amazon",
-   "titulo": "PlayStation5 Slim Disk - Pacote ASTRO BOT e Gran Turismo 7",
-   "url": "https://www.promobit.com.br/oferta/playstation5-slim-disk-pacote-astro-bot-e-gran-turismo-7-3237281/",
-   "id": "3237281",
-   "preco": 4649.06,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-21T07:16:23-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "preco_antigo": 5099.9,
-    "status": "APPROVED",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3950.0,
-     "parcelado": 4150.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DISCO",
-   "chave": "promobit:3237281",
-   "melhor_preco": 4649.06,
-   "ultima_vez": "2026-11-21T09:35:04-03:00",
-   "ultimo_preco": 4649.06,
-   "menor_preco": 4649.06
-  },
-  {
-   "primeira_vez": "2026-11-21T08:50:09-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "AliExpress",
-   "titulo": "[tecnoarthardware] 🔥  PS5 Console PlayStation 5 Edição Digital 825GB 1 Controle Branco Sony",
-   "url": "https://t.me/tecnoarthardware/55719",
-   "id": "tecnoarthardware/55719#PS5_DIGITAL",
-   "preco": 3964.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "IFPFBFP2",
-   "publicado": "2026-11-21T07:06:01-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "tecnoarthardware",
-    "links": [
-     "https://a.aliexpress.com/_c3WOhv8h",
-     "https://a.aliexpress.com/_c3K4JWjL"
-    ],
-    "texto": "EAI, BORA JOGAR GTA 6?\n🔥  PS5 Console PlayStation 5 Edição Digital 825GB 1 Controle Branco Sony\n💵  R$ 3.964,00 em 12x sem juros\n🏷️  Use cupom:  IFPFBFP2  ou  IFPL2JRQ  ou  AFFBF08  + 807 moedas no APP\n🔗  Link APP:  https://a.aliexpress.com/_c3WOhv8h\n🔗  Link PC:  https://a.aliexpress.com/_c3K4JWjL\n⚡️ SE LIGA NOS OUTROS CANAIS DO TECNOART ⚡️\n👨🏼‍💻 SÓ PLACAS DE VÍDEO:  https://t.me/placasdevideotecnoart\n💻 SÓ NOTEBOOKS:  https://t.me/cacadordenotebook\n📱 SÓ SMARTHPONES:  t.me/cacadordesmartphones\n(anuncio)",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "telegram:tecnoarthardware/55719#PS5_DIGITAL",
-   "melhor_preco": 3964.0,
-   "ultima_vez": "2026-11-21T09:35:04-03:00",
-   "ultimo_preco": 3964.0,
-   "menor_preco": 3964.0
-  },
-  {
-   "primeira_vez": "2026-11-21T08:50:09-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "AliExpress",
-   "titulo": "[IskandarSouza] 🔥 🇧🇷  PS5 Console PlayStation 5 Edição Digital 825GB 1 Controle Branco Sony",
-   "url": "https://t.me/IskandarSouza/199452",
-   "id": "IskandarSouza/199452#PS5_DIGITAL",
-   "preco": 3964.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "IFPFBFP2",
-   "publicado": "2026-11-21T07:05:05-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "IskandarSouza",
-    "links": [
-     "https://a.aliexpress.com/_c3TlPQ3z",
-     "https://seuhardware.com/s/qeVfGnU",
-     "https://seuhardware.com/s/S5c1CfE"
-    ],
-    "texto": "🔥 🇧🇷  PS5 Console PlayStation 5 Edição Digital 825GB 1 Controle Branco Sony\n- Vendido por Magalu  🇧🇷  Direto do Brasil\n💰  R$ 3.964 em 12x SEM JUROS  ‼️\n📝  Cupom:  IFPFBFP2  ou  IFPL2JRQ  ou  AFFBF08  + 807 moedas no APP\n⬇️\nhttps://a.aliexpress.com/_c3TlPQ3z\n⬇️  NO PC\nhttps://seuhardware.com/s/qeVfGnU\n⬇️  Modelo com jogos caso volte\nhttps://seuhardware.com/s/S5c1CfE\n⬇️  NO PC\nhttps://seuhardware.com/s/wZZ9ygC",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "telegram:IskandarSouza/199452#PS5_DIGITAL",
-   "melhor_preco": 3964.0,
-   "ultima_vez": "2026-11-21T08:50:09-03:00",
-   "ultimo_preco": 3964.0,
-   "menor_preco": 3964.0
   }
  ],
  "gta6_custo_final": [
@@ -10290,72 +10324,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:01:58-03:00",
+   "ultimo_ok": "2026-11-22T21:16:58-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:05-03:00",
+   "ultimo_ok": "2026-11-22T21:17:03-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:55-03:00",
+   "ultimo_ok": "2026-11-22T21:17:49-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:01:59-03:00",
+   "ultimo_ok": "2026-11-22T21:17:00-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:20-03:00",
+   "ultimo_ok": "2026-11-22T21:17:17-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:25-03:00",
+   "ultimo_ok": "2026-11-22T21:17:22-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:25-03:00",
+   "ultimo_ok": "2026-11-22T21:17:23-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:27-03:00",
+   "ultimo_ok": "2026-11-22T21:17:25-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:28-03:00",
+   "ultimo_ok": "2026-11-22T21:17:26-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:29-03:00",
+   "ultimo_ok": "2026-11-22T21:17:27-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 900,
+   "falhas": 901,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-22T21:02:35-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-22T21:17:32-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:36-03:00",
+   "ultimo_ok": "2026-11-22T21:17:34-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:38-03:00",
+   "ultimo_ok": "2026-11-22T21:17:35-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-22T21:02:44-03:00",
+   "ultimo_ok": "2026-11-22T21:17:37-03:00",
    "ultimo_erro": null
   }
  },
