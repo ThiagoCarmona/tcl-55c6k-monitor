@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-23T17:00:03-03:00",
+ "atualizado": "2026-11-23T17:15:04-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -6680,50 +6680,6 @@
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
-   "titulo": "PlayStation 5 Slim Disk 1TB 1 Controle Branco Sony",
-   "url": "https://www.magazineluiza.com.br/playstation-5-slim-disk-1tb-1-controle-branco-sony/p/240609000/ga/gap5/",
-   "id": "240609000-magazineluiza",
-   "preco": 5099.0,
-   "preco_pix": 4691.08,
-   "parcelado": "10x R$ 509,90 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Magalu",
-   "extra": {
-    "preco_de": 5399.9,
-    "1p": true,
-    "anuncio": "240609000",
-    "vendedor_id": "magazineluiza",
-    "ficha": {
-     "avaliacoes": 552,
-     "peso_kg": 4.9,
-     "razao_social": "Magazine Luiza SA",
-     "vendedor_desde": "2016-06-01",
-     "vendas_vendedor": 200000000,
-     "nota_vendedor": 5
-    },
-    "anuncio_exclusivo": false,
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "confiavel"
-    },
-    "alvo": {
-     "pix": 3950.0,
-     "parcelado": 4150.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DISCO",
-   "chave": "magalu.produtos:240609000-magazineluiza",
-   "melhor_preco": 4691.08
-  },
-  {
-   "fonte": "magalu.produtos",
-   "tipo": "loja",
-   "loja": "Magazine Luiza",
    "titulo": "Console Sony PlayStation 5 Edição Digital Slim, SSD 825GB, Controle DualSense, Astro's Playroom, Branco - CFI 2114B",
    "url": "https://www.magazineluiza.com.br/console-sony-playstation-5-edicao-digital-slim-ssd-825gb-controle-dualsense-astro-s-playroom-branco-cfi-2114b/p/gcf919d9d7/ga/gap5/",
    "id": "gcf919d9d7-kabum",
@@ -7026,6 +6982,50 @@
    "modelo": "PS5_DISCO",
    "chave": "americanas:Americanas-8299908-magazineluiza",
    "melhor_preco": 4844.05
+  },
+  {
+   "fonte": "magalu.produtos",
+   "tipo": "loja",
+   "loja": "Magazine Luiza",
+   "titulo": "PlayStation 5 Slim Disk 1TB 1 Controle Branco Sony",
+   "url": "https://www.magazineluiza.com.br/playstation-5-slim-disk-1tb-1-controle-branco-sony/p/240590800/ga/gap5/",
+   "id": "240590800-magazineluiza",
+   "preco": 5099.0,
+   "preco_pix": 4946.03,
+   "parcelado": "10x R$ 509,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Magalu",
+   "extra": {
+    "preco_de": 5399.9,
+    "1p": true,
+    "anuncio": "240590800",
+    "vendedor_id": "magazineluiza",
+    "ficha": {
+     "avaliacoes": 5112,
+     "peso_kg": 4.9,
+     "razao_social": "Magazine Luiza SA",
+     "vendedor_desde": "2016-06-01",
+     "vendas_vendedor": 200000000,
+     "nota_vendedor": 5
+    },
+    "anuncio_exclusivo": false,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "magalu.produtos:240590800-magazineluiza",
+   "melhor_preco": 4946.03
   },
   {
    "fonte": "kabum.produtos",
@@ -7335,6 +7335,51 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-23T17:15:02-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Amazon",
+   "titulo": "[tecnoarthardware] EAI, BORA JOGAR GTA 6?",
+   "url": "https://t.me/tecnoarthardware/56097",
+   "id": "tecnoarthardware/56097#GTA6_CODE_IN_BOX",
+   "preco": 356.0,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-23T17:01:51-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "tecnoarthardware",
+    "links": [
+     "https://aoferta.net/002NbHoP-Amazon"
+    ],
+    "texto": "EAI, BORA JOGAR GTA 6?\n🔥  Razer Wolverine V3 Tournament Edition XBOX/PC, 6 Remappable Buttons to Outplay Them All, 1000Hz Polling Rate for Competitive Play on PC, Wired Esports Controller - Black\n💵  R$ 356,00\n🔗  LINK DO PRODUTO:\nhttps://aoferta.net/002NbHoP-Amazon\n⚡️ SE LIGA NOS OUTROS CANAIS DO TECNOART ⚡️\n👨🏼‍💻 SÓ PLACAS DE VÍDEO:  https://t.me/placasdevideotecnoart\n💻 SÓ NOTEBOOKS:  https://t.me/cacadordenotebook\n📱 SÓ SMARTHPONES:  t.me/cacadordesmartphones\n(anuncio)",
+    "produto": {
+     "plataforma_incerta": true
+    },
+    "alvo": {
+     "pix": 300.0,
+     "parcelado": 320.0,
+     "nota": "chega depois de 18/11"
+    },
+    "entrega": {
+     "classe": "a_tempo",
+     "data": "2026-11-16",
+     "origem": "estimativa",
+     "cep_referencia": true,
+     "texto": "📦 Entrega: previsão 16/11 (estimativa da pesquisa de 03/10) — chega a tempo ✅ (até 18/11; lançamento 19/11)"
+    }
+   },
+   "modelo": "GTA6_CODE_IN_BOX",
+   "chave": "telegram:tecnoarthardware/56097#GTA6_CODE_IN_BOX",
+   "melhor_preco": 356.0,
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
+   "ultimo_preco": 356.0,
+   "menor_preco": 356.0
+  },
+  {
    "primeira_vez": "2026-11-23T17:00:01-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -7376,7 +7421,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:linguicapromocoes/123862#GTA6_CODE_IN_BOX",
    "melhor_preco": 322.27,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 322.27,
    "menor_preco": 322.27
   },
@@ -7411,7 +7456,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3244483",
    "melhor_preco": 4296.31,
-   "ultima_vez": "2026-11-23T17:00:01-03:00"
+   "ultima_vez": "2026-11-23T17:15:02-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -7538,7 +7583,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "telegram:peperaiohardware/124725#SSD_NVME_1TB",
    "melhor_preco": 897.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 897.0,
    "menor_preco": 897.0
   },
@@ -7573,7 +7618,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3243382",
    "melhor_preco": 849.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00"
+   "ultima_vez": "2026-11-23T17:15:02-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -7613,7 +7658,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3243321",
    "melhor_preco": 369.9,
-   "ultima_vez": "2026-11-23T17:00:01-03:00"
+   "ultima_vez": "2026-11-23T17:15:02-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -7656,7 +7701,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84740#GTA6_CODE_IN_BOX",
    "melhor_preco": 261.9,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 261.9,
    "menor_preco": 261.9
   },
@@ -7698,7 +7743,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3242946",
    "melhor_preco": 400.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00"
+   "ultima_vez": "2026-11-23T17:15:02-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -7731,7 +7776,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242240",
    "melhor_preco": 510.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 510.0,
    "menor_preco": 510.0
   },
@@ -7766,7 +7811,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242250",
    "melhor_preco": 410.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00"
+   "ultima_vez": "2026-11-23T17:15:02-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -7799,7 +7844,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242238",
    "melhor_preco": 270.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 270.0,
    "menor_preco": 270.0
   },
@@ -7944,7 +7989,7 @@
    "modelo": "LEITOR_PS5",
    "chave": "promobit:3241495",
    "melhor_preco": 598.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 598.0,
    "menor_preco": 598.0
   },
@@ -8017,7 +8062,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84729#PS5_DIGITAL",
    "melhor_preco": 4311.28,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 4311.28,
    "menor_preco": 4311.28
   },
@@ -8052,7 +8097,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3241363",
    "melhor_preco": 4599.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 4599.0,
    "menor_preco": 4599.0
   },
@@ -8087,7 +8132,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3241119",
    "melhor_preco": 4084.07,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 4084.07,
    "menor_preco": 4084.07
   },
@@ -8122,7 +8167,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3241081",
    "melhor_preco": 1047.01,
-   "ultima_vez": "2026-11-23T17:00:01-03:00"
+   "ultima_vez": "2026-11-23T17:15:02-03:00"
   },
   {
    "primeira_vez": "2026-11-22T21:03:09-03:00",
@@ -8155,7 +8200,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3240879",
    "melhor_preco": 4499.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 4499.0,
    "menor_preco": 4499.0
   },
@@ -8190,7 +8235,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3240334",
    "melhor_preco": 4499.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 4499.0,
    "menor_preco": 4499.0
   },
@@ -8755,7 +8800,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3238622",
    "melhor_preco": 839.0,
-   "ultima_vez": "2026-11-23T17:00:01-03:00",
+   "ultima_vez": "2026-11-23T17:15:02-03:00",
    "ultimo_preco": 839.0,
    "menor_preco": 839.0
   },
@@ -8792,41 +8837,6 @@
    "chave": "telegram:tecnanofertas/158942#SSD_NVME_1TB",
    "melhor_preco": 839.0,
    "ultima_vez": "2026-11-21T21:21:24-03:00",
-   "ultimo_preco": 839.0,
-   "menor_preco": 839.0
-  },
-  {
-   "primeira_vez": "2026-11-21T16:08:44-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Mercado Livre",
-   "titulo": "[xaviertechpromo] 🚨  Ssd M.2 Nvme 1tb Sandisk Plus Sdssda3n-1t00-g26 3200mbps Azul-marinho",
-   "url": "https://t.me/xaviertechpromo/414097",
-   "id": "xaviertechpromo/414097#SSD_NVME_1TB",
-   "preco": 839.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": "TUDOCASA2111",
-   "publicado": "2026-11-21T15:55:24-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "xaviertechpromo",
-    "links": [
-     "https://meli.la/1UoZ5ex"
-    ],
-    "texto": "🚨  Ssd M.2 Nvme 1tb Sandisk Plus Sdssda3n-1t00-g26 3200mbps Azul-marinho\n💵  R$ 839 no Pix\n🎟  Cupom:  TUDOCASA2111\nhttps://meli.la/1UoZ5ex\n(Anúncio)",
-    "alvo": {
-     "pix": 700.0,
-     "parcelado": 750.0,
-     "nota": ""
-    }
-   },
-   "modelo": "SSD_NVME_1TB",
-   "chave": "telegram:xaviertechpromo/414097#SSD_NVME_1TB",
-   "melhor_preco": 839.0,
-   "ultima_vez": "2026-11-21T16:08:44-03:00",
    "ultimo_preco": 839.0,
    "menor_preco": 839.0
   }
@@ -9935,72 +9945,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:09-03:00",
+   "ultimo_ok": "2026-11-23T17:14:09-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:16-03:00",
+   "ultimo_ok": "2026-11-23T17:14:15-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:57-03:00",
+   "ultimo_ok": "2026-11-23T17:14:57-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:11-03:00",
+   "ultimo_ok": "2026-11-23T17:14:10-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:28-03:00",
+   "ultimo_ok": "2026-11-23T17:14:28-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:32-03:00",
+   "ultimo_ok": "2026-11-23T17:14:32-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:33-03:00",
+   "ultimo_ok": "2026-11-23T17:14:32-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:34-03:00",
+   "ultimo_ok": "2026-11-23T17:14:34-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:35-03:00",
+   "ultimo_ok": "2026-11-23T17:14:34-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:36-03:00",
+   "ultimo_ok": "2026-11-23T17:14:35-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 910,
+   "falhas": 911,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-23T16:59:42-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-23T17:14:41-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:44-03:00",
+   "ultimo_ok": "2026-11-23T17:14:43-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:45-03:00",
+   "ultimo_ok": "2026-11-23T17:14:45-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-23T16:59:46-03:00",
+   "ultimo_ok": "2026-11-23T17:14:46-03:00",
    "ultimo_erro": null
   }
  },
