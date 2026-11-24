@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-24T12:36:02-03:00",
+ "atualizado": "2026-11-24T12:51:06-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -3945,6 +3945,41 @@
  ],
  "posts": [
   {
+   "primeira_vez": "2026-11-24T12:51:05-03:00",
+   "preco_alertado": null,
+   "fonte": "telegram",
+   "tipo": "post",
+   "loja": "Mercado Livre",
+   "titulo": "[linguicapromocoes] 👉 Gift Cards PSN/XBOX/NINTENDO:  https://meli.la/2LWUsqF",
+   "url": "https://t.me/linguicapromocoes/124734",
+   "id": "linguicapromocoes/124734#GIFT_CARD_PSN",
+   "preco": null,
+   "preco_pix": null,
+   "parcelado": null,
+   "cupom": null,
+   "publicado": "2026-11-24T12:38:00-03:00",
+   "ativo": true,
+   "vendedor": null,
+   "extra": {
+    "canal": "linguicapromocoes",
+    "links": [
+     "https://mercadolivre.com/sec/1H7uov1",
+     "https://meli.la/1LfaWVQ",
+     "https://meli.la/2Zf9LDB"
+    ],
+    "texto": "🎁  Cupom Mercado Livre\n🔥  R$ 50 OFF a partir de R$ 399, Limite de R$ 50:  SITETODO2411\nNossa lista de sugestões\nhttps://mercadolivre.com/sec/1H7uov1\n⚠️  Clique em \"mostrar mais\" ao acessar os links\n👉 Jogos de PS5:  https://meli.la/1LfaWVQ\n👉 Jogos de PS4:  https://meli.la/2Zf9LDB\n👉 Jogos de Nintendo Switch:  https://meli.la/26ZqFQR\n👉 Gift Cards PSN/XBOX/NINTENDO:  https://meli.la/2LWUsqF\nanúncio\nEntre no meu grupo de ofertas 👇🏻 👇🏻\nhttps://linktr.ee/linguicapromo",
+    "alvo": {
+     "pix": null,
+     "parcelado": null,
+     "nota": "sem o valor de face"
+    }
+   },
+   "modelo": "GIFT_CARD_PSN",
+   "chave": "telegram:linguicapromocoes/124734#GIFT_CARD_PSN",
+   "melhor_preco": null,
+   "ultima_vez": "2026-11-24T12:51:05-03:00"
+  },
+  {
    "primeira_vez": "2026-11-24T12:21:06-03:00",
    "preco_alertado": null,
    "fonte": "telegram",
@@ -4066,7 +4101,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3247033",
    "melhor_preco": 4480.55,
-   "ultima_vez": "2026-11-24T12:36:01-03:00",
+   "ultima_vez": "2026-11-24T12:51:05-03:00",
    "ultimo_preco": 4480.55,
    "menor_preco": 4480.55
   },
@@ -4267,7 +4302,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3245570",
    "melhor_preco": 306.34,
-   "ultima_vez": "2026-11-24T12:36:01-03:00"
+   "ultima_vez": "2026-11-24T12:51:05-03:00"
   },
   {
    "primeira_vez": "2026-11-24T01:24:28-03:00",
@@ -4303,7 +4338,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "telegram:cupons_desconto/84756#PS5_DIGITAL",
    "melhor_preco": 4284.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00",
+   "ultima_vez": "2026-11-24T12:51:05-03:00",
    "ultimo_preco": 4284.0,
    "menor_preco": 4284.0
   },
@@ -4469,7 +4504,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3244548",
    "melhor_preco": 322.27,
-   "ultima_vez": "2026-11-24T12:36:01-03:00"
+   "ultima_vez": "2026-11-24T12:51:05-03:00"
   },
   {
    "primeira_vez": "2026-11-23T17:00:01-03:00",
@@ -4502,7 +4537,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3244483",
    "melhor_preco": 4296.31,
-   "ultima_vez": "2026-11-24T12:36:01-03:00"
+   "ultima_vez": "2026-11-24T12:51:05-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -4626,7 +4661,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3244249",
    "melhor_preco": 897.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00"
+   "ultima_vez": "2026-11-24T12:51:05-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -4697,7 +4732,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3244241",
    "melhor_preco": 897.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00"
+   "ultima_vez": "2026-11-24T12:51:05-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -4730,7 +4765,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3243382",
    "melhor_preco": 849.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00"
+   "ultima_vez": "2026-11-24T12:51:05-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -4888,7 +4923,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242240",
    "melhor_preco": 510.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00",
+   "ultima_vez": "2026-11-24T12:51:05-03:00",
    "ultimo_preco": 510.0,
    "menor_preco": 510.0
   },
@@ -4923,7 +4958,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242250",
    "melhor_preco": 410.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00"
+   "ultima_vez": "2026-11-24T12:51:05-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -4956,7 +4991,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242238",
    "melhor_preco": 270.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00",
+   "ultima_vez": "2026-11-24T12:51:05-03:00",
    "ultimo_preco": 270.0,
    "menor_preco": 270.0
   },
@@ -5101,7 +5136,7 @@
    "modelo": "LEITOR_PS5",
    "chave": "promobit:3241495",
    "melhor_preco": 598.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00",
+   "ultima_vez": "2026-11-24T12:51:05-03:00",
    "ultimo_preco": 598.0,
    "menor_preco": 598.0
   },
@@ -5209,7 +5244,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3241363",
    "melhor_preco": 4599.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00",
+   "ultima_vez": "2026-11-24T12:51:05-03:00",
    "ultimo_preco": 4599.0,
    "menor_preco": 4599.0
   },
@@ -5244,7 +5279,7 @@
    "modelo": "PS5_DIGITAL",
    "chave": "promobit:3241119",
    "melhor_preco": 4084.07,
-   "ultima_vez": "2026-11-24T12:36:01-03:00",
+   "ultima_vez": "2026-11-24T12:51:05-03:00",
    "ultimo_preco": 4084.07,
    "menor_preco": 4084.07
   },
@@ -5312,7 +5347,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3240879",
    "melhor_preco": 4499.0,
-   "ultima_vez": "2026-11-24T12:36:01-03:00",
+   "ultima_vez": "2026-11-24T12:51:05-03:00",
    "ultimo_preco": 4499.0,
    "menor_preco": 4499.0
   },
@@ -5430,44 +5465,6 @@
    "ultima_vez": "2026-11-22T09:39:02-03:00",
    "ultimo_preco": 864.5,
    "menor_preco": 864.5
-  },
-  {
-   "primeira_vez": "2026-11-22T00:30:59-03:00",
-   "preco_alertado": null,
-   "fonte": "telegram",
-   "tipo": "post",
-   "loja": "Amazon",
-   "titulo": "[achadosdotb] 🎮   PS5 Slim Digital com Astro Bot e GT7 chega a novo menor preço na Amazon",
-   "url": "https://t.me/achadosdotb/12211",
-   "id": "achadosdotb/12211#PS5_DIGITAL",
-   "preco": 3905.0,
-   "preco_pix": null,
-   "parcelado": null,
-   "cupom": null,
-   "publicado": "2026-11-22T00:17:40-03:00",
-   "ativo": true,
-   "vendedor": null,
-   "extra": {
-    "canal": "achadosdotb",
-    "links": [
-     "https://tecno.click/mhi"
-    ],
-    "texto": "🎮   PS5 Slim Digital com Astro Bot e GT7 chega a novo menor preço na Amazon\n📉  15% OFF\nR$ 3.905,00\n👉  Aproveite a oferta na Amazon:  https://tecno.click/mhi\n✨  Design slim e compacto que ocupa menos espaço\n✨  SSD ultrarrápido de 825 GB para carregamentos quase instantâneos\n✨  Pacote com dois jogos exclusivos de alto valor agregado\n✨  Controle DualSense com feedback háptico imersivo\n✖️  Edição digital sem leitor de disco, impossibilitando mídias físicas\n✖️  Armazenamento de 825 GB pode ser limitado para quem joga muitos títulos simultaneamente",
-    "produto": {
-     "versao_incerta": false
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "telegram:achadosdotb/12211#PS5_DIGITAL",
-   "melhor_preco": 3905.0,
-   "ultima_vez": "2026-11-23T05:18:43-03:00",
-   "ultimo_preco": 3905.0,
-   "menor_preco": 3905.0
   }
  ],
  "gta6_custo_final": [
@@ -6589,72 +6586,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:12-03:00",
+   "ultimo_ok": "2026-11-24T12:50:14-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:19-03:00",
+   "ultimo_ok": "2026-11-24T12:50:23-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:58-03:00",
+   "ultimo_ok": "2026-11-24T12:51:01-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:14-03:00",
+   "ultimo_ok": "2026-11-24T12:50:15-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:24-03:00",
+   "ultimo_ok": "2026-11-24T12:50:29-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:30-03:00",
+   "ultimo_ok": "2026-11-24T12:50:34-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:31-03:00",
+   "ultimo_ok": "2026-11-24T12:50:35-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:33-03:00",
+   "ultimo_ok": "2026-11-24T12:50:37-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:34-03:00",
+   "ultimo_ok": "2026-11-24T12:50:38-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:34-03:00",
+   "ultimo_ok": "2026-11-24T12:50:38-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 918,
+   "falhas": 919,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-24T12:35:40-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-24T12:50:44-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:43-03:00",
+   "ultimo_ok": "2026-11-24T12:50:46-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:44-03:00",
+   "ultimo_ok": "2026-11-24T12:50:47-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-24T12:35:46-03:00",
+   "ultimo_ok": "2026-11-24T12:50:49-03:00",
    "ultimo_erro": null
   }
  },
