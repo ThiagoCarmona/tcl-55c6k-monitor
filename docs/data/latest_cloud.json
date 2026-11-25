@@ -1,6 +1,6 @@
 {
  "modo": "cloud",
- "atualizado": "2026-11-25T03:59:25-03:00",
+ "atualizado": "2026-11-25T04:14:10-03:00",
  "tvs_desligadas": true,
  "produtos": {
   "PS5_DIGITAL": {
@@ -834,6 +834,10 @@
     "produto": {
      "plataforma_incerta": false
     },
+    "entrega_prevista": "2026-11-26",
+    "entrega_ate_lancamento": false,
+    "cep_referencia": false,
+    "entrega_origem": "simulação de frete",
     "confianca": {
      "veredito": "confiavel"
     },
@@ -843,11 +847,11 @@
      "nota": "chega depois de 18/11"
     },
     "entrega": {
-     "classe": "desconhecida",
-     "data": null,
-     "origem": "",
+     "classe": "depois",
+     "data": "2026-11-26",
+     "origem": "loja",
      "cep_referencia": false,
-     "texto": "📦 Entrega: prazo desconhecido: confira antes de comprar (precisa chegar até 18/11)"
+     "texto": "📦 Entrega: previsão 26/11 — ⚠️ chega DEPOIS do lançamento (19/11)"
     }
    },
    "modelo": "GTA6_CODE_IN_BOX",
@@ -1510,7 +1514,7 @@
     "produto": {
      "geracao": "3"
     },
-    "descartado": "fora da faixa (mediana 1660.45)",
+    "descartado": "fora da faixa (mediana 1669.15)",
     "alvo": {
      "pix": 700.0,
      "parcelado": 750.0,
@@ -5078,6 +5082,46 @@
    "melhor_preco": 2239.99
   },
   {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "SSD WD M.2 1TB Wd Green Sn3000 Nvme Wds100t4g0e Leitura Alta Velocidade PCie Gen4 Interno Gamer PC Notebook",
+   "url": "https://www.kabum.com.br/produto/1078203",
+   "id": "1078203",
+   "preco": 2267.71,
+   "preco_pix": null,
+   "parcelado": "10x de R$ 226,77 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "TRUEX INFORMATICA E HARDWARE",
+   "extra": {
+    "preco_tabela": 2267.71,
+    "openbox": false,
+    "kabum_seller_id": "16558",
+    "kabum_oferta_id": 3419766,
+    "produto": {
+     "geracao": "4"
+    },
+    "confianca": {
+     "veredito": "sem_risco_aparente",
+     "checagens": [
+      "preço"
+     ],
+     "sinais": [],
+     "codigos": []
+    },
+    "alvo": {
+     "pix": 700.0,
+     "parcelado": 750.0,
+     "nota": ""
+    }
+   },
+   "modelo": "SSD_NVME_1TB",
+   "chave": "kabum.produtos:1078203",
+   "melhor_preco": 2267.71
+  },
+  {
    "fonte": "magalu.produtos",
    "tipo": "loja",
    "loja": "Magazine Luiza",
@@ -6649,7 +6693,7 @@
     "anuncio": "aebh5a7a94",
     "vendedor_id": "kabum",
     "ficha": {
-     "avaliacoes": 3807,
+     "avaliacoes": 3849,
      "peso_kg": 3.808,
      "razao_social": "KABUM S.A.",
      "vendedor_desde": "2021-06-30",
@@ -6758,6 +6802,41 @@
    },
    "modelo": "PS5_DISCO",
    "chave": "kabum.produtos:1049973",
+   "melhor_preco": 4742.07
+  },
+  {
+   "fonte": "kabum.produtos",
+   "tipo": "loja",
+   "loja": "KaBuM!",
+   "titulo": "Console Playstation 5 1TB – Astro Bot E Gran Turismo 7",
+   "url": "https://www.kabum.com.br/produto/953109",
+   "id": "953109",
+   "preco": 5099.0,
+   "preco_pix": 4742.07,
+   "parcelado": "10x de R$ 509,90 sem juros",
+   "cupom": null,
+   "publicado": null,
+   "ativo": true,
+   "vendedor": "Magalu",
+   "extra": {
+    "preco_tabela": 5099.0,
+    "openbox": false,
+    "kabum_seller_id": "1000",
+    "kabum_oferta_id": 30376348,
+    "produto": {
+     "versao_incerta": false
+    },
+    "confianca": {
+     "veredito": "confiavel"
+    },
+    "alvo": {
+     "pix": 3950.0,
+     "parcelado": 4150.0,
+     "nota": ""
+    }
+   },
+   "modelo": "PS5_DISCO",
+   "chave": "kabum.produtos:953109",
    "melhor_preco": 4742.07
   },
   {
@@ -6965,7 +7044,7 @@
     "anuncio": "240590800",
     "vendedor_id": "magazineluiza",
     "ficha": {
-     "avaliacoes": 5124,
+     "avaliacoes": 5145,
      "peso_kg": 4.9,
      "razao_social": "Magazine Luiza SA",
      "vendedor_desde": "2016-06-01",
@@ -7031,42 +7110,6 @@
    "modelo": "PS5_KIT",
    "chave": "kabum.produtos:1081973",
    "melhor_preco": 4999.0
-  },
-  {
-   "fonte": "vtex.fastshop.ps5",
-   "tipo": "loja",
-   "loja": "Fast Shop",
-   "titulo": "Console Playstation 5 Slim Edição Digital 825GB com 2 Jogos Branco",
-   "url": "https://site.fastshop.com.br/console-playstation-5-slim-edicao-digital-825gb-com-2-jogos-branco-181030/p",
-   "id": "Fast Shop-181030-cnl253",
-   "preco": 5651.0,
-   "preco_pix": 5085.9,
-   "parcelado": "8x R$ 706,37 sem juros",
-   "cupom": null,
-   "publicado": null,
-   "ativo": true,
-   "vendedor": "Webcontinental Marketplace",
-   "extra": {
-    "preco_de": 7221.9,
-    "ref": "243290_Fastshopbr",
-    "ean": "711719023876",
-    "sku": "191243",
-    "seller_id": "cnl253",
-    "produto": {
-     "versao_incerta": false
-    },
-    "confianca": {
-     "veredito": "confiavel"
-    },
-    "alvo": {
-     "pix": 3550.0,
-     "parcelado": 3700.0,
-     "nota": ""
-    }
-   },
-   "modelo": "PS5_DIGITAL",
-   "chave": "vtex.fastshop.ps5:Fast Shop-181030-cnl253",
-   "melhor_preco": 5085.9
   },
   {
    "fonte": "magalu.produtos",
@@ -7538,7 +7581,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:tecnoarthardware/56458#GTA6_CODE_IN_BOX",
    "melhor_preco": 379.91,
-   "ultima_vez": "2026-11-25T03:59:23-03:00",
+   "ultima_vez": "2026-11-25T04:14:08-03:00",
    "ultimo_preco": 379.91,
    "menor_preco": 379.91
   },
@@ -7573,7 +7616,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3249960",
    "melhor_preco": 4296.31,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-24T20:53:43-03:00",
@@ -7613,7 +7656,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3249937",
    "melhor_preco": 299.0,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-24T20:53:43-03:00",
@@ -7653,7 +7696,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3249690",
    "melhor_preco": 375.81,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-24T20:53:43-03:00",
@@ -7696,7 +7739,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "telegram:cupons_desconto/84780#GTA6_CODE_IN_BOX",
    "melhor_preco": 345.0,
-   "ultima_vez": "2026-11-25T03:59:23-03:00",
+   "ultima_vez": "2026-11-25T04:14:08-03:00",
    "ultimo_preco": 345.0,
    "menor_preco": 345.0
   },
@@ -7728,7 +7771,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3249466",
    "melhor_preco": 794.0,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-24T20:53:43-03:00",
@@ -7813,7 +7856,7 @@
    "modelo": "GTA6_CODE_IN_BOX",
    "chave": "promobit:3249169",
    "melhor_preco": 322.27,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-24T20:53:43-03:00",
@@ -8450,7 +8493,7 @@
    "modelo": "PS5_DISCO",
    "chave": "promobit:3244483",
    "melhor_preco": 4296.31,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -8574,7 +8617,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3244249",
    "melhor_preco": 897.0,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -8645,7 +8688,7 @@
    "modelo": "SSD_NVME_1TB",
    "chave": "promobit:3244241",
    "melhor_preco": 897.0,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -8836,7 +8879,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242240",
    "melhor_preco": 510.0,
-   "ultima_vez": "2026-11-25T03:59:23-03:00",
+   "ultima_vez": "2026-11-25T04:14:08-03:00",
    "ultimo_preco": 510.0,
    "menor_preco": 510.0
   },
@@ -8871,7 +8914,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242250",
    "melhor_preco": 410.0,
-   "ultima_vez": "2026-11-25T03:59:23-03:00"
+   "ultima_vez": "2026-11-25T04:14:08-03:00"
   },
   {
    "primeira_vez": "2026-11-23T16:30:34-03:00",
@@ -8904,7 +8947,7 @@
    "modelo": "GIFT_CARD_PSN",
    "chave": "promobit:3242238",
    "melhor_preco": 270.0,
-   "ultima_vez": "2026-11-25T03:59:23-03:00",
+   "ultima_vez": "2026-11-25T04:14:08-03:00",
    "ultimo_preco": 270.0,
    "menor_preco": 270.0
   },
@@ -10252,72 +10295,72 @@
  "saude": {
   "promobit.busca": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:12-03:00",
+   "ultimo_ok": "2026-11-25T04:13:12-03:00",
    "ultimo_erro": null
   },
   "promobit.cupons": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:24-03:00",
+   "ultimo_ok": "2026-11-25T04:13:20-03:00",
    "ultimo_erro": null
   },
   "telegram.publico": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:59:18-03:00",
+   "ultimo_ok": "2026-11-25T04:14:05-03:00",
    "ultimo_erro": null
   },
   "promobit.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:15-03:00",
+   "ultimo_ok": "2026-11-25T04:13:15-03:00",
    "ultimo_erro": null
   },
   "magalu.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:41-03:00",
+   "ultimo_ok": "2026-11-25T04:13:28-03:00",
    "ultimo_erro": null
   },
   "kabum.produtos": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:47-03:00",
+   "ultimo_ok": "2026-11-25T04:13:34-03:00",
    "ultimo_erro": null
   },
   "maiscorreios": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:48-03:00",
+   "ultimo_ok": "2026-11-25T04:13:35-03:00",
    "ultimo_erro": null
   },
   "americanas": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:50-03:00",
+   "ultimo_ok": "2026-11-25T04:13:37-03:00",
    "ultimo_erro": null
   },
   "vtex.fastshop.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:51-03:00",
+   "ultimo_ok": "2026-11-25T04:13:39-03:00",
    "ultimo_erro": null
   },
   "vtex.webcontinental.ps5": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:58:52-03:00",
+   "ultimo_ok": "2026-11-25T04:13:40-03:00",
    "ultimo_erro": null
   },
   "carrefour": {
-   "falhas": 925,
+   "falhas": 926,
    "ultimo_ok": "2026-10-05T08:39:30-03:00",
-   "ultimo_erro": "2026-11-25T03:58:58-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
+   "ultimo_erro": "2026-11-25T04:13:46-03:00 RuntimeError: busca: HTTPError: 403 Client Error: Forbidden for url: https://www.carrefour.com.br/busca/playstation%205"
   },
   "psstore": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:59:00-03:00",
+   "ultimo_ok": "2026-11-25T04:13:47-03:00",
    "ultimo_erro": null
   },
   "mercadolivre.playstation": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:59:02-03:00",
+   "ultimo_ok": "2026-11-25T04:13:49-03:00",
    "ultimo_erro": null
   },
   "hype": {
    "falhas": 0,
-   "ultimo_ok": "2026-11-25T03:59:04-03:00",
+   "ultimo_ok": "2026-11-25T04:13:51-03:00",
    "ultimo_erro": null
   }
  },
