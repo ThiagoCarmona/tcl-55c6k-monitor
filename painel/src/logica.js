@@ -494,6 +494,17 @@ const linhaPost = cat => p => ({
   telegram: /^telegram/i.test(p.fonte || ''),
   quando: dt(p.publicado || p.primeira_vez),
   url: p.url,
+  // aba Cupons (26/11/2026): o produto (modelo > variante na tela), o canal do Telegram e o título sem o [canal] e os emoji
+  produto: modeloDe(p, cat),
+  ...modeloVariante(modeloDe(p, cat), cat),
+  valor: p.melhor_preco ? Number(p.melhor_preco) : null,
+  canal: p.extra?.canal || (String(p.titulo || '').match(/^\[([^\]]+)\]/) || [])[1] || null,
+  texto: String(p.titulo || '')
+    .replace(/^\[[^\]]+\]\s*/, '')
+    .replace(/[\u{1F300}-\u{1FAFF}\u2600-\u27BF\uFE0F]/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 140),
 });
 
 // GTA 6 em todas as formas pelo custo final (latest.gta6_custo_final, calculado no monitor com o melhor gift card de loja
@@ -571,6 +582,60 @@ function custoFinal(fontes) {
 // Uma seção por família (PS5, GTA 6): resumo por produto (meta, melhor à vista e parcelado agora, menor já visto,
 // distância da meta), a tabela de preços por loja e o gráfico de cada produto, as postagens recentes e, no GTA 6, o
 // gift card e todas as formas pelo custo final (com a entrega).
+// Modelo > variante (26/11/2026): a tela agrupa pelo campo 'familia' do catálogo (PS5, GTA6, ACESSORIO, SSD...), e cada
+// produto vira uma variante do modelo, com o nome curto dela. Só nomes de tela; produto novo sem nome aqui usa o 'curto'.
+export const MODELOS_TELA = [
+  ['PS5', 'PlayStation 5', 'PS5'],
+  ['GTA6', 'GTA 6', 'GTA 6'],
+  ['ACESSORIO', 'Acessórios do PS5', 'Acessórios'],
+  ['SSD', 'SSD', 'SSD'],
+  ['TV', 'TVs TCL', 'TVs'],
+];
+const VARIANTE = {
+  PS5_DIGITAL: 'Slim Digital',
+  PS5_DISCO: 'Slim com leitor',
+  PS5_PRO: 'Pro',
+  PS5_DIGITAL_GTA6: 'Digital + GTA 6',
+  PS5_DISCO_GTA6: 'Com leitor + GTA 6',
+  PS5_KIT: 'Edição especial / kit',
+  GTA6_CODE_IN_BOX: 'Code in Box (mídia)',
+  GTA6_DIGITAL: 'Digital Standard',
+  GTA6_ULTIMATE: 'Digital Ultimate',
+  GTA6_UPGRADE: 'Upgrade para a Ultimate',
+  LEITOR_PS5: 'Leitor de disco',
+  GIFT_CARD_PSN: 'Gift card PSN',
+  SSD_NVME_1TB: 'NVMe M.2 1TB',
+  '55C6K': '55" (55C6K)',
+  '65C6K': '65" (65C6K)',
+};
+const modeloVariante = (id, cat) => {
+  const modelo = ehTV(id) ? 'TV' : cat[id]?.familia || cat[id]?.secao || id;
+  const m = MODELOS_TELA.find(x => x[0] === modelo);
+  return {
+    modelo,
+    modeloNome: m ? m[1] : modelo,
+    modeloCurto: m ? m[2] : modelo,
+    variante: VARIANTE[id] || cat[id]?.curto || cat[id]?.nome || id,
+  };
+};
+
+// agrupa itens que têm {modelo, modeloNome, modeloCurto} por modelo, na ordem de MODELOS_TELA (modelo novo vai para o
+// fim); dentro do modelo, as variantes com preço agora (temPreco) primeiro, sem mudar a ordem do catálogo
+export function agrupaPorModelo(lista, temPreco = () => true) {
+  const ordem = id => {
+    const i = MODELOS_TELA.findIndex(m => m[0] === id);
+    return i < 0 ? 99 : i;
+  };
+  const g = new Map();
+  for (const it of lista) {
+    if (!g.has(it.modelo)) g.set(it.modelo, {id: it.modelo, nome: it.modeloNome, curto: it.modeloCurto, itens: []});
+    g.get(it.modelo).itens.push(it);
+  }
+  return [...g.values()]
+    .sort((a, b) => ordem(a.id) - ordem(b.id))
+    .map(m => ({...m, itens: [...m.itens.filter(temPreco), ...m.itens.filter(x => !temPreco(x))]}));
+}
+
 const TITULO_SECAO = {PS5: 'PS5', GTA6: 'GTA 6'}; // seção sem título aqui usa o próprio id ("SSD")
 function secaoFamilia(sec, titulo, ctx, posts) {
   const {cat} = ctx;
@@ -590,6 +655,7 @@ function secaoFamilia(sec, titulo, ctx, posts) {
       resumo.push({
         id,
         nome: p.nome,
+        ...modeloVariante(id, cat),
         sub: null,
         meta: {v: `${pctTxt(mg)} de desconto`, subs: ['por oferta']},
         melhor: {v: fmt(g.preco), sub: `vale R$ ${Math.round(g.valor_face)} · ${g.loja}`},
@@ -601,6 +667,7 @@ function secaoFamilia(sec, titulo, ctx, posts) {
       resumo.push({
         id,
         nome: p.nome,
+        ...modeloVariante(id, cat),
         sub: p.edicao ? `edição ${p.edicao}` : null,
         meta: {
           v: meta.pix != null ? fmt(meta.pix) : 'por oferta',
@@ -621,6 +688,7 @@ function secaoFamilia(sec, titulo, ctx, posts) {
     produtos.push({
       id,
       nome: p.nome,
+      ...modeloVariante(id, cat),
       sub: r.melhor ? `melhor ${fmt(r.melhor.melhor_preco)} · ${quem(r.melhor)}` : 'sem coleta recente',
       linhas: r.linhas,
       grafico: p.compara_preco === false ? null : {serie: r.serie, alvo: meta.pix},
@@ -666,10 +734,27 @@ function vitrine(ctx, semTVs) {
         r = ctx.r(id),
         m = r.melhor;
       const meta = m?.extra?.alvo?.pix ?? p.alvo_pix;
+      // ofertas de agora para a lista "onde comprar": uma por loja (a mais barata dela), sem as suspeitas e antigas
+      const vistas = new Set(),
+        agora = [];
+      for (const o of r.lojas.filter(o => !o._velho && !suspeito(o)).sort((a, b) => a.melhor_preco - b.melhor_preco)) {
+        const k = normLoja(o.loja);
+        if (vistas.has(k)) continue;
+        vistas.add(k);
+        agora.push({
+          loja: o.loja,
+          vendedor: vendedorChave(o) ? o.vendedor : null,
+          preco: Number(o.melhor_preco),
+          precoTxt: fmt(o.melhor_preco),
+          url: o.url || null,
+        });
+      }
       return {
         id,
         nome: p.nome,
         curto: p.curto || p.nome,
+        ...modeloVariante(id, cat),
+        agora,
         familia: ehTV(id) ? 'TV' : p.secao,
         meta,
         serie: r.serie,
@@ -677,6 +762,7 @@ function vitrine(ctx, semTVs) {
         melhor: m
           ? {
               preco: fmt(m.melhor_preco),
+              valor: Number(m.melhor_preco),
               loja: m.loja,
               forma: m.preco_pix && m.melhor_preco === Number(m.preco_pix) ? 'no Pix' : 'à vista',
               vendedor: vendedorChave(m) ? m.vendedor : null,
@@ -687,7 +773,9 @@ function vitrine(ctx, semTVs) {
             }
           : null,
         parc: r.melhorParc ? {total: fmt(r.melhorParc.pc.total), quem: quem(r.melhorParc.o)} : null,
-        min: r.min ? {preco: fmt(r.min.preco), loja: r.min.loja || '?', quando: dt(r.min.quando)} : null,
+        min: r.min
+          ? {preco: fmt(r.min.preco), valor: r.min.preco, loja: r.min.loja || '?', quando: dt(r.min.quando)}
+          : null,
       };
     })
     .filter(it => it.melhor || Object.keys(it.serie).length);
@@ -731,6 +819,33 @@ export function seriesDoGrafico(serie) {
     .slice(0, 8);
   const dias = [...new Set(lojas.flatMap(l => Object.keys(serie[l])))].sort();
   return {dias, lojas, valores: lojas.map(l => dias.map(d => serie[l][d] ?? null))};
+}
+
+// O desconto e a compra mínima que o título do cupom diz ("R$ 200 OFF ... acima de R$ 2000", "10% de desconto"), para o
+// destaque do cartão do cupom. Valor de R$ 1.000 ou mais no "OFF" costuma ser o preço do produto, não o desconto: fica de fora.
+export function valorDoCupom(titulo) {
+  const t = String(titulo || '');
+  const num = v => Number(v.replace(/\./g, '').replace(',', '.'));
+  let valor = null;
+  const rs = t.match(/R\$\s?(\d{1,3}(?:\.\d{3})*(?:,\d+)?)\s?(?:OFF|de desconto)/i);
+  if (rs && num(rs[1]) < 1000) valor = `R$ ${rs[1]} OFF`;
+  if (!valor) {
+    const pc = t.match(/(\d{1,2}(?:[.,]\d+)?)\s?%/);
+    if (pc) valor = `${String(Number(pc[1].replace(',', '.'))).replace('.', ',')}% OFF`; // "5.00%" e "5,5%" são decimais
+  }
+  const min = t.match(/(?:a partir de|acima de|acima|mínim[oa] de)\s?R\$\s?(\d{1,3}(?:\.\d{3})*(?:,\d+)?)/i);
+  return {valor, minimo: min ? `R$ ${min[1]}` : null};
+}
+
+// Variação do menor preço do dia nos últimos 7 dias (porDia: {'AAAA-MM-DD': preço}): o último dia contra o dia mais
+// recente de 7 ou mais dias antes (ou o primeiro). null com menos de 2 dias.
+export function variacao7(porDia) {
+  const dias = Object.keys(porDia || {}).sort();
+  if (dias.length < 2) return null;
+  const ult = dias.at(-1),
+    lim = new Date(Date.parse(ult + 'T12:00:00Z') - 7 * 864e5).toISOString().slice(0, 10);
+  const ant = [...dias].reverse().find(d => d <= lim) || dias[0];
+  return porDia[ult] - porDia[ant];
 }
 
 // ---- o painel inteiro. dados = {cloud, pc, csvCloud, csvPc} (o que veio de docs/data; ausente = null/''),
@@ -864,7 +979,8 @@ export function montaPainel({cloud, pc, csvCloud = '', csvPc = ''}, agora = Date
       .map(sec => secaoFamilia(sec, TITULO_SECAO[sec] || sec, ctx, posts))
       .filter(Boolean),
     vitrine: vitrine(ctx, semTVs),
-    cupons: lc.slice(0, 40).map(c => ({
+    // todos os cupons ativos (até 26/11 eram só os 40 primeiros; a aba Cupons filtra por loja)
+    cupons: lc.map(c => ({
       loja: c.loja,
       codigo: c.codigo,
       especifico: !!c.especifico,
@@ -873,6 +989,8 @@ export function montaPainel({cloud, pc, csvCloud = '', csvPc = ''}, agora = Date
       regra: c.regra && c.regra !== c.titulo ? c.regra.slice(0, 140) : null,
       fonte: c.fonte,
       validade: c.validade ? dt(c.validade) : null,
+      vence: c.validade || null,
+      ...valorDoCupom(c.titulo),
       url: c.url,
     })),
     posts: posts.slice(0, 30).map(linhaPost(cat)),
@@ -882,6 +1000,7 @@ export function montaPainel({cloud, pc, csvCloud = '', csvPc = ''}, agora = Date
         const f = s.falhas || 0;
         return {
           nome,
+          falhas: f,
           classe: f === 0 ? 'ok' : f < 3 ? 'warn' : 'bad',
           rotulo: f === 0 ? 'OK' : `${f} falhas`,
           ultimoOk: dt(s.ultimo_ok),

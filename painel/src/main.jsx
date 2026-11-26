@@ -1,10 +1,10 @@
 import {StrictMode, useEffect, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import {TableCell, TableRow} from './tremor.js';
-import {montaPainel} from './logica.js';
-import {Chip, CodigoCupom, Fato, H2, Lista, Postagem, Sub, Tabela} from './componentes.jsx';
+import {agrupaPorModelo, montaPainel} from './logica.js';
+import {Fato, H2} from './componentes.jsx';
 import Vitrine, {Pilulas} from './Vitrine.jsx';
 import Tabelas from './Tabelas.jsx';
+import {Cupons, Fontes} from './Abas.jsx';
 import './estilo.css';
 
 const pega = (u, como) =>
@@ -37,7 +37,7 @@ function useSessao(chave, inicial) {
 function App() {
   const [vm, setVm] = useState(undefined); // undefined: carregando; null: sem dados
   const [abaSalva, setAba] = useSessao('aba', 'produtos');
-  const [filtroCupons, setFiltroCupons] = useSessao('cupons', 'ativos'); // aba Cupons: 'ativos' ou 'novos'
+  const [filtroCupons, setFiltroCupons] = useSessao('cupons', 'ativos'); // aba Cupons: 'ativos' (cupons) ou 'novos' (postagens)
   const aba = ABAS.some(([k]) => k === abaSalva) ? abaSalva : 'produtos';
   // dados publicados em data/, buscados na abertura (o botão de atualizar recarrega a página)
   useEffect(() => {
@@ -53,23 +53,25 @@ function App() {
     scrollTo(0, 0);
   };
 
-  // produto escolhido nas pílulas (#p= no endereço) e o cartão dele, que só abre com o clique na pílula; sem escolha
-  // válida, fica o primeiro com preço
+  // variante escolhida (#p= no endereço); sem escolha válida, fica a primeira com preço. As pílulas do topo são os
+  // modelos (PS5, GTA 6...); tocar num modelo abre a variante mais barata dele
   const [prodId, setProdId] = useState(() => decodeURIComponent((location.hash.match(/^#p=(.+)$/) || [])[1] || ''));
-  const [cartao, setCartao] = useState(false);
   const itens = vm ? vm.vitrine : [];
+  const modelos = agrupaPorModelo(itens, v => !!v.melhor);
   const atual = itens.find(it => it.id === prodId) || itens.find(it => it.melhor) || itens[0];
+  const modeloAtual = modelos.find(m => m.id === atual?.modelo);
   const escolhe = id => {
-    if (id === atual?.id) setCartao(c => !c);
-    else {
-      setProdId(id);
-      setCartao(true);
-    }
+    setProdId(id);
     try {
       history.replaceState(null, '', '#p=' + encodeURIComponent(id));
     } catch {
       /* sandbox */
     }
+  };
+  const escolheModelo = m => {
+    if (m.id === atual?.modelo) return;
+    const com = m.itens.filter(v => v.melhor);
+    escolhe((com.length ? com.reduce((a, b) => (b.melhor.valor < a.melhor.valor ? b : a)) : m.itens[0]).id);
   };
   return (
     <>
@@ -88,9 +90,7 @@ function App() {
             <BotaoTema />
           </div>
         </div>
-        {aba === 'produtos' && itens.length > 0 && (
-          <Pilulas itens={itens} atual={atual} cartao={cartao} onEscolhe={escolhe} />
-        )}
+        {aba === 'produtos' && itens.length > 0 && <Pilulas modelos={modelos} atual={atual} onModelo={escolheModelo} />}
       </header>
 
       <main className="mx-auto max-w-[1180px] px-4 pb-[104px] pt-4 sm:px-6 sm:pb-[96px] sm:pt-6">
@@ -102,7 +102,7 @@ function App() {
           <>
             {aba === 'produtos' && (
               <>
-                <Vitrine it={atual} cartao={cartao} />
+                <Vitrine it={atual} modelo={modeloAtual} onVariante={escolhe} />
                 <H2>Resumo</H2>
                 <div className="grid grid-cols-2 gap-2 md:grid-cols-5">
                   <Fato k="Cupons ativos" d={vm.resumo.cupons} />
@@ -114,24 +114,8 @@ function App() {
               </>
             )}
             {aba === 'tabelas' && <Tabelas vm={vm} />}
-            {aba === 'cupons' && <Cupons vm={vm} filtro={filtroCupons} onFiltro={setFiltroCupons} />}
-            {aba === 'fontes' && (
-              <>
-                <H2>Fontes</H2>
-                <Tabela cab={['Fonte', 'Estado', 'Último OK', 'Último erro']} zebra={false}>
-                  {vm.fontes.map(f => (
-                    <TableRow key={f.nome}>
-                      <TableCell>{f.nome}</TableCell>
-                      <TableCell>
-                        <Chip tipo={f.classe}>{f.rotulo}</Chip>
-                      </TableCell>
-                      <TableCell>{f.ultimoOk}</TableCell>
-                      <TableCell className="whitespace-normal text-sm text-tinta-3">{f.erro}</TableCell>
-                    </TableRow>
-                  ))}
-                </Tabela>
-              </>
-            )}
+            {aba === 'cupons' && <Cupons vm={vm} modo={filtroCupons} onModo={setFiltroCupons} />}
+            {aba === 'fontes' && <Fontes vm={vm} />}
           </>
         )}
         <footer className="mt-11 border-t-2 border-linha pt-3 text-sm text-tinta-3">
@@ -143,76 +127,6 @@ function App() {
     </>
   );
 }
-
-// aba Cupons: um seletor entre os cupons ativos e as novidades (as últimas postagens), uma lista por vez
-const FILTROS_CUPONS = [
-  ['ativos', 'Ativos', 'Cupons ativos'],
-  ['novos', 'Novos', 'Últimas postagens'],
-];
-function Cupons({vm, filtro, onFiltro}) {
-  const f = FILTROS_CUPONS.find(([k]) => k === filtro) || FILTROS_CUPONS[0];
-  return (
-    <>
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-        <H2>{f[2]}</H2>
-        <div className="flex gap-1.5" role="group" aria-label="Filtrar a aba Cupons">
-          {FILTROS_CUPONS.map(([k, rotulo]) => (
-            <button
-              key={k}
-              type="button"
-              aria-pressed={f[0] === k}
-              onClick={() => onFiltro(k)}
-              className={`rounded-[3px] border-2 px-3 py-1 text-sm font-bold transition-colors duration-150 ${f[0] === k ? 'border-tinta bg-tinta text-fundo' : 'border-linha bg-superficie text-tinta'}`}
-            >
-              {rotulo}
-              <span className="ml-1.5 font-normal opacity-70">
-                {k === 'ativos' ? vm.cupons.length : vm.posts.length}
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
-      {f[0] === 'ativos' ? (
-        <Lista vazio="Nenhum cupom aplicável no momento.">
-          {vm.cupons.map(c => (
-            <Cupom key={c.loja + c.codigo} c={c} />
-          ))}
-        </Lista>
-      ) : (
-        <Lista vazio="Nenhuma postagem registrada.">
-          {vm.posts.map(p => (
-            <Postagem key={p.chave} p={p} />
-          ))}
-        </Lista>
-      )}
-    </>
-  );
-}
-
-// cupom: a loja (que é o link do cupom), o código (com o copiar), a descrição e a validade, discreta, no fim.
-// Descrição: a regra; se ela não diz o valor (ex.: só "produtos Aliexpress") e o título diz ("R$ 16"), vale o título
-const temValor = s => /R\$\s?\d/.test(s || '');
-const Cupom = ({c}) => {
-  const texto = !c.regra || (!temValor(c.regra) && temValor(c.titulo)) ? c.titulo : c.regra;
-  return (
-    <li className="break-words border-b border-linha-2 px-3 py-2.5 text-base last:border-b-0">
-      <b>
-        {c.url ? (
-          <a href={c.url} target="_blank" rel="noopener noreferrer" title="Ver o cupom">
-            {c.loja}
-          </a>
-        ) : (
-          c.loja
-        )}
-      </b>{' '}
-      <CodigoCupom codigo={c.codigo} />
-      <Sub>
-        {texto}
-        {c.validade && <span className="whitespace-nowrap text-xs"> · até {c.validade}</span>}
-      </Sub>
-    </li>
-  );
-};
 
 function BotaoTema() {
   const [escuro, setEscuro] = useState(() => document.documentElement.classList.contains('dark'));
