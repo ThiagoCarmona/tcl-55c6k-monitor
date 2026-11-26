@@ -15,25 +15,19 @@ Parcelado: só os meios de CARTÃO contam. A Fast Shop lista também "Outros Pag
 que não é cartão: o 12x sem juros dele aparecia como o parcelado da loja, que nos cartões é 10x (26/09). A Americanas
 lista "Cartão Cliente A" (o cartão da loja, 3x) e "WH Google Pay": também não contam.
 Pix: a parcela 1x do meio "Pix" (Fast Shop, Mais Correios, Americanas) ou o selo "X% no Pix".
-GTA 6 (Code in Box e pacotes com ele): prazo de entrega pela simulação de frete do checkout (orderForms/simulation, sem
-carrinho e sem login) com o CEP de config.cep_entrega(); "39bd" = 39 dias úteis a partir de hoje. Só a data que cai antes
-de as caixas saírem (12/11, ou o envio informado na descrição) é reprojetada (sources/entrega.marca).
 """
 
 from __future__ import annotations
 
 import re
 import time
-from datetime import date
 from typing import Iterable, Optional
-
-import requests
 
 from .. import config, produtos
 from ..filtro import eh_tv_c6k, modelo_do_titulo
 from ..models import MODELO_PADRAO, Oferta
-from ..util import HEADERS_JSON, get_json, loja_canonica, parse_preco, sem_acentos
-from . import Fonte, Resultado, entrega
+from ..util import get_json, loja_canonica, parse_preco, sem_acentos
+from . import Fonte, Resultado
 
 _RE_PIX = re.compile(r"(\d{1,2})\s*%\s*(?:no\s+|de\s+desconto\s+no\s+)?pix", re.I)
 _RE_PAGTO_A_VISTA = re.compile(r"^\s*(?:pix|boleto)\b", re.I)
@@ -127,15 +121,11 @@ def parse_catalogo(data: list, loja: str, base: str, modelo: str | None = None, 
                 extra = {"preco_de": parse_preco(of.get("ListPrice")), "ref": p.get("productReference"),
                          "ean": item.get("ean") or None}
                 if not produtos.eh_tv(m):
-                    # o que a simulação de frete precisa (sku e vendedor). O id do vendedor NÃO vai em vendedor_id: as
-                    # listas de confiança destas lojas casam pelo nome (com o id, só o id decidiria)
+                    # sku e vendedor do item. O id do vendedor NÃO vai em vendedor_id: as listas de confiança destas
+                    # lojas casam pelo nome (com o id, só o id decidiria)
                     extra.update({"sku": item.get("itemId"), "seller_id": s.get("sellerId") or None})
                     if detalhes:
                         extra["produto"] = detalhes
-                    descr = sem_acentos(str(p.get("description") or "")).lower()
-                    envio = entrega.envio_a_partir(descr) if entrega.precisa(m) else None
-                    if envio:
-                        extra["envio_a_partir"] = envio
                 out.append(Oferta(
                     fonte=fonte, tipo="loja", loja=loja_canonica(loja), titulo=nome, url=link,
                     id=f"{loja}-{p.get('productId')}-{s.get('sellerId') or vendedor}",
@@ -159,58 +149,6 @@ def eans_do_catalogo(familias: Optional[Iterable[str]] = None) -> list[str]:
 def url_por_ean(base: str, eans: Iterable[str]) -> str:
     q = "&".join(f"fq=alternateIds_Ean:{e}" for e in eans)
     return f"{base}/api/catalog_system/pub/products/search?{q}&_from=0&_to=49"
-
-
-def simula_prazo(base: str, sku: str, vendedor: str, cep: str, timeout: int = 20,
-                 inicio: Optional[date] = None) -> Optional[str]:
-    """Prazo de entrega (data ISO) do item no CEP pela simulação do checkout (sem carrinho, sem login). A menor
-    estimativa entre as opções de entrega (retirada não conta), contada a partir de HOJE (é como a loja conta: "39bd" é
-    39 dias úteis depois do pedido). None quando a loja não responde ou não entrega.
-    `inicio`: pré-venda (GTA 6 físico): só a data que cai ANTES do envio (12/11 ou o informado) é reprojetada a partir
-    dele (entrega.ajusta_pre_venda); a que já cai depois vale como está. 2ª conferência de 03/10: contar toda estimativa
-    a partir de 12/11 contava a espera da pré-venda duas vezes ("39bd" da Fast Shop virava 11/01/2027 em vez de 01/12)."""
-    h = dict(HEADERS_JSON)
-    h["Content-Type"] = "application/json"
-    corpo = {"items": [{"id": str(sku), "quantity": 1, "seller": str(vendedor)}], "postalCode": cep, "country": "BRA"}
-    r = requests.post(f"{base}/api/checkout/pub/orderForms/simulation?sc=1", json=corpo, headers=h, timeout=timeout)
-    r.raise_for_status()
-    datas = []
-    hoje = entrega.hoje()
-    for li in (r.json() or {}).get("logisticsInfo") or []:
-        for s in li.get("slas") or []:
-            if str(s.get("deliveryChannel") or "delivery") != "delivery":
-                continue
-            d = entrega.data_da_estimativa(s.get("shippingEstimate"), hoje)
-            if d:
-                datas.append(d)
-    if not datas:
-        return None
-    menor = min(datas)
-    if inicio:
-        menor = entrega.ajusta_pre_venda(menor, base=hoje, inicio=inicio)[0]
-    return menor
-
-
-def completa_entrega(ofertas: list[Oferta], base: str, nome: str, maximo: int = 3) -> None:
-    """Prazo do GTA 6 físico (o jogo e os pacotes) de até `maximo` ofertas (das mais baratas), com o CEP de entrega.
-    A descrição que diz "envio a partir de 19/11" (ou depois) já basta: chega depois do lançamento, sem simular.
-    Falha não derruba a coleta (a oferta fica com a estimativa da pesquisa)."""
-    cep, referencia = entrega.cep()
-    alvos = sorted((o for o in ofertas if entrega.precisa(o.modelo) and o.extra.get("sku")),
-                   key=lambda o: o.melhor_preco or 9e9)[:maximo]
-    for o in alvos:
-        envio = o.extra.get("envio_a_partir")
-        if envio and envio >= produtos.LANCAMENTO_GTA6:
-            entrega.marca_envio_tardio(o)
-            continue
-        try:
-            # a data contada de hoje, como a loja conta; entrega.marca reprojeta só a que cai antes de as caixas saírem
-            # (12/11 ou o envio informado) e anota "(prazo contado a partir de 12/11...)" nela
-            data = simula_prazo(base, o.extra["sku"], o.extra.get("seller_id") or "1", cep)
-        except Exception as e:  # noqa: BLE001 - o prazo é extra: a oferta continua sem ele
-            print(f"[{nome}] simulação de frete de {o.id} falhou: {type(e).__name__}")
-            continue
-        entrega.marca(o, data, referencia, "simulação de frete")
 
 
 class Vtex(Fonte):
@@ -267,7 +205,6 @@ class VtexEan(Fonte):
             ofertas = parse_catalogo(data, self.loja, self.base, fonte=self.nome)
             if familias is not None:
                 ofertas = [o for o in ofertas if produtos.familia(o.modelo) in familias]
-            completa_entrega(ofertas, base, self.nome)
             por_produto = ", ".join(f"{sum(o.modelo == m for o in ofertas)} {m}" for m in sorted({o.modelo for o in ofertas}))
             print(f"[{self.nome}] {len(ofertas)} ofertas pelo EAN" + (f" ({por_produto})" if por_produto else ""))
             return ofertas, []

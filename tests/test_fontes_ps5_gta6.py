@@ -1,15 +1,18 @@
-"""Fontes do PS5 e do GTA 6 (frente B, 03/10/2026): lojas novas, ampliação das de antes, busca por termo no canal do
-Pelando e o prazo de entrega do GTA 6 com o CEP de entrega.
+"""Fontes do PS5 e do GTA 6 (frente B, 03/10/2026): lojas novas, ampliação das de antes e busca por termo no canal do
+Pelando.
 
 Fixtures: páginas e respostas reais de 03/10/2026 (aparadas), lidas sem login e com o CEP de referência (centro de São
 Paulo). Nenhum teste acessa a rede nem abre o Chrome: get_html/get_json/requests.post/_abrir/_avaliar são trocados.
-O CEP de entrega dos testes é inventado (o do usuário nunca aparece em teste, log nem fixture).
+O CEP de entrega dos testes é inventado (o do usuário nunca aparece em teste, log nem fixture); hoje ele só escolhe a
+UF da consulta de preço da Netshoes.
+
+26/11/2026: sem o prazo de entrega do GTA 6 (regra do lançamento): saíram a cotação de frete (KaBuM, Netshoes), a
+simulação da VTEX, a troca de CEP da Amazon e o "envio a partir de" das descrições.
 """
 
 from __future__ import annotations
 
 import json
-from datetime import date
 from pathlib import Path
 
 import pytest
@@ -17,7 +20,7 @@ import requests
 
 from monitor import config, confianca, produtos
 from monitor.models import Oferta
-from monitor.sources import (amazon, carrefour, entrega, kabum, magalu, mercadolivre_loja, netshoes, promobit, psstore,
+from monitor.sources import (amazon, carrefour, kabum, magalu, mercadolivre_loja, netshoes, promobit, psstore,
                              telegram_public, vtex)
 from monitor.sources import playwright_sources as ps
 
@@ -32,11 +35,6 @@ def _fx(nome: str) -> str:
 
 def _json(nome: str):
     return json.loads(_fx(nome))
-
-
-@pytest.fixture
-def hoje_03_10(monkeypatch):
-    monkeypatch.setattr(entrega, "hoje", lambda: date(2026, 10, 3))
 
 
 @pytest.fixture
@@ -56,71 +54,21 @@ def _sem_cep_em(ofertas, saida: str = "") -> None:
     assert CEP_FALSO not in saida
 
 
-class _Resp:
-    def __init__(self, dados, status: int = 200):
-        self.dados, self.status_code = dados, status
-
-    def json(self):
-        return self.dados
-
-    def raise_for_status(self):
-        if self.status_code >= 400:
-            r = requests.Response()
-            r.status_code = self.status_code
-            raise requests.HTTPError(str(self.status_code), response=r)
-
-
 # ------------------------------------------------------------------------------------------------
-# prazo de entrega (monitor/sources/entrega.py)
+# CEP de entrega (só a UF da consulta de preço da Netshoes)
 # ------------------------------------------------------------------------------------------------
 
-@pytest.mark.parametrize("texto,iso", [
-    ("Segunda-feira, 16 de Novembro", "2026-11-16"),
-    ("Entrega GRÁTIS: seg., 16 de nov.", "2026-11-16"),
-    ("Chega dia 30 de novembro", "2026-11-30"),
-    ("até 17/11/2026", "2026-11-17"),
-    ("17/11/26", "2026-11-17"),
-    ("até quarta-feira (07/10/2026)", "2026-10-07"),
-    ("sem data", None),
-])
-def test_data_por_extenso(texto, iso, hoje_03_10):
-    assert entrega.data_por_extenso(texto) == iso
-
-
-def test_estimativa_em_dias_uteis_pula_fim_de_semana_e_feriado(hoje_03_10):
-    # sábado 03/10 + 5 dias úteis: 05, 06, 07, 08, 09/10
-    assert entrega.data_da_estimativa("5bd") == "2026-10-09"
-    # a segunda 12/10 é feriado: 7 dias úteis vão até 14/10
-    assert entrega.data_da_estimativa("7bd") == "2026-10-14"
-    assert entrega.data_da_estimativa("3d") == "2026-10-06"
-    assert entrega.data_da_estimativa("39bd") > produtos.ENTREGA_LIMITE_GTA6   # a Webfones da Fast Shop
-    assert entrega.data_da_estimativa("xyz") is None
-
-
-@pytest.mark.parametrize("texto,iso", [
-    ("<strong>ENVIO A PARTIR DE 19 DE NOVEMBRO</strong>", "2026-11-19"),                      # Carrefour
-    ("PRÉ-VENDA LANÇAMENTO 12/11/2026, ESTE PRODUTO SERA ENVIADO A PARTIR DO DIA:\xa0 20/11/2026", "2026-11-20"),
-    ("Envios a partir de 12/11/2026", "2026-11-12"),
-    ("Lançamento 19/11", None),
-])
-def test_envio_a_partir(texto, iso, hoje_03_10):
-    assert entrega.envio_a_partir(texto) == iso
-
-
-def test_uf_do_cep_e_marca_so_no_gta_fisico():
-    assert entrega.uf_do_cep("01310100") == "SP" and entrega.uf_do_cep("70002900") == "DF"
-    assert entrega.uf_do_cep("90010000") == "RS" and entrega.uf_do_cep("123") == "SP"
-    gta = Oferta("x", "loja", "KaBuM!", "GTA 6", "u", "1", preco=400, modelo="GTA6_CODE_IN_BOX")
-    entrega.marca(gta, "2026-11-17", True, "cotação de frete")
-    assert gta.extra["entrega_prevista"] == "2026-11-17" and gta.extra["entrega_ate_lancamento"] is True
-    assert produtos.entrega(gta).classe == "a_tempo" and gta.extra["cep_referencia"] is True
-    ps5 = Oferta("x", "loja", "KaBuM!", "PS5", "u", "2", preco=4000, modelo="PS5_DIGITAL")
-    entrega.marca(ps5, "2026-10-09", False)
-    assert "entrega_prevista" not in ps5.extra   # o prazo só importa no que traz o GTA 6 físico
+def test_uf_do_cep():
+    assert config.uf_do_cep("01310100") == "SP" and config.uf_do_cep("70002900") == "DF"
+    assert config.uf_do_cep("90010000") == "RS" and config.uf_do_cep("123") == "SP"
 
 
 def test_cep_de_referencia_sem_a_variavel(sem_cep):
-    assert entrega.cep() == (config.CEP_REFERENCIA, True)
+    assert config.cep_entrega() == (config.CEP_REFERENCIA, True)
+
+
+def test_cep_da_variavel(com_cep):
+    assert config.cep_entrega() == (CEP_FALSO, False)
 
 
 # ------------------------------------------------------------------------------------------------
@@ -179,7 +127,7 @@ def test_vtex_ean_um_pedido_com_os_eans_com_e_sem_zero_e_a_reserva(monkeypatch, 
     assert {o.fonte for o in ofs} == {"maiscorreios"} and {"65C6K", "PS5_DIGITAL"} <= {o.modelo for o in ofs}
 
 
-def test_vtex_fast_shop_so_ps5_e_gta_com_prazo_da_simulacao(monkeypatch, hoje_03_10, com_cep, capsys):
+def test_vtex_fast_shop_so_ps5_e_gta(monkeypatch, com_cep, capsys):
     gta = {"productId": "175223", "productName": "Jogo PS5 Grand Theft Auto VI", "link": "https://site.fastshop.com.br/x/p",
            "description": "DATA DE LANÇAMENTO: 19 de Novembro de 2026",
            "items": [{"itemId": "185443", "ean": "710425676338", "sellers": [{"sellerId": "CNL132", "sellerName": "Webfones",
@@ -187,40 +135,17 @@ def test_vtex_fast_shop_so_ps5_e_gta_com_prazo_da_simulacao(monkeypatch, hoje_03
                                           "Installments": []}}]}]}
     tv = _json(f"maiscorreios_ean_{D}.json")[:1]
     monkeypatch.setattr(vtex, "get_json", lambda url, **k: tv + [gta])
-    corpos = []
-
-    def post(url, json=None, **k):
-        corpos.append((url, json))
-        return _Resp(_json(f"vtex_simulacao_gta_{D}.json"))
-
-    monkeypatch.setattr(vtex.requests, "post", post)
     ofs, _ = vtex.VtexEan("vtex.fastshop.ps5").coletar()
     assert [o.modelo for o in ofs] == ["GTA6_CODE_IN_BOX"]   # a TV da resposta fica com a fonte vtex.fastshop
     o = ofs[0]
-    # os 39 dias úteis contam de hoje, como a loja conta: já caem depois de 12/11 (01/12), então não são reprojetados
-    # (2ª conferência de 03/10: contar de 12/11 punha a espera da pré-venda duas vezes e dava 11/01/2027)
-    assert o.fonte == "vtex.fastshop.ps5" and o.extra["entrega_prevista"] == entrega.data_da_estimativa("39bd") \
-        == "2026-12-01"
-    assert o.extra["entrega_ate_lancamento"] is False and o.extra["cep_referencia"] is False
-    (url, corpo), = corpos
-    assert url.endswith("/api/checkout/pub/orderForms/simulation?sc=1")
-    assert corpo["postalCode"] == CEP_FALSO and corpo["items"] == [{"id": "185443", "quantity": 1, "seller": "CNL132"}]
+    assert o.fonte == "vtex.fastshop.ps5" and o.preco == 449.9 and o.vendedor == "Webfones"
+    assert not any(k.startswith("entrega") or k == "cep_referencia" for k in o.extra)
     _sem_cep_em(ofs, capsys.readouterr().out)
-    assert produtos.alvos_da_oferta(o).pix == 300.0   # chega depois: meta do GTA tardio
-
-
-def test_vtex_envio_depois_do_lancamento_na_descricao_dispensa_a_simulacao(monkeypatch, sem_cep):
-    gta = {"productId": "9", "productName": "Jogo GTA 6 PS5", "description": "ENVIO A PARTIR DE 19 DE NOVEMBRO",
-           "items": [{"itemId": "1", "ean": "0710425676338", "sellers": [{"sellerId": "1", "sellerName": "Loja",
-                      "commertialOffer": {"Price": 449.9, "AvailableQuantity": 1, "Installments": []}}]}]}
-    monkeypatch.setattr(vtex, "get_json", lambda url, **k: [gta])
-    monkeypatch.setattr(vtex.requests, "post", lambda *a, **k: pytest.fail("não precisava simular"))
-    (o,), _ = vtex.VtexEan("americanas").coletar()
-    assert o.extra["entrega_ate_lancamento"] is False and produtos.entrega(o).classe == "depois"
+    assert produtos.alvos_da_oferta(o).pix == 300.0
 
 
 # ------------------------------------------------------------------------------------------------
-# KaBuM: lista de consoles, API do GTA 6 e cotação de frete
+# KaBuM: lista de consoles e API do GTA 6
 # ------------------------------------------------------------------------------------------------
 
 @pytest.fixture
@@ -237,8 +162,7 @@ def test_kabum_lista_de_consoles(durante_a_oferta):
     assert (k.modelo, k.vendedor, k.preco, k.preco_pix, k.extra["oferta"]) == (
         "PS5_DIGITAL", "KaBuM!", 4499.0, 4184.07, "OFERTAS KABUM")
     g = por_id["1004851"]
-    assert (g.vendedor, g.preco_pix, g.extra["kabum_seller_id"], g.extra["kabum_oferta_id"]) == (
-        "Loja Gazin", 4099.0, "8145", 2980774)
+    assert (g.vendedor, g.preco_pix, g.extra["kabum_seller_id"]) == ("Loja Gazin", 4099.0, "8145")
     assert por_id["1064155"].modelo == "PS5_DISCO" and por_id["636960"].modelo == "PS5_PRO"
     assert por_id["1065184"].modelo == "PS5_KIT" and {o.fonte for o in por_id.values()} == {"kabum.produtos"}
     assert confianca.classifica_por_lista(g, ())[0] == confianca.CONFIAVEL
@@ -250,16 +174,7 @@ def test_kabum_lista_fora_da_oferta_volta_ao_preco_normal(monkeypatch):
     assert (k.preco, k.preco_pix) == (5052.69, 4699.0) and "oferta" not in k.extra
 
 
-def test_kabum_cotacao_de_frete_ignora_a_entrega_agendada(monkeypatch):
-    corpos = []
-    monkeypatch.setattr(kabum.requests, "post",
-                        lambda url, json=None, **k: corpos.append(json) or _Resp(_json(f"kabum_frete_gta_{D}.json")))
-    assert kabum.prazo_cotacao("1051619", "KaBuM!", "0", CEP_FALSO) == "2026-11-17"
-    assert corpos[0]["zip_code"] == CEP_FALSO and corpos[0]["sellers"][0]["products"][0]["offer_id"] == 0
-
-
-def test_kabum_produtos_coleta_o_gta_com_prazo_e_o_parceiro_que_envia_depois(monkeypatch, durante_a_oferta, com_cep,
-                                                                           capsys):
+def test_kabum_produtos_coleta_o_gta_e_o_parceiro(monkeypatch, durante_a_oferta, com_cep, capsys):
     def get_json(url, **k):
         pid = url.rsplit("/", 1)[1]
         if pid in ("1051619", "1066262"):
@@ -268,23 +183,14 @@ def test_kabum_produtos_coleta_o_gta_com_prazo_e_o_parceiro_que_envia_depois(mon
 
     monkeypatch.setattr(kabum, "get_html", lambda url, **k: _fx(f"kabum_lista_consoles_{D}.html"))
     monkeypatch.setattr(kabum, "get_json", get_json)
-    cotados = []
-
-    def post(url, json=None, **k):
-        cotados.append(json["sellers"][0]["products"][0]["code"])
-        return _Resp(_json(f"kabum_frete_gta_{D}.json"))
-
-    monkeypatch.setattr(kabum.requests, "post", post)
     ofs, _ = kabum.KaBuMProdutos().coletar()
     por_id = {o.id: o for o in ofs}
     gta = por_id["1051619"]
-    assert (gta.modelo, gta.preco_pix, gta.extra["pre_venda"], gta.extra["envio_a_partir"]) == (
-        "GTA6_CODE_IN_BOX", 418.41, True, "2026-11-12")
-    assert (gta.extra["entrega_prevista"], gta.extra["entrega_ate_lancamento"], gta.extra["cep_referencia"]) == (
-        "2026-11-17", True, False)
-    mo = por_id["1066262"]   # "SERA ENVIADO A PARTIR DO DIA: 20/11/2026": chega depois, sem cotar
-    assert mo.extra["envio_a_partir"] == "2026-11-20" and produtos.entrega(mo).classe == "depois"
-    assert cotados == [1051619]
+    assert (gta.modelo, gta.preco_pix, gta.extra["pre_venda"]) == ("GTA6_CODE_IN_BOX", 418.41, True)
+    mo = por_id["1066262"]   # o parceiro do marketplace
+    assert mo.modelo == "GTA6_CODE_IN_BOX"
+    for o in (gta, mo):
+        assert not any(k.startswith("entrega") or k in ("envio_a_partir", "cep_referencia") for k in o.extra)
     _sem_cep_em(ofs, capsys.readouterr().out)
 
 
@@ -325,7 +231,6 @@ def test_magalu_busca_do_gta_so_o_jogo():
     assert (o.id, o.modelo, o.preco_pix, o.cupom, o.extra["preco_com_cupom"]) == (
         "241923300-magazineluiza", "GTA6_CODE_IN_BOX", 418.41, "GTA60", 358.41)
     assert [c.codigo for c in cupons] == ["GTA60"] and cupons[0].modelo == "GTA6_CODE_IN_BOX"
-    assert produtos.entrega(o).classe == "desconhecida"   # o espelho não traz o prazo do Magalu
 
 
 def test_magalu_produtos_orcamento_e_bloqueio(monkeypatch):
@@ -358,11 +263,11 @@ def test_carrefour_busca():
     assert "340270416" in cartoes
 
 
-def test_carrefour_produto_do_gta_envia_depois_do_lancamento():
+def test_carrefour_produto_do_gta():
     o = carrefour.parse_produto(_fx(f"carrefour_produto_gta_{D}.html"), "340270416", "u")
     assert (o.modelo, o.vendedor, o.preco, o.preco_pix, o.parcelado) == (
         "GTA6_CODE_IN_BOX", "Carrefour", 449.9, None, "12x R$ 37,49 sem juros")
-    assert o.extra["entrega_ate_lancamento"] is False and produtos.entrega(o).classe == "depois"
+    assert not any(k.startswith("entrega") for k in o.extra)
     assert confianca.classifica_por_lista(o, ())[0] == confianca.CONFIAVEL
 
 
@@ -477,7 +382,7 @@ def test_falha_na_busca_por_termo_nao_derruba_o_canal(monkeypatch):
 
 
 # ------------------------------------------------------------------------------------------------
-# Amazon (PC): PS5/GTA 6 pela página do GTA e pelas buscas, com o CEP da sessão
+# Amazon (PC): PS5/GTA 6 pela página do GTA e pelas buscas
 # ------------------------------------------------------------------------------------------------
 
 DP_GTA = """<html><body><span id="productTitle">Grand Theft Auto VI - PlayStation 5</span>
@@ -490,58 +395,44 @@ DP_GTA = """<html><body><span id="productTitle">Grand Theft Auto VI - PlayStatio
 </body></html>"""
 
 
-def test_amazon_busca_do_gta_e_dos_pacotes(hoje_03_10):
+def test_amazon_busca_do_gta_e_dos_pacotes():
     por_asin = {o.extra["asin"]: o for o in amazon.parse_busca_produtos(_fx(f"amazon_busca_gta_{D}.html"))}
     # o pacote GTA + DualSense (jogo + acessório) e o suporte de controle ficam de fora
     assert set(por_asin) == {"B0H6KT2RWH", "B0H6LVH152"}
     g = por_asin["B0H6KT2RWH"]
-    assert (g.modelo, g.preco_pix, g.parcelado, g.extra["entrega_texto"]) == (
-        "GTA6_CODE_IN_BOX", 418.4, "12x R$ 37,49 sem juros", "seg., 16 de nov.")
+    assert (g.modelo, g.preco_pix, g.parcelado) == ("GTA6_CODE_IN_BOX", 418.4, "12x R$ 37,49 sem juros")
+    assert "entrega_texto" not in g.extra
     b = por_asin["B0H6LVH152"]
     assert (b.modelo, b.preco, b.preco_pix) == ("PS5_DIGITAL_GTA6", 4948.9, 4602.47)
 
 
-def test_amazon_pagina_do_gta_le_o_prazo():
+def test_amazon_pagina_do_gta():
     o = amazon.parse_produto(DP_GTA, "B0H6KT2RWH", "GTA6_CODE_IN_BOX")
     assert (o.modelo, o.vendedor, o.preco, o.preco_pix) == ("GTA6_CODE_IN_BOX", "Amazon.com.br", 449.9, 418.4)
-    assert o.extra["entrega_texto"] == "Segunda-feira, 16 de Novembro"
+    assert "entrega_texto" not in o.extra
     # nas TVs nada muda: a página do GTA não é a da 55C6K
     assert amazon.parse_produto(DP_GTA, "B0H6KT2RWH", "55C6K") is None
 
 
-def test_amazon_produtos_troca_o_cep_da_sessao_e_marca_o_prazo(monkeypatch, hoje_03_10, com_cep, capsys):
-    cargas, avaliados = [], []
+def test_amazon_produtos_pagina_do_gta_e_buscas(monkeypatch, com_cep, capsys):
+    cargas = []
 
     def abrir(url, *a, **k):
         cargas.append(url)
         return (DP_GTA if "/dp/" in url else _fx(f"amazon_busca_gta_{D}.html")), "", []
 
-    def avaliar(js, arg=None, perfil="default"):
-        avaliados.append(arg)
-        return {"ok": True, "mudou": True}
-
     monkeypatch.setattr(ps, "_abrir", abrir)
-    monkeypatch.setattr(ps, "_avaliar", avaliar)
+    monkeypatch.setattr(ps, "_avaliar", lambda *a, **k: pytest.fail("não troca o CEP da sessão"))
     ofs, _ = amazon.AmazonProdutos().coletar()
-    assert avaliados == [{"cep": CEP_FALSO}]
-    assert cargas[:2] == ["https://www.amazon.com.br/dp/B0H6KT2RWH"] * 2   # recarrega depois de trocar o CEP
+    assert cargas[0] == "https://www.amazon.com.br/dp/B0H6KT2RWH" and cargas.count(cargas[0]) == 1
     # o painel de ofertas (vendedor dos preços da busca) tem o próprio limite, config.AMAZON_MAX_PAINEIS_PRODUTOS
     assert len([u for u in cargas if "aodAjax" not in u]) <= config.AMAZON_MAX_CARGAS_PRODUTOS
     por_id = {o.id: o for o in ofs}
     g = por_id["B0H6KT2RWH-A1ZZFT5FULY4LN"]
-    assert (g.extra["entrega_prevista"], g.extra["entrega_ate_lancamento"], g.extra["cep_referencia"]) == (
-        "2026-11-16", True, False)
-    assert "entrega_texto" not in g.extra and {o.fonte for o in ofs} == {"amazon.produtos"}
+    assert not any(k.startswith("entrega") or k == "cep_referencia" for k in g.extra)
+    assert {o.fonte for o in ofs} == {"amazon.produtos"}
     assert not any(o.extra.get("asin") == "B0H6KT2RWH" and o.id != g.id for o in ofs)   # a busca não duplica
     _sem_cep_em(ofs, capsys.readouterr().out)
-
-
-def test_amazon_produtos_sem_trocar_o_cep_e_prazo_aproximado(monkeypatch, hoje_03_10, com_cep):
-    monkeypatch.setattr(ps, "_abrir", lambda url, *a, **k: ((DP_GTA if "/dp/" in url else ""), "", []))
-    monkeypatch.setattr(ps, "_avaliar", lambda *a, **k: {"ok": False, "erro": "sem token"})
-    ofs, _ = amazon.AmazonProdutos().coletar()
-    (g,) = ofs
-    assert g.extra["cep_referencia"] is True
 
 
 def test_amazon_das_tvs_nao_abre_as_paginas_do_ps5(monkeypatch):
@@ -569,18 +460,7 @@ def test_netshoes_busca_e_preco():
     assert netshoes.oferta_do_preco(cartoes["D32-286W-014"], {"erro": 404}) is None
 
 
-def test_netshoes_url_e_resposta_do_frete():
-    api = _json(f"netshoes_api_{D}.json")
-    c = {x["codigo"]: x for x in netshoes.parse_busca(api["busca_html"])}["POE-0002-006"]
-    g = netshoes.oferta_do_preco(c, api["precos"]["POE-0002-006"])
-    u = netshoes.url_frete(g, CEP_FALSO)
-    assert u.startswith("/pdp-api/api/shipping/calculate?sku=POE-0002-006-01&preSale=false")
-    assert "productType=Jogos%2Bpara%2BConsoles" in u and "sellerId=29198&skuPrice=54900&weight=90" in u
-    assert u.endswith(f"&priceWithDiscounts=44990&zipCode={CEP_FALSO}")
-    assert netshoes.data_do_frete(api["frete_gta"]) == "2026-11-30"
-
-
-def test_netshoes_coleta_com_prazo_e_sem_o_cep_na_oferta(monkeypatch, tmp_path, com_cep, capsys):
+def test_netshoes_coleta_sem_o_cep_na_oferta(monkeypatch, tmp_path, com_cep, capsys):
     api = _json(f"netshoes_api_{D}.json")
     monkeypatch.setattr(netshoes, "MARCA_BLOQUEIO", tmp_path / "netshoes_bloqueado_em")
     monkeypatch.setattr(ps, "_abrir", lambda *a, **k: (api["busca_html"], "", []))
@@ -588,17 +468,15 @@ def test_netshoes_coleta_com_prazo_e_sem_o_cep_na_oferta(monkeypatch, tmp_path, 
 
     def avaliar(js, arg=None, perfil="default"):
         chamadas.append(arg)
-        if isinstance(arg, dict):
-            return {c: api["precos"].get(c, {"erro": 404}) for c in arg["codigos"]}
-        return api["frete_gta"]
+        return {c: api["precos"].get(c, {"erro": 404}) for c in arg["codigos"]}
 
     monkeypatch.setattr(ps, "_avaliar", avaliar)
     ofs, _ = netshoes.Netshoes().coletar()
     por = {o.modelo: o for o in ofs}
     assert set(por) == {"PS5_DIGITAL", "GTA6_CODE_IN_BOX"}
     g = por["GTA6_CODE_IN_BOX"]
-    assert (g.extra["entrega_prevista"], g.extra["entrega_ate_lancamento"], g.extra["cep_referencia"]) == (
-        "2026-11-30", False, False)
+    assert not any(k.startswith("entrega") or k == "cep_referencia" for k in g.extra)
+    assert len(chamadas) == 1                                  # só a consulta de preço (sem o frete)
     assert chamadas[0]["uf"] == "SP" and "HTW-026A-014" not in chamadas[0]["codigos"]   # o controle não é consultado
     assert "D32-2878-014" in chamadas[0]["codigos"]   # o Pro do catálogo, mesmo fora da busca
     assert all("_frete" not in o.extra for o in ofs)

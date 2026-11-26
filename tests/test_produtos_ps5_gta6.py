@@ -12,8 +12,6 @@ as fontes de postagens e o painel. Nenhum teste acessa a rede.
 from __future__ import annotations
 
 import json
-import re
-import subprocess
 import sys
 
 import pytest
@@ -48,19 +46,17 @@ def test_catalogo_tem_os_ids_do_contrato_e_as_tvs_de_sempre():
         assert pid in produtos.IDS, pid
     assert produtos.TVS == ("55C6K", "65C6K") and produtos.IDS[:2] == produtos.TVS
     assert {produtos.familia(p) for p in produtos.IDS} == {"TV", "PS5", "GTA6", "ACESSORIO", "SSD"}   # SSD: 14/11
-    assert produtos.secao("LEITOR_PS5") == "PS5" and produtos.secao("GIFT_CARD_PSN") == "GTA6"
+    assert produtos.secao("LEITOR_PS5") == "PS5" and produtos.secao("GIFT_CARD_PSN") == "PS5"
     assert rotulo_modelo("55C6K") == "TCL 55C6K" and rotulo_modelo("PS5_PRO") == "PS5 Pro"
 
 
 def test_metas_aprovadas_pelo_usuario():
     esperado = {"PS5_DIGITAL": (3550, 3700), "PS5_DISCO": (3950, 4150), "PS5_PRO": (5950, 6100),
-                "PS5_DIGITAL_GTA6": (4000, 4150), "PS5_DISCO_GTA6": (4300, 4450), "GTA6_CODE_IN_BOX": (345, 370),
+                "PS5_DIGITAL_GTA6": (4000, 4150), "PS5_DISCO_GTA6": (4300, 4450), "GTA6_CODE_IN_BOX": (300, 320),
                 "GTA6_DIGITAL": (365, 365), "GTA6_ULTIMATE": (450, 450), "GTA6_UPGRADE": (85, 85),
                 "LEITOR_PS5": (300, 320)}
     for pid, (pix, parc) in esperado.items():
         assert (config.alvo_pix(pid), config.alvo_parcelado(pid)) == (pix, parc), pid
-    p = produtos.produto("GTA6_CODE_IN_BOX")
-    assert (p.alvo_pix_tardio, p.alvo_parcelado_tardio) == (300, 320)
     assert config.alvo_pix("PS5_KIT") is None and config.alvo_pix("GIFT_CARD_PSN") is None
     # as TVs continuam como antes, e o latest leva só elas em 'alvos'
     assert config.alvos() == {"55C6K": {"pix": 2900.0, "parcelado": 3000.0}, "65C6K": {"pix": 3300.0, "parcelado": 3500.0}}
@@ -284,46 +280,8 @@ def test_mensagem_de_gift_card_traz_o_valor_de_face():
 # metas por oferta e entrega do GTA 6
 # ------------------------------------------------------------------------------------------------
 
-def _gta(loja="Amazon", vendedor=None, preco=339.0, tipo="loja", extra=None, oid="g1"):
-    return Oferta("x", tipo, loja, "Jogo GTA 6 PS5 Code in Box", f"https://x/{oid}", oid, preco=preco,
-                  vendedor=vendedor, extra=extra or {}, modelo="GTA6_CODE_IN_BOX", publicado=agora_iso())
 
-
-@pytest.mark.parametrize("extra,classe,pix", [
-    ({"entrega_prevista": "2026-11-16"}, "a_tempo", 345.0),
-    ({"entrega_prevista": "2026-11-18"}, "a_tempo", 345.0),
-    ({"entrega_prevista": "2026-11-19"}, "no_dia", 300.0),
-    ({"entrega_prevista": "2026-11-30"}, "depois", 300.0),
-    ({"entrega_ate_lancamento": True}, "a_tempo", 345.0),
-    ({"entrega_ate_lancamento": False}, "depois", 300.0),
-])
-def test_meta_do_code_in_box_depende_da_entrega(extra, classe, pix):
-    o = _gta(loja="Magazine Luiza", extra=extra)
-    assert produtos.entrega(o).classe == classe
-    assert produtos.alvos_da_oferta(o, hoje="2026-10-03").pix == pix
-
-
-def test_entrega_estimada_pela_loja_quando_a_fonte_nao_diz():
-    assert produtos.entrega(_gta("Amazon")).classe == "a_tempo"
-    assert produtos.entrega(_gta("Amazon")).cep_referencia is True       # estimativa: prazo aproximado
-    assert produtos.entrega(_gta("Netshoes")).classe == "depois"
-    assert produtos.entrega(_gta("KaBuM!", vendedor="MERCADOONLINESP")).classe == "depois"
-    e = produtos.entrega(_gta("Magazine Luiza"))
-    assert e.classe == "desconhecida" and "confira" in e.texto
-    a = produtos.alvos_da_oferta(_gta("Magazine Luiza"), hoje="2026-10-03")
-    assert a.pix == 345.0 and a.nota == "prazo desconhecido"
-    # depois do lançamento, a meta é a de quem chega depois
-    assert produtos.alvos_da_oferta(_gta("Amazon"), hoje="2026-11-20").pix == 300.0
-    # o pacote com o GTA também mostra a entrega; o console sozinho, não
-    pac = Oferta("x", "loja", "Amazon", "Pacote", "u", "p", preco=4602.0, modelo="PS5_DIGITAL_GTA6")
-    assert produtos.entrega(pac).classe == "a_tempo"
-    assert produtos.entrega(Oferta("x", "loja", "Amazon", "PS5", "u", "q", preco=3800.0, modelo="PS5_DIGITAL")) is None
-
-
-def test_meta_do_kit_e_do_gift_card(monkeypatch):
-    # fora da janela de 01/11 a 11/11/2026 (perto do prazo da pré-venda a meta do gift card cai para 10%): o teste não
-    # pode depender da data em que roda
-    monkeypatch.setattr(produtos, "JANELA_GIFT_ACEITAVEL", ("2000-01-01", "2000-01-01"))
+def test_meta_do_kit_e_do_gift_card():
     kit = Oferta("x", "post", "KaBuM!", "Console PS5 Slim Digital + 2 Controles", "u", "k", preco=3800.0,
                  modelo="PS5_KIT")
     assert produtos.alvos_da_oferta(kit) == (3850.0, 4000.0, "meta do PS5 Slim Digital + R$ 300 do extra")
@@ -335,33 +293,6 @@ def test_meta_do_kit_e_do_gift_card(monkeypatch):
     ml = Oferta("x", "post", "Mercado Livre", "Sony PlayStation Store Gift Card R$ 100", "u", "m", preco=85.0,
                 modelo="GIFT_CARD_PSN", extra={"texto": "na loja oficial PlayStation"})
     assert produtos.alvos_da_oferta(ml).pix == 85.0
-
-
-def test_custo_efetivo_do_digital_com_gift_card():
-    gift = Oferta("x", "post", "Nuuvem", "Gift Card PlayStation R$ 300", "u", "g", preco=242.74,
-                  modelo="GIFT_CARD_PSN", publicado=agora_iso())
-    ps = Oferta("psstore", "loja", "PlayStation Store", "Grand Theft Auto VI", "u", "s", preco=449.90,
-                modelo="GTA6_DIGITAL")
-    d, _o = produtos.desconto_gift_card([gift, ps])
-    assert round(d, 3) == round(1 - 242.74 / 300, 3)
-    assert produtos.preco_comparavel(ps, d) == round(449.90 * (1 - d), 2) <= 365
-    assert produtos.custo_digital_com_gift(d)["GTA6_DIGITAL"] <= 365
-    # gift card de loja não oficial não conta
-    eneba = Oferta("x", "post", "Eneba", "Gift Card PlayStation R$ 300", "u", "e", preco=200.0, modelo="GIFT_CARD_PSN")
-    assert produtos.desconto_gift_card([eneba, ps]) is None
-
-
-def test_custo_final_do_gta_compara_todas_as_formas():
-    linhas = produtos.custo_final_gta([
-        _gta("Netshoes", preco=341.0, tipo="post", oid="n"), _gta("Amazon", preco=418.40, oid="a"),
-        Oferta("x", "post", "Nuuvem", "Gift Card PlayStation R$ 450", "u", "g", preco=360.0, modelo="GIFT_CARD_PSN",
-               publicado=agora_iso()),
-    ])
-    assert linhas[0]["loja"] == "Netshoes" and linhas[0]["entrega"] == "depois"
-    digital = [l for l in linhas if l["produto"] == "GTA6_DIGITAL"]
-    # um cartão de R$ 450 a R$ 360 paga os R$ 449,90 (combinação de valores de face, revisão de 26/10)
-    assert digital and digital[0]["custo_final"] == 360.0 and digital[0]["entrega"] == "digital"
-    assert [l["custo_final"] for l in linhas] == sorted(l["custo_final"] for l in linhas)
 
 
 # ------------------------------------------------------------------------------------------------
@@ -417,15 +348,16 @@ def test_partida_por_secao_e_depois_toda_postagem_alerta_com_meta_e_distancia(da
     assert "R$ 350,00 acima da meta" in msgs[1] and "meta do PS5 Slim Digital + R$ 300 do extra" in msgs[1]
 
 
-def test_alerta_do_gta_diz_a_entrega_e_se_chega_a_tempo(dados):
+def test_alerta_do_gta_e_um_produto_comum(dados):
+    """26/11/2026: sem as regras do lançamento (prazo de entrega, meta que dependia dele): o GTA 6 Code in Box tem uma
+    meta só, como qualquer produto."""
     _state(dados, modelos_iniciados=["55C6K", "65C6K", "GTA6_CODE_IN_BOX"])
     est, msgs = _rodada([_post("GTA6_CODE_IN_BOX", "Jogo GTA 6 PS5 Code in Box", 341.0, "Netshoes", "n"),
-                         _post("GTA6_CODE_IN_BOX", "Jogo GTA 6 PS5 Code in Box", 339.0, "Amazon", "a")])
+                         _post("GTA6_CODE_IN_BOX", "Jogo GTA 6 PS5 Code in Box", 299.0, "Amazon", "a")])
     net, amz = msgs
-    assert net.startswith("📣 Promoção postada · GTA 6 PS5 Code in Box")       # 341 > 300 (chega depois)
-    assert "chega DEPOIS do lançamento" in net and "Meta: Pix R$ 300,00" in net
-    assert amz.startswith("📣 Promoção postada 🎯 · GTA 6 PS5 Code in Box")    # 339 <= 345 (chega a tempo)
-    assert "chega a tempo ✅" in amz and "previsão 16/11" in amz
+    assert net.startswith("📣 Promoção postada · GTA 6 PS5 Code in Box") and "Meta: Pix R$ 300,00" in net
+    assert amz.startswith("📣 Promoção postada 🎯 · GTA 6 PS5 Code in Box")
+    assert not any("Entrega" in m or "chega" in m for m in msgs)
 
 
 def test_preco_so_de_assinante_nao_ganha_alvo(dados):
@@ -436,28 +368,17 @@ def test_preco_so_de_assinante_nao_ganha_alvo(dados):
     assert m.startswith("📣 Promoção postada · PS5 Slim Digital") and "exclusivo de assinatura (prime)" in m
 
 
-def test_gift_card_de_loja_oficial_ganha_alvo_e_mostra_o_custo_do_gta_digital(dados):
-    _state(dados, modelos_iniciados=["55C6K", "65C6K", "GTA6_CODE_IN_BOX"])
+def test_gift_card_de_loja_oficial_ganha_alvo(dados):
+    # 26/11/2026: o gift card está na seção do PS5 (antes, na do GTA 6)
+    _state(dados, modelos_iniciados=["55C6K", "65C6K", "PS5_DIGITAL"])
     est, msgs = _rodada([
         _post("GIFT_CARD_PSN", "Gift Card PlayStation R$ 300", 242.74, "Nuuvem", "g1"),
         _post("GIFT_CARD_PSN", "Gift Card PlayStation R$ 300", 230.0, "Eneba", "g2")])
     nuuvem, eneba = msgs
     assert nuuvem.startswith("📣 Promoção postada 🎯 · Gift card PlayStation")
-    # o custo do GTA 6 digital sai da combinação de valores de face (R$ 300 + R$ 149,90 no cartão), não do desconto
-    # proporcional (revisão de 26/10: era R$ 364,03, um custo que não dá para pagar com cartões de R$ 300)
-    assert "🧮 GTA 6 digital pago com este cartão: Standard R$ 392,64" in nuuvem and "sairia por" not in nuuvem
+    # 26/11/2026: o gift card é um produto comum; o alerta não calcula mais o GTA 6 digital pago com ele
+    assert "🧮" not in nuuvem and "GTA 6 digital" not in nuuvem
     assert not eneba.startswith("📣 Promoção postada 🎯") and "loja não oficial" in eneba
-
-
-def test_digital_da_ps_store_alerta_pelo_custo_efetivo(dados):
-    _state(dados, modelos_iniciados=["55C6K", "65C6K", "GTA6_DIGITAL"])
-    ps = Oferta("psstore", "loja", "PlayStation Store", "Grand Theft Auto VI", "https://ps/s", "s", preco=449.90,
-                vendedor="PlayStation Store", modelo="GTA6_DIGITAL")
-    # cartão de R$ 450 a R$ 360 (20%): paga o jogo inteiro com um cartão só (custo da combinação, revisão de 26/10)
-    gift = _post("GIFT_CARD_PSN", "Gift Card PlayStation R$ 450", 360.0, "Nuuvem", "g1")
-    est, msgs = _rodada([ps, gift])
-    loja = [m for m in msgs if "PlayStation Store</b>" in m.split("\n")[0]]
-    assert loja and "🎯 Abaixo do alvo" in loja[0] and "custo efetivo R$ 360,00" in loja[0]
 
 
 def test_modo_vigia_vale_so_para_as_tvs(dados, monkeypatch, capsys):
@@ -513,7 +434,7 @@ def test_resumo_do_ps5_e_do_gta(dados):
     r = resumo_diario(est, of, [])
     assert r.startswith("☀️ <b>Resumo diário — TCL 55C6K</b>")
     assert "🎮 <b>PS5</b>" in r and "R$ 4.094,10 (Netshoes/Magalu Oficial) · meta R$ 3.550,00" in r
-    assert "🎮 <b>GTA 6</b>" in r and "chega a tempo" in r
+    assert "🎮 <b>GTA 6</b>" in r and "chega" not in r
     rv = resumo_diario(est, of, [], vigia=True)
     assert "TCL 55C6K" not in rv and "🎮 <b>PS5</b>" in rv
 
@@ -619,7 +540,7 @@ def test_minimo_historico_e_latest_por_produto(dados):
     lt = json.loads((dados / "latest_cloud.json").read_text(encoding="utf-8"))
     assert lt["minimo_PS5_DIGITAL"]["preco"] == 4094.10 and "minimo_PS5_KIT" not in lt
     assert lt["produtos"]["PS5_DIGITAL"]["nome"] == "PS5 Slim Digital" and lt["produtos"]["55C6K"]["familia"] == "TV"
-    assert "gta6_custo_final" in lt
+    assert "gta6_custo_final" not in lt and "gift_card_psn" in lt
     kit = next(o for o in lt["ofertas_loja"] if o["modelo"] == "PS5_KIT")
     assert kit["extra"]["alvo"]["pix"] == 3750.0 and kit["extra"]["produto"]["base"] == "PS5_DIGITAL"
     linhas = (dados / "historico_cloud.csv").read_text(encoding="utf-8").splitlines()
@@ -736,13 +657,9 @@ def test_painel_mostra_as_secoes_do_ps5_e_do_gta(tmp_path):
                     parcelado="10x R$ 454,90 sem juros", oid="D32")
     ps5.update(modelo="PS5_DIGITAL", titulo="PlayStation 5 Edição Digital")
     gta = tp.oferta("kabum", "KaBuM!", 449.9, 418.41, vendedor="KaBuM!", oid="1051619")
-    gta.update(modelo="GTA6_CODE_IN_BOX", titulo="GTA VI", extra={"entrega": {"classe": "a_tempo", "data": "2026-11-17",
-               "texto": "📦 Entrega: previsão 17/11 — chega a tempo ✅"}, "alvo": {"pix": 345.0, "nota": ""}})
+    gta.update(modelo="GTA6_CODE_IN_BOX", titulo="GTA VI", extra={"alvo": {"pix": 300.0, "nota": ""}})
     cloud = tp.latest("cloud", tp.CLOUD_AT, [*tp.ofertas_cloud_hoje(), ps5, gta], tp.MIN_MAGALU)
     cloud["produtos"] = cat
-    cloud["gta6_custo_final"] = [{"produto": "GTA6_CODE_IN_BOX", "forma": "GTA 6 PS5 Code in Box", "loja": "KaBuM!",
-                                  "tipo": "loja", "url": "https://k", "preco": 418.41, "custo_final": 418.41,
-                                  "entrega": "a_tempo", "entrega_texto": "chega a tempo", "meta": 345.0}]
     cloud["posts"] = [{"fonte": "promobit", "tipo": "post", "loja": "Netshoes", "titulo": "PS5 Slim Digital",
                        "url": "https://p/1", "id": "1", "chave": "promobit:1", "preco": 3599.0, "melhor_preco": 3599.0,
                        "publicado": "2026-09-18T10:00:00-03:00", "modelo": "PS5_DIGITAL"}]
@@ -754,8 +671,9 @@ def test_painel_mostra_as_secoes_do_ps5_e_do_gta(tmp_path):
     ps5 = json.dumps(fam["PS5"], ensure_ascii=False)
     assert "PS5 Slim Digital" in ps5 and tp.brl(4094.10) in ps5
     assert tp.brl(3550.0) in ps5 and (tp.brl(4094.10 - 3550.0) + " acima") in ps5
-    assert fam["GTA6"]["custoFinal"]["std"], "Todas as formas pelo custo final"
+    # 26/11/2026: sem o bloco do custo final nem a entrega (regras do lançamento do GTA 6)
+    assert "custoFinal" not in fam["GTA6"]
     gta = json.dumps(fam["GTA6"], ensure_ascii=False)
-    assert "chega até 18/11" in gta and "chega a tempo" in gta
+    assert "GTA 6 PS5 Code in Box" in gta and "chega" not in gta
     assert out["graficos"]["chart-PS5_DIGITAL"]["alvo"] == 3550.0
     assert {"texto": "PS5 Digital", "classe": "mp"} in [p["chip"] for p in out["vm"]["posts"]]

@@ -1,8 +1,7 @@
 """Hype: cartão presente (gift card) da PlayStation Store [Exclusivo Brasil], por HTTP (26/10/2026).
 
-Pedido do usuário em 26/10: comprar o GTA 6 digital na PS Store pagando com gift card comprado com desconto. A pesquisa
-de 26/10 confirmou que a PS Store BR aceita o saldo da carteira na pré-venda e apontou a Hype como loja oficial do cartão
-(cartões de R$ 35 a R$ 700; R$ 450 e R$ 550 fecham a Standard e a Ultimate). Um pedido por rodada
+A Hype é a loja oficial do cartão (pesquisa de 26/10: cartões de R$ 35 a R$ 700). O gift card é um produto comum do
+catálogo: alerta quando sai com desconto sobre o valor de face (produtos.DESCONTO_GIFT_MINIMO). Um pedido por rodada
 (config.URL_HYPE_GIFT_PSN): a página é Next.js e cada cartão traz um "gtmProduct" (id, nome, preço original e de agora,
 disponível, vendedor Sony) no payload do HTML, com o link do produto (/br/product/<slug>) logo antes dele. O cupom da
 Hype (PSN10, PSN550...) não muda esse preço: ele chega pelos cupons do Promobit (slug "hype-games") e pelas postagens.

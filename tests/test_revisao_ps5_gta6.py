@@ -1,12 +1,9 @@
-"""Correções da revisão do PS5/GTA 6 (03/10/2026).
+"""Correções da revisão do PS5/GTA 6 (03/10/2026). A 2 (prazo de entrega do GTA) e a 3 (custo efetivo com gift card)
+saíram com as regras do lançamento do GTA 6 (26/11/2026).
 
 1. (alta) Carrinho: o leitor de disco avulso da pessoa nunca é lido como console ("Unidade de Disco para Consoles PS5
    Digital Edition", nome oficial da Sony; "Leitor de Disco Ultra HD Blu-ray Console PS5 Slim"). Antes ele virava um
    principal restaurável e saía da sacola em silêncio.
-2. (média) Entrega do GTA 6 na pré-venda: o prazo conta a partir de 12/11 (quando as caixas existem). Uma estimativa
-   curta da VTEX ("5bd"), uma data lida no carrinho ou no cartão da Amazon antes de 12/11 não pode virar "chega a tempo".
-3. (média) Gift card da PlayStation só paga compra na PS Store: chave/código de outra loja (Eneba, revendedor do ML) não
-   ganha o custo efetivo com gift card.
 4. (média) "+ Controle Sem Fio DualSense" (singular, sem número, sem "extra") é o controle que já vem no console: não
    vira kit (+R$ 300 na meta).
 5. (baixas) Classificador (mousepad, Grade A, 30 Anos, conta compartilhada, garantia estendida, brinde); cupom do leitor
@@ -19,22 +16,21 @@ Nada acessa a rede nem abre navegador.
 from __future__ import annotations
 
 import json
-import sys
 from datetime import date
 
 import pytest
 
-from monitor import config, confianca, produtos
+from monitor import config, produtos
 from monitor.carrinho import CarrinhoOcupado, Magalu, MercadoLivre, modelo_da_linha, produto_do_titulo
 from monitor.estado import Estado
 from monitor.models import Cupom, Oferta
 from monitor.regras import cupom_compativel, gerar_alertas
-from monitor.sources import entrega, magalu, vtex
+from monitor.sources import magalu
 from monitor.util import agora_iso
 from test_carrinho import MAGALU_1P
 from test_testador_anuncios import FIXO, amb, tc  # noqa: F401 - ambiente do testador (dados, relógio, sessão)
 from test_testador_produtos import (  # noqa: F401
-    IDS_ML, K_GTA, ML_PS5, O_GTA, URL_PS5, CarrinhoProdutos, SacolaProdutos, _alvo, _latest, _sacola,
+    IDS_ML, ML_PS5, URL_PS5, SacolaProdutos, _alvo, _sacola,
 )
 
 
@@ -46,7 +42,6 @@ class _Hoje(date):
 
 @pytest.fixture
 def hoje_03_10(monkeypatch):
-    monkeypatch.setattr(entrega, "hoje", lambda: date(2026, 10, 3))
     monkeypatch.setattr(produtos, "date", _Hoje)
 
 
@@ -133,155 +128,6 @@ def test_ml_linha_do_leitor_nao_e_produto_do_carrinho(titulo):
     linhas = [{"links": ["https://produto.mercadolivre.com.br/MLB-7777777777-x"], "texto": titulo + "\nExcluir"}]
     (c,) = MercadoLivre.classificar_linhas(linhas, ML_PS5, "", (), "PS5_DIGITAL", dict(IDS_ML))
     assert (c["tv"], c["modelo"]) == (False, None)
-
-
-# ------------------------------------------------------------------------------------------------
-# 2. (média) entrega do GTA 6 na pré-venda conta a partir de 12/11
-# ------------------------------------------------------------------------------------------------
-
-class _Resp:
-    def __init__(self, d):
-        self.d = d
-
-    def json(self):
-        return self.d
-
-    def raise_for_status(self):
-        pass
-
-
-def _gta_vtex(monkeypatch, estimativa="5bd", descricao="Pré-venda. Lançamento 19/11/2026"):
-    gta = {"productId": "9", "productName": "Jogo Grand Theft Auto VI PS5 Code in Box", "link": "https://x/p",
-           "description": descricao,
-           "items": [{"itemId": "1", "ean": "0710425676338", "sellers": [{"sellerId": "1", "sellerName": "AMERICANAS SA",
-                      "commertialOffer": {"Price": 449.9, "AvailableQuantity": 5, "Installments": []}}]}]}
-    monkeypatch.setattr(vtex, "get_json", lambda url, **k: [gta])
-    sim = {"logisticsInfo": [{"itemIndex": 0, "slas": [{"id": "NORMAL", "shippingEstimate": estimativa,
-                                                       "deliveryChannel": "delivery"}]}]}
-    monkeypatch.setattr(vtex.requests, "post", lambda *a, **k: _Resp(sim))
-    (o,), _ = vtex.VtexEan("americanas").coletar()
-    return o
-
-
-def test_vtex_pre_venda_conta_o_prazo_a_partir_de_12_11(monkeypatch, hoje_03_10):
-    monkeypatch.delenv("CEP_ENTREGA", raising=False)
-    o = _gta_vtex(monkeypatch)
-    # 12/11 (quinta) + 5 dias úteis: 13, 16, 17, 18 e 19/11
-    assert o.extra["entrega_prevista"] == "2026-11-19" and o.extra["entrega_ate_lancamento"] is False
-    e = produtos.entrega(o)
-    assert e.classe == "no_dia" and "chega a tempo" not in e.texto
-    assert produtos.alvos_da_oferta(o, "2026-10-03")[:2] == (300.0, 320.0)
-
-
-def test_vtex_pre_venda_com_envio_informado_conta_a_partir_do_envio(monkeypatch, hoje_03_10):
-    monkeypatch.delenv("CEP_ENTREGA", raising=False)
-    o = _gta_vtex(monkeypatch, "2bd", "Envios a partir de 16/11/2026")
-    assert o.extra["entrega_prevista"] == "2026-11-18" and produtos.entrega(o).classe == "a_tempo"
-
-
-def test_simula_prazo_sem_inicio_continua_contando_de_hoje(monkeypatch, hoje_03_10):
-    sim = {"logisticsInfo": [{"slas": [{"shippingEstimate": "5bd", "deliveryChannel": "delivery"}]}]}
-    monkeypatch.setattr(vtex.requests, "post", lambda *a, **k: _Resp(sim))
-    assert vtex.simula_prazo("https://x", "1", "1", "01310100") == "2026-10-09"
-    assert vtex.simula_prazo("https://x", "1", "1", "01310100", inicio=date(2026, 11, 12)) == "2026-11-19"
-
-
-@pytest.mark.parametrize("lida,esperada,ajustou", [
-    ("2026-10-09", "2026-11-19", True),    # 5 dias úteis depois de hoje (sábado 03/10): 5 depois de 12/11
-    ("2026-10-05", "2026-11-13", True),    # 1 dia útil
-    ("2026-11-16", "2026-11-16", False),   # depois de 12/11: a data da loja vale como está
-    (None, None, False),
-])
-def test_ajusta_pre_venda(lida, esperada, ajustou, hoje_03_10):
-    assert entrega.ajusta_pre_venda(lida) == (esperada, ajustou)
-
-
-def test_marca_reprojeta_data_antes_de_12_11(hoje_03_10):
-    gta = Oferta("x", "loja", "Amazon", "GTA 6", "u", "1", preco=400, modelo="GTA6_CODE_IN_BOX")
-    entrega.marca(gta, "2026-10-09", False, "página da Amazon")
-    assert gta.extra["entrega_prevista"] == "2026-11-19" and gta.extra["entrega_ate_lancamento"] is False
-    assert "12/11" in gta.extra["entrega_origem"]
-    e = produtos.entrega(gta)
-    assert e.classe == "no_dia" and "previsão 19/11 (contado a partir de 12/11)" in e.texto
-
-
-def test_data_antes_de_12_11_gravada_sem_ajuste_nao_chega_a_tempo(hoje_03_10):
-    o = {"modelo": "GTA6_CODE_IN_BOX", "loja": "Americanas", "extra": {"entrega_prevista": "2026-10-09"}}
-    e = produtos.entrega(o)
-    assert e.classe == "desconhecida" and "chega a tempo" not in e.texto and "12/11" in e.texto
-    assert produtos.alvos_da_oferta(o, "2026-10-03").nota == "prazo desconhecido"
-
-
-def test_entrega_lida_no_carrinho_antes_de_12_11_e_reprojetada(amb):
-    # relógio do testador: sábado 19/09; o carrinho diz 25/09 (5 dias úteis): 5 dias úteis depois de 12/11 = 19/11
-    _latest(amb, [O_GTA], cupons=[])
-    loja = CarrinhoProdutos(amb.pasta, aceita={(K_GTA, "GTA60"): 60.0}, entregas={K_GTA: "2026-09-25"})
-    aceitos, _ = amb.rodar(loja, None)
-    (r,) = [x for x in aceitos if x.codigo == "GTA60"]
-    assert (r.extra["alvo_pix"], r.extra["alvo_parcelado"]) == (300.0, 320.0)
-    msg = tc.msg_melhor([("Magazine Luiza", r)])
-    assert "previsão 19/11" in msg and "chega a tempo" not in msg
-
-
-# ------------------------------------------------------------------------------------------------
-# 3. (média) gift card da PlayStation só paga a PS Store
-# ------------------------------------------------------------------------------------------------
-
-def _gift(pub, face=100, preco=81.0):
-    return Oferta(fonte="promobit", tipo="post", loja="Mercado Livre",
-                  titulo=f"Gift Card PlayStation R$ {face} - Loja oficial PlayStation", url="https://www.promobit.com.br/g/",
-                  id="g1", preco=preco, modelo="GIFT_CARD_PSN", cupom="LOJASOFICIAIS",
-                  extra={"produto": {"valor_face": float(face)}}, publicado=pub)
-
-
-def _ps_store():
-    return Oferta(fonte="psstore", tipo="loja", loja="PlayStation Store", titulo="Grand Theft Auto VI",
-                  url="https://store.playstation.com/pt-br/product/EP1004-PPSA01547_00-GTAVISTANDARD001",
-                  id="EP1004-PPSA01547_00-GTAVISTANDARD001", preco=449.90, vendedor="PlayStation Store",
-                  modelo="GTA6_DIGITAL")
-
-
-def _chave_eneba(pub, preco=420.0):
-    return Oferta(fonte="promobit", tipo="post", loja="Eneba", titulo="GTA VI Edição Standard PS5 Digital - chave",
-                  url="https://www.promobit.com.br/oferta/k/", id="k1", preco=preco, modelo="GTA6_DIGITAL", publicado=pub)
-
-
-def test_gift_card_nao_desconta_chave_de_outra_loja():
-    pub = agora_iso()
-    gift = produtos.desconto_gift_card([_gift(pub)])
-    assert gift and round(gift[0], 2) == 0.19
-    chave = _chave_eneba(pub)
-    assert produtos.preco_comparavel(chave, gift[0]) == 420.0
-    linhas = produtos.linhas_da_oferta(chave, gift)
-    assert not any("custo efetivo" in l for l in linhas)
-    assert any("R$ 55,00 acima da meta" in l for l in linhas), linhas
-    # a PS Store continua com o custo efetivo
-    assert produtos.preco_comparavel(_ps_store(), gift[0]) == 364.42
-
-
-def test_alerta_da_chave_da_eneba_sem_meta_falsa(tmp_path, monkeypatch):
-    e = _estado(tmp_path, monkeypatch)
-    pub = agora_iso()
-    # cartão de R$ 450 a R$ 364,50 (19%): um só paga o jogo (o custo é o da combinação de valores de face, revisão de
-    # 26/10; com 2 cartões de R$ 100 a R$ 81 sobram R$ 249,90 no cartão de crédito e o custo passa da meta)
-    ofertas = [_ps_store(), _gift(pub, 450, 364.50), _chave_eneba(pub)]
-    confianca.avaliar(e, ofertas, rede=False)
-    msgs, _ = gerar_alertas(e, ofertas, [])
-    (eneba,) = [x for x in msgs if "Eneba" in x]
-    assert "🎯" not in eneba.split("\n")[0] and "custo efetivo" not in eneba
-    (ps,) = [x for x in msgs if "PlayStation Store" in x.split("\n")[0]]
-    assert "🎯" in ps.split("\n")[0] and "custo efetivo R$ 364,50" in ps
-
-
-def test_custo_final_do_gta_nao_desconta_a_chave():
-    pub = agora_iso()
-    linhas = produtos.custo_final_gta([_ps_store(), _gift(pub), _chave_eneba(pub)])
-    por_loja = {l["loja"]: l for l in linhas if l["produto"] == "GTA6_DIGITAL"}
-    # PS Store: 2 cartões de R$ 100 a R$ 81 (até 2 do mesmo anúncio) + R$ 249,90 no cartão de crédito (combinação de
-    # valores de face, revisão de 26/10)
-    assert por_loja["Eneba"]["custo_final"] == 420.0 and por_loja["PlayStation Store"]["custo_final"] == 411.90
-    assert "PS Store" not in por_loja["Eneba"]["forma"] and "Eneba" in por_loja["Eneba"]["forma"]
-    assert linhas[0]["loja"] == "PlayStation Store"
 
 
 # ------------------------------------------------------------------------------------------------

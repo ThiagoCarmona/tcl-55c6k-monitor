@@ -61,9 +61,8 @@ class Oferta:
     publicado: Optional[str] = None     # ISO 8601
     ativo: bool = True
     vendedor: Optional[str] = None      # vendedor dentro de marketplace
-    # extra: dados da fonte. Do PS5/GTA 6 (03/10/2026): 'produto' (detalhes da classificação: base/extras/valor_extra do
-    # kit, valor_face do gift card), 'entrega_prevista' (ISO), 'entrega_ate_lancamento' (bool), 'cep_referencia' (bool:
-    # prazo calculado com o CEP de referência, não o do usuário) e o que produtos.anota() acrescenta (alvo, entrega)
+    # extra: dados da fonte. Dos produtos do catálogo (03/10/2026): 'produto' (detalhes da classificação:
+    # base/extras/valor_extra do kit, valor_face do gift card) e o que produtos.anota() acrescenta (alvo)
     extra: dict[str, Any] = field(default_factory=dict)
     modelo: str = MODELO_PADRAO         # id do produto: "55C6K" | "65C6K" | "PS5_DIGITAL" | ... (monitor/produtos.py)
 

@@ -1,8 +1,6 @@
-"""Passada de lista fechada do PS5/GTA 6 (03/10/2026, depois da 2ª conferência).
+"""Passada de lista fechada do PS5/GTA 6 (03/10/2026, depois da 2ª conferência). A P1 (prazo de entrega do GTA) e a
+P5 (custo final das duas edições) saíram com as regras do lançamento do GTA 6 (26/11/2026).
 
-P1. (média) Entrega do GTA na VTEX contada em dobro: a estimativa ("39bd") conta a partir de HOJE; só a data que cai
-    antes de 12/11 (quando as caixas saem) é reprojetada (entrega.ajusta_pre_venda). Mantém o limite de 18/11 e o feriado
-    de 20/11.
 P2. (média) PS5 COM leitor cujo título não traz "Console" antes de "Leitor de Disco" ("PlayStation 5 Slim 1TB Leitor de
     Disco Branco", "PS5 Slim Leitor de Disco 1TB + 2 Jogos") é o console (PS5_DISCO), não o leitor avulso. O leitor
     avulso é o assunto do título ("Leitor de Disco para PS5 Digital/Pro", "Unidade de Disco ... para console PS5").
@@ -11,117 +9,17 @@ P3. (média) Cupom do console que cita "com leitor" sem a palavra console ("R$ 2
 P4. (baixa) Acessórios e produtos temáticos do GTA ("Mousepad Gamer Grande - GTA VI PAISAGEM 2 - 90x40", "Suporte para
     Controle Gamer GTA VI Edição Exclusiva", pôster, camiseta, caneca, chaveiro) e outros jogos (GTA V, Trilogy, GTA V
     Premium) são recusados pelo CLASSIFICADOR, não só pela faixa de preço.
-P5. (conferência) As duas edições do GTA 6: Standard (Code in Box e digital) e Ultimate (só digital no Brasil). A tabela
-    "GTA 6 em todas as formas pelo custo final", o alerta e o resumo comparam a Ultimate digital com "Standard (Code in
-    Box ou digital) + upgrade R$ 100" pelo custo final e mostram as duas edições.
-
 Nada acessa a rede nem abre navegador.
 """
 
 from __future__ import annotations
-
-import json
-import subprocess
-from datetime import date
 
 import pytest
 
 from monitor import produtos
 from monitor.models import Cupom, Oferta
 from monitor.regras import cupom_compativel, sanear
-from monitor.sources import entrega, vtex
 from monitor.util import agora_iso
-
-
-class _Hoje(date):
-    @classmethod
-    def today(cls):
-        return date(2026, 10, 3)
-
-
-@pytest.fixture
-def hoje_03_10(monkeypatch):
-    monkeypatch.setattr(entrega, "hoje", lambda: date(2026, 10, 3))
-    monkeypatch.setattr(produtos, "date", _Hoje)
-
-
-# ------------------------------------------------------------------------------------------------
-# P1. entrega do GTA na VTEX: a estimativa conta de hoje; só o que cai antes de 12/11 é reprojetado
-# ------------------------------------------------------------------------------------------------
-
-class _Resp:
-    def __init__(self, d):
-        self.d = d
-
-    def json(self):
-        return self.d
-
-    def raise_for_status(self):
-        pass
-
-
-def _gta_vtex(monkeypatch, estimativa, descricao="Pré-venda. Lançamento 19/11/2026", preco=340.0):
-    gta = {"productId": "9", "productName": "Jogo Grand Theft Auto VI PS5 Code in Box", "link": "https://x/p",
-           "description": descricao,
-           "items": [{"itemId": "1", "ean": "0710425676338", "sellers": [{"sellerId": "1", "sellerName": "AMERICANAS SA",
-                      "commertialOffer": {"Price": preco, "AvailableQuantity": 5, "Installments": []}}]}]}
-    monkeypatch.setattr(vtex, "get_json", lambda url, **k: [gta])
-    sim = {"logisticsInfo": [{"itemIndex": 0, "slas": [{"id": "NORMAL", "shippingEstimate": estimativa,
-                                                       "deliveryChannel": "delivery"}]}]}
-    monkeypatch.setattr(vtex.requests, "post", lambda *a, **k: _Resp(sim))
-    (o,), _ = vtex.VtexEan("americanas").coletar()
-    return o
-
-
-@pytest.mark.parametrize("estimativa,data,classe,meta", [
-    # sábado 03/10 + N dias úteis (12/10 e 02/11 são feriados): já cai depois de 12/11, vale como está
-    ("28bd", "2026-11-13", "a_tempo", 345.0),
-    ("30bd", "2026-11-17", "a_tempo", 345.0),
-    ("31bd", "2026-11-18", "a_tempo", 345.0),     # 18/11: o último dia para jogar à meia-noite
-    ("32bd", "2026-11-19", "no_dia", 300.0),
-    ("33bd", "2026-11-23", "depois", 300.0),      # 20/11 (sexta) é feriado nacional: pula para segunda 23/11
-    ("39bd", "2026-12-01", "depois", 300.0),      # a Webfones da Fast Shop (rodada seca): não 11/01/2027
-    # antes de 12/11: o trânsito conta a partir de 12/11 (correção da 1ª revisão, mantida)
-    ("5bd", "2026-11-19", "no_dia", 300.0),
-])
-def test_vtex_estimativa_conta_de_hoje_e_so_reprojeta_antes_de_12_11(monkeypatch, hoje_03_10, estimativa, data,
-                                                                       classe, meta):
-    monkeypatch.delenv("CEP_ENTREGA", raising=False)
-    o = _gta_vtex(monkeypatch, estimativa)
-    assert o.extra["entrega_prevista"] == data
-    assert o.extra["entrega_ate_lancamento"] is (data <= produtos.ENTREGA_LIMITE_GTA6)
-    assert produtos.entrega(o).classe == classe
-    assert produtos.alvos_da_oferta(o, "2026-10-03").pix == meta
-
-
-def test_vtex_data_depois_de_12_11_nao_diz_contado_a_partir_de_12_11(monkeypatch, hoje_03_10):
-    monkeypatch.delenv("CEP_ENTREGA", raising=False)
-    o = _gta_vtex(monkeypatch, "30bd")
-    assert "12/11" not in o.extra.get("entrega_origem", "")
-    e = produtos.entrega(o)
-    assert "previsão 17/11" in e.texto and "contado a partir de 12/11" not in e.texto and "chega a tempo" in e.texto
-    # o que é reprojetado continua dizendo
-    o5 = _gta_vtex(monkeypatch, "5bd")
-    assert "12/11" in o5.extra["entrega_origem"] and "contado a partir de 12/11" in produtos.entrega(o5).texto
-
-
-def test_vtex_envio_informado_continua_valendo(monkeypatch, hoje_03_10):
-    monkeypatch.delenv("CEP_ENTREGA", raising=False)
-    # "Envios a partir de 16/11": 2 dias úteis contados de hoje (06/10) viram 2 dias úteis depois de 16/11
-    o = _gta_vtex(monkeypatch, "2bd", "Envios a partir de 16/11/2026")
-    assert o.extra["entrega_prevista"] == "2026-11-18" and produtos.entrega(o).classe == "a_tempo"
-    # uma estimativa que já cai depois do envio informado vale como está
-    o = _gta_vtex(monkeypatch, "32bd", "Envios a partir de 16/11/2026")
-    assert o.extra["entrega_prevista"] == "2026-11-19"
-
-
-def test_simula_prazo_com_inicio_nao_conta_em_dobro(monkeypatch, hoje_03_10):
-    for est, sem, com in (("5bd", "2026-10-09", "2026-11-19"), ("39bd", "2026-12-01", "2026-12-01"),
-                          ("28bd", "2026-11-13", "2026-11-13")):
-        sim = {"logisticsInfo": [{"slas": [{"shippingEstimate": est, "deliveryChannel": "delivery"}]}]}
-        monkeypatch.setattr(vtex.requests, "post", lambda *a, sim=sim, **k: _Resp(sim))
-        assert vtex.simula_prazo("https://x", "1", "1", "01310100") == sem, est
-        assert vtex.simula_prazo("https://x", "1", "1", "01310100", inicio=date(2026, 11, 12)) == com, est
 
 
 # ------------------------------------------------------------------------------------------------
@@ -417,148 +315,3 @@ def test_mensagem_com_o_gta_6_e_outro_gta_separa_os_blocos():
 
 URL_ULT = "https://store.playstation.com/pt-br/product/EP1004-PPSA01547_00-GTAVIULTIMATE001"
 URL_STD = "https://store.playstation.com/pt-br/product/EP1004-PPSA01547_00-GTAVISTANDARD001"
-
-
-def _cib(loja="KaBuM!", preco=449.9, pix=418.41, oid="1051619", tipo="loja", entrega_prevista="2026-11-17"):
-    return Oferta("kabum", tipo, loja, "Jogo Grand Theft Auto VI PS5 Code in Box", f"https://k/{oid}", oid, preco=preco,
-                  preco_pix=pix, vendedor=loja, modelo="GTA6_CODE_IN_BOX", publicado=agora_iso(),
-                  extra={"entrega_prevista": entrega_prevista} if entrega_prevista else {})
-
-
-def _ps(pid, preco, url, oid):
-    titulo = {"GTA6_DIGITAL": "Grand Theft Auto VI", "GTA6_ULTIMATE": "Grand Theft Auto VI: Ultimate Edition",
-              "GTA6_UPGRADE": "Grand Theft Auto VI: Melhoria Ultimate Edition"}[pid]
-    return Oferta("psstore", "loja", "PlayStation Store", titulo, url, oid, preco=preco, vendedor="PlayStation Store",
-                  modelo=pid)
-
-
-def _gift_nuuvem():
-    return Oferta("promobit", "post", "Nuuvem", "Gift Card PlayStation R$ 300", "https://p/g", "g1", preco=242.74,
-                  modelo="GIFT_CARD_PSN", publicado=agora_iso())
-
-
-def test_custo_final_mostra_as_duas_edicoes_e_o_standard_mais_upgrade():
-    linhas = produtos.custo_final_gta([_cib(), _ps("GTA6_DIGITAL", 449.90, URL_STD, "s"),
-                                       _ps("GTA6_ULTIMATE", 549.90, URL_ULT, "u")])
-    assert {l["edicao"] for l in linhas} == {"Standard", "Ultimate"}
-    std = {l["produto"]: l for l in linhas if l["edicao"] == "Standard"}
-    assert set(std) == {"GTA6_CODE_IN_BOX", "GTA6_DIGITAL"}
-    ult = [l for l in linhas if l["edicao"] == "Ultimate"]
-    # a Ultimate digital e o Standard (Code in Box e digital) + upgrade de R$ 100 (preço oficial: a PS Store ainda não
-    # vende o upgrade), pelo custo final
-    combos = {l["via"]: l for l in ult if l.get("via")}
-    assert set(combos) == {"GTA6_CODE_IN_BOX", "GTA6_DIGITAL"}
-    assert combos["GTA6_CODE_IN_BOX"]["custo_final"] == 518.41 and combos["GTA6_DIGITAL"]["custo_final"] == 549.90
-    assert "Standard" in combos["GTA6_CODE_IN_BOX"]["forma"] and "upgrade" in combos["GTA6_CODE_IN_BOX"]["forma"]
-    assert combos["GTA6_CODE_IN_BOX"]["entrega"] == "a_tempo"            # a caixa ainda tem de chegar
-    assert combos["GTA6_CODE_IN_BOX"]["meta"] == 450.0                   # a meta da Ultimate
-    (digital,) = [l for l in ult if l["produto"] == "GTA6_ULTIMATE"]
-    assert digital["custo_final"] == 549.90 and digital["entrega"] == "digital"
-    assert [l["custo_final"] for l in linhas] == sorted(l["custo_final"] for l in linhas)
-
-
-def test_custo_final_com_gift_card_desconta_a_ultimate_e_o_upgrade():
-    linhas = produtos.custo_final_gta([_cib(), _ps("GTA6_ULTIMATE", 549.90, URL_ULT, "u"), _gift_nuuvem()])
-    (ult,) = [l for l in linhas if l["produto"] == "GTA6_ULTIMATE" and l["tipo"] == "loja"]
-    # combinação de valores de face (revisão de 26/10): 2 cartões de R$ 300 a R$ 242,74 pagam os R$ 549,90
-    assert ult["custo_final"] == round(2 * 242.74, 2)
-    (combo,) = [l for l in linhas if l.get("via") == "GTA6_CODE_IN_BOX"]
-    # o upgrade de R$ 100 com um cartão de R$ 300 sai mais caro que pagar direto: fica o preço oficial
-    assert combo["custo_final"] == round(418.41 + 100.0, 2)
-
-
-def test_custo_final_sem_ultimate_vista_usa_o_preco_oficial():
-    linhas = produtos.custo_final_gta([_cib()])
-    ult = [l for l in linhas if l["edicao"] == "Ultimate"]
-    assert any(l["produto"] == "GTA6_ULTIMATE" and l["custo_final"] == 549.90 and l["tipo"] == "calculo" for l in ult)
-    assert any(l.get("via") == "GTA6_CODE_IN_BOX" and l["custo_final"] == 518.41 for l in ult)
-
-
-def test_custo_final_nao_corta_a_ultimate_com_muitas_ofertas_standard():
-    muitas = [_cib(loja="KaBuM!", preco=400.0 + i, pix=None, oid=f"k{i}") for i in range(40)]
-    linhas = produtos.custo_final_gta(muitas + [_ps("GTA6_ULTIMATE", 549.90, URL_ULT, "u")])
-    assert any(l["produto"] == "GTA6_ULTIMATE" for l in linhas) and any(l.get("via") for l in linhas)
-
-
-def test_comparacao_da_ultimate_pelo_custo_final():
-    c = produtos.comparacao_ultimate([_cib(pix=340.0), _ps("GTA6_ULTIMATE", 549.90, URL_ULT, "u")])
-    assert c["ultimate"]["custo"] == 549.90 and c["upgrade"]["custo"] == 100.0
-    assert c["standard"]["custo"] == 340.0 and c["standard"]["produto"] == "GTA6_CODE_IN_BOX"
-    assert c["standard_mais_upgrade"] == 440.0 and c["mais_barato"] == "standard+upgrade"
-
-
-def _estado_iniciado(tmp_path, monkeypatch):
-    from monitor import config
-    from monitor.estado import Estado
-
-    monkeypatch.setattr(config, "DIR_DADOS", tmp_path)
-    d = {"ofertas": {}, "cupons": {}, "minimo": None, "saude": {}, "ultimo_resumo": None,
-         "criado_em": "2026-09-13T15:22:00-03:00", "modelos_iniciados": list(produtos.IDS)}
-    (tmp_path / "state_cloud.json").write_text(json.dumps(d), encoding="utf-8")
-    return Estado("cloud")
-
-
-def test_alerta_do_standard_compara_com_a_ultimate(tmp_path, monkeypatch):
-    from monitor.regras import gerar_alertas
-
-    e = _estado_iniciado(tmp_path, monkeypatch)
-    post = _cib(loja="KaBuM!", preco=340.0, pix=None, oid="p1", tipo="post")
-    msgs, _ = gerar_alertas(e, [post, _ps("GTA6_ULTIMATE", 549.90, URL_ULT, "u")], [])
-    (m,) = [x for x in msgs if "Code in Box" in x.split("\n")[0]]
-    linha = next(l for l in m.split("\n") if l.startswith("🆚"))
-    assert "Ultimate" in linha and "Standard" in linha and "upgrade" in linha
-    assert "R$ 440,00" in linha and "R$ 549,90" in linha and "R$ 109,90" in linha
-    assert "meta da Ultimate" in linha
-
-
-def test_alerta_da_ultimate_compara_com_o_standard_mais_upgrade(tmp_path, monkeypatch):
-    from monitor.regras import gerar_alertas
-
-    e = _estado_iniciado(tmp_path, monkeypatch)
-    ult = Oferta("promobit", "post", "PlayStation Store", "GTA VI Ultimate Edition PS5", "https://p/u", "u1",
-                 preco=499.90, modelo="GTA6_ULTIMATE", publicado=agora_iso())
-    msgs, _ = gerar_alertas(e, [ult, _cib(pix=340.0)], [])
-    (m,) = [x for x in msgs if "Ultimate" in x.split("\n")[0]]
-    linha = next(l for l in m.split("\n") if l.startswith("🆚"))
-    assert "Standard + upgrade" in linha and "R$ 440,00" in linha and "R$ 499,90" in linha and "R$ 59,90" in linha
-    assert "Code in Box" in linha and "KaBuM!" in linha
-
-
-def test_resumo_compara_as_duas_edicoes(tmp_path, monkeypatch):
-    from monitor.regras import resumo_diario
-
-    e = _estado_iniciado(tmp_path, monkeypatch)
-    of = [_cib(pix=418.41), _ps("GTA6_ULTIMATE", 549.90, URL_ULT, "u")]
-    r = resumo_diario(e, of, [])
-    linha = next(l for l in r.split("\n") if l.startswith("🆚"))
-    assert "Ultimate" in linha and "R$ 518,41" in linha and "R$ 549,90" in linha
-
-
-def test_painel_mostra_as_duas_edicoes(tmp_path):
-    import test_painel as tp
-
-    cat = produtos.para_painel()
-    assert cat["GTA6_CODE_IN_BOX"]["edicao"] == "Standard" and cat["GTA6_ULTIMATE"]["edicao"] == "Ultimate"
-    gta = tp.oferta("kabum", "KaBuM!", 449.9, 418.41, vendedor="KaBuM!", oid="1051619")
-    gta.update(modelo="GTA6_CODE_IN_BOX", titulo="GTA VI")
-    cloud = tp.latest("cloud", tp.CLOUD_AT, [*tp.ofertas_cloud_hoje(), gta], tp.MIN_MAGALU)
-    cloud["produtos"] = cat
-    # 14 linhas da Standard (mais que as 12 da tabela de antes) e as da Ultimate, mais caras: as duas aparecem
-    muitas = [_cib(loja="KaBuM!", preco=400.0 + i, pix=None, oid=f"k{i}") for i in range(14)]
-    cloud["gta6_custo_final"] = produtos.custo_final_gta(muitas + [_ps("GTA6_ULTIMATE", 549.90, URL_ULT, "u")])
-    # o PC não lê a PS Store: a tabela dele traz a Ultimate pelo preço oficial (referência) e o Code in Box da Amazon
-    pc = tp.latest("pc", tp.PC_AT, tp.ofertas_pc_hoje(), tp.MIN_AMAZON)
-    pc["gta6_custo_final"] = produtos.custo_final_gta([_cib(loja="Amazon", preco=430.0, pix=None, oid="a1")])
-    assert any(l["produto"] == "GTA6_ULTIMATE" and l["tipo"] == "calculo" for l in pc["gta6_custo_final"])
-    out = tp.roda_painel(tmp_path, cloud, pc)
-    cf = [f for f in out["vm"]["familias"] if f["sec"] == "GTA6"][0]["custoFinal"]
-    assert cf["std"] and cf["ult"], "as duas edições aparecem"
-    g = json.dumps(cf, ensure_ascii=False)
-    assert "Standard (Code in Box) + upgrade" in g and "GTA 6 digital Ultimate" in g
-    assert tp.brl(549.90) in g and tp.brl(500.0) in g          # o Code in Box de R$ 400 + upgrade de R$ 100
-    assert cf["nota"].startswith("Ultimate mais barata")
-    ult = json.dumps({"nota": cf["nota"], "ult": cf["ult"]}, ensure_ascii=False)
-    # a referência pelo preço oficial (do PC) não repete a Ultimate vista na PS Store (da nuvem), e de cada forma da
-    # Standard + upgrade fica a mais barata (a do Code in Box de R$ 400 da nuvem, não a de R$ 430 do PC)
-    assert "Ultimate (PS Store) (preço oficial)" not in ult and ult.count("GTA 6 digital Ultimate") == 1
-    assert ult.count("Standard (Code in Box) + upgrade") == 2 and tp.brl(530.0) not in ult   # a nota + a linha

@@ -7,7 +7,7 @@ A API VTEX do Carrefour dá 403 (Cloudflare), mas a busca e a página do produto
 - página do produto (até config.CARREFOUR_MAX_PRODUTOS por rodada: os do catálogo primeiro, depois os mais baratos;
   o slug não importa, só o sku no fim): JSON-LD (preço do cartão, gtin, sku, disponibilidade), "Vendido e entregue
   por <strong>Carrefour</strong>", o Pix e o parcelado sem juros (o "nos nossos Cartões" é do cartão da loja e fica de
-  fora) e a descrição, onde o GTA 6 diz "ENVIO A PARTIR DE 19 DE NOVEMBRO" (chega depois do lançamento).
+  fora).
 Só os produtos do catálogo que não são TV (o classificador recusa controle, óculos VR2, jogo de outro título...).
 """
 
@@ -22,7 +22,7 @@ from bs4 import BeautifulSoup
 from .. import config, produtos
 from ..models import Oferta
 from ..util import get_html, jsonld_produtos, limpa_html, parse_preco
-from . import Fonte, Resultado, entrega
+from . import Fonte, Resultado
 
 BASE = "https://www.carrefour.com.br"
 _RE_SKU = re.compile(r"/produto/[^\"'#?]*?-(\d{6,})(?:[/?#]|$)")
@@ -105,9 +105,6 @@ def parse_produto(html: str, sku: str, url: str) -> Optional[Oferta]:
     o = Oferta(fonte="carrefour", tipo="loja", loja="Carrefour", titulo=titulo, url=url, id=sku, preco=cartao,
                preco_pix=pix, parcelado=parcelado, vendedor=vendedor,
                ativo=not re.search(r"OutOfStock|SoldOut|Discontinued", disp), extra=extra, modelo=c.produto)
-    envio = entrega.envio_a_partir(limpa_html(str(prod.get("description") or "")))
-    if envio and envio >= produtos.LANCAMENTO_GTA6:
-        entrega.marca_envio_tardio(o)
     return o
 
 

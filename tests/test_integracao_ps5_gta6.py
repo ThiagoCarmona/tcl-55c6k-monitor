@@ -1,8 +1,8 @@
 """Integração das três frentes do PS5/GTA 6 (03/10/2026): catálogo (A), fontes novas (B) e testador por produto (C).
 
 Cobre o que só aparece com as três juntas: o anúncio que a fonte nova grava no latest chega ao testador com o produto,
-a meta e o cupom da página; o preço com o cupom da página do anúncio conta no custo final do PS5/GTA 6 (e nunca nas
-TVs); a TV tirada do carrinho fica fora durante a vigia enquanto o testador roda para o PS5/GTA 6; e os títulos reais
+a meta e o cupom da página; o preço com o cupom da página do anúncio é o que se compara com a meta do PS5/GTA 6 (e
+nunca nas TVs); a TV tirada do carrinho fica fora durante a vigia enquanto o testador roda para o PS5/GTA 6; e os títulos reais
 que a rodada seca de 03/10 mostrou mal classificados. Nenhum teste acessa a rede nem abre navegador.
 """
 
@@ -34,7 +34,7 @@ def _fx(nome: str) -> str:
 
 
 class _Hoje(date):
-    """03/10/2026: antes do lançamento do GTA 6 (depois de 19/11 a meta do Code in Box é a de quem chega depois)."""
+    """03/10/2026, a data das fixtures (o cupom da página do anúncio tem validade)."""
 
     @classmethod
     def today(cls):
@@ -64,7 +64,7 @@ def test_titulos_da_rodada_seca(titulo, esperado):
 
 
 # ------------------------------------------------------------------------------------------------
-# 2. o cupom da página do anúncio no custo final (PS5/GTA 6; as TVs como antes)
+# 2. o cupom da página do anúncio no preço comparado com a meta (PS5/GTA 6; as TVs como antes)
 # ------------------------------------------------------------------------------------------------
 
 def _gta_magalu(pix: float, com_cupom: float, **extra) -> Oferta:
@@ -74,19 +74,16 @@ def _gta_magalu(pix: float, com_cupom: float, **extra) -> Oferta:
                   preco=449.90, preco_pix=pix, parcelado="10x R$ 44,99 sem juros", cupom="GTA60", vendedor="Magalu",
                   modelo="GTA6_CODE_IN_BOX",
                   extra={"anuncio": "241923300", "vendedor_id": "magazineluiza", "preco_com_cupom": com_cupom,
-                         "cupom_regra": "R$ 60,00 OFF com cupom: GTA60", "entrega_prevista": "2026-11-16", **extra})
+                         "cupom_regra": "R$ 60,00 OFF com cupom: GTA60", **extra})
 
 
-def test_cupom_da_pagina_entra_no_custo_final_do_gta():
-    o = _gta_magalu(398.0, 338.0)
-    assert produtos.preco_com_cupom_do_anuncio(o) == (338.0, "GTA60")
-    assert produtos.preco_comparavel(o) == 338.0
+def test_cupom_da_pagina_entra_no_preco_do_gta():
+    o = _gta_magalu(358.0, 298.0)
+    assert produtos.preco_com_cupom_do_anuncio(o) == (298.0, "GTA60")
+    assert produtos.preco_comparavel(o) == 298.0
     linhas = produtos.linhas_da_oferta(o)
-    assert "🎟️ Com o cupom GTA60 do anúncio: R$ 338,00" in linhas
-    assert any(l.startswith("🎯 Meta: Pix R$ 345,00") and "abaixo da meta" in l for l in linhas)
-    (linha,) = [l for l in produtos.custo_final_gta([o]) if l["loja"] == "Magazine Luiza"
-                and l["produto"] == "GTA6_CODE_IN_BOX"]
-    assert (linha["custo_final"], linha["preco"], linha["cupom"]) == (338.0, 398.0, "GTA60")
+    assert "🎟️ Com o cupom GTA60 do anúncio: R$ 298,00" in linhas
+    assert any(l.startswith("🎯 Meta: Pix R$ 300,00") and "abaixo da meta" in l for l in linhas)
 
 
 def test_cupom_so_de_assinante_ou_preco_fora_da_faixa_nao_conta():
@@ -113,15 +110,15 @@ def test_alerta_do_gta_com_o_cupom_da_pagina_na_meta(tmp_path, monkeypatch):
     (tmp_path / "state_cloud.json").write_text(json.dumps(d), encoding="utf-8")
     e = Estado("cloud")
     assert not e.bootstrap and not e.bootstrap_modelo("GTA6_CODE_IN_BOX")
-    msgs, alertados = gerar_alertas(e, [_gta_magalu(398.0, 338.0)], [])
+    msgs, alertados = gerar_alertas(e, [_gta_magalu(358.0, 298.0)], [])
     (m,) = [x for x in msgs if "GTA 6" in x]
     assert "🎯 Abaixo do alvo" in m and "cupom <code>GTA60</code>" in m and "Com o cupom GTA60 do anúncio" in m
-    assert "chega a tempo" in m
-    assert alertados["magalu.produtos:241923300-magazineluiza"] == 338.0
-    resumo = resumo_diario(e, [_gta_magalu(398.0, 338.0)], [], False)
-    assert "com o cupom GTA60 (sem ele R$ 398,00)" in resumo and "com gift card" not in resumo
-    inicio = mensagem_bootstrap([_gta_magalu(398.0, 338.0)], [], "cloud", set(), ["GTA6_CODE_IN_BOX"])
-    assert "<b>R$ 338,00</b> com o cupom GTA60 (Magazine Luiza/Magalu) · meta R$ 345,00" in inicio
+    assert "chega" not in m and "Entrega" not in m
+    assert alertados["magalu.produtos:241923300-magazineluiza"] == 298.0
+    resumo = resumo_diario(e, [_gta_magalu(358.0, 298.0)], [], False)
+    assert "com o cupom GTA60 (sem ele R$ 358,00)" in resumo and "com gift card" not in resumo
+    inicio = mensagem_bootstrap([_gta_magalu(358.0, 298.0)], [], "cloud", set(), ["GTA6_CODE_IN_BOX"])
+    assert "<b>R$ 298,00</b> com o cupom GTA60 (Magazine Luiza/Magalu) · meta R$ 300,00" in inicio
 
 
 def test_codigo_de_assinante_no_cupom_da_postagem_nao_vale(tmp_path, monkeypatch):
@@ -132,9 +129,7 @@ def test_codigo_de_assinante_no_cupom_da_postagem_nao_vale(tmp_path, monkeypatch
                   modelo="GTA6_CODE_IN_BOX")
     assert produtos.exige_assinatura(post) == "prime"
     assert any("exclusivo de assinatura (prime)" in l for l in produtos.linhas_da_oferta(post))
-    # só a referência da Ultimate (preço oficial da PS Store) fica: nem o Code in Box de assinante nem ele + upgrade
-    linhas = produtos.custo_final_gta([post])
-    assert [l["produto"] for l in linhas] == ["GTA6_ULTIMATE"], "preço de assinante não é o custo final do usuário"
+    assert produtos.alvos_da_oferta(post).pix == 300.0
     primeira = Oferta(fonte="promobit", tipo="post", loja="Netshoes", titulo="Jogo GTA 6 PS5 Code in Box",
                       url="https://www.promobit.com.br/oferta/y/", id="p2", preco=339.0, cupom="PRIMEIRA20",
                       modelo="GTA6_CODE_IN_BOX")
@@ -154,7 +149,7 @@ def test_gta_da_busca_do_magalu_chega_ao_testador_com_o_cupom_e_a_meta(amb):
     cods, anuncios = tc.codigos_conhecidos(Magalu())
     (a,) = anuncios
     assert (a.chave, a.modelo, a.cupom, a.preco) == ("241923300-magazineluiza", "GTA6_CODE_IN_BOX", "GTA60", 418.41)
-    assert (a.alvo_pix, a.alvo_parcelado) == (345.0, 370.0) and "prazo desconhecido" in (a.entrega or "")
+    assert (a.alvo_pix, a.alvo_parcelado) == (300.0, 320.0)
     assert cods.compat("GTA60", "GTA6_CODE_IN_BOX") == "sim" and cods.compat("GTA60", "PS5_DIGITAL") == "nao"
     assert "magazineluiza.com.br" in a.url, "o carrinho do Magalu reconhece a URL da fonte nova"
 

@@ -104,12 +104,10 @@ function App() {
               <>
                 <Vitrine it={atual} modelo={modeloAtual} onVariante={escolhe} />
                 <H2>Resumo</H2>
-                <div className="grid grid-cols-2 gap-2 md:grid-cols-5">
+                <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
                   <Fato k="Cupons ativos" d={vm.resumo.cupons} />
                   <Fato k="Postagens (7 dias)" d={vm.resumo.posts} />
                   <Fato k="Melhor gift card PSN" d={vm.resumo.gift} />
-                  <Fato k="GTA 6 Standard com gift card" d={vm.resumo.giftStd} />
-                  <Fato k="GTA 6 Ultimate com gift card" d={vm.resumo.giftUlt} />
                 </div>
               </>
             )}

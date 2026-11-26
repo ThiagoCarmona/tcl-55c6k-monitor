@@ -4,9 +4,8 @@ Vende o estoque do próprio Magalu (vendedor "Magalu Oficial", sellerId 29198) c
 Uma página por rodada (config.URL_NETSHOES_BUSCA, a busca "playstation 5", que traz os consoles, o GTA 6 e o leitor)
 e, de dentro dela, as APIs da própria loja (o navegador manda os cookies e o sensor do Akamai; nenhuma outra página):
 - preço: /frdmprcsts/<código>/alternative/lazy?state=<UF> -> vendedor, salePrice (Pix, em centavos),
-  finalPriceWithoutPaymentBenefitDiscount (cartão), installment (parcelas sem juros), preSale, peso e medidas;
-- prazo do GTA 6: /pdp-api/api/shipping/calculate?...&zipCode=<CEP> (os mesmos parâmetros que a página usa) ->
-  minDeliveryDate/maxDeliveryDate. O CEP vem de config.cep_entrega() e nunca é impresso.
+  finalPriceWithoutPaymentBenefitDiscount (cartão), installment (parcelas sem juros), preSale.
+  A UF sai do CEP de config.cep_entrega() (o CEP nunca é impresso).
 Os cartões da busca vêm sem preço (o preço carrega depois, por API): o título e o tipo saem dos atributos do link
 (data-name, data-producttype). Códigos do catálogo que a busca não trouxe (o Pro, outras versões) também são
 consultados (sem oferta, ficam de fora).
@@ -16,14 +15,13 @@ from __future__ import annotations
 
 import re
 from typing import Any, Optional
-from urllib.parse import quote
 
 from bs4 import BeautifulSoup
 
 from .. import config, produtos
 from ..models import Oferta
 from ..util import fmt_preco
-from . import Fonte, Pular, Resultado, entrega
+from . import Fonte, Pular, Resultado
 
 BASE = "https://www.netshoes.com.br"
 _RE_CODIGO = re.compile(r"-([A-Z0-9]{3}-[A-Z0-9]{4}-[A-Z0-9]{3})$")
@@ -37,13 +35,6 @@ JS_PRECOS = """async ({codigos, uf}) => {
     } catch (e) { out[c] = {erro: String(e).slice(0, 80)}; }
   }
   return out;
-}"""
-
-JS_GET = """async (url) => {
-  try {
-    const r = await fetch(url, {credentials: 'include'});
-    return r.ok ? await r.json() : {erro: r.status};
-  } catch (e) { return {erro: String(e).slice(0, 80)}; }
 }"""
 
 
@@ -95,44 +86,13 @@ def oferta_do_preco(cartao: dict, preco: dict) -> Optional[Oferta]:
     if isinstance(n, int) and n > 1 and cartao_preco and abs((_reais(parc.get("fullAmountInCents")) or 0) - cartao_preco) < 1:
         parcelado = f"{n}x {fmt_preco(_reais(parc.get('amountInCents')))} sem juros"
     extra = {"anuncio": cartao["codigo"], "sku": preco.get("sku"), "vendedor_id": str(preco.get("sellerId")),
-             "preco_de": _reais(preco.get("listPrice")), "pre_venda": bool(preco.get("preSale")),
-             "_frete": {"peso": preco.get("weightInGrams"), "altura": preco.get("heightInCm"),
-                        "largura": preco.get("widthInCm"), "profundidade": preco.get("depthInCm"),
-                        "lista": preco.get("listPrice"), "cheio": preco.get("finalPriceWithoutPaymentBenefitDiscount"),
-                        "tipo": cartao.get("tipo") or ""}}
+             "preco_de": _reais(preco.get("listPrice")), "pre_venda": bool(preco.get("preSale"))}
     if c.detalhes:
         extra["produto"] = dict(c.detalhes)
     return Oferta(fonte="netshoes", tipo="loja", loja="Netshoes", titulo=cartao["titulo"], url=cartao["url"],
                   id=f"{cartao['codigo']}-{preco.get('sellerId')}", preco=cartao_preco, preco_pix=pix,
                   parcelado=parcelado, vendedor=str(preco.get("sellerName") or "") or None, extra=extra,
                   modelo=c.produto)
-
-
-def url_frete(o: Oferta, cep: str) -> Optional[str]:
-    """A URL da cotação de frete da página do produto (os mesmos parâmetros que a Netshoes usa) para este CEP."""
-    f = o.extra.get("_frete") or {}
-    if not o.extra.get("sku") or not o.extra.get("vendedor_id"):
-        return None
-    tipo = quote(str(f.get("tipo") or "Jogos para Consoles").replace(" ", "+"))
-    return (f"/pdp-api/api/shipping/calculate?sku={quote(str(o.extra['sku']))}&preSale="
-            f"{'true' if o.extra.get('pre_venda') else 'false'}&hasPersona=false&department=Games&productType={tipo}"
-            f"&headerType=PDP_MANUAL&sellerId={o.extra['vendedor_id']}&skuPrice={int(f.get('lista') or 0)}"
-            f"&weight={int(f.get('peso') or 0)}&height={int(f.get('altura') or 0)}&width={int(f.get('largura') or 0)}"
-            f"&depth={int(f.get('profundidade') or 0)}&priceWithDiscounts={int(f.get('cheio') or 0)}&zipCode={cep}")
-
-
-def data_do_frete(resposta: Any) -> Optional[str]:
-    """A data de entrega (ISO) da resposta da cotação: o maior maxDeliveryDate da opção mais rápida."""
-    if not isinstance(resposta, dict):
-        return None
-    datas = []
-    for opcoes in resposta.values():
-        for op in opcoes if isinstance(opcoes, list) else []:
-            if isinstance(op, dict):
-                d = str(op.get("maxDeliveryDate") or op.get("minDeliveryDate") or "")[:10]
-                if re.match(r"\d{4}-\d\d-\d\d$", d):
-                    datas.append(d)
-    return min(datas) if datas else None
 
 
 MARCA_BLOQUEIO = config.RAIZ / "logs" / "netshoes_bloqueado_em"   # existe enquanto a Netshoes estiver bloqueando
@@ -163,8 +123,7 @@ class Netshoes(Fonte):
             MARCA_BLOQUEIO.write_text(_t.strftime("%Y-%m-%d %H:%M:%S"), encoding="utf-8")
             return RuntimeError(f"Netshoes bloqueou (Akamai): {motivo}; nova tentativa em 2 h")
 
-        cep, referencia = entrega.cep()
-        uf = entrega.uf_do_cep(cep)
+        uf = config.uf_do_cep(config.cep_entrega()[0])
         with sessao("default"):
             html, texto, _ = _abrir(config.URL_NETSHOES_BUSCA, esperar="div.card[data-code]", ocioso_ms=6000)
             if bloqueio(html, texto):
@@ -182,21 +141,7 @@ class Netshoes(Fonte):
             if precos and all(isinstance(v, dict) and v.get("erro") == 403 for v in precos.values()):
                 raise marca_bloqueio("consulta de preço")
             ofertas = [o for o in (oferta_do_preco(c, precos.get(c["codigo"])) for c in escolhidos) if o]
-            for o in ofertas:
-                if not entrega.precisa(o.modelo):
-                    continue
-                u = url_frete(o, cep)
-                if not u:
-                    continue
-                try:
-                    data = data_do_frete(_avaliar(JS_GET, u))
-                except Exception as e:  # noqa: BLE001 - o prazo é extra
-                    print(f"[netshoes] cotação de frete de {o.id} falhou: {type(e).__name__}")
-                    continue
-                entrega.marca(o, data, referencia, "cotação de frete")
         MARCA_BLOQUEIO.unlink(missing_ok=True)
-        for o in ofertas:
-            o.extra.pop("_frete", None)
         sem_oferta = len(escolhidos) - len(ofertas)
         print(f"[netshoes] {len(cartoes)} cartões, {len(ofertas)} ofertas"
               + (f" ({sem_oferta} sem oferta agora)" if sem_oferta else ""))

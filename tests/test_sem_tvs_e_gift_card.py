@@ -1,4 +1,4 @@
-"""TVs fora do monitor e do painel e gift card da PSN para o GTA 6 digital (pedido do usuário em 26/10/2026).
+"""TVs fora do monitor e do painel e gift card da PSN (pedido do usuário em 26/10/2026).
 
 O usuário vai ficar com a TV ("não preciso mais monitorar") e quer só o PS5 e o GTA 6; e cogita comprar o GTA 6 digital
 na PS Store pagando com gift card comprado com desconto (a pesquisa de 26/10 confirmou: a PS Store BR aceita o saldo da
@@ -8,15 +8,17 @@ Cobre, com config.TVS_DESLIGADAS ligada: as fontes só de TV fora do registro, a
 EANs das TVs, a rede do run.py (oferta/postagem/cupom de TV saem logo depois da coleta), o latest sem nada de TV (com o
 sinal "tvs_desligadas"), o resumo sem falar de TV, o testador sem TV mesmo com --forcar e o painel sem a parte das TVs.
 E o gift card: as fontes de loja (Hype, KaBuM), as lojas oficiais (1P em KaBuM/Americanas/Amazon/Magalu), o valor de
-face, a meta da pesquisa (15%, 10% perto do prazo, cartão de R$ 100 ou mais, sem alerta abaixo de 10%), a combinação de
-valores de face para pagar o GTA 6 Standard e Ultimate, o alerta, o resumo, o latest e o painel. Nada vai à rede.
+face, a meta da pesquisa (15%, cartão de R$ 100 ou mais, sem alerta abaixo de 10%), o alerta, o resumo, o latest e o
+painel. Nada vai à rede.
+
+26/11/2026: o gift card virou um produto comum (seção do PS5). Saíram as contas do GTA 6 digital pago com gift card
+(combinação de valores de face, custo efetivo na PS Store, Standard × Ultimate) e a meta de 10% perto do prazo.
 """
 
 from __future__ import annotations
 
 import json
 import shutil
-import subprocess
 import sys
 from pathlib import Path
 
@@ -244,15 +246,13 @@ def test_valor_de_face_sem_limite_cashback_nem_lista(titulo, face):
     assert produtos.valor_face(titulo) == face
 
 
-def test_limite_por_cpf_nao_infla_a_meta_nem_a_combinacao():
+def test_limite_por_cpf_nao_infla_a_meta():
     o = _post_gift("Gift Card PlayStation Store R$ 150 por R$ 135 - limite de R$ 300 por CPF", 135.0)
     assert produtos.detalhes_de(o)["valor_face"] == 150.0
-    a = produtos.alvos_da_oferta(o, hoje="2026-10-26")
+    a = produtos.alvos_da_oferta(o)
     assert a.pix == 127.5 and not (135.0 <= a.pix)          # 10%: sem 🎯
     (c,) = produtos.cartoes_gift([o])
-    assert (c["valor_face"], c["desconto"]) == (150.0, 0.1)
-    g = produtos.gta_com_gift([o])
-    assert g["GTA6_DIGITAL"]["custo"] == round(2 * 135 + 149.90, 2)   # não R$ 270 com "face" de R$ 300
+    assert (c["valor_face"], c["desconto"]) == (150.0, 0.1)   # não R$ 135 de R$ 300 (o limite por CPF)
     cash = _post_gift("Gift Card PlayStation Store R$ 250 por R$ 225 — ganhe R$ 450 em cashback", 225.0, oid="c")
     assert produtos.detalhes_de(cash)["valor_face"] == 250.0
     lista = _post_gift("Gift Card PSN R$ 60, R$ 100 e R$ 300 com 10% OFF na Hype", 54.0, oid="l")
@@ -278,27 +278,24 @@ def test_a_hype_continua_a_hype():
     assert not produtos._loja_oficial_gift(x) and produtos.alvos_da_oferta(x).pix is None
 
 
-# ---- revisão de 26/10: o custo do GTA 6 da PS Store sai da combinação (cartão pequeno não dá 🎯 falso) -----------
+# ---- revisão de 26/10: cartão pequeno não dá 🎯 falso -----------------------------------------------------------
 
 def _ps_gta(preco=449.90):
     return Oferta("psstore", "loja", "PlayStation Store", "Grand Theft Auto VI", "https://ps/s", "s", preco=preco,
                   vendedor="PlayStation Store", modelo="GTA6_DIGITAL")
 
 
-def test_cartao_pequeno_nao_vira_desconto_do_jogo_inteiro():
+def test_cartao_pequeno_fica_sem_meta():
     # o caso real de 21/09: R$ 60 por R$ 35 na loja oficial PlayStation do Mercado Livre
     g = _post_gift("Gift Card PlayStation Store R$ 60 por R$ 35 - Loja oficial PlayStation", 35.0,
                    loja="Mercado Livre", oid="ml")
-    gta = _ps_gta()
-    assert produtos.desconto_gift_card([g, gta]) is None          # cartão abaixo de R$ 100 não é referência
-    cartoes = produtos.cartoes_gift([g, gta])
-    assert produtos.preco_comparavel(gta, None, cartoes) == 399.90   # 2 x R$ 60 + R$ 329,90 no cartão
-    assert produtos.preco_comparavel(gta, None, cartoes) > produtos.alvos_da_oferta(gta).pix
-    linhas = produtos.linhas_da_oferta(g, None, None, cartoes)
+    assert produtos.alvos_da_oferta(g).pix is None            # cartão abaixo de R$ 100 não é referência
+    linhas = produtos.linhas_da_oferta(g)
     assert not any("sairia por" in l for l in linhas) and not any(l.startswith("🔥") for l in linhas)
-    assert any("🧮" in l and "Standard R$ 399,90" in l for l in linhas)
-    lg = produtos.linhas_da_oferta(gta, None, None, cartoes)
-    assert any("custo efetivo R$ 399,90" in l for l in lg) and any("acima da meta" in l for l in lg)
+    assert any("Sem meta: cartão abaixo de R$ 100" in l for l in linhas) and not any("🧮" in l for l in linhas)
+    # o GTA 6 digital da PS Store é comparado pelo preço dele (sem conta com gift card)
+    gta = _ps_gta()
+    assert produtos.preco_comparavel(gta) == 449.90
 
 
 def test_alerta_da_ps_store_sem_meta_falsa_com_cartao_pequeno(dados):
@@ -309,23 +306,14 @@ def test_alerta_da_ps_store_sem_meta_falsa_com_cartao_pequeno(dados):
     msgs, _al = gerar_alertas(est, [_ps_gta(), g], [])
     assert not any("PlayStation Store</b>" in m.split("\n")[0] and "🎯" in m.split("\n")[0] for m in msgs), msgs
     (gm,) = [m for m in msgs if "Gift card" in m.split("\n")[0]]
-    assert "sairia por" not in gm and "🔥" not in gm and "Standard R$ 399,90" in gm
-
-
-def test_alerta_da_ps_store_com_cartao_que_paga_o_jogo(dados):
-    _state(dados)
-    est = Estado("cloud")
-    msgs, _al = gerar_alertas(est, [_ps_gta(), _gift("Hype", 450, 360.0, "h450")], [])
-    (ps,) = [m for m in msgs if "PlayStation Store</b>" in m.split("\n")[0]]
-    assert "🎯" in ps.split("\n")[0] and "custo efetivo R$ 360,00" in ps
+    assert "sairia por" not in gm and "🔥" not in gm and "🧮" not in gm
 
 
 def test_resumo_sem_a_linha_proporcional(dados):
     _state(dados)
     est = Estado("cloud")
     txt = resumo_diario(est, [_ps_gta(), _gift("Hype", 150, 120.0, "h150")], [], vigia=True)
-    assert "sairia por" not in txt
-    assert "🧮 Standard digital com gift card: R$ 389,90" in txt     # 2 x R$ 150 a R$ 120 + R$ 149,90
+    assert "sairia por" not in txt and "🧮" not in txt and "com gift card" not in txt
 
 
 # ---- revisão de 26/10: gift card de outra região não resgata na conta BR ------------------------------------------
@@ -379,7 +367,7 @@ def test_hype_le_os_cartoes_da_pagina(monkeypatch):
     assert (a.loja, a.vendedor, a.preco, a.modelo, a.extra["produto"]["valor_face"]) == (
         "Hype", "Hype", 405.0, "GIFT_CARD_PSN", 450.0)
     assert a.url == "https://hype.games/br/product/450-playstation-store" and ofs["3"].ativo is False
-    assert produtos._loja_oficial_gift(a) and produtos.alvos_da_oferta(a, "2026-10-26").pix == 382.5
+    assert produtos._loja_oficial_gift(a) and produtos.alvos_da_oferta(a).pix == 382.5
     monkeypatch.setattr(hype, "get_html", lambda url, **k: html)
     assert len(hype.HypeGiftCard().coletar()[0]) == 3
     monkeypatch.setattr(hype, "get_html", lambda url, **k: "<html></html>")
@@ -409,7 +397,6 @@ def test_kabum_produtos_le_a_lista_dos_gift_cards(monkeypatch):
 
     monkeypatch.setattr(kabum, "get_html", get_html)
     monkeypatch.setattr(kabum, "get_json", lambda url, **k: (_ for _ in ()).throw(ConnectionError("sem rede")))
-    monkeypatch.setattr(kabum, "completa_entrega", lambda ofs: None)
     ofs = {o.id: o for o in kabum.KaBuMProdutos().coletar()[0]}
     assert config.URL_KABUM_LISTA_GIFT in pedidas
     a, parceiro = ofs["1059584"], ofs["777"]
@@ -434,11 +421,9 @@ def test_lojas_oficiais_do_gift_card():
 
 def test_meta_do_gift_card_pela_pesquisa():
     h = _gift("Hype", 450, 405, "h")
-    assert produtos.alvos_da_oferta(h, "2026-10-26").pix == 382.5          # 15%
-    a = produtos.alvos_da_oferta(h, "2026-11-05")                         # perto do prazo: 10%
-    assert a.pix == 405.0 and "perto do prazo" in a.nota
-    assert produtos.alvos_da_oferta(h, "2026-11-12").pix == 382.5
-    peq = produtos.alvos_da_oferta(_gift("Hype", 60, 35, "p"), "2026-10-26")
+    a = produtos.alvos_da_oferta(h)                                       # 15%, em qualquer data
+    assert a.pix == 382.5 and a.nota == "15% de desconto sobre R$ 450"
+    peq = produtos.alvos_da_oferta(_gift("Hype", 60, 35, "p"))
     assert peq.pix is None and "abaixo de R$ 100" in peq.nota
     assert produtos.gift_sem_alerta(_gift("Hype", 450, 430, "x"))          # 4,4%: sem alerta
     assert not produtos.gift_sem_alerta(_gift("Hype", 450, 405, "y"))      # 10%
@@ -446,46 +431,16 @@ def test_meta_do_gift_card_pela_pesquisa():
     assert not produtos.gift_sem_alerta(sem_face)
 
 
-def test_combinacao_de_valores_de_face_para_o_gta():
-    std = 449.90
-    um = produtos.cartoes_gift([_gift("Hype", 450, 405.0, "a")])
-    c = produtos.combinacao_gift(std, um)
-    assert (c["custo"], c["sobra"], c["no_cartao"]) == (405.0, 0.1, 0.0)
-    dois = produtos.cartoes_gift([_gift("KaBuM!", 300, 240.0, "b"), _gift("Hype", 150, 135.0, "c"),
-                                  _gift("Hype", 450, 440.0, "d")])
-    c = produtos.combinacao_gift(std, dois)
-    assert c["custo"] == 375.0 and [x["valor_face"] for x in c["cartoes"]] == [300.0, 150.0]
-    # só um cartão pequeno: ele (até 2 iguais, há limite por CPF) e o resto no cartão de crédito
-    c = produtos.combinacao_gift(std, produtos.cartoes_gift([_gift("Hype", 100, 85.0, "e")]))
-    assert c["custo"] == round(2 * 85 + 249.90, 2) and c["no_cartao"] == 249.9 and len(c["cartoes"]) == 2
-    # limite da carteira: 2 x R$ 300 não cabe num limite de R$ 500
-    c = produtos.combinacao_gift(std, produtos.cartoes_gift([_gift("Hype", 300, 240.0, "f")]), limite=500)
-    assert c["valor_face"] == 300.0 and c["custo"] == round(240 + 149.90, 2)
-    # sem desconto nenhum: pagar direto é o mesmo (nenhuma combinação)
-    assert produtos.combinacao_gift(std, produtos.cartoes_gift([_gift("Hype", 450, 450.0, "g")])) is None
-    # loja não oficial e preço só de assinante não entram
-    assert produtos.cartoes_gift([_gift("Eneba", 300, 220.0, "h", tipo="post")]) == []
-
-
-def test_custo_do_gta_standard_e_ultimate_com_gift_card():
-    ofs = [_gift("Hype", 450, 405.0, "a"), _gift("Hype", 550, 495.0, "b")]
-    g = produtos.gta_com_gift(ofs)
-    assert g["GTA6_DIGITAL"]["custo"] == 405.0 and g["GTA6_ULTIMATE"]["custo"] == 495.0
-    assert (g["GTA6_DIGITAL"]["meta"], g["GTA6_DIGITAL"]["aceitavel"], g["GTA6_DIGITAL"]["otimo"]) == (
-        382.42, 404.91, 359.92)
-    assert g["GTA6_ULTIMATE"]["meta"] == 467.42
-    # a PS Store em promoção: a conta parte do preço dela
-    ps = Oferta("psstore", "loja", "PlayStation Store", "GTA VI", "u", "s", preco=399.90, vendedor="PlayStation Store",
-                modelo="GTA6_DIGITAL")
-    assert "GTA6_DIGITAL" not in produtos.gta_com_gift(ofs + [ps])   # R$ 405 no cartão de R$ 450 não compensa mais
-    g = produtos.gta_com_gift([ps, _gift("Hype", 300, 240.0, "c")])["GTA6_DIGITAL"]
-    assert (g["preco_psstore"], g["custo"], g["no_cartao"]) == (399.9, 339.9, 99.9)
+def test_bloco_do_gift_card_para_o_painel():
+    ofs = [_gift("Hype", 450, 405.0, "a"), _gift("Hype", 550, 495.0, "b"), _gift("Eneba", 300, 220.0, "e", tipo="post")]
     bloco = produtos.gift_para_painel(ofs)
     assert bloco["melhor"]["valor_face"] in (450.0, 550.0) and bloco["melhor"]["desconto"] == 0.1
-    assert bloco["regra"]["prazo"] == "2026-11-11" and set(bloco["gta"]) == {"GTA6_DIGITAL", "GTA6_ULTIMATE"}
+    assert len(bloco["cartoes"]) == 2                          # a Eneba não é loja oficial
+    assert set(bloco) == {"melhor", "cartoes", "regra", "lojas_oficiais"}   # sem a conta do GTA 6
+    assert bloco["regra"]["meta"] == 0.15 and "prazo" not in bloco["regra"]
 
 
-def test_alerta_do_gift_card_so_com_desconto_e_com_o_custo_do_gta(dados):
+def test_alerta_do_gift_card_so_com_desconto(dados):
     _state(dados)
     est = Estado("cloud")
     cheio = _gift("Hype", 450, 450.0, "cheio")
@@ -496,19 +451,18 @@ def test_alerta_do_gift_card_so_com_desconto_e_com_o_custo_do_gta(dados):
     assert len(msgs) == 1, msgs
     m = msgs[0]
     assert m.startswith("🆕 Nova oferta 🎯 Abaixo do alvo · Gift card PlayStation") or "🎯" in m.split("\n")[0]
-    assert "🧮 GTA 6 digital pago com este cartão" in m and "Ultimate R$ 467,00" in m
-    assert "⏰ Para jogar no lançamento" in m or "2026-11-11" < agora_iso()[:10]
+    assert "Meta: Pix R$ 467,50" in m and "🧮" not in m and "⏰" not in m
     # postagem de gift card com 5% de desconto: sem alerta
     est2 = Estado("cloud")
     post, _ = sanear([_gift("Nuuvem", 300, 285.0, "p5", tipo="post")])
     assert gerar_alertas(est2, post, [])[0] == []
 
 
-def test_resumo_mostra_o_gta_digital_com_gift_card(dados):
+def test_resumo_mostra_o_melhor_gift_card(dados):
     _state(dados)
     est = Estado("cloud")
     txt = resumo_diario(est, [_gift("Hype", 450, 382.0, "a")], [], vigia=True)
-    assert "🧮 Standard digital com gift card: R$ 382,00" in txt and "R$ 450 (Hype, R$ 382,00)" in txt
+    assert "<b>Gift card PSN</b>: R$ 382,00 (Hype)" in txt and "🧮" not in txt
 
 
 def test_latest_publica_o_bloco_do_gift_card(dados, sem_tvs):
@@ -518,7 +472,7 @@ def test_latest_publica_o_bloco_do_gift_card(dados, sem_tvs):
     est.escreve_latest(ofs, [])
     latest = json.loads((dados / "latest_cloud.json").read_text(encoding="utf-8"))
     g = latest["gift_card_psn"]
-    assert g["melhor"]["loja"] == "Hype" and g["gta"]["GTA6_DIGITAL"]["custo"] == 382.0
+    assert g["melhor"]["loja"] == "Hype" and g["melhor"]["preco"] == 382.0 and "gta" not in g
     assert latest["tvs_desligadas"] is True
 
 
@@ -537,17 +491,15 @@ def _painel(tmp_path, cloud, pc=None, agora="2026-10-26T12:00:00-03:00"):
         arquivos["data/latest_pc.json"] = pc
     out = tp.roda_modelo(tmp_path, arquivos, agora)
     vm = out["vm"]
-    gta = [f for f in vm["familias"] if f["sec"] == "GTA6"]
+    fam = {f["sec"]: f for f in vm["familias"]}
     r = vm["resumo"]
     return {**out, "sem_tvs": vm["tvs"] is None, "f-posts": r["posts"]["v"],
-            "f-gift": r["gift"]["v"], "f-gift-s": r["gift"]["s"], "f-gift-std": r["giftStd"]["v"],
-            "f-gift-std-s": r["giftStd"]["s"], "f-gift-ult": r["giftUlt"]["v"], "f-gift-ult-s": r["giftUlt"]["s"],
-            "gta": gta[0] if gta else None}
+            "f-gift": r["gift"]["v"], "f-gift-s": r["gift"]["s"], "ps5": fam.get("PS5"), "gta": fam.get("GTA6")}
 
 
 def _latest(sem_tvs_flag, gift=None, posts=(), cupons=()):
     d = {"modo": "cloud", "atualizado": "2026-10-26T11:50:00-03:00", "produtos": produtos.para_painel(sem_tvs_flag),
-         "ofertas_loja": [], "posts": list(posts), "cupons": list(cupons), "saude": {}, "gta6_custo_final": [],
+         "ofertas_loja": [], "posts": list(posts), "cupons": list(cupons), "saude": {},
          "confianca": {"reprovados": []}}
     if sem_tvs_flag:
         d["tvs_desligadas"] = True
@@ -592,17 +544,17 @@ def test_painel_sem_o_sinal_continua_com_as_tvs(tmp_path):
 
 
 @pytest.mark.skipif(NODE is None, reason="node não encontrado no PATH")
-def test_painel_mostra_o_melhor_gift_card_e_o_custo_do_gta(tmp_path):
+def test_painel_mostra_o_melhor_gift_card(tmp_path):
     ofs = [_gift("Hype", 450, 382.0, "a"), _gift("Hype", 550, 495.0, "b"), _gift("KaBuM!", 300, 270.0, "c")]
     gift = json.loads(json.dumps(produtos.gift_para_painel(ofs)))
     s = _painel(tmp_path, _latest(True, gift=gift))
     assert s["f-gift"] == "R$ 382,00" and "vale R$ 450" in s["f-gift-s"] and "15%" in s["f-gift-s"]
-    assert s["f-gift-std"] == "R$ 382,00" and "R$ 450 (Hype, R$ 382,00)" in s["f-gift-std-s"]
-    # a Ultimate sai mais barata com o de R$ 450 (15%) e R$ 99,90 no cartão do que com o de R$ 550 (10%)
-    assert s["f-gift-ult"] == "R$ 481,90" and "R$ 99,90 no cartão" in s["f-gift-ult-s"]
-    g = s["gta"]["gift"]
-    assert g["melhor"]["preco"] == "R$ 382,00" and g["melhor"]["naMeta"] and g["regra"]["prazo"] == "11/11"
-    assert [x["meta"] for x in g["gta"] if x["edicao"] == "Standard"] == ["R$ 382,42"]   # meta da Standard com 15%
+    assert "giftStd" not in s["vm"]["resumo"] and "giftUlt" not in s["vm"]["resumo"]   # sem a conta do GTA 6
+    # 26/11/2026: o bloco do gift card fica na seção do PS5 (antes, na do GTA 6)
+    g = s["ps5"]["gift"]
+    assert g["melhor"]["preco"] == "R$ 382,00" and g["melhor"]["naMeta"] and g["regra"]["meta"] == "15%"
+    assert [c["naMeta"] for c in g["cartoes"]] == [True, False, False] and "gta" not in g
+    assert s["gta"]["gift"] is None
     # o gift card não tem gráfico (mistura valores de face)
     assert "chart-GIFT_CARD_PSN" not in s["graficos"]
 
@@ -611,4 +563,4 @@ def test_painel_mostra_o_melhor_gift_card_e_o_custo_do_gta(tmp_path):
 def test_painel_sem_gift_card_com_desconto(tmp_path):
     s = _painel(tmp_path, _latest(True, gift=produtos.gift_para_painel([])))
     assert s["f-gift"] == "—" and "nenhum com desconto" in s["f-gift-s"]
-    assert s["gta"]["gift"]["melhor"] is None and s["gta"]["gift"]["gta"] == []
+    assert s["ps5"]["gift"]["melhor"] is None and s["ps5"]["gift"]["cartoes"] == []

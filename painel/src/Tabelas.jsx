@@ -1,7 +1,7 @@
 // Aba "Tabelas" (26/11/2026, protótipo aprovado): um cartão por MODELO (PS5, GTA 6, acessórios, SSD) com uma linha
 // por variante (meta, melhor agora, parcelado, menor já visto, distância da meta). Tocar na variante abre as lojas,
-// cada uma com o link do anúncio. No GTA 6 vão também o custo final de cada caminho e o gift card. As TVs (escondidas
-// com "tvs_desligadas" no latest) continuam no topo quando ligadas.
+// cada uma com o link do anúncio. No modelo do gift card vão também os cartões com desconto. As TVs (escondidas com
+// "tvs_desligadas" no latest) continuam no topo quando ligadas.
 import {useState} from 'react';
 import {TableCell, TableRow} from './tremor.js';
 import {agrupaPorModelo} from './logica.js';
@@ -29,7 +29,7 @@ const ativa = l => l.classe !== 'sus' && l.classe !== 'velho';
 export default function Tabelas({vm}) {
   const resumo = vm.familias.flatMap(f => f.resumo);
   const produtos = Object.fromEntries(vm.familias.flatMap(f => f.produtos).map(p => [p.id, p]));
-  const gta = vm.familias.find(f => f.sec === 'GTA6');
+  const gift = vm.familias.map(f => f.gift).find(Boolean) || null;
   const modelos = agrupaPorModelo(resumo, temPreco);
   const [filtro, setFiltro] = useState('todos');
   // abre a primeira variante com oferta, para mostrar que a linha abre
@@ -73,7 +73,7 @@ export default function Tabelas({vm}) {
             produtos={produtos}
             aberto={aberto}
             onTroca={troca}
-            gta={m.id === 'GTA6' ? gta : null}
+            gift={m.itens.some(r => r.id === 'GIFT_CARD_PSN') ? gift : null}
           />
         ))}
       <Nota>
@@ -84,7 +84,7 @@ export default function Tabelas({vm}) {
   );
 }
 
-function Modelo({m, atraso, produtos, aberto, onTroca, gta}) {
+function Modelo({m, atraso, produtos, aberto, onTroca, gift}) {
   const com = m.itens.filter(temPreco).length;
   return (
     <section className="cartao modelo entra" style={{animationDelay: `${atraso}ms`}} aria-label={m.nome}>
@@ -112,10 +112,9 @@ function Modelo({m, atraso, produtos, aberto, onTroca, gta}) {
       {m.itens.map(r => (
         <Variante key={r.id} r={r} p={produtos[r.id]} aberto={!!aberto[r.id]} onTroca={() => onTroca(r.id)} />
       ))}
-      {gta && (gta.custoFinal || gta.gift) && (
+      {gift && (
         <div className="bloco-extra">
-          {gta.custoFinal && <CustoFinal cf={gta.custoFinal} />}
-          {gta.gift && <Gift g={gta.gift} />}
+          <Gift g={gift} />
         </div>
       )}
     </section>
@@ -373,12 +372,12 @@ function Gift({g}) {
   const {regra, melhor: m} = g;
   return (
     <>
-      <H3>Gift card PlayStation · pagar o GTA 6 digital na PS Store</H3>
+      <H3>Gift card PlayStation</H3>
       {!m ? (
         <Nota>
           Nenhum gift card com desconto em loja oficial agora (PS Store, Hype, Nuuvem, loja oficial PlayStation no
           Mercado Livre, ou vendido pela própria KaBuM, Americanas, Amazon ou Magalu). Meta: {regra.meta} de desconto ou
-          mais; comprar e resgatar até {regra.prazo}.
+          mais.
         </Nota>
       ) : (
         <>
@@ -405,27 +404,6 @@ function Gift({g}) {
               </>
             )}
           </p>
-          {g.gta.length > 0 && (
-            <Tabela cab={['GTA 6 digital', 'PS Store', 'Pagando com gift card', `Meta (${regra.minimo})`, 'Cartões']}>
-              {g.gta.map(x => (
-                <TableRow key={x.edicao}>
-                  <TableCell>
-                    <b className="text-tinta">{x.edicao}</b>
-                  </TableCell>
-                  <TableCell>{x.psstore}</TableCell>
-                  <TableCell className={x.ok ? 'text-ok' : ''}>
-                    <b>{x.custo}</b>
-                    <Sub>{x.economia}</Sub>
-                  </TableCell>
-                  <TableCell>
-                    {x.meta}
-                    <Sub>{x.faixas}</Sub>
-                  </TableCell>
-                  <TableCell className="whitespace-normal">{x.cartoes}</TableCell>
-                </TableRow>
-              ))}
-            </Tabela>
-          )}
           {g.cartoes.length > 0 && (
             <Tabela className="mt-2" cab={['Loja', 'Valor de face', 'Preço', 'Desconto', '']}>
               {g.cartoes.map((c, i) => (
@@ -447,68 +425,11 @@ function Gift({g}) {
             </Tabela>
           )}
           <Nota>
-            Só cartão [Exclusivo Brasil] de loja oficial. O saldo da carteira é usado primeiro e o resto vai para o
-            cartão de crédito; a Sony tem um limite de saldo que não divulga (a conta não passa de R$ 700). Meta:{' '}
-            {regra.meta} de desconto ou mais (🔥 a partir de {regra.excelente}). Para jogar no lançamento: comprar e
-            resgatar o cartão e fazer a pré-venda até {regra.prazo} (pré-carregamento a partir de 12/11).
+            Só cartão [Exclusivo Brasil] de loja oficial. Meta: {regra.meta} de desconto ou mais (🔥 a partir de{' '}
+            {regra.excelente}).
           </Nota>
         </>
       )}
-    </>
-  );
-}
-
-// GTA 6: o que sai do bolso por cada caminho (cupom de postagem e upgrade somados), Standard e Ultimate juntas
-function CustoFinal({cf}) {
-  const linhas = [
-    ...cf.std.slice(0, 4).map(r => ({...r, ed: 'Standard'})),
-    ...cf.ult.map(r => ({...r, ed: 'Ultimate'})),
-  ];
-  return (
-    <>
-      <h3>Custo final do GTA 6</h3>
-      <p className="sub">O que sai do bolso por cada caminho, com cupom de postagem e upgrade somados.</p>
-      {linhas.length ? (
-        linhas.map((r, i) => (
-          <div key={i} className="cf">
-            <div>
-              <b>{r.forma.replace(/^GTA 6 (PS5 |Ultimate = |digital )?/, '')}</b>
-              <small>
-                {r.loja === '?' ? 'loja não informada' : r.loja}
-                {r.tipo ? ` · ${r.tipo}` : ''}
-              </small>
-            </div>
-            <div className="cf-custo">
-              <b>{r.custo}</b>
-              <small>
-                {r.ed}
-                {r.detalhe ? ` · ${r.detalhe}` : ''}
-              </small>
-            </div>
-            <div className="cf-ok">
-              <span className={`chipz ${r.ok ? 'ok' : 'bad'}`}>{r.ok ? 'dentro da meta' : `meta ${r.meta}`}</span>
-            </div>
-            <div className="cf-ent">
-              {r.entrega && (
-                <span className={`chipz ${r.entrega.classe}`} title={r.entrega.titulo}>
-                  {r.entrega.rotulo}
-                </span>
-              )}
-            </div>
-            <div className="tl-link">
-              <LinkFora
-                url={r.url}
-                aria={`Abrir ${r.tipo === 'postagem' ? 'a postagem' : 'o anúncio'} (abre em outra aba)`}
-              >
-                {r.tipo === 'postagem' ? 'Abrir postagem' : 'Ver na loja'}
-              </LinkFora>
-            </div>
-          </div>
-        ))
-      ) : (
-        <p className="nota-gta">Nenhuma oferta do GTA 6 agora.</p>
-      )}
-      {cf.nota && <p className="nota-gta">{cf.nota}</p>}
     </>
   );
 }

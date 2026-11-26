@@ -22,7 +22,7 @@ from .. import config, produtos
 from ..filtro import modelo_do_titulo
 from ..models import MODELO_PADRAO, Oferta
 from ..util import get_html, parcelado_no_texto, parse_preco
-from . import Fonte, Pular, Resultado, entrega
+from . import Fonte, Pular, Resultado
 
 _RE_CARTAO = re.compile(
     r"R\$\s?([\d.]+,\d{2})\s+em\s+at[ée]\s+(\d{1,2})x\s+de\s+R\$\s?([\d.]+,\d{2})(\s+sem\s+juros)?", re.I)
@@ -101,8 +101,7 @@ def _e_a_amazon(nome: str | None) -> bool:
 
 def parse_produto(html: str, asin: str = config.ASIN_AMAZON, modelo: str | None = None) -> Oferta | None:
     """Oferta do vendedor em destaque na página do produto. TV: o título tem de ser do modelo do ASIN (ou `modelo`).
-    PS5/GTA 6 (`modelo` de fora das TVs): o produto do classificador do catálogo com o ASIN; e o prazo de entrega da
-    página (data-csa-c-delivery-time, no CEP da sessão) vai para extra['entrega_texto']."""
+    PS5/GTA 6 (`modelo` de fora das TVs): o produto do classificador do catálogo com o ASIN."""
     if "api-services-support@amazon.com" in html or "Digite os caracteres" in html:
         raise RuntimeError("Amazon devolveu captcha")
     modelo = modelo or modelo_do_asin(asin)
@@ -162,9 +161,6 @@ def parse_produto(html: str, asin: str = config.ASIN_AMAZON, modelo: str | None 
     if not produtos.eh_tv(modelo):
         if detalhes:
             extra["produto"] = detalhes
-        prazo = soup.select_one("[data-csa-c-delivery-time]")
-        if prazo is not None and prazo.get("data-csa-c-delivery-time"):
-            extra["entrega_texto"] = str(prazo.get("data-csa-c-delivery-time"))[:60]
     return Oferta(
         fonte="amazon", tipo="loja", loja="Amazon", titulo=titulo, url=url_vendedor(asin, vendedor_id),
         id=_id_oferta(asin, vendedor_id, vendedor),
@@ -289,14 +285,12 @@ def parse_busca(html: str) -> list[Oferta]:
     return list(out.values())
 
 
-_RE_ENTREGA_CARTAO = re.compile(r"\bEntrega\b[^:|]{0,30}:?\s*([^|]{0,40}?\b\d{1,2}\s+de\s+[a-zç]{3,9}\.?)", re.I)
 _RE_PARCELA_CARTAO = re.compile(r"em at[ée] (\d{1,2})x de R\$ ?([\d.]+,\d{2})(?: R\$ ?[\d.]+,\d{2})?( sem juros)?", re.I)
 
 
 def parse_busca_produtos(html: str) -> list[Oferta]:
     """Cartões da busca com um produto do catálogo que não é TV (PS5, pacotes com o GTA 6, o GTA 6, leitor): preço
-    (Pix quando o cartão diz "à vista no Pix"; o do cartão é o total das parcelas sem juros), e o prazo de entrega do
-    cartão ("Entrega GRÁTIS: seg., 16 de nov.", no CEP da sessão) em extra['entrega_texto']. Acessório, kit de jogo +
+    (Pix quando o cartão diz "à vista no Pix"; o do cartão é o total das parcelas sem juros). Acessório, kit de jogo +
     controle, versão "International"/KSA ficam de fora (classificador)."""
     soup = BeautifulSoup(html, "html.parser")
     out: dict[str, Oferta] = {}
@@ -322,9 +316,6 @@ def parse_busca_produtos(html: str) -> list[Oferta]:
         extra = _extra(asin, None, origem="busca")
         if cl.detalhes:
             extra["produto"] = dict(cl.detalhes)
-        me = _RE_ENTREGA_CARTAO.search(txt)
-        if me:
-            extra["entrega_texto"] = me.group(1).strip()[:60]
         if pix:
             o_preco, o_pix = (cartao if cartao and cartao > preco + 0.005 else None), preco
         else:
@@ -337,38 +328,12 @@ def parse_busca_produtos(html: str) -> list[Oferta]:
     return list(out.values())
 
 
-# CEP da sessão do Chrome (anônima) pela troca de endereço do próprio site (o "Atualizar CEP" do cabeçalho), de dentro
-# da página: o token anti-CSRF do modal, depois o address-change. Devolve só se deu certo (o CEP não volta nem é
-# impresso). Por HTTP simples a troca dá 503 (pesquisa de 03/10).
-JS_CEP = """async ({cep}) => {
-  const atual = (document.querySelector('#glow-ingress-line2')?.innerText || '').replace(/\\D/g, '');
-  if (atual === cep) return {ok: true, mudou: false};
-  const el = document.querySelector('#nav-global-location-data-modal-action');
-  if (!el) return {ok: false, erro: 'sem o seletor de CEP'};
-  let m;
-  try { m = JSON.parse(el.getAttribute('data-a-modal')); } catch (e) { return {ok: false, erro: 'modal ilegível'}; }
-  const r1 = await fetch(m.url, {headers: {'anti-csrftoken-a2z': (m.ajaxHeaders || {})['anti-csrftoken-a2z'] || ''},
-                                credentials: 'include'});
-  const h1 = await r1.text();
-  const t = (h1.match(/CSRF_TOKEN\\s*:\\s*["']([^"']+)["']/) || [])[1];
-  if (!t) return {ok: false, erro: 'sem token'};
-  const r2 = await fetch('/portal-migration/hz/glow/address-change?actionSource=glow', {
-    method: 'POST', credentials: 'include',
-    headers: {'anti-csrftoken-a2z': t, 'content-type': 'application/json'},
-    body: JSON.stringify({locationType: 'LOCATION_INPUT', zipCode: cep, deviceType: 'web', storeContext: 'videogames',
-                          pageType: 'Detail', actionSource: 'glow'})});
-  let j = {};
-  try { j = await r2.json(); } catch (e) {}
-  return {ok: !!(j && j.successful), mudou: true};
-}"""
-
-
 def _vendedores_da_busca(achados: dict[str, Oferta], erros: list[str], _abrir) -> int:
     """O cartão da busca não diz quem vende (id '<ASIN>-destaque'): sem o vendedor não há checagem de confiança. Abre o
     painel de ofertas dos ASINs sem vendedor (por HTTP; no Chrome se o HTTP falhar), primeiro o mais barato de cada
     produto e depois os outros, do mais perto da meta ao mais longe, até config.AMAZON_MAX_PAINEIS_PRODUTOS, e troca o
     cartão pelos vendedores do painel (com as avaliações e o Full de cada um). O do destaque (o vendedor do cartão)
-    herda do cartão o preço no cartão, o parcelado e o prazo quando o preço é o mesmo. Devolve quantos painéis abriu."""
+    herda do cartão o preço no cartão e o parcelado quando o preço é o mesmo. Devolve quantos painéis abriu."""
     def perto_da_meta(o: Oferta) -> float:
         a = produtos.alvos_da_oferta(o)
         meta = a.pix or a.parcelado
@@ -412,8 +377,6 @@ def _vendedores_da_busca(achados: dict[str, Oferta], erros: list[str], _abrir) -
                 if p.preco_pix and not p.preco and o.preco and o.preco > p.preco_pix + 0.005:
                     p.preco = o.preco
                 p.parcelado = p.parcelado or o.parcelado
-                if o.extra.get("entrega_texto"):
-                    p.extra["entrega_texto"] = o.extra["entrega_texto"]
             achados.setdefault(p.id, p)
         achados.pop(o.id, None)
     return abertos
@@ -552,22 +515,18 @@ class Amazon(Fonte):
 
 class AmazonProdutos(Fonte):
     """PS5 e GTA 6 na Amazon, no Chrome do PC (fonte própria: as cargas das TVs ficam como antes), até
-    config.AMAZON_MAX_CARGAS_PRODUTOS páginas: a do GTA 6 (B0H6KT2RWH: vendedor, cartão, Pix, parcelado e o prazo de
-    entrega; antes, o CEP de entrega na sessão, recarregando a página se ele mudou) e as buscas
-    (config.URLS_AMAZON_BUSCA_PRODUTOS: os pacotes com o GTA 6 e os consoles, com o prazo do cartão da busca), e o painel
-    de ofertas dos ASINs da busca, que dá o vendedor de cada preço (_vendedores_da_busca). O prazo é
-    o do CEP da sessão: o de config.cep_entrega() quando a troca deu certo (sem a variável, o de referência), senão
-    marcado como aproximado."""
+    config.AMAZON_MAX_CARGAS_PRODUTOS páginas: a do GTA 6 (B0H6KT2RWH: vendedor, cartão, Pix e parcelado) e as buscas
+    (config.URLS_AMAZON_BUSCA_PRODUTOS: os pacotes com o GTA 6 e os consoles), e o painel de ofertas dos ASINs da busca,
+    que dá o vendedor de cada preço (_vendedores_da_busca)."""
 
     nome = "amazon.produtos"
     modo = "pc"
 
     def coletar(self) -> Resultado:
-        from .playwright_sources import _abrir, _avaliar, sessao
+        from .playwright_sources import _abrir, sessao
 
         por_id: dict[str, Oferta] = {}
         erros: list[str] = []
-        cep, referencia = entrega.cep()
         with sessao("default"):
             asin_gta = produtos.produto("GTA6_CODE_IN_BOX").ids_loja["Amazon"][0]
             url_gta = f"https://www.amazon.com.br/dp/{asin_gta}"
@@ -576,20 +535,10 @@ class AmazonProdutos(Fonte):
             try:
                 cargas += 1
                 html = _abrir(url_gta, esperar="#productTitle", ocioso_ms=6000)[0]
-                r = _avaliar(JS_CEP, {"cep": cep}) or {}
-                cep_ok = bool(r.get("ok"))
-                if r.get("mudou") and cep_ok and cargas < config.AMAZON_MAX_CARGAS_PRODUTOS:
-                    cargas += 1
-                    html = _abrir(url_gta, esperar="#productTitle", ocioso_ms=6000)[0]
-                elif not cep_ok:
-                    print(f"[amazon.produtos] não troquei o CEP da sessão ({r.get('erro') or 'sem resposta'}): "
-                          "prazo aproximado")
             except Pular:
                 raise
             except Exception as e:  # noqa: BLE001
                 erros.append(f"GTA 6 (Chrome): {type(e).__name__}: {e}"[:160])
-                cep_ok = False
-            ref = referencia or not cep_ok
             achados: dict[str, Oferta] = {}
             if html:
                 try:
@@ -616,9 +565,6 @@ class AmazonProdutos(Fonte):
                         achados.setdefault(o.id, o)
             paineis = _vendedores_da_busca(achados, erros, _abrir)
             for o in achados.values():
-                txt = o.extra.pop("entrega_texto", None)
-                if txt and entrega.precisa(o.modelo):
-                    entrega.marca(o, entrega.data_por_extenso(txt), ref, "página da Amazon")
                 por_id.setdefault(o.id, o)
             print(f"[amazon.produtos] {len(achados)} ofertas em {cargas} páginas e {paineis} painéis de ofertas")
         for o in por_id.values():

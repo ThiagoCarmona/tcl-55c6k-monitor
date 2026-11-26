@@ -2,7 +2,7 @@
 
 A página de cada produto (config.URL_PSSTORE_PRODUTO, ids do catálogo em monitor/produtos.py) responde por HTTP e traz o
 preço no JSON-LD (offers.price). A melhoria para a Ultimate vem sem preço enquanto a loja não vende (03/10/2026): fica
-de fora até ter preço. O custo efetivo (pagando com gift card comprado com desconto) é calculado nas regras.
+de fora até ter preço.
 """
 
 from __future__ import annotations

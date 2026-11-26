@@ -202,12 +202,11 @@ export function parseCsv(txt) {
     .map(r => Object.fromEntries(h.map((k, i) => [k, r[i] ?? ''])));
 }
 
-// ---- PS5 e GTA 6 (03/10/2026): o que a coleta gravou no extra (monitor/produtos.py, anota): a meta desta oferta, a
-// entrega do GTA 6 (chega a tempo?), os extras do kit, o valor de face do gift card
+// ---- produtos do catálogo (03/10/2026): o que a coleta gravou no extra (monitor/produtos.py, anota): a meta desta
+// oferta, os extras do kit, o valor de face do gift card
 function infoProduto(o) {
   const ex = o?.extra || {},
     partes = [];
-  if (ex.entrega?.texto) partes.push(ex.entrega.texto.replace(/^📦\s*/, ''));
   const det = ex.produto || {};
   if (det.extras?.length) partes.push('extras: ' + det.extras.map(e => e.nome || e.tipo).join(', '));
   if (det.valor_face && o.melhor_preco)
@@ -379,9 +378,8 @@ function comparacao(res) {
   });
 }
 
-// ---- gift card PlayStation para pagar o GTA 6 digital (26/10/2026; latest.gift_card_psn, calculado no monitor): o
-// melhor cartão de loja oficial (maior desconto) e o custo do GTA 6 digital com a melhor combinação de valores de face
-// (o saldo da carteira é usado primeiro e o resto vai para o cartão de crédito). Os dois modos juntos.
+// ---- gift card PlayStation (26/10/2026; latest.gift_card_psn, calculado no monitor): os cartões de loja oficial com
+// desconto sobre o valor de face, o de maior desconto primeiro. Os dois modos juntos.
 function giftDosModos(fontes) {
   const blocos = fontes.map(f => f.gift_card_psn).filter(b => b && typeof b === 'object');
   if (!blocos.length) return null;
@@ -392,52 +390,29 @@ function giftDosModos(fontes) {
       if (!vistos.has(k)) vistos.set(k, c);
     }
   const cartoes = [...vistos.values()].sort((a, b) => b.desconto - a.desconto || a.preco - b.preco);
-  const gta = {};
-  for (const b of blocos)
-    for (const [pid, g] of Object.entries(b.gta || {})) if (!gta[pid] || g.custo < gta[pid].custo) gta[pid] = g;
   const regra = blocos.find(b => b.regra)?.regra || {};
-  return {melhor: cartoes[0] || null, cartoes, gta, regra};
+  return {melhor: cartoes[0] || null, cartoes, regra};
 }
-const textoCartoes = g =>
-  (g.cartoes || []).map(c => `R$ ${Math.round(c.valor_face)} (${c.loja}, ${fmt(c.preco)})`).join(' + ') +
-  (g.no_cartao ? ` + ${fmt(g.no_cartao)} no cartão` : '') +
-  (g.sobra ? `; sobram ${fmt(g.sobra)} de saldo` : '');
 function resumoGift(gift) {
-  const m = gift?.melhor,
-    out = {
-      gift: {
-        v: m ? fmt(m.preco) : '—',
-        s: m
-          ? `vale R$ ${Math.round(m.valor_face)} · ${pctTxt(m.desconto)} · ${m.loja}`
-          : 'nenhum com desconto em loja oficial',
-      },
-    };
-  for (const [pid, k] of [
-    ['GTA6_DIGITAL', 'giftStd'],
-    ['GTA6_ULTIMATE', 'giftUlt'],
-  ]) {
-    const g = gift?.gta?.[pid];
-    out[k] = {
-      v: g ? fmt(g.custo) : '—',
-      s: g ? `−${pctTxt(g.desconto)} · ${textoCartoes(g)}` : 'sem gift card que baixe o preço',
-    };
-  }
-  return out;
+  const m = gift?.melhor;
+  return {
+    gift: {
+      v: m ? fmt(m.preco) : '—',
+      s: m
+        ? `vale R$ ${Math.round(m.valor_face)} · ${pctTxt(m.desconto)} · ${m.loja}`
+        : 'nenhum com desconto em loja oficial',
+    },
+  };
 }
-// bloco do gift card na seção do GTA 6
+// bloco do gift card no cartão do modelo em que ele está
 function blocoGift(gift) {
   const r = gift?.regra || {},
     meta = r.meta ?? 0.15,
     faceMin = r.face_minima ?? 100;
   const naMeta = c => c.desconto >= meta - 1e-9 && c.valor_face >= faceMin; // cartão abaixo de R$ 100 fica sem meta (igual ao monitor)
-  const regra = {
-    prazo: r.prazo ? r.prazo.slice(8, 10) + '/' + r.prazo.slice(5, 7) : '11/11',
-    meta: pctTxt(meta),
-    excelente: pctTxt(r.excelente ?? 0.2),
-    minimo: pctTxt(r.minimo ?? 0.15),
-  };
+  const regra = {meta: pctTxt(meta), excelente: pctTxt(r.excelente ?? 0.2)};
   const m = gift?.melhor;
-  if (!m) return {regra, melhor: null, gta: [], cartoes: []};
+  if (!m) return {regra, melhor: null, cartoes: []};
   const cartao = c => ({
     loja: c.loja,
     post: c.tipo === 'post',
@@ -448,21 +423,8 @@ function blocoGift(gift) {
     cupom: c.cupom || null,
     url: c.url || null,
   });
-  const gta = Object.values(gift.gta || {})
-    .sort((a, b) => (a.edicao || '').localeCompare(b.edicao || ''))
-    .reverse()
-    .map(g => ({
-      edicao: g.edicao || g.nome,
-      psstore: fmt(g.preco_psstore),
-      custo: fmt(g.custo),
-      ok: g.custo <= g.meta,
-      economia: `−${pctTxt(g.desconto)} · economia ${fmt(g.economia)}`,
-      meta: fmt(g.meta),
-      faixas: `aceitável ${fmt(g.aceitavel)} · ótimo ${fmt(g.otimo)}`,
-      cartoes: textoCartoes(g),
-    }));
   const outros = (gift.cartoes || []).slice(0, 6);
-  return {regra, melhor: cartao(m), gta, cartoes: outros.length > 1 ? outros.map(cartao) : []};
+  return {regra, melhor: cartao(m), cartoes: outros.length > 1 ? outros.map(cartao) : []};
 }
 
 // distância do preço até a meta: "R$ 49,00 acima" / "R$ 51,00 abaixo"
@@ -474,14 +436,6 @@ const distMeta = (v, meta) =>
       : v - meta < -0.5
         ? `${fmt(meta - v)} abaixo`
         : 'na meta';
-const ENTREGA_CLASSE = {a_tempo: 'ok', digital: 'ok', no_dia: 'warn', depois: 'bad', desconhecida: 'mute'};
-const ENTREGA_ROTULO = {
-  a_tempo: 'chega até 18/11',
-  digital: 'digital (00:00 de 19/11)',
-  no_dia: 'chega 19/11',
-  depois: 'chega depois',
-  desconhecida: 'prazo ?',
-};
 const linhaPost = cat => p => ({
   chave: p.chave,
   chip: chipModelo(modeloDe(p, cat), cat),
@@ -507,81 +461,9 @@ const linhaPost = cat => p => ({
     .slice(0, 140),
 });
 
-// GTA 6 em todas as formas pelo custo final (latest.gta6_custo_final, calculado no monitor com o melhor gift card de loja
-// oficial visto), nas duas edições (pedido de 03/10): a Standard (Code in Box e digital) e a Ultimate (só digital no
-// Brasil), que também sai pela Standard + o upgrade de R$ 100. O mais barato primeiro, com a entrega (precisa chegar até
-// 18/11 para jogar à meia-noite de 19/11). Linha de latest antigo, sem 'edicao': a edição sai do produto.
-const EDICAO_GTA = {
-  GTA6_CODE_IN_BOX: 'Standard',
-  GTA6_DIGITAL: 'Standard',
-  GTA6_ULTIMATE: 'Ultimate',
-  GTA6_UPGRADE: 'Ultimate',
-};
-function custoFinal(fontes) {
-  const vistos = new Map();
-  for (const f of fontes)
-    for (const r of f.gta6_custo_final || []) {
-      const k = [r.produto, r.via || '', normLoja(r.loja), r.url].join('|'),
-        atual = vistos.get(k);
-      if (!atual || r.custo_final < atual.custo_final) vistos.set(k, r);
-    }
-  let todas = [...vistos.values()].filter(r => r.custo_final != null).sort((a, b) => a.custo_final - b.custo_final);
-  // os dois modos juntos: a referência pelo preço oficial (um modo que não leu a PS Store) sai quando o outro viu o
-  // produto por esse preço ou menos; de cada forma da Standard + upgrade fica a mais barata
-  const reais_ = todas.filter(r => r.tipo !== 'calculo');
-  const vias = new Set();
-  todas = todas.filter(r => {
-    if (r.tipo === 'calculo' && !r.via)
-      return !reais_.some(x => x.produto === r.produto && x.custo_final <= r.custo_final + 0.005);
-    if (r.via) {
-      if (vias.has(r.via)) return false;
-      vias.add(r.via);
-    }
-    return true;
-  });
-  if (!todas.length) return null;
-  const edicao = r => r.edicao || EDICAO_GTA[r.produto] || 'Standard';
-  const std = todas.filter(r => edicao(r) === 'Standard').slice(0, 10),
-    ult = todas.filter(r => edicao(r) === 'Ultimate').slice(0, 6);
-  const linha = r => ({
-    forma: r.forma,
-    loja: r.loja || '?',
-    tipo: r.tipo === 'post' ? 'postagem' : r.tipo === 'calculo' ? 'cálculo' : null,
-    custo: fmt(r.custo_final),
-    detalhe:
-      r.preco && Math.abs(r.preco - r.custo_final) > 0.5
-        ? `preço ${fmt(r.preco)}${r.cupom ? ` · cupom ${r.cupom}` : ''}`
-        : null,
-    meta: r.meta ? fmt(r.meta) : '—',
-    ok: !!(r.meta && r.custo_final <= r.meta),
-    entrega: r.entrega
-      ? {
-          classe: ENTREGA_CLASSE[r.entrega] || 'mute',
-          rotulo: ENTREGA_ROTULO[r.entrega] || r.entrega,
-          titulo: r.entrega_texto || '',
-        }
-      : null,
-    url: r.url || null,
-  });
-  // a Ultimate mais barata: a digital × a Standard + upgrade (a melhor das linhas da comparação)
-  const dig = ult.find(r => r.produto === 'GTA6_ULTIMATE'),
-    combo = ult.find(r => r.via);
-  let nota = null;
-  if (dig && combo) {
-    const d = Math.abs(dig.custo_final - combo.custo_final);
-    nota =
-      d < 0.005
-        ? `Ultimate mais barata: a digital e a Standard + upgrade empatam (${fmt(dig.custo_final)}).`
-        : combo.custo_final < dig.custo_final
-          ? `Ultimate mais barata: ${combo.forma.replace('GTA 6 Ultimate = ', '')} (${combo.loja || '?'}) por ${fmt(combo.custo_final)}, ${fmt(d)} a menos que a Ultimate digital (${fmt(dig.custo_final)}).`
-          : `Ultimate mais barata: a digital por ${fmt(dig.custo_final)}, ${fmt(d)} a menos que a Standard + upgrade (${fmt(combo.custo_final)}).`;
-  }
-  return {std: std.map(linha), ult: ult.map(linha), nota};
-}
-
-// Uma seção por família (PS5, GTA 6): resumo por produto (meta, melhor à vista e parcelado agora, menor já visto,
-// distância da meta), a tabela de preços por loja e o gráfico de cada produto, as postagens recentes e, no GTA 6, o
-// gift card e todas as formas pelo custo final (com a entrega).
+// Uma seção por família (PS5, GTA 6, SSD...): resumo por produto (meta, melhor à vista e parcelado agora, menor já
+// visto, distância da meta), a tabela de preços por loja e o gráfico de cada produto, as postagens recentes e, na
+// seção do gift card, os cartões com desconto.
 // Modelo > variante (26/11/2026): a tela agrupa pelo campo 'familia' do catálogo (PS5, GTA6, ACESSORIO, SSD...), e cada
 // produto vira uma variante do modelo, com o nome curto dela. Só nomes de tela; produto novo sem nome aqui usa o 'curto'.
 export const MODELOS_TELA = [
@@ -673,7 +555,6 @@ function secaoFamilia(sec, titulo, ctx, posts) {
           v: meta.pix != null ? fmt(meta.pix) : 'por oferta',
           subs: [
             meta.parcelado != null && meta.parcelado !== meta.pix ? `parc. ${fmt(meta.parcelado)}` : '',
-            p.alvo_pix_tardio ? `chega depois: ${fmt(p.alvo_pix_tardio)}` : '',
           ].filter(Boolean),
         },
         melhor: {v: r.melhor ? fmt(r.melhor.melhor_preco) : '—', sub: r.melhor ? quem(r.melhor) : null},
@@ -699,8 +580,7 @@ function secaoFamilia(sec, titulo, ctx, posts) {
     titulo,
     resumo,
     produtos,
-    gift: sec === 'GTA6' ? blocoGift(ctx.gift) : null,
-    custoFinal: sec === 'GTA6' ? custoFinal(ctx.fontes) : null,
+    gift: ids.includes('GIFT_CARD_PSN') ? blocoGift(ctx.gift) : null,
     posts: posts
       .filter(p => cat[modeloDe(p, cat)]?.secao === sec)
       .slice(0, 10)

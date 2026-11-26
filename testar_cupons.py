@@ -68,13 +68,12 @@ o "modelo" de um anúncio é o id do produto no catálogo (monitor/produtos.py; 
 de cada produto são percorridos do mais barato ao mais caro e cada cupom é medido com o produto SOZINHO no carrinho (o
 cupom vale para o pedido). No fim da rodada o carrinho fica com UM item de cada produto PRINCIPAL que tem anúncio na
 loja: as TVs, o PS5 Digital, o PS5 com leitor, o PS5 Pro e o GTA 6 Code in Box (monitor.carrinho.PRINCIPAIS). Os
-CAMINHOS (pacote PS5 + GTA 6, kit/edição especial, gift card PlayStation) só são testados quando são o caminho mais
-barato para um principal da mesma loja (o preço deles menos o valor do extra — o GTA 6, o controle, a edição — ou, no
-gift card, o GTA 6 digital pago com ele, abaixo do anúncio mais barato do principal) e NUNCA ficam no carrinho.
+CAMINHOS (pacote PS5 + GTA 6, kit/edição especial) só são testados quando são o caminho mais barato para um principal
+da mesma loja (o preço deles menos o valor do extra — o GTA 6, o controle, a edição — abaixo do anúncio mais barato do
+principal) e NUNCA ficam no carrinho.
 Os cupons de cada produto passam pela regra de cupom do catálogo (regras.cupom_compativel): o que é claramente de outra
 coisa não é testado; o duvidoso vai depois. Modo vigia (TV comprada em 03/10): as TVs ficam fora do testador até
-config.VIGIA_ATE; o PS5 e o GTA 6 seguem. A mensagem traz, de cada produto, o preço + frete e, no GTA 6, a previsão de
-entrega (chega até 18/11?).
+config.VIGIA_ATE; o PS5 e o GTA 6 seguem. A mensagem traz, de cada produto, o preço + frete.
 
 O robô nunca avança para pagamento nem digita dados de conta. Só aplica cupom, lê o total e remove.
 """
@@ -108,7 +107,6 @@ from monitor.carrinho import (  # noqa: E402
 )
 from monitor.models import Cupom  # noqa: E402
 from monitor.filtro import eh_55c6k  # noqa: E402
-from monitor.sources import entrega as _entrega  # noqa: E402
 from monitor.trava import PerfilOcupado, trava_perfil  # noqa: E402
 from monitor.util import TZ_BR, agora, agora_iso, fmt_preco, hoje, loja_canonica  # noqa: E402
 
@@ -266,16 +264,14 @@ class Anuncio:
     frete: Optional[float] = field(default=None, compare=False)
     # reconhece as chaves antigas do estado (fim da URL) que são deste anúncio
     antiga: Optional[Callable[[str, dict], bool]] = field(default=None, repr=False, compare=False)
-    # 03/10 (PS5/GTA 6): anúncio de um CAMINHO (pacote PS5 + GTA 6, kit, gift card): o principal a que ele leva e o preço
-    # equivalente nele (o preço menos o valor do extra; no gift card, o GTA 6 digital pago com ele). None: principal
+    # 03/10 (PS5/GTA 6): anúncio de um CAMINHO (pacote PS5 + GTA 6, kit): o principal a que ele leva e o preço
+    # equivalente nele (o preço menos o valor do extra). None: principal
     caminho: Optional[str] = field(default=None, compare=False)
     equivalente: Optional[float] = field(default=None, compare=False)
-    # a meta desta oferta (produtos.alvos_da_oferta: no GTA 6 Code in Box ela depende da entrega) e a nota dela
+    # a meta desta oferta (produtos.alvos_da_oferta) e a nota dela
     alvo_pix: Optional[float] = field(default=None, compare=False)
     alvo_parcelado: Optional[float] = field(default=None, compare=False)
     nota_alvo: str = field(default="", compare=False)
-    # GTA 6 físico (Code in Box e pacotes com ele): a linha "📦 Entrega: ..." de produtos.entrega (chega até 18/11?)
-    entrega: Optional[str] = field(default=None, compare=False)
 
     @property
     def rotulo(self) -> str:
@@ -318,8 +314,6 @@ class Anuncio:
             out.update(grupo=self.caminho, caminho=True, equivalente=self.equivalente, preco_ref=self.preco)
         if self.alvo_pix is not None or self.alvo_parcelado is not None:
             out.update(alvo_pix=self.alvo_pix, alvo_parcelado=self.alvo_parcelado, nota_alvo=self.nota_alvo)
-        if self.entrega:
-            out["entrega"] = self.entrega
         return out
 
 
@@ -355,9 +349,7 @@ def caminho_da_oferta(o: dict, preco: float) -> tuple[Optional[str], Optional[fl
 
     - pacote PS5 + GTA 6: o PS5 da mesma versão; equivalente = preço menos o GTA 6 (produtos.VALOR_EXTRA['gta6']);
     - kit/edição especial: o console-base (produtos.detalhes_de); equivalente = preço menos o valor do extra (e menos o
-      GTA 6 quando a base é um pacote);
-    - gift card PlayStation (só loja oficial, com o valor de face): o GTA 6 Code in Box; equivalente = o GTA 6 digital
-      (preço da PS Store) pago com o desconto deste gift card."""
+      GTA 6 quando a base é um pacote)."""
     pid = modelo_da_oferta(o)
     if pid not in CAMINHOS:
         return None, None
@@ -374,25 +366,18 @@ def caminho_da_oferta(o: dict, preco: float) -> tuple[Optional[str], Optional[fl
         if base not in PRINCIPAIS:
             return None, None
         return base, round(preco - extra, 2)
-    if pid == "GIFT_CARD_PSN":
-        face = produtos.detalhes_de(o).get("valor_face")
-        digital = produtos.produto("GTA6_DIGITAL")
-        if not face or not digital or not digital.preco_oficial or preco >= face or \
-                not produtos._loja_oficial_gift(o):
-            return None, None
-        return "GTA6_CODE_IN_BOX", round(digital.preco_oficial * preco / face, 2)
     return None, None
 
 
 def contexto_do_carrinho(anuncios: Iterable[Anuncio], loja_canonica: Optional[str] = None,
                          postos: Optional[dict] = None) -> dict:
     """ids_modelo (id do /p/ do Magalu ou item MLB… do ML -> produto), restauraveis (produtos principais com anúncio
-    conhecido na loja) e descartaveis (os caminhos: kit, pacote, gift card, que saem do carrinho sem volta) para os
+    conhecido na loja) e descartaveis (os caminhos: kit, pacote, que saem do carrinho sem volta) para os
     adaptadores do carrinho. Com a loja, os ids do catálogo dos PRINCIPAIS (produtos.ids_da_loja) também reconhecem
     linhas (o anúncio da coleta vale mais).
 
-    Linha de caminho só é do robô quando ele mesmo a pôs no carrinho (`postos`: reg["caminhos_postos"]): o kit, o
-    pacote ou o gift card que a pessoa pôs no carrinho dela não é reconhecido e, por isso, nunca é tirado (o carrinho
+    Linha de caminho só é do robô quando ele mesmo a pôs no carrinho (`postos`: reg["caminhos_postos"]): o kit ou o
+    pacote que a pessoa pôs no carrinho dela não é reconhecido e, por isso, nunca é tirado (o carrinho
     com ele é "outro produto": CarrinhoOcupado)."""
     postos = postos or {}
     ids: dict = {}
@@ -414,7 +399,7 @@ def contexto_do_carrinho(anuncios: Iterable[Anuncio], loja_canonica: Optional[st
     return {"ids_modelo": ids, "restauraveis": sorted(modelos), "descartaveis": sorted(CAMINHOS)}
 
 
-# um caminho (kit, pacote, gift card) que o robô pôs no carrinho para medir um cupom fica registrado até sair de lá
+# um caminho (kit, pacote) que o robô pôs no carrinho para medir um cupom fica registrado até sair de lá
 # (reg["caminhos_postos"]); se não sair, o registro vale por este tempo (a pessoa foi avisada) e o robô tenta tirar
 JANELA_CAMINHO_POSTO = timedelta(hours=72)
 
@@ -466,8 +451,8 @@ def anuncio_da_oferta(loja: LojaCarrinho, o: dict) -> Optional[Anuncio]:
     que dizia 55" na opção de 65") não vai ao carrinho.
 
     03/10: também os produtos do PS5/GTA 6 que o carrinho conhece (carrinho.PRODUTOS_DO_CARRINHO): o título passa pelo
-    classificador do catálogo (com o EAN e o id do anúncio), o preço tem de caber na faixa do produto, gift card só de
-    loja oficial e caminho só quando dá para compará-lo com um principal (caminho_da_oferta). Produto desligado nesta
+    classificador do catálogo (com o EAN e o id do anúncio), o preço tem de caber na faixa do produto e caminho
+    só quando dá para compará-lo com um principal (caminho_da_oferta). Produto desligado nesta
     rodada (modo vigia: as TVs) não vira anúncio."""
     url = o.get("url") or ""
     if o.get("tipo", "loja") != "loja" or not o.get("ativo", True) or loja.dominio_url not in url:
@@ -505,10 +490,8 @@ def anuncio_da_oferta(loja: LojaCarrinho, o: dict) -> Optional[Anuncio]:
                 cupom=str(o["cupom"]).strip().upper() if o.get("cupom") else None,
                 caminho=caminho, equivalente=equivalente)
     if not eh_tv(modelo):
-        meta = produtos.alvos_da_oferta(o, agora().astimezone(TZ_BR).date().isoformat())
+        meta = produtos.alvos_da_oferta(o)
         a.alvo_pix, a.alvo_parcelado, a.nota_alvo = meta.pix, meta.parcelado, meta.nota
-        e = produtos.entrega(o)
-        a.entrega = e.texto if e else None
     alvo = a.alvo()
     a.antiga = lambda sufixo, reg: loja.eh_chave_antiga(sufixo, reg, alvo)
     return a
@@ -1031,8 +1014,7 @@ def _linhas_so_frete(resultados: list[tuple[str, ResultadoCupom]]) -> list[str]:
 
 def _alvos_do_resultado(r: ResultadoCupom, alvo_pix: Optional[float],
                         alvo_parc: Optional[float]) -> tuple[Optional[float], Optional[float], str]:
-    """A meta da oferta do resultado (no GTA 6 Code in Box ela depende da entrega; produtos.alvos_da_oferta, guardada
-    no Anuncio) ou, sem ela, a do produto."""
+    """A meta da oferta do resultado (produtos.alvos_da_oferta, guardada no Anuncio) ou, sem ela, a do produto."""
     e = r.extra or {}
     pix = e["alvo_pix"] if e.get("alvo_pix") is not None else alvo_pix
     parc = e["alvo_parcelado"] if e.get("alvo_parcelado") is not None else alvo_parc
@@ -1041,18 +1023,16 @@ def _alvos_do_resultado(r: ResultadoCupom, alvo_pix: Optional[float],
 
 def _equivalente_com_cupom(r: ResultadoCupom) -> Optional[float]:
     """O preço equivalente no principal de um resultado num CAMINHO, com o cupom: no pacote/kit, o preço com o cupom
-    menos o mesmo valor do extra; no gift card, o GTA 6 digital pago com o desconto que o cupom deu."""
+    menos o mesmo valor do extra."""
     e = r.extra or {}
     valor, eq, ref = (r.tv_pix or r.tv_cartao), e.get("equivalente"), e.get("preco_ref")
     if valor is None or eq is None or not ref:
         return None
-    if _modelo_do_resultado(r) == "GIFT_CARD_PSN":
-        return round(eq * valor / ref, 2)
     return round(valor - (ref - eq), 2)
 
 
 def _linhas_caminhos(modelo: str, resultados: list[tuple[str, ResultadoCupom]]) -> tuple[list[str], bool]:
-    """Linhas dos cupons que funcionaram num CAMINHO (kit, pacote, gift card) do principal `modelo` e se algum deles
+    """Linhas dos cupons que funcionaram num CAMINHO (kit, pacote) do principal `modelo` e se algum deles
     bateu a meta da própria oferta. Caminho nunca fica no carrinho: a linha diz isso."""
     out: list[str] = []
     meta = False
@@ -1062,18 +1042,15 @@ def _linhas_caminhos(modelo: str, resultados: list[tuple[str, ResultadoCupom]]) 
         pid = _modelo_do_resultado(r)
         valor = texto_com_frete(r.tv_pix or r.tv_cartao, r.frete, preco_a_vista(r) is not None)
         eq = _equivalente_com_cupom(r)
-        como = "o GTA 6 digital pago com ele sai" if pid == "GIFT_CARD_PSN" else "equivale a"
         linha = (f"🧩 Caminho mais barato: {produtos.nome(pid)} por {valor} na {_onde(n, r)} com "
-                 f"<code>{r.codigo}</code> ({como} {fmt_preco(eq)} no {produtos.curto(modelo)}"
-                 f"{'' if pid != 'GIFT_CARD_PSN' else ' digital'}); não fica no carrinho")
+                 f"<code>{r.codigo}</code> (equivale a {fmt_preco(eq)} no {produtos.curto(modelo)}); "
+                 "não fica no carrinho")
         a_pix = r.extra.get("alvo_pix")
         final = _final_a_vista(r)
         if a_pix:
             linha += f" — meta do {produtos.curto(pid)}: {fmt_preco(a_pix)}, {produtos.distancia(final, a_pix)}"
             meta = meta or final <= a_pix + 0.005
         out.append(linha)
-        if r.extra.get("entrega"):
-            out.append("   " + str(r.extra["entrega"]))
     return out, meta
 
 
@@ -1081,9 +1058,8 @@ def _bloco_do_modelo(modelo: str, resultados: list[tuple[str, ResultadoCupom]]) 
     """Linhas da mensagem de UM modelo/produto (melhor à vista, melhor parcelado, outros, caminhos, alvo, carrinho) e se
     o alvo foi atingido. L4 (26/09): o melhor é escolhido pelo preço COM o frete lido no carrinho, que a mensagem
     mostra ('R$ X no Pix + frete R$ Y = R$ Z'), e o alvo vale para esse preço final. Cupom só de frete vai numa linha
-    própria (L2). 03/10: no PS5/GTA 6 o alvo é o da oferta (o GTA 6 Code in Box depende da entrega), com a distância
-    até ele, e o GTA 6 traz a linha da entrega (chega até 18/11?); o cupom num caminho (kit, pacote, gift card) vai
-    numa linha própria. Sem cupom que compense nem cupom só de frete, ([], False)."""
+    própria (L2). 03/10: no PS5/GTA 6 o alvo é o da oferta, com a distância até ele; o cupom num caminho (kit,
+    pacote) vai numa linha própria. Sem cupom que compense nem cupom só de frete, ([], False)."""
     tv = eh_tv(modelo)
     alvo_pix, alvo_parc = alvos_do_modelo(modelo)
     validos = [(n, r) for n, r in resultados if r.aceito and (r.tv_pix or r.tv_cartao) and not r.extra.get("caminho")]
@@ -1117,16 +1093,12 @@ def _bloco_do_modelo(modelo: str, resultados: list[tuple[str, ResultadoCupom]]) 
             antes = round((r.extra["antes_pix"] - r.frete) / max(1, r.quantidade), 2)  # de UMA TV, como tv_pix
             if antes > (r.tv_pix or 0):
                 linhas.append(f"   antes {fmt_preco(antes)}, economia de {fmt_preco(antes - (r.tv_pix or 0))}")
-        if r.extra.get("entrega"):
-            linhas.append("   " + str(r.extra["entrega"]))
     if melhor_parc:
         p = melhor_parc[1]
         frete_p = (f" + frete {fmt_preco(p.frete)} = {fmt_preco(p.tv_cartao + p.frete)}"
                    if p.frete and p.tv_cartao is not None else "")
         linhas.append(f"<b>Melhor parcelado</b>: {fmt_preco(p.tv_cartao)} em {p.parcelado_real}{frete_p} "
                       f"na {_onde(*melhor_parc)} com <code>{p.codigo}</code>")
-        if p.extra.get("entrega") and (p is not r or not melhor_vista):
-            linhas.append("   " + str(p.extra["entrega"]))
     outros = [f"{_onde(n, x)}: {texto_com_frete(x.tv_pix or x.tv_cartao, x.frete, preco_a_vista(x) is not None)} "
               f"({x.codigo})" for n, x in sorted((v for v in validos if v[1] is not r),
                                                  key=lambda x: _final_a_vista(x[1]))[:4]]
@@ -1222,7 +1194,7 @@ def _remocoes(loja) -> int:
 def _atualiza_fora(loja, p: Percurso, conferidos: Iterable[str] = ()) -> None:
     """Passa para p.modelos_fora os modelos das linhas que o adaptador tirou desde a última vez e tira de lá (e de
     p.fora_de_antes) os modelos cuja TV acabou de ser conferida no carrinho. Só os PRINCIPAIS (TVs, PS5, GTA 6 Code
-    in Box) voltam ao carrinho: o caminho (kit, pacote, gift card) sai sem volta."""
+    in Box) voltam ao carrinho: o caminho (kit, pacote) sai sem volta."""
     tirados = list(getattr(loja, "removidos", None) or [])
     p.modelos_fora |= {m for m in tirados[p.removidos_vistos:] if m in PRINCIPAIS}
     p.removidos_vistos = len(tirados)
@@ -1258,36 +1230,6 @@ def _sessao(loja: LojaCarrinho, visivel: bool):
             ctx.close()
 
 
-def _entrega_do_carrinho(loja: LojaCarrinho, page, a: Anuncio, r: ResultadoCupom) -> None:
-    """GTA 6 físico (03/10): o carrinho logado (ou a página do anúncio na Amazon) mostra o prazo com o endereço da conta
-    da pessoa, o prazo de verdade. Quando a página traz a data, ela vale no lugar da estimativa da coleta: a linha
-    "📦 Entrega" e a meta da oferta (até 18/11: R$ 345 / 370; depois: R$ 300 / 320) passam a ser as dela. Só a data é
-    lida; endereço e CEP nunca."""
-    if a.entrega is None or not hasattr(loja, "ler_entrega"):
-        return
-    try:
-        quando = loja.ler_entrega(page)
-    except Exception:  # noqa: BLE001 - leitura extra: nunca atrapalha o teste do cupom
-        quando = None
-    if not quando:
-        return
-    # pré-venda: data antes de as caixas saírem (12/11) é o prazo contado de hoje; o trânsito passa a contar de 12/11
-    quando, _ajustou = _entrega.ajusta_pre_venda(quando, base=agora().astimezone(TZ_BR).date())
-    if not quando:
-        return
-    o = {"modelo": a.modelo, "loja": loja.loja_canonica, "vendedor": a.vendedor,
-         "extra": {"entrega_prevista": quando, "cep_referencia": False}}
-    e = produtos.entrega(o)
-    if e is None:
-        return
-    a.entrega = e.texto.replace("📦 Entrega:", "📦 Entrega (lida no carrinho, no seu endereço):", 1)
-    meta = produtos.alvos_da_oferta(o, agora().astimezone(TZ_BR).date().isoformat())
-    if not a.caminho:
-        a.alvo_pix, a.alvo_parcelado, a.nota_alvo = meta.pix, meta.parcelado, meta.nota
-    r.extra.update(a.extra_do_resultado())
-    print(f"[{loja.nome}] {a.rotulo}: {a.entrega}")
-
-
 def _registra_leitura(p: Percurso, a: Anuncio, r: ResultadoCupom) -> None:
     atual = p.lidos.get(a.chave)
     if atual is None or (r.tv_pix or r.tv_cartao or 9e9) < (atual.tv_pix or atual.tv_cartao or 9e9):
@@ -1311,7 +1253,6 @@ def _ler_anuncio_so_leitura(loja: LojaCarrinho, page, a: Anuncio, p: Percurso, i
     base.codigo = "(sem cupom)"
     base.extra.update(anuncio=a.chave, vendedor=a.vendedor or base.extra.get("vendedor"), so_leitura=True,
                       **a.extra_do_resultado())
-    _entrega_do_carrinho(loja, page, a, base)
     p.sem_cupom[a.chave] = base
     _registra_leitura(p, a, base)
     print(f"[{loja.nome}] {a.rotulo}: Pix {fmt_preco(base.total_pix)} cartão {fmt_preco(base.total_cartao)}"
@@ -1480,7 +1421,6 @@ def percorrer(loja: LojaCarrinho, page, anuncios: list[Anuncio], fila_base: list
             base = loja.ler_totais(page)
         base.codigo = "(sem cupom)"
         base.extra.update(anuncio=a.chave, vendedor=a.vendedor or loja.loja_canonica, **a.extra_do_resultado())
-        _entrega_do_carrinho(loja, page, a, base)
         print(f"[{loja.nome}] {a.rotulo}: produtos {fmt_preco(base.produtos)} frete {fmt_preco(base.frete)} "
               f"Pix {fmt_preco(base.total_pix)} cartão {fmt_preco(base.total_cartao)}"
               + (f" · {base.parcelado}" if base.parcelado else ""))
@@ -1748,10 +1688,10 @@ def _avisar_tvs_a_mais(loja: LojaCarrinho, modelos: Iterable[str] = ()) -> None:
 
 
 def _avisar_caminho_que_ficou(loja: LojaCarrinho) -> None:
-    """03/10: o kit/pacote/gift card que o robô pôs no carrinho para medir um cupom não saiu no passo final."""
-    print(f"[{loja.nome}] ⚠ um kit/pacote/gift card que eu pus para medir um cupom ficou no carrinho")
+    """03/10: o kit/pacote que o robô pôs no carrinho para medir um cupom não saiu no passo final."""
+    print(f"[{loja.nome}] ⚠ um kit/pacote que eu pus para medir um cupom ficou no carrinho")
     AVISOS_CARRINHO.append(
-        f"⚠️ <b>{loja.loja_canonica}</b>: pus no carrinho um kit/pacote/gift card só para medir um cupom e não consegui "
+        f"⚠️ <b>{loja.loja_canonica}</b>: pus no carrinho um kit/pacote só para medir um cupom e não consegui "
         f"tirar no fim. Confira em {loja.url_carrinho} e tire-o à mão (ele não é para ficar lá).")
 
 
@@ -2268,7 +2208,7 @@ def testar_loja(loja_id: str, codigos: list[str] | None, forcar: bool, visivel: 
     if not grupos:
         print(f"[{loja_id}] nenhum produto principal com anúncio nesta rodada: não mexo no carrinho")
         return []
-    # o passo final só deixa no carrinho os PRINCIPAIS: o caminho (kit, pacote, gift card) nunca fica
+    # o passo final só deixa no carrinho os PRINCIPAIS: o caminho (kit, pacote) nunca fica
     finais_por_produto = {m: [a for a in lista if not a.caminho] for m, lista in grupos.items()}
     do_estado = [a for a in anuncios if a.origem == "estado"]
     if do_estado:
@@ -2337,7 +2277,7 @@ def testar_loja(loja_id: str, codigos: list[str] | None, forcar: bool, visivel: 
                 # a loja parou (antirrobô, sessão) depois de o robô tirar a TV e antes de ela voltar: sem passo final
                 _avisar_sacola_vazia(loja, [a for a in anuncios if a.chave in p.visitados], interrompida)
             if postos and not so_leitura and interrompida is None and not _tempo_esgotado(PRAZO_PASSO_FINAL_S):
-                # 03/10: um caminho (kit, pacote, gift card) que o robô pôs numa rodada anterior e não conseguiu tirar:
+                # 03/10: um caminho (kit, pacote) que o robô pôs numa rodada anterior e não conseguiu tirar:
                 # o passo final sem cupom (1 item de cada principal) tira a linha dele
                 print(f"[{loja_id}] tiro do carrinho o caminho que pus numa rodada anterior para medir um cupom")
                 tentou |= p.fora_de_antes & set(finais_por_produto)
@@ -2469,7 +2409,7 @@ def marcar_se_compensa(resultados: list[ResultadoCupom], ref_vista: Optional[flo
 
 
 def marcar_caminhos(resultados: list[ResultadoCupom], ref_vista: Optional[float]) -> None:
-    """Cupom aceito num CAMINHO (kit, pacote, gift card) que, no equivalente do principal (com o frete), não fica abaixo
+    """Cupom aceito num CAMINHO (kit, pacote) que, no equivalente do principal (com o frete), não fica abaixo
     do anúncio mais barato do principal sem cupom não é o caminho mais barato: sai da mensagem (pior_que_principal)."""
     for r in resultados:
         eq = _equivalente_com_cupom(r)

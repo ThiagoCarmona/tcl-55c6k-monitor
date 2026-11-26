@@ -2,9 +2,12 @@
 
 03/10: "o testador de cupons PODE usar os carrinhos para PS5/GTA 6 (mesmas regras: só o produto monitorado, 1 unidade,
 nunca mexe no resto, nunca finaliza)". O carrinho termina a rodada com UM item de cada produto PRINCIPAL (PS5 Digital,
-PS5 com leitor, PS5 Pro, GTA 6 Code in Box; e as TVs fora do modo vigia). Kit/pacote/gift card (os CAMINHOS) só são
-testados quando são o caminho mais barato para um principal e nunca ficam no carrinho. Cada cupom é medido com o
-produto sozinho no carrinho. Modo vigia (TV comprada): as TVs ficam fora do testador; o PS5 e o GTA 6 seguem.
+PS5 com leitor, PS5 Pro, GTA 6 Code in Box; e as TVs fora do modo vigia). Kit/pacote (os CAMINHOS) só são testados
+quando são o caminho mais barato para um principal e nunca ficam no carrinho. Cada cupom é medido com o produto
+sozinho no carrinho. Modo vigia (TV comprada): as TVs ficam fora do testador; o PS5 e o GTA 6 seguem.
+
+26/11/2026: sem as regras do lançamento do GTA 6: o testador não lê mais a entrega no carrinho, a meta do GTA 6 não
+depende dela e o gift card deixou de ser caminho para o GTA 6 (não vai ao carrinho).
 
 Tudo com páginas e carrinhos falsos (nenhum navegador de verdade, nenhum perfil de loja).
 """
@@ -42,7 +45,6 @@ O_PS5D = _oferta("240604800", 4231.0, 4549.0, PS5D, "PS5_DIGITAL")
 O_PS5D2 = _oferta("240590700", 4277.0, 4599.0, PS5D_2J, "PS5_DIGITAL")
 O_DISCO = _oferta("240609000", 4691.08, 5099.0, PS5DISCO, "PS5_DISCO")
 O_GTA = _oferta("241923300", 418.41, 449.90, GTA, "GTA6_CODE_IN_BOX", cupom="GTA60")
-O_GTA["extra"].update(entrega_prevista="2026-11-16", cep_referencia=True)
 O_KIT = _oferta("kitwolv001", 4100.0, 4400.0, KIT, "PS5_KIT")
 K_PS5D, K_PS5D2 = "240604800-magazineluiza", "240590700-magazineluiza"
 K_DISCO, K_GTA, K_KIT = "240609000-magazineluiza", "241923300-magazineluiza", "kitwolv001-magazineluiza"
@@ -75,20 +77,16 @@ class CarrinhoProdutos(Magalu):
     (alvo['descartaveis']), senão CarrinhoOcupado; garantir_itens deixa os pedidos, tira o anúncio errado de um produto
     pedido e o caminho, e mantém o resto. `aceita`: {(chave, código): desconto} medido com o produto sozinho."""
 
-    def __init__(self, pasta, carrinho=(), aceita=None, nao_entra=(), entregas=None):
+    def __init__(self, pasta, carrinho=(), aceita=None, nao_entra=()):
         self.pasta = pasta
         self.carrinho = list(carrinho)
         self.aceita = dict(aceita or {})
         self.nao_entra = set(nao_entra)
-        self.entregas = dict(entregas or {})   # chave -> data de entrega que o carrinho mostra com ela sozinha
         self.eventos: list[tuple] = []
         self.alvos: list[dict] = []
 
     def perfil(self):
         return self.pasta
-
-    def ler_entrega(self, page):
-        return self.entregas.get(self.carrinho[0]) if len(self.carrinho) == 1 else None
 
     def _tira(self, chaves):
         for c in list(chaves):
@@ -187,14 +185,14 @@ def test_titulo_da_pagina_confere_o_produto_com_o_id():
 
 def test_principais_e_caminhos():
     assert PRINCIPAIS == ("55C6K", "65C6K", "PS5_DIGITAL", "PS5_DISCO", "PS5_PRO", "GTA6_CODE_IN_BOX")
-    assert set(CAMINHOS) == {"PS5_DIGITAL_GTA6", "PS5_DISCO_GTA6", "PS5_KIT", "GIFT_CARD_PSN"}
+    assert set(CAMINHOS) == {"PS5_DIGITAL_GTA6", "PS5_DISCO_GTA6", "PS5_KIT"}
 
 
 # ------------------------------------------------------------------------------------------------
-# 2. anúncios da coleta: produto, meta da oferta, entrega do GTA, caminho com o equivalente
+# 2. anúncios da coleta: produto, meta da oferta, caminho com o equivalente
 # ------------------------------------------------------------------------------------------------
 
-def test_anuncios_por_produto_com_meta_e_entrega(amb):
+def test_anuncios_por_produto_com_meta(amb):
     _latest(amb, [O_GTA, O_PS5D2, O_DISCO, O_PS5D, A])
     _, anuncios = tc.codigos_conhecidos(CarrinhoProdutos(amb.pasta))
     grupos = tc.por_modelo(anuncios)
@@ -203,7 +201,7 @@ def test_anuncios_por_produto_com_meta_e_entrega(amb):
     ps5 = grupos["PS5_DIGITAL"][0]
     assert (ps5.alvo_pix, ps5.alvo_parcelado) == (3550.0, 3700.0)
     gta = grupos["GTA6_CODE_IN_BOX"][0]
-    assert (gta.alvo_pix, gta.alvo_parcelado) == (345.0, 370.0) and "chega a tempo" in gta.entrega
+    assert (gta.alvo_pix, gta.alvo_parcelado) == (300.0, 320.0)
     ctx = tc.contexto_do_carrinho(anuncios, "Magazine Luiza")
     assert ctx["ids_modelo"]["241923300"] == "GTA6_CODE_IN_BOX" and ctx["ids_modelo"]["240604800"] == "PS5_DIGITAL"
     assert set(ctx["descartaveis"]) == set(CAMINHOS)
@@ -238,10 +236,8 @@ def test_kit_entra_so_quando_e_o_caminho_mais_barato(amb):
     assert tc.por_modelo(anuncios) == {}, "sem anúncio do principal na loja: o caminho não é testado"
 
 
-def test_gift_card_so_de_loja_oficial_e_vira_caminho_do_gta(monkeypatch):
-    # fora da janela de 01/11 a 11/11/2026 (perto do prazo da pré-venda a meta do gift card cai para 10%): o teste não
-    # pode depender da data em que roda
-    monkeypatch.setattr(produtos, "JANELA_GIFT_ACEITAVEL", ("2000-01-01", "2000-01-01"))
+def test_gift_card_nao_vai_ao_carrinho():
+    # 26/11/2026: o gift card deixou de ser caminho para o GTA 6 digital; nem o da loja oficial vai ao carrinho
     ml = MercadoLivre()
     url = "https://produto.mercadolivre.com.br/MLB-50200776-gift-card-playstation-r-100-_JM"
     base = {"fonte": "mercadolivre", "tipo": "loja", "loja": "Mercado Livre", "titulo": "Gift Card PlayStation R$ 100",
@@ -249,9 +245,7 @@ def test_gift_card_so_de_loja_oficial_e_vira_caminho_do_gta(monkeypatch):
             "extra": {"item_id": "MLB50200776"}}
     assert tc.anuncio_da_oferta(ml, dict(base, vendedor="Loja Qualquer")) is None, "gift card fora da loja oficial: não"
     oficial = dict(base, vendedor="PlayStation", extra={"item_id": "MLB50200776", "vendedor_id": "1047493289"})
-    a = tc.anuncio_da_oferta(ml, oficial)
-    assert (a.caminho, a.equivalente) == ("GTA6_CODE_IN_BOX", round(449.90 * 85 / 100, 2)), "GTA 6 digital com ele"
-    assert (a.alvo_pix, a.alvo_parcelado) == (85.0, 85.0), "meta do gift card: 15% de desconto sobre o valor de face"
+    assert tc.anuncio_da_oferta(ml, oficial) is None
 
 
 def test_modo_vigia_tira_as_tvs_do_testador(amb, vigia):
@@ -320,8 +314,7 @@ def test_rodada_com_ps5_e_gta_durante_a_vigia(amb, vigia):
     assert msg.index("PS5 Slim Digital") < msg.index("GTA 6 PS5 Code in Box")
     assert "<b>Melhor à vista</b>: R$ 3.807,90" in msg and "<b>Melhor à vista</b>: R$ 358,41" in msg
     assert "Alvo: Pix R$ 3.550,00 · parcelado R$ 3.700,00 — R$ 257,90 acima da meta (7%)" in msg
-    assert "Alvo: Pix R$ 345,00 · parcelado R$ 370,00 (chega até 18/11)" in msg
-    assert "📦 Entrega: previsão 16/11 (prazo aproximado, CEP de referência) — chega a tempo ✅" in msg
+    assert "Alvo: Pix R$ 300,00 · parcelado R$ 320,00" in msg and "chega" not in msg and "📦" not in msg
     assert "com 1 unidade de cada produto" in msg and "para o GTA 6 PS5 Code in Box sozinho, o cupom é" in msg
     assert "TV" not in msg.replace("TVS200", "")
 
@@ -371,37 +364,6 @@ def test_kit_mais_barato_e_testado_mas_nao_fica_no_carrinho(amb):
     assert "🧩 Caminho mais barato: PS5 edição especial / kit por R$ 3.690,00" in msg
     assert "equivale a R$ 3.490,00 no PS5 Digital); não fica no carrinho" in msg
     assert "<b>Melhor à vista</b>: R$ 3.807,90" in msg, "o melhor do PS5 Digital em si continua sendo o do anúncio"
-
-
-def test_entrega_lida_no_carrinho_vale_no_lugar_da_estimativa(amb):
-    # o carrinho logado (endereço da conta) diz 25/11: chega DEPOIS do lançamento; a meta cai para R$ 300 / 320
-    _latest(amb, [O_GTA], cupons=[])
-    loja = CarrinhoProdutos(amb.pasta, aceita={(K_GTA, "GTA60"): 60.0}, entregas={K_GTA: "2026-11-25"})
-    aceitos, _ = _rodar(amb, loja)
-    (r,) = [x for x in aceitos if x.codigo == "GTA60"]
-    assert (r.extra["alvo_pix"], r.extra["alvo_parcelado"]) == (300.0, 320.0)
-    msg = tc.msg_melhor([("Magazine Luiza", r)])
-    assert "📦 Entrega (lida no carrinho, no seu endereço): previsão 25/11 — ⚠️ chega DEPOIS do lançamento" in msg
-    assert "Alvo: Pix R$ 300,00 · parcelado R$ 320,00 (chega depois de 18/11)" in msg
-    assert "CEP" not in msg
-
-
-@pytest.mark.parametrize("texto,data", [
-    ("Chega entre 16 e 18 de novembro", "2026-11-18"),
-    ("Receba até 18/11", "2026-11-18"),
-    ("Entrega GRÁTIS Segunda-feira, 16 de Novembro\nOu entrega mais rápida sábado, 14 de nov.", "2026-11-16"),
-    ("Previsão de entrega: 30/11/2026", "2026-11-30"),
-    ("Jogo GTA 6 - Pré-venda - Lançamento 19/11\nFrete grátis", None),       # lançamento não é entrega
-    ("Devolução grátis até 30/10\nChega amanhã", None),                          # devolução não é entrega
-    ("Entrega em até 5 dias úteis", None),
-    ("Chega dia 18/11/2025", None),                                               # data velha
-])
-def test_entrega_no_texto(texto, data):
-    from datetime import date
-
-    from monitor.carrinho import entrega_no_texto
-
-    assert entrega_no_texto(texto, date(2026, 10, 3)) == data
 
 
 def test_caminho_so_e_do_robo_quando_ele_mesmo_o_pos(amb):
@@ -619,13 +581,14 @@ def test_ml_reconhece_as_linhas_pelo_id_pelo_catalogo_e_pelo_titulo():
         (False, None)], "gift card só pelo id de um anúncio conhecido; acessório nunca"
 
 
-def test_ml_passo_final_tira_o_gift_card_e_poe_o_ps5():
+def test_ml_passo_final_nao_mexe_no_gift_card():
+    # 26/11/2026: o gift card não é mais caminho: se está no carrinho, é da pessoa e fica
     ml = MercadoLivre()
     ml.comecar_rodada()
     p = PaginaMLProdutos([_linha(ML_GIFT)])
     assert ml.garantir_itens(p, [_alvo_ml(ML_PS5)]) == {ML_PS5}
-    assert [(l["id"], l["qtd"]) for l in p.carrinho] == [(ML_PS5, 1)]
-    assert p.cliques == ["excluir", "adicionar"] and ml.removidos == ["GIFT_CARD_PSN"] and not ml.sobrou_caminho
+    assert [(l["id"], l["qtd"]) for l in p.carrinho] == [(ML_GIFT, 1), (ML_PS5, 1)]
+    assert p.cliques == ["adicionar"] and ml.removidos == [] and not ml.sobrou_caminho
 
 
 def test_ml_isola_o_ps5_tirando_o_pro_que_sabe_devolver():
@@ -709,13 +672,11 @@ def _res(codigo, pix, cartao, modelo, **extra):
                           parcelado="10x R$ 40,00 sem juros", extra={"modelo": modelo, **extra})
 
 
-def test_msg_do_gta_com_entrega_e_meta_da_oferta():
-    tarde = "📦 Entrega: previsão 30/11 (estimativa da pesquisa de 03/10) — ⚠️ chega DEPOIS do lançamento (19/11)"
-    r = _res("GTA6", 296.0, 296.0, "GTA6_CODE_IN_BOX", alvo_pix=300.0, alvo_parcelado=320.0,
-             nota_alvo="chega depois de 18/11", entrega=tarde)
+def test_msg_do_gta_com_a_meta_da_oferta():
+    r = _res("GTA6", 296.0, 296.0, "GTA6_CODE_IN_BOX", alvo_pix=300.0, alvo_parcelado=320.0)
     msg = tc.msg_melhor([("Netshoes", r)])
     assert msg.startswith("🎯 <b>META ATINGIDA</b>") and "🎯 <b>GTA 6 PS5 Code in Box</b>" in msg
-    assert tarde in msg and "Alvo: Pix R$ 300,00 · parcelado R$ 320,00 (chega depois de 18/11)" in msg
+    assert "Alvo: Pix R$ 300,00 · parcelado R$ 320,00" in msg and "📦" not in msg
     assert "R$ 4,00 abaixo da meta ✅" in msg
 
 

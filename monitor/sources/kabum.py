@@ -5,9 +5,7 @@
   * a lista /gamer/playstation/consoles-playstation: um pedido traz todos os consoles da loja (o __NEXT_DATA__ traz
     pageProps.data como TEXTO JSON: catalogServer.data), com vendedor (KaBuM! ou parceiro) e oferta relâmpago;
   * a API do produto para o que o catálogo conhece e a lista não trouxe (o GTA 6, o leitor, o kit): pré-venda em
-    is_pre_order / date_pre_order;
-  * o prazo do GTA 6 físico pela cotação de frete (shipping/v4/quotation, sem login nem cookie) com o CEP de
-    config.cep_entrega() (o CEP nunca é impresso).
+    is_pre_order.
 Oferta relâmpago só para assinante Prime Ninja (isPrimeExclusive) não vale: o usuário não assina.
 """
 
@@ -18,13 +16,11 @@ import re
 import time
 from typing import Any, Optional
 
-import requests
-
 from .. import config, produtos
 from ..filtro import modelo_do_titulo
 from ..models import MODELO_PADRAO, Oferta
-from ..util import HEADERS_JSON, get_html, get_json, limpa_html, next_data, parse_preco
-from . import Fonte, Resultado, entrega
+from ..util import get_html, get_json, next_data, parse_preco
+from . import Fonte, Resultado
 
 
 def _monta(titulo: str, pid: str, a: dict, modelo: str, fonte: str = "kabum", detalhes: Optional[dict] = None,
@@ -53,25 +49,8 @@ def _monta(titulo: str, pid: str, a: dict, modelo: str, fonte: str = "kabum", de
         # decidiria, e a Fast Shop/Gazin entraram por nome)
         mk = a.get("marketplace") or {}
         extra["kabum_seller_id"] = str(mk.get("seller_id") or "0") if a.get("is_marketplace") else "0"
-        # a cotação de frete de parceiro exige o id da oferta dele (marketplace.product_id / offerIdMarketplace)
-        extra["kabum_oferta_id"] = int(mk.get("product_id") or 0) if a.get("is_marketplace") else 0
-        envios = []
         if a.get("is_pre_order"):
             extra["pre_venda"] = True
-            dpo = a.get("date_pre_order")
-            if isinstance(dpo, (int, float)) and dpo > 0:
-                from datetime import datetime
-
-                from ..util import TZ_BR
-
-                envios.append(datetime.fromtimestamp(dpo, TZ_BR).date().isoformat())
-        if entrega.precisa(modelo):
-            # o parceiro que escreve "SERÁ ENVIADO A PARTIR DO DIA 20/11/2026" na descrição (MERCADOONLINESP, 03/10)
-            envio_txt = entrega.envio_a_partir(limpa_html(str(a.get("description") or ""))[:4000])
-            if envio_txt:
-                envios.append(envio_txt)
-        if envios:
-            extra["envio_a_partir"] = max(envios)
         if detalhes:
             extra["produto"] = detalhes
     return Oferta(
@@ -139,51 +118,6 @@ def parse_lista(html: str, fonte: str = "kabum.produtos") -> list[Oferta]:
     return out
 
 
-def prazo_cotacao(code: str, vendedor: str, vendedor_id: str, cep: str, oferta_id: int = 0,
-                  timeout: int = 20) -> Optional[str]:
-    """Data ISO da entrega mais cedo (fora a "Entrega Agendada") da cotação de frete da KaBuM no CEP. Parceiro precisa
-    do id da oferta dele (`oferta_id`); a KaBuM (seller_id "0") e o Magalu (1000) aceitam 0."""
-    corpo = {"zip_code": cep, "sellers": [{"seller_name": vendedor, "seller_id": str(vendedor_id),
-                                           "products": [{"code": int(code), "quantity": 1,
-                                                         "offer_id": int(oferta_id or 0)}]}],
-             "client": {"id": "", "session": "", "type": "F", "is_prime": False}, "store": 1, "origin": "product"}
-    h = dict(HEADERS_JSON)
-    h.update({"Content-Type": "application/json", "Origin": "https://www.kabum.com.br",
-              "Referer": "https://www.kabum.com.br/"})
-    r = requests.post(config.URL_KABUM_FRETE, json=corpo, headers=h, timeout=timeout)
-    r.raise_for_status()
-    datas = []
-    for q in (r.json() or {}).get("quotes") or []:
-        for d in q.get("deliveries") or []:
-            if str(d.get("type") or "").upper() == "AGENDADO":
-                continue
-            iso = entrega.data_por_extenso(d.get("arrival_date") or d.get("expected_arrival_date"))
-            if iso:
-                datas.append(iso)
-    return min(datas) if datas else None
-
-
-def completa_entrega(ofertas: list[Oferta]) -> None:
-    """Prazo do GTA 6 físico com o CEP de entrega (uma cotação por anúncio). Anúncio que só envia a partir do lançamento
-    (pré-venda com data >= 19/11) já é "chega depois", sem cotar."""
-    cep, referencia = entrega.cep()
-    for o in ofertas:
-        if not entrega.precisa(o.modelo):
-            continue
-        envio = o.extra.get("envio_a_partir")
-        if envio and envio >= produtos.LANCAMENTO_GTA6:
-            entrega.marca_envio_tardio(o)
-            continue
-        vid = o.extra.get("kabum_seller_id") or "0"
-        nome = o.vendedor or "KaBuM!"
-        try:
-            data = prazo_cotacao(o.id, nome, vid, cep, o.extra.get("kabum_oferta_id") or 0)
-        except Exception as e:  # noqa: BLE001 - o prazo é extra: a oferta continua sem ele
-            print(f"[kabum] cotação de frete de {o.id} falhou: {type(e).__name__}")
-            continue
-        entrega.marca(o, data, referencia, "cotação de frete")
-
-
 class KaBuM(Fonte):
     nome = "kabum"
 
@@ -209,9 +143,8 @@ class KaBuM(Fonte):
 
 class KaBuMProdutos(Fonte):
     """PS5, GTA 6, leitor e SSD na KaBuM: a lista de consoles (1 pedido), a lista dos gift cards da PlayStation Store (1
-    pedido, 26/10/2026: o gift card paga o GTA 6 digital na PS Store), a busca do SSD NVMe 1TB (1 pedido, 14/11/2026),
-    a API dos anúncios do catálogo que as listas não
-    trouxeram (GTA 6, leitor, kit) e a cotação de frete do GTA 6."""
+    pedido, 26/10/2026), a busca do SSD NVMe 1TB (1 pedido, 14/11/2026) e a API dos anúncios do catálogo que as listas
+    não trouxeram (GTA 6, leitor, kit)."""
 
     nome = "kabum.produtos"
 
@@ -240,7 +173,6 @@ class KaBuMProdutos(Fonte):
             if o:
                 por_id.setdefault(o.id, o)
         ofertas = list(por_id.values())
-        completa_entrega(ofertas)
         if erros:
             print("[kabum.produtos] " + " | ".join(erros))
         if not ofertas and erros:

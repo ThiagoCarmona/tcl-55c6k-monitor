@@ -267,7 +267,7 @@ class Estado:
         """Primeira rodada deste modo com o produto `modelo` (a partida geral, a 65C6K entrando num state que já existia
         ou, em 03/10, o PS5 e o GTA 6): registra ofertas e postagens sem alertar (senão as postagens antigas viram uma
         enxurrada de 📣) e manda a mensagem de início. Nas TVs, por modelo (como antes); nos outros, pela SEÇÃO do
-        painel (PS5 com o leitor; GTA 6 com o gift card): depois da partida da seção, o produto que aparece pela primeira
+        painel (PS5 com o leitor e o gift card; GTA 6): depois da partida da seção, o produto que aparece pela primeira
         vez (um kit, o primeiro gift card) já é novidade e alerta."""
         m = modelo_de({"modelo": modelo})
         if self.bootstrap:
@@ -886,17 +886,15 @@ class Estado:
     def escreve_latest(self, ofertas: list[Oferta], cupons: list[Cupom]) -> None:
         lojas = [o.to_dict() for o in ofertas if o.tipo == "loja"]
         lojas.sort(key=lambda d: (d["melhor_preco"] is None, d["melhor_preco"] or 0))
-        # posts: os desta execução + os recentes já conhecidos (TVs, PS5 e GTA 6 dividem a lista)
+        # posts: os desta execução + os recentes já conhecidos (todos os produtos dividem a lista)
         posts_conhecidos = [r for r in self.dados["ofertas"].values() if r.get("tipo") == "post"]
         posts_conhecidos.sort(key=lambda r: r.get("publicado") or r.get("primeira_vez") or "", reverse=True)
         cupons_ativos = [c.to_dict() for c in cupons]
         posts_conhecidos = [r for r in posts_conhecidos if not self._bloqueado(r)]
-        # GTA 6 em todas as formas pelo custo final (preços de loja desta rodada + postagens ativas dos últimos 7 dias,
-        # que trazem também o gift card com desconto)
+        # gift card: preços de loja desta rodada + postagens ativas dos últimos 7 dias
         recentes = [r for r in posts_conhecidos if r.get("ativo", True)
                     and (dias_desde(r.get("publicado") or r.get("primeira_vez")) or 0) <= 7]
         validas = [d for d in lojas if not fora_de_preco(d)] + recentes
-        gta = produtos.custo_final_gta(validas)
         # TVs desligadas (26/10/2026): nada de TV no latest (as postagens antigas de TV continuam no state, para religar)
         sem_tvs = config.TVS_DESLIGADAS
         # as TVs com a lista de sempre (até POSTS_NO_LATEST); os outros produtos com a cota deles, sem tirar as das TVs
@@ -918,9 +916,7 @@ class Estado:
                if not (sem_tvs and produtos.eh_tv(m)) and (m in MODELOS or self.dados.get(chave_minimo(m)))},
             "ofertas_loja": lojas,
             "posts": posts_latest,
-            "gta6_custo_final": gta,
-            # gift card da PlayStation para pagar o GTA 6 digital (26/10/2026): o melhor de loja oficial e o custo do GTA
-            # digital com a melhor combinação de valores de face
+            # gift card da PlayStation (26/10/2026): os cartões com desconto sobre o valor de face, o melhor primeiro
             "gift_card_psn": produtos.gift_para_painel(validas),
             "cupons": cupons_ativos,
             "saude": self.dados["saude"],

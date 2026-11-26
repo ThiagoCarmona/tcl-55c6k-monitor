@@ -22,7 +22,7 @@ conhece um anúncio dele para devolver depois (`alvo["restauraveis"]`); senão, 
 
 Produtos (03/10): o "modelo" passou a ser o id de um produto do catálogo (monitor/produtos.py). O carrinho trabalha com
 os PRINCIPAIS (as TVs, PS5 Digital, PS5 com leitor, PS5 Pro e GTA 6 Code in Box: no fim da rodada, no máximo 1 unidade
-de cada) e os CAMINHOS (pacote PS5 + GTA 6, kit/edição especial e gift card PlayStation), que o testador só põe no
+de cada) e os CAMINHOS (pacote PS5 + GTA 6 e kit/edição especial), que o testador só põe no
 carrinho para medir um cupom quando são o caminho mais barato para um principal e que NUNCA ficam lá: no passo final a
 linha de um caminho sai (`alvo["descartaveis"]`). Linha de caminho só é reconhecida pelo id do anúncio (um anúncio que o
 testador conhece); pelo título, só os principais. Qualquer outro produto continua intocável (CarrinhoOcupado).
@@ -50,7 +50,7 @@ PERFIS = config.RAIZ / ".pw-profile-carrinho"
 # os principais: 1 unidade de cada no fim da rodada (decisão de 03/10; as TVs primeiro, como sempre)
 PRINCIPAIS: tuple[str, ...] = tuple(_produtos.CARRINHO)
 # caminhos para pagar menos num principal: testados só quando são o caminho mais barato e nunca deixados no carrinho
-CAMINHOS: tuple[str, ...] = ("PS5_DIGITAL_GTA6", "PS5_DISCO_GTA6", "PS5_KIT", "GIFT_CARD_PSN")
+CAMINHOS: tuple[str, ...] = ("PS5_DIGITAL_GTA6", "PS5_DISCO_GTA6", "PS5_KIT")
 PRODUTOS_DO_CARRINHO: tuple[str, ...] = PRINCIPAIS + tuple(c for c in CAMINHOS if c not in PRINCIPAIS)
 # catálogo do Mercado Livre de cada produto que não é TV (página com as opções de compra; ver produtos.CATALOGOS_ML_EXTRA)
 CATALOGOS_ML_PRODUTOS: dict[str, str] = {
@@ -150,7 +150,7 @@ def modelo_do_titulo(texto: str) -> Optional[str]:
 def produto_do_titulo(texto: str) -> Optional[str]:
     """Produto PRINCIPAL do carrinho que o texto de uma linha/item é: as TVs como sempre (modelo_do_titulo, o texto
     inteiro); senão, cada linha do texto passa pelo classificador do catálogo e vale o principal que aparecer (texto com
-    dois principais diferentes, ou com a TV C6K de outro tamanho: nenhum). Caminho (kit, pacote, gift card) nunca sai
+    dois principais diferentes, ou com a TV C6K de outro tamanho: nenhum). Caminho (kit, pacote) nunca sai
     do título: só do id de um anúncio conhecido (quem chama)."""
     t = texto or ""
     m = modelo_do_titulo(t)
@@ -204,7 +204,7 @@ def eh_servico(texto: str) -> bool:
 def modelo_da_linha(texto: str) -> Optional[str]:
     """Produto da linha/item do carrinho que é o próprio produto (55C6K, 65C6K ou, desde 03/10, um principal que não é
     TV: PS5 Digital, PS5 com leitor, PS5 Pro, GTA 6 Code in Box); None para serviço com o nome dele, outro produto,
-    caminho (kit/pacote/gift card: só pelo id) ou texto que não dá para dizer."""
+    caminho (kit/pacote: só pelo id) ou texto que não dá para dizer."""
     return None if eh_servico(texto) else produto_do_titulo(texto)
 
 
@@ -342,53 +342,6 @@ def medir_cupom(antes: ResultadoCupom, depois: ResultadoCupom, mensagem: str = "
     return depois
 
 
-# ----------------------------------------------------------------------------------------------
-# entrega lida no carrinho (03/10, GTA 6): o carrinho logado calcula o prazo com o endereço da conta da pessoa, que é
-# o prazo de verdade. Só a DATA é lida; o endereço e o CEP nunca são lidos, gravados nem impressos.
-# ----------------------------------------------------------------------------------------------
-
-_MESES = {"jan": 1, "fev": 2, "mar": 3, "abr": 4, "mai": 5, "jun": 6, "jul": 7, "ago": 8, "set": 9, "out": 10,
-          "nov": 11, "dez": 12}
-_RE_LINHA_ENTREGA = re.compile(r"\b(?:chega|receba|recebe|entrega|previs[aã]o de entrega|data prevista)", re.I)
-_RE_LINHA_NAO_E_ENTREGA = re.compile(r"devolu|garantia|parcel|vencimento|validade|cupom|lan[cç]a|oferta|termina|"
-                                     r"acaba", re.I)
-_RE_DATA_NUM = re.compile(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?:/(\d{2,4}))?(?![\d/])")
-_RE_DATA_EXTENSO = re.compile(r"(?<!\d)(\d{1,2})\s*(?:de\s+)?(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)[a-z]*\.?"
-                              r"(?:\s*(?:de\s+)?(20\d\d))?", re.I)
-
-
-def entrega_no_texto(texto: str, hoje: Optional["date"] = None) -> Optional[str]:
-    """A data de entrega (ISO) que a página do carrinho/anúncio mostra ("Chega entre 16 e 18 de novembro", "Receba até
-    18/11", "Entrega GRÁTIS Segunda-feira, 16 de Novembro"): só linhas que falam de entrega (nunca de devolução,
-    garantia, parcela, cupom, lançamento ou fim de oferta) e com a data escrita (dia e mês); havendo mais de uma, vale
-    a MAIS TARDE (o limite do prazo). Data fora de hoje-1 a hoje+150 dias não conta. None quando não há."""
-    from datetime import date, timedelta
-
-    hoje = hoje or date.today()
-    datas: list = []
-
-    def poe(dia: int, mes: int, ano: Optional[int]) -> None:
-        try:
-            d = date(ano or hoje.year, mes, dia)
-        except ValueError:
-            return
-        if ano is None and d < hoje - timedelta(days=30):
-            d = date(d.year + 1, mes, dia)
-        if hoje - timedelta(days=1) <= d <= hoje + timedelta(days=150):
-            datas.append(d)
-
-    for linha in (texto or "").splitlines():
-        if not _RE_LINHA_ENTREGA.search(linha) or _RE_LINHA_NAO_E_ENTREGA.search(linha):
-            continue
-        l = sem_acentos(linha).lower()
-        for m in _RE_DATA_NUM.finditer(l):
-            ano = int(m.group(3)) if m.group(3) else None
-            poe(int(m.group(1)), int(m.group(2)), (2000 + ano if ano and ano < 100 else ano))
-        for m in _RE_DATA_EXTENSO.finditer(l):
-            poe(int(m.group(1)), _MESES[m.group(2).lower()[:3]], int(m.group(3)) if m.group(3) else None)
-    return max(datas).isoformat() if datas else None
-
-
 class PrecisaLogin(Exception):
     """A loja pediu login: a sessão salva expirou ou nunca foi feita."""
 
@@ -456,7 +409,7 @@ class LojaCarrinho:
     removidos: list = []
     # o carrinho pode ter ficado com mais de uma TV do mesmo modelo (ou mais de 1 unidade): a pessoa precisa saber
     tvs_a_mais = False
-    # 03/10: a linha de um caminho (kit, pacote PS5 + GTA 6, gift card) que o robô pôs para medir um cupom não saiu no
+    # 03/10: a linha de um caminho (kit, pacote PS5 + GTA 6) que o robô pôs para medir um cupom não saiu no
     # passo final: a pessoa precisa saber (caminho nunca fica no carrinho)
     sobrou_caminho = False
     # 22/09 (F5): opções de compra do catálogo que a página LOGADA mostrou nesta rodada, por item (só ML).
@@ -500,14 +453,6 @@ class LojaCarrinho:
     def tem_cupom_aplicado(self, page, base: "ResultadoCupom") -> bool:
         """O carrinho já está com um cupom (de uma rodada anterior)? Aí o total não é o preço cheio."""
         return False
-
-    def ler_entrega(self, page) -> Optional[str]:
-        """A data de entrega (ISO) que a página aberta agora mostra (o carrinho logado, com o endereço da conta), ou
-        None. Só a data: endereço e CEP nunca são lidos."""
-        try:
-            return entrega_no_texto(_texto(page))
-        except Exception:  # noqa: BLE001 - leitura extra: nunca atrapalha o teste do cupom
-            return None
 
     # --- a implementar por loja ---
     def logado(self, page) -> bool:  # pragma: no cover
@@ -769,7 +714,7 @@ class Magalu(LojaCarrinho):
     @staticmethod
     def modelo_do_item(item: dict, ids_modelo: Optional[dict] = None) -> Optional[str]:
         """Produto de um item da sacola: pelo id do /p/ de um anúncio conhecido (o tamanho vem da variação que a coleta
-        leu, não do título; caminho — kit, pacote, gift card — só por aqui) ou, sem isso, pelo título (só os
+        leu, não do título; caminho — kit, pacote — só por aqui) ou, sem isso, pelo título (só os
         principais). Serviço com o nome do produto (garantia, seguro) não é o produto."""
         titulo = item.get("titulo") or ""
         if eh_servico(titulo):
@@ -864,7 +809,7 @@ class Magalu(LojaCarrinho):
         info = alvo or {}
         modelo = info.get("modelo") or MODELO_PADRAO
         ids_modelo = dict(info.get("ids_modelo") or {})
-        # caminho (kit, pacote, gift card) que o robô pôs para medir um cupom sai sem volta (nunca fica no carrinho)
+        # caminho (kit, pacote) que o robô pôs para medir um cupom sai sem volta (nunca fica no carrinho)
         restauraveis = set(info.get("restauraveis") or ()) | set(info.get("descartaveis") or ()) | {modelo}
         alvo_id = self._id_anuncio(url_produto)
         ids_modelo.setdefault(alvo_id, modelo)
@@ -951,7 +896,7 @@ class Magalu(LojaCarrinho):
                         descartaveis: Iterable[str] = ()) -> set:
         """Chaves dos pedidos que estão na sacola como devem (1 unidade, e a única linha do modelo); marca
         `tvs_a_mais` quando algum modelo ficou com mais de uma linha ou mais de 1 unidade, e `sobrou_caminho` quando
-        ficou a linha de um caminho (kit, pacote, gift card) que o robô pôs para medir um cupom."""
+        ficou a linha de um caminho (kit, pacote) que o robô pôs para medir um cupom."""
         casados, _ = self._casados(itens, pedidos, sem_vendedor_ok=True)
         linhas: dict = {}
         for it in itens:
@@ -962,7 +907,7 @@ class Magalu(LojaCarrinho):
             print("[magalu] ⚠ a sacola ficou com mais de uma unidade de um dos modelos")
         if set(linhas) & set(descartaveis):
             self.sobrou_caminho = True
-            print("[magalu] ⚠ a sacola ficou com um kit/pacote/gift card que eu pus para medir um cupom")
+            print("[magalu] ⚠ a sacola ficou com um kit/pacote que eu pus para medir um cupom")
         return {ped["chave"] for ped in pedidos if ped["chave"] in casados and linhas.get(ped["modelo"]) == 1}
 
     def garantir_itens(self, page, alvos: list[dict]) -> set:
@@ -971,7 +916,7 @@ class Magalu(LojaCarrinho):
         - sacola com produto que não é do carrinho (as TVs, os principais e os caminhos reconhecidos): CarrinhoOcupado;
         - item de um modelo que não está em `alvos` fica como está (nunca é tirado); se para trocar o anúncio de um
           modelo fosse preciso esvaziar a sacola (o Magalu não liga o "Excluir" ao item) e ela tem esse item, não mexe;
-          a exceção é o caminho (`alvo["descartaveis"]`: kit, pacote, gift card que o robô pôs para medir um cupom),
+          a exceção é o caminho (`alvo["descartaveis"]`: kit, pacote que o robô pôs para medir um cupom),
           que sai;
         - só falta pôr: abre a página de cada anúncio que falta (confere modelo e vendedor) e adiciona, sem tirar nada;
         - há item errado de um dos modelos (ou um caminho): confere ANTES a página de TODOS os anúncios pedidos (uma que
@@ -2050,7 +1995,7 @@ class MercadoLivre(LojaCarrinho):
         troca (G1): pré-checa cada anúncio que falta, TIRA as linhas erradas de cada modelo (conferindo que sumiram) e
         só então PÕE o que falta. Um modelo cuja pré-checagem falha, ou cuja linha errada não dá para tirar, fica como
         está (nunca duas linhas do mesmo modelo). Linha de modelo que não está em `alvos` não é tocada, salvo a de um
-        caminho (`alvo["descartaveis"]`: kit, pacote, gift card que o robô pôs para medir um cupom), que sai; produto
+        caminho (`alvo["descartaveis"]`: kit, pacote que o robô pôs para medir um cupom), que sai; produto
         que não é do carrinho: CarrinhoOcupado. Devolve as chaves conferidas (única linha do modelo, 1 unidade)."""
         self.item_alvo = None
         ids_modelo: dict = {}
@@ -2082,7 +2027,7 @@ class MercadoLivre(LojaCarrinho):
         if any(not c["tv"] for c in cl):
             raise CarrinhoOcupado("o carrinho do Mercado Livre tem produto que não é dos monitorados (ou um item que "
                                   "não consigo conferir); não mexo nele. Tire-o à mão para o teste voltar")
-        # 03/10: o caminho (kit, pacote, gift card) que o robô pôs para medir um cupom nunca fica no carrinho
+        # 03/10: o caminho (kit, pacote) que o robô pôs para medir um cupom nunca fica no carrinho
         caminhos = [c for c in cl if c["modelo"] in descartaveis]
         for c in caminhos:
             if not (c["ids"] and c["excluir"] and self._tirar_linha(page, c["ids"], ctx)):

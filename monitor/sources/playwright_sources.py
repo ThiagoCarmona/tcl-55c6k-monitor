@@ -190,7 +190,7 @@ def _abrir(url: str, esperar: str | None = None, capturar: list[str] | None = No
 def _avaliar(js: str, arg: Any = None, perfil: str = "default") -> Any:
     """Roda a função JavaScript `js` (com o argumento `arg`) na aba da sessão aberta do `perfil`, depois de um _abrir
     dentro de `with sessao(perfil)`, e devolve o resultado. Serve para pedir as APIs da própria loja de dentro da página
-    (o navegador manda os cookies e o sensor do Akamai: preço da Netshoes, CEP da Amazon). Nos testes é trocado."""
+    (o navegador manda os cookies e o sensor do Akamai: o preço da Netshoes). Nos testes é trocado."""
     s = _SESSOES.get(perfil)
     if s is None or s.page is None:
         raise RuntimeError("nenhuma página aberta nesta sessão do Chrome")

@@ -107,9 +107,9 @@ def alvos_produtos() -> dict[str, dict[str, float | None]]:
     return {m: {"pix": alvo_pix(m), "parcelado": alvo_parcelado(m)} for m in _produtos.IDS}
 
 
-# CEP de entrega do usuário (prazo do GTA 6): SÓ da variável de ambiente CEP_ENTREGA (.env do PC, secret do GitHub).
-# Nunca vai para código, log, teste, docs/data nem anotações. Sem ele, o CEP de referência (centro de São Paulo, o
-# mesmo da pesquisa de 03/10) e o prazo sai marcado como aproximado (Oferta.extra['cep_referencia'] = True).
+# CEP do usuário: SÓ da variável de ambiente CEP_ENTREGA (.env do PC, secret do GitHub). Serve para escolher o estado
+# (UF) nas consultas de preço que pedem a UF (Netshoes). Nunca vai para código, log, teste, docs/data nem anotações. Sem
+# ele, o CEP de referência (centro de São Paulo).
 CEP_REFERENCIA = "01310100"
 
 
@@ -117,6 +117,26 @@ def cep_entrega() -> tuple[str, bool]:
     """(CEP só com dígitos, é o de referência?). Não imprimir o CEP."""
     cep = re.sub(r"\D", "", os.environ.get("CEP_ENTREGA", ""))
     return (cep, False) if len(cep) == 8 else (CEP_REFERENCIA, True)
+
+
+# CEP -> UF (faixas dos Correios)
+_FAIXAS_UF = (
+    (1000, 19999, "SP"), (20000, 28999, "RJ"), (29000, 29999, "ES"), (30000, 39999, "MG"), (40000, 48999, "BA"),
+    (49000, 49999, "SE"), (50000, 56999, "PE"), (57000, 57999, "AL"), (58000, 58999, "PB"), (59000, 59999, "RN"),
+    (60000, 63999, "CE"), (64000, 64999, "PI"), (65000, 65999, "MA"), (66000, 68899, "PA"), (68900, 68999, "AP"),
+    (69000, 69299, "AM"), (69300, 69399, "RR"), (69400, 69899, "AM"), (69900, 69999, "AC"), (70000, 72799, "DF"),
+    (72800, 72999, "GO"), (73000, 73699, "DF"), (73700, 76799, "GO"), (76800, 76999, "RO"), (77000, 77999, "TO"),
+    (78000, 78899, "MT"), (79000, 79999, "MS"), (80000, 87999, "PR"), (88000, 89999, "SC"), (90000, 99999, "RS"),
+)
+
+
+def uf_do_cep(cep: object) -> str:
+    """UF do CEP (SP quando o CEP é inválido)."""
+    d = re.sub(r"\D", "", str(cep or ""))
+    if len(d) != 8:
+        return "SP"
+    p = int(d[:5])
+    return next((uf for a, b, uf in _FAIXAS_UF if a <= p <= b), "SP")
 
 
 # Termos de busca usados nos sites de promoção (BUSCAS é o da 55C6K, como antes). Do catálogo (monitor/produtos.py)
@@ -233,8 +253,7 @@ LOJAS_VTEX_EAN = {
     "vtex.fastshop.ps5": ("Fast Shop", LOJAS_VTEX["Fast Shop"], "", True),
     "vtex.webcontinental.ps5": ("Webcontinental", LOJAS_VTEX["Webcontinental"], "", True),
 }
-# KaBuM: a lista de consoles PlayStation (um pedido traz todos os PS5 da loja, com vendedor e oferta) e a cotação de
-# frete (sem login) para o prazo do GTA 6 com o CEP
+# KaBuM: a lista de consoles PlayStation (um pedido traz todos os PS5 da loja, com vendedor e oferta)
 URL_KABUM_LISTA_CONSOLES = "https://www.kabum.com.br/gamer/playstation/consoles-playstation"
 # gift card da PlayStation Store vendido e entregue pela KaBuM (1P): a categoria traz todos os valores de face (R$ 60 a
 # R$ 700) com preço e vendedor, no mesmo formato da lista de consoles (conferido em 26/10/2026; a busca
@@ -243,7 +262,6 @@ URL_KABUM_LISTA_GIFT = "https://www.kabum.com.br/servicos-digitais/giftcard/game
 # SSD NVMe M.2 1TB do notebook (14/11/2026): a busca traz a lista no mesmo formato da de consoles (conferido em 14/11:
 # 60 anúncios, todos SSD NVMe de 1TB pelo classificador). Um pedido por rodada
 URL_KABUM_BUSCA_SSD = "https://www.kabum.com.br/busca/ssd-nvme-1tb"
-URL_KABUM_FRETE = "https://servicespub.prod.api.aws.grupokabum.com.br/shipping/v4/quotation"
 # Magalu (magazinevoce): as buscas do PS5/GTA 6 já trazem preço, vendedor e o cupom do anúncio (seller.tags)
 MAGALU_TERMOS_PRODUTOS = _produtos.termos("magalu", _NAO_TV)
 MAGALU_PRODUTOS_MAX_REQUISICOES = 4 + len(_produtos.EXTRAS)   # cada produto do ➕ ganha a busca dele
@@ -260,9 +278,6 @@ URL_ML_LOJA_PLAYSTATION = "https://www.mercadolivre.com.br/loja/playstation"
 # Hype (loja oficial de cartão presente PlayStation, pesquisa de 26/10/2026): a página da categoria traz os cartões
 # "[Exclusivo Brasil]" de R$ 35 a R$ 700 com o preço de agora (gtmProduct no HTML). Um pedido por rodada
 URL_HYPE_GIFT_PSN = "https://hype.games/br/cartao-presente-playstation-store"
-# Carteira da PSN: a Sony tem um limite de saldo que não divulga (termos, seção 7.2); a Hype vende cartão de R$ 700, então
-# é pelo menos isso. A combinação de gift cards para pagar o GTA 6 (produtos.combinacao_gift) não passa deste total
-LIMITE_CARTEIRA_PSN = float(_env("LIMITE_CARTEIRA_PSN", "700"))
 # Telegram: busca por termo (t.me/s/<canal>?q=<termo>) nos canais de muito volume: pega a postagem que saiu da 1ª
 # página entre uma rodada e outra (o @pelandobr posta 7 a 10 por hora; a nuvem roda com intervalos de horas)
 TELEGRAM_CANAIS_BUSCA = [c.strip().lstrip("@") for c in _env("TELEGRAM_CANAIS_BUSCA", "pelandobr").split(",") if c.strip()]

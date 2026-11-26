@@ -46,7 +46,7 @@ def todas() -> list[Fonte]:
         carrefour.Carrefour(),
         psstore.PlayStationStore(),
         mercadolivre_loja.MercadoLivreLojaPlayStation(),
-        # gift card da PlayStation Store para pagar o GTA 6 digital (26/10/2026)
+        # gift card da PlayStation Store (26/10/2026)
         hype.HypeGiftCard(),
         telegram_public.TelegramPublico(),
         # ---- só no PC ----

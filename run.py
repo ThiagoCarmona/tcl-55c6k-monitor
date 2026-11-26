@@ -271,8 +271,8 @@ def main() -> int:
                 estado.dados["lista_cupons_parcial"] = hoje()
         print(f"[cupons] lista de cupons ativos: {sum(chegaram)}/{len(lista_cupons)} mensagem(ns) enviada(s)")
 
-    # o que o painel e o resumo usam nos produtos que não são TV (meta desta oferta, entrega do GTA 6, detalhes do kit e
-    # do gift card), gravado no extra antes de ir para o state/latest
+    # o que o painel e o resumo usam nos produtos que não são TV (meta desta oferta, detalhes do kit e do gift card),
+    # gravado no extra antes de ir para o state/latest
     produtos.anota(ofertas)
 
     # persistência
