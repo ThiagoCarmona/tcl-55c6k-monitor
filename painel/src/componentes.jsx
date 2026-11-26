@@ -30,7 +30,16 @@ const LOGOS = {
 };
 // ícone quadrado (aplicativo/site) ocupa o selo inteiro, sem a margem branca dos logos horizontais
 const QUADRADOS = new Set(['carrefour.png', 'nuuvem.png', 'hype.jpg', 'telegram.webp']);
-const FOTOS = {PS5_DIGITAL: 'produtos/ps5-slim.webp', GTA6_CODE_IN_BOX: 'produtos/gta6.webp'};
+const FOTOS = {
+  PS5_DIGITAL: 'produtos/ps5-slim.webp',
+  PS5_DISCO: 'produtos/ps5-slim.webp',
+  PS5_DIGITAL_GTA6: 'produtos/ps5-slim.webp',
+  PS5_DISCO_GTA6: 'produtos/ps5-slim.webp',
+  GTA6_CODE_IN_BOX: 'produtos/gta6.webp',
+  GTA6_DIGITAL: 'produtos/gta6.webp',
+  GTA6_ULTIMATE: 'produtos/gta6.webp',
+};
+export const fotoDe = id => FOTOS[id] || null;
 
 const arquivoLogo = loja =>
   LOGOS[
@@ -55,6 +64,9 @@ const CLAREAR_NO_ESCURO = new Set([
 const VERSAO_ESCURA = {'mercadolivre.webp': 'mercadolivre-escuro.webp'};
 
 // logo sem fundo nos dois temas; altura pela classe
+// a loja tem logo no painel? (aba Fontes: sem logo, vai a inicial)
+export const temLogo = loja => !!arquivoLogo(loja);
+
 export function Logo({loja, className = 'h-[22px] max-w-[92px]'}) {
   const f = arquivoLogo(loja);
   if (!f) return <span className="font-bold">{loja}</span>;
@@ -523,3 +535,56 @@ export const Lista = ({children, vazio}) => (
     </ul>
   </Card>
 );
+
+// seta de "abre em outra aba" dos links de anúncio, postagem e cupom
+export const SetaFora = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M7 17L17 7M9 7h8v8" />
+  </svg>
+);
+// botão-link com a seta (Ver anúncio, Abrir postagem); no celular fica só a seta, com o nome no aria-label
+export const LinkFora = ({url, children, aria}) =>
+  url ? (
+    <a className="lnk" href={url} target="_blank" rel="noopener noreferrer" aria-label={aria}>
+      <span className="lnk-txt">{children}</span>
+      <SetaFora />
+    </a>
+  ) : null;
+
+// código de cupom grande, que copia ao tocar ("Copiar" vira "Copiado" por 1,6 s)
+export function Copiar({codigo, mini}) {
+  const [ok, setOk] = useState(false);
+  useEffect(() => {
+    if (!ok) return;
+    const t = setTimeout(() => setOk(false), 1600);
+    return () => clearTimeout(t);
+  }, [ok]);
+  const copia = () =>
+    navigator.clipboard
+      ?.writeText(codigo)
+      .then(() => setOk(true))
+      .catch(() => {
+        /* sem permissão: nada a fazer */
+      });
+  return (
+    <button
+      type="button"
+      onClick={copia}
+      aria-label={ok ? `Código ${codigo} copiado` : `Copiar o código ${codigo}`}
+      className={`codigo${mini ? ' mini' : ''}${ok ? ' feito' : ''}`}
+    >
+      {codigo}
+      <span className="cp-btn" aria-live="polite">
+        {ok ? 'Copiado' : 'Copiar'}
+      </span>
+    </button>
+  );
+}
